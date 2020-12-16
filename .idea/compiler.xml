@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="proyectopsp2021-grupoB" target="1.5" />
+      <module name="proyectopsp2021-grupoB" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

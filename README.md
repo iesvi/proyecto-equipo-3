@@ -51,9 +51,13 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 3. Funcionalidades para comunicaciones en red: Arquitectura Cliente-Servidor.
 
     - La aplicación en sí tendrá un desarrollo por dos partes en este requisito:
-         *&nbsp;&nbsp;&nbsp;&nbsp;La aplicación servidor, que será la encargada de recibir peticiones de los clientes, 
-         *&nbsp;&nbsp;&nbsp;&nbsp;la que establecerá una conexión con la base de datos. Si está parte no está operativa
-         *&nbsp;&nbsp;&nbsp;&nbsp;los usuarios no podrán usar la aplicación del lado del cliente
+         
+         * La aplicación servidor, que será la encargada de recibir peticiones de los clientes, 
+         la que establecerá una conexión con la base de datos. Si está parte no está operativa
+         los usuarios no podrán usar la aplicación del lado del cliente. Se usará el protocolo
+         TPC/IP para estas conexiones.
+         
+         *
     
 
 

@@ -7,5 +7,3 @@
 ## <p align="center">GAMER HUB</p>
 
 
-
-# proyectopsp2021-grupoB

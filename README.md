@@ -95,6 +95,14 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 ## ACTIVIDAD 5: MODELO DE OBJETOS DEL NEGOCIO.
 
 
+
+###Modelo de datos 
+<p align="center">
+<img src="/resources/modelo_datos_gamerHub.png"/>
+</p>
+
+
+
 <br>
 
 

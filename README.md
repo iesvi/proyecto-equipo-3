@@ -96,7 +96,9 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 
 <br>
+
 ### Modelo de datos 
+
 <p align="center">
 <img src="/resources/modelo_datos_gamerHub.png"/>
 </p>

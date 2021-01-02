@@ -34,32 +34,37 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 1. Funcionalidades desarrolladas en procesos y subprocesos.
  
-    - <b>Procesos del SO: </b>fecha y hora, CMD, recoger
+    * Procesos del SO: fecha y hora, CMD, recoger
     datos de otras aplicaciones como Spotify o Steam.
-    - <b>Procesos de la propia app: </b>[por ver aún...]
+    * Procesos de la propia app: [por ver aún...]
   
 2. Funcionalidades concurrentes con hilos.
 
-    - Nuestra aplicación requerirá de hilos para la propia conexión en sí al servidor,
+    * Nuestra aplicación requerirá de hilos para la propia conexión en sí al servidor,
     al conectarse a un canal o sala de chat. En el primer caso, cada usuario conectado es un hilo,
     y las conexiones a los chats serían subhilos.
-    - ... o al enviar peticiones al admin, las cuales 
+    * ... o al enviar peticiones al admin, las cuales 
     serán limitadas en un tiempo determinado (productor-consumidor). Esta última funcionalidad
     requerirá de una cola de peticiones, y sólo cuando el admin o usuario con el rol requerido
     atienda a la petición se podrá enviar otra.
 
 3. Funcionalidades para comunicaciones en red: Arquitectura Cliente-Servidor.
 
-    - La aplicación en sí tendrá un desarrollo por dos partes en este requisito:
+    * La aplicación en sí tendrá un desarrollo por dos partes en este requisito:
          
-         * La aplicación servidor, que será la encargada de recibir peticiones de los clientes, 
+         - La aplicación servidor, que será la encargada de recibir peticiones de los clientes, 
          la que establecerá una conexión con la base de datos. Si está parte no está operativa
          los usuarios no podrán usar la aplicación del lado del cliente. Se usará el protocolo
          TPC/IP para estas conexiones.
          
-         *
+         - La aplicación cliente, que enviará la petición de conexión al servidor.
     
+4. Implementación protocolos estándar de correo y ficheros: SMTP y FTP.
 
+    * <b>FTP: </b>Servidor común de archivos (imágenes o ficheros) en los que los usuarios podrán descargar
+    o subir archivos.
+    
+    * <b>SMTP: </b>Servidor para correos: recordatorios, envíos de peticiones, recuperación de la cuenta.
 
 
 
@@ -67,6 +72,9 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 
 ## ACTIVIDAD 2: REQUISITOS FUNCIONALES. DEFINICIÓN DEL PROBLEMA.
+
+
+1. <b> 
 
 
 <br>

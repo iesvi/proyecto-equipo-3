@@ -6,4 +6,8 @@
 
 ## <p align="center">GAMER HUB</p>
 
+<p align="center">
+<img src="/resources/gamerhublogo.png"/>
+</p>
+
 

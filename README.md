@@ -36,7 +36,7 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
  
     - <b>Procesos del SO: </b>fecha y hora, CMD, recoger
     datos de otras aplicaciones como Spotify o Steam.
-    - <b>Procesos de la propia app: [por ver aún...]
+    - <b>Procesos de la propia app: </b>[por ver aún...]
   
 2. Funcionalidades concurrentes con hilos.
 

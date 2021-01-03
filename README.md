@@ -693,17 +693,19 @@ Ninguna.
 
 ### Diagrama de clases
 
+
+#### Diagrama Servidor
+
 <p align="center">
-<img src="/resources/modelo_datos_gamerHub.png"/>
+<img src="/resources/diagrama_clases_gamerhub.png"/>
 </p>
 
 
 <br>
 
 ### Descripción del diagrama de clases
-
+<br>
 #### Plantilla clases
-
 <br>
 
 <table>

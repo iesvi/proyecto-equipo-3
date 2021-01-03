@@ -115,47 +115,57 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 <br>
 
+
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-X</td>
+    <td>CU-1</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>. . . </td>
+    <td>REGISTRO USUARIO/ CREACIÓN DE CUENTA </td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
-    <td>- . . . </td>
-
+    <td>Se accede al formulario de registro al pulsar el botón “Crear cuenta”</td>
   </tr>
   <tr>
     <td><b>Actores:</b></td>
-    <td>. . .</td>
+    <td>Cliente/Usuario</td>
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
-  <td>. . . </td>
+  <td>El nombre de usuario o el correo mediante los cuales vamos a crear nuestra cuenta no deben existir previamente como registrados, es decir, han de ser nuevos.</td>
   </tr>
     <tr>
   <td><b>Curso normal:</b></td>
   <td>
-   
-<br>
+1.  En la pantalla inicial de login o registro, pulsamos el botón “Crear Cuenta”<br><br>
+2.  Se pasa a una vista de formulario, en la que se nos pedirán datos como:<br><br>
+-   	Nombre de usuario o nickname.<br>
+-   	Nombre (Obligatorio) y apellidos (Opcional).<br>
+-   	Fecha de nacimiento. (Obligatorio).<br>
+-   	E-mail. (Obligatorio).<br>
+-   	Teléfono (Opcional).<br><br>
+3.  El usuario hace clic en aceptar.<br><br>
+4.  El sistema verifica los datos.<br><br>
+5.  La cuenta se crea satisfactoriamente.
   </td>
   </tr>
   <tr>
   <td><b>Postcondiciones:</b></td>
-  <td>. . .<br>
+  <td>Acceso a la pantalla principal o “home” de la aplicación.<br>
   </td>
 </td>
   </tr>
   <tr>
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
-
+  1.  Error de conexión<br><br>
+  ---------------------------------------------------------------------------<br>
+  3.  Error en la introducción de algún campo, algún dato no es correcto.<br>
+  4.  No se crea la cuenta.
 </td>
-
 </table>
 
 <br> 

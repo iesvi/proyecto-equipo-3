@@ -19,6 +19,18 @@
 
 <br>
 
+# LICENCIA Y AUTORES
+
+Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> bajo licencia Creative Commons.  
+
+<br>
+
+<p align="center">
+<img src="/resources/LicenciaCC.png" height="40" width="140"/>  
+</p>
+
+<br>
+
 # PRESENTACIÓN
 
 ¡Hola! Somos el equipo 3, formado por los alumnos Manuel Santos y Víctor Ruiz.

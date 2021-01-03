@@ -18,7 +18,13 @@
 # <p align="center">Índice</p>
 > **[1. Licencia y Autores](#1)**<br>
 > **[2. Presentación](#2)**<br>
-
+> **[3. FASE 1: Análisis y diseño](#3)**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 1: Requisitos no funcionales](#4):**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 2: Requisitos funcionales. Definición del problema.](#5):**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 3: Entorno de trabajo.](#6):**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 4: Análisis de requisitos funcionales. Casos de uso.](#7):**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 5: Modelo de objetos del negocio.](#8):**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 6: Interfaz gráfica.](#9):**<br>
 <br>
 
 <a name="1"></a>
@@ -41,11 +47,12 @@ Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> ba
 Somos estudiantes de 2º curso de ciclo FP superior DAM y este es un proyecto
 que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle Inclán.
 
-
+<a name="3"></a>
 # FASE 1: ANÁLISIS Y DISEÑO
 
 <br>
 
+<a name="4"></a>
 ## ACTIVIDAD 1: REQUISITOS NO FUNCIONALES.
 
 1. Funcionalidades desarrolladas en procesos y subprocesos.
@@ -86,7 +93,7 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 <br>
 
-
+<a name="5"></a>
 ## ACTIVIDAD 2: REQUISITOS FUNCIONALES. DEFINICIÓN DEL PROBLEMA.
 
 
@@ -101,7 +108,7 @@ de APIs.
 
 <br>
 
-
+<a name="6"></a>
 ## ACTIVIDAD 3: ENTORNO DE TRABAJO
 
 1.  Lenguaje: Java.
@@ -111,7 +118,7 @@ de APIs.
 5.  Maven.
 <br>
 
-
+<a name="7"></a>
 ## ACTIVIDAD 4: ANÁLISIS DE REQUISITOS FUNCIONALES. CASOS DE USO.
 
 <br>
@@ -684,7 +691,7 @@ Ninguna.
 </table>
 <br> 
 
-
+<a name="8"></a>
 ## ACTIVIDAD 5: MODELO DE OBJETOS DEL NEGOCIO.
 
 
@@ -805,5 +812,5 @@ Ninguna.
 
 
 <br>
-
+<a name="9"></a>
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.

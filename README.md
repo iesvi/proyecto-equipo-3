@@ -697,7 +697,7 @@ Ninguna.
 #### Diagrama Servidor
 
 <p align="center">
-<img src="/resources/diagrama_clases_gamerhub.png"/>
+<img src="/resources/diagramas_clases_gamerhub.png"/>
 </p>
 
 

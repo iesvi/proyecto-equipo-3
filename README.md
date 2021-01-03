@@ -91,7 +91,12 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 
 1. <b>TÍTULO: </b> GAMER HUB
-2. <b>RESUMEN: </b> 
+2. <b>RESUMEN: </b> Nuestra aplicación consiste en una plataforma de tipo red social, parecida a *Discord*, de tipo cliente-servidor, para la comunicación
+entre jugadores. Para poder acceder a la plataforma es necesario tener una cuenta registrada de antemano. Las funcionalidades principales consistirán en la
+posibilidad de crear, administrar o unirse a canales de chat y hablar con diferentes grupos de personas, compartir archivos o planificar eventos. 
+
+Otra funcionalidad que está [aún por ver] es la posibilidad de ver qué música están escuchando tus amigos, o a qué están jugando en Steam, todo esto mediante uso
+de APIs.
 
 
 <br>
@@ -683,6 +688,105 @@ Ninguna.
 ## ACTIVIDAD 5: MODELO DE OBJETOS DEL NEGOCIO.
 
 
+
+<br>
+
+### Diagrama de clases
+
+
+<br>
+
+### Descripción del diagrama de clases
+<br>
+#### Plantilla clases
+<br>
+
+<table>
+
+
+
+<tr>
+
+<td>  Nombre de la clase  </td>
+<td>    </td>
+	
+</tr>
+
+<tr>
+<td>  Descripción  </td>
+<td>    </td>
+
+</tr>
+
+<tr> 
+
+<td> Relaciones </td>
+<td></td>
+
+<tr>
+	
+</table>
+
+
+<br>
+
+<br>
+
+<table>
+
+
+<tr>
+
+<td>  Atributos  </td>
+<td>    </td>
+	
+</tr>
+
+<tr>
+<td>  Atributos propios de la clase  </td>
+<td>    </td>
+
+</tr>
+
+<tr> 
+
+<td> Atributos propios de la relación </td>
+<td></td>
+
+<tr>
+	
+</table>
+
+
+<br>
+
+<br>
+
+<table>
+
+
+<tr>
+
+<td>  Métodos  </td>
+<td>    </td>
+	
+</tr>
+
+<tr>
+<td>  Función  </td>
+<td>    </td>
+
+</tr>
+
+<tr> 
+
+<td> Sintaxis del método </td>
+<td></td>
+
+<tr>
+	
+</table>
+
 <br>
 
 ### Modelo de datos 
@@ -694,6 +798,4 @@ Ninguna.
 
 
 <br>
-
-
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.

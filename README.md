@@ -15,9 +15,9 @@
 <br>
 
 
-# <p align="center">Índice:</p>
-> **[1. Licencia y Autores](#1):**<br>
-> **[2. Presentación](#2):**<br>
+# <p align="center">Índice</p>
+> **[1. Licencia y Autores](#1)**<br>
+> **[2. Presentación](#2)**<br>
 
 <br>
 

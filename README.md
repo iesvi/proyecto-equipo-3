@@ -104,6 +104,17 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 ## ACTIVIDAD 4: ANÁLISIS DE REQUISITOS FUNCIONALES. CASOS DE USO.
 
+<br>
+
+### <b>DIAGRAMA CASOS DE USO</b>
+
+<br>
+<p align="center">
+<img src="/resources/casos_uso_gamerhub.png"/>
+</p>
+
+<br>
+
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>

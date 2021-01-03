@@ -19,12 +19,12 @@
 > **[1. Licencia y Autores](#1)**<br>
 > **[2. Presentación](#2)**<br>
 > **[3. FASE 1: Análisis y diseño](#3)**<br>
-> **[&nbsp;&nbsp;&nbsp; Actividad 1: Requisitos no funcionales](#4):**<br>
-> **[&nbsp;&nbsp;&nbsp; Actividad 2: Requisitos funcionales. Definición del problema.](#5):**<br>
-> **[&nbsp;&nbsp;&nbsp; Actividad 3: Entorno de trabajo.](#6):**<br>
-> **[&nbsp;&nbsp;&nbsp; Actividad 4: Análisis de requisitos funcionales. Casos de uso.](#7):**<br>
-> **[&nbsp;&nbsp;&nbsp; Actividad 5: Modelo de objetos del negocio.](#8):**<br>
-> **[&nbsp;&nbsp;&nbsp; Actividad 6: Interfaz gráfica.](#9):**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 1: Requisitos no funcionales](#4)**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 2: Requisitos funcionales. Definición del problema.](#5)**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 3: Entorno de trabajo.](#6)**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 4: Análisis de requisitos funcionales. Casos de uso.](#7)**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 5: Modelo de objetos del negocio.](#8)**<br>
+> **[&nbsp;&nbsp;&nbsp; Actividad 6: Interfaz gráfica.](#9)**<br>
 <br>
 
 <a name="1"></a>

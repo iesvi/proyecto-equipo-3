@@ -100,6 +100,48 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 ## ACTIVIDAD 4: ANÁLISIS DE REQUISITOS FUNCIONALES. CASOS DE USO.
 
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-X</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>. . . </td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>- . . . </td>
+
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>. . .</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>. . . </td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+   
+<br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>. . .<br>
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+
+</td>
+
+</table>
 
 <br> 
 

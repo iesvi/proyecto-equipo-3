@@ -133,7 +133,6 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
   <tr>
   <td><b>Equipo/Individual<b></td>
   <td>Equipo</td>
-  <td>-</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -192,7 +191,6 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Individual</td>
   <td>Victor</td>
   </tr>
   <tr>
@@ -246,7 +244,6 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Individual</td>
   <td>Manuel</td>
   </tr>
   <tr>
@@ -297,7 +294,6 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
   <tr>
   <td><b>Equipo/Individual<b></td>
   <td>Equipo</td>
-  <td>-</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -345,7 +341,6 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Individual</td>
   <td>Victor</td>
   </tr>
   <tr>
@@ -397,7 +392,6 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Individual</td>
   <td>Manuel</td>
   </tr>
   <tr>
@@ -449,7 +443,6 @@ Ninguna.
   <tr>
   <td><b>Equipo/Individual<b></td>
   <td>Equipo</td>
-  <td>-</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -499,7 +492,6 @@ Ninguna.
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Individual</td>
   <td>Victor</td>
   </tr>
   <tr>
@@ -549,7 +541,6 @@ Ninguna.
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Individual</td>
   <td>Manuel</td>
   </tr>
   <tr>
@@ -601,7 +592,6 @@ Ninguna.
   <tr>
   <td><b>Equipo/Individual<b></td>
   <td>Equipo</td>
-  <td>-</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -653,7 +643,6 @@ Ninguna.
   <tr>
   <td><b>Equipo/Individual<b></td>
   <td>Equipo</td>
-  <td>-</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>

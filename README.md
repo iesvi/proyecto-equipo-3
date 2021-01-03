@@ -26,7 +26,7 @@ Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> ba
 <br>
 
 <p align="center">
-<img src="/resources/LicenciaCC.png" height="40" width="140"/>  
+<img src="/resources/cclogo.png" height="40" width="140"/>  
 </p>
 
 <br>

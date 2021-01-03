@@ -798,4 +798,5 @@ Ninguna.
 
 
 <br>
+
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.

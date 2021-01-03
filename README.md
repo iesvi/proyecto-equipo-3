@@ -701,8 +701,9 @@ Ninguna.
 <br>
 
 ### Descripción del diagrama de clases
-<br>
+
 #### Plantilla clases
+
 <br>
 
 <table>

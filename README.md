@@ -693,6 +693,10 @@ Ninguna.
 
 ### Diagrama de clases
 
+<p align="center">
+<img src="/resources/modelo_datos_gamerHub.png"/>
+</p>
+
 
 <br>
 

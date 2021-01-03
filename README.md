@@ -15,10 +15,13 @@
 <br>
 
 
-# <p align="center">Índice:</p>
+# <p align="center">Índice</p>
+> **[1. Licencia y Autores](#1)**<br>
+> **[2. Presentación](#2)**<br>
 
 <br>
 
+<a name="1"></a>
 # LICENCIA Y AUTORES
 
 Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> bajo licencia Creative Commons.  
@@ -31,6 +34,7 @@ Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> ba
 
 <br>
 
+<a name="2"></a>
 # PRESENTACIÓN
 
 ¡Hola! Somos el equipo 3, formado por los alumnos Manuel Santos y Víctor Ruiz.
@@ -86,7 +90,8 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 ## ACTIVIDAD 2: REQUISITOS FUNCIONALES. DEFINICIÓN DEL PROBLEMA.
 
 
-1. <b> 
+1. <b>TÍTULO: </b> GAMER HUB
+2. <b>RESUMEN: </b> 
 
 
 <br>

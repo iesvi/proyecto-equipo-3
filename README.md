@@ -813,4 +813,5 @@ Ninguna.
 
 <br>
 <a name="9"></a>
+
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.

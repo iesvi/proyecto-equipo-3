@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
 <img src="/resources/cabecera.png"/>
 </p>
 
@@ -94,7 +94,11 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 ## ACTIVIDAD 3: ENTORNO DE TRABAJO
 
-
+1.  Lenguaje: Java.
+2.  Entorno de Desarrollo: IntelliJ.
+3.  Control de versiones: GitHub Classroom
+4.  Arquitectura MVC.
+5.  Maven.
 <br>
 
 

@@ -98,13 +98,18 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 
 
 1. <b>TÍTULO: </b> GAMER HUB
-2. <b>RESUMEN: </b> Nuestra aplicación consiste en una plataforma de tipo red social, parecida a *Discord*, de tipo cliente-servidor, para la comunicación
-entre jugadores. Para poder acceder a la plataforma es necesario tener una cuenta registrada de antemano. Las funcionalidades principales consistirán en la
-posibilidad de crear, administrar o unirse a canales de chat y hablar con diferentes grupos de personas, compartir archivos o planificar eventos. 
+2. <b>RESUMEN: </b> Nuestro proyecto constituye una aplicación cliente servidor para jugadores, parecida a Discord. Esta aplicación va a requerir de varios clientes que se conecten a un servidor, mediante un login. Sus características incluirán:
+- Registrar una cuenta.
+- Un perfil del cliente que el mismo podrá modificar a gusto propio.
+- Salas de chats o canales para hablar con amigos.
+- Una funcionalidad que permite enviar mensajes (peticiones o incidencias) al administrador del sistema.
+- APIs: que nos proporcionarán datos de los juegos (Steam) o música (Spotify) que nosotros o nuestros amigos están jugando o escuchando en ese momento.
+- Un calendario de eventos.
 
-Otra funcionalidad que está [aún por ver] es la posibilidad de ver qué música están escuchando tus amigos, o a qué están jugando en Steam, todo esto mediante uso
-de APIs.
-
+- En la pantalla de login o registro una opción de recuperación de la cuenta si se olvidan el correo, nombre de usuario o contraseña.
+- Añadir/Eliminar amigo
+- Ver perfil de amigo
+ 
 
 <br>
 

@@ -1,14 +1,16 @@
 ﻿<p align="center">
-<img src="/resources/cabecera.png"/>
+<img src="./resources/cabecera.png"/>
 </p>
+
 
 # <p align="center">PROYECTO PSP/AAD 20/21</p>
 
 ## <p align="center">GAMER HUB</p>
 
 <p align="center">
-<img src="/resources/gamerhublogo.png"/>
+<img src="./resources/gamerhublogo.png"/>
 </p>
+
 
 
 <br>
@@ -35,8 +37,9 @@ Este material ha sido producido por <b>Manuel Santos</b>, <b>Victor Ruiz</b> y <
 <br>
 
 <p align="center">
-<img src="/resources/cclogo.png" height="40" width="140"/>  
+<img src="./resources/cclogo.png" height="40" width="140"/>  
 </p>
+
 
 <br>
 
@@ -56,7 +59,7 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 ## ACTIVIDAD 1: REQUISITOS NO FUNCIONALES.
 
 1. Funcionalidades desarrolladas en procesos y subprocesos.
- 
+
     * Procesos del SO: fecha y hora, CMD, recoger
     datos de otras aplicaciones como Spotify o Steam.
     * Procesos de la propia app: [por ver aún...]
@@ -74,7 +77,7 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 3. Funcionalidades para comunicaciones en red: Arquitectura Cliente-Servidor.
 
     * La aplicación en sí tendrá un desarrollo por dos partes en este requisito:
-         
+      
          - La aplicación servidor, que será la encargada de recibir peticiones de los clientes, 
          la que establecerá una conexión con la base de datos. Si está parte no está operativa
          los usuarios no podrán usar la aplicación del lado del cliente. Se usará el protocolo
@@ -109,7 +112,7 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 - En la pantalla de login o registro una opción de recuperación de la cuenta si se olvidan el correo, nombre de usuario o contraseña.
 - Añadir/Eliminar amigo
 - Ver perfil de amigo
- 
+
 
 <br>
 
@@ -132,9 +135,12 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 ### <b>DIAGRAMA CASOS DE USO</b>
 
 <br>
-<p align="center">
-<img src="/resources/casos_uso_gamerhub.png"/>
-</p>
+
+![](.\resources\DCU-gestion-usuario.png)
+
+![](.\resources\DCU-Gestiondearchivos.png)
+
+
 
 <br>
 
@@ -242,7 +248,7 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
  4.  Error de conexión con el server.<br>
- 
+
 		4.1.  Nombre de usuario/ E-mail o contraseñas incorrectos.
 		4.2.  El nombre de usuario no existe.
 </td>
@@ -812,8 +818,9 @@ Ninguna.
 ### Modelo de datos 
 
 <p align="center">
-<img src="/resources/modelo_datos_gamerHub.png"/>
+<img src="./resources/modelo_datos_gamerHub.png"/>
 </p>
+
 
 
 

@@ -128,6 +128,7 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 <br>
 
 <a name="7"></a>
+
 ## ACTIVIDAD 4: ANÁLISIS DE REQUISITOS FUNCIONALES. CASOS DE USO.
 
 <br>
@@ -136,9 +137,27 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 
 <br>
 
-![](.\resources\DCU-gestion-usuario.png)
+<p align="center">
+<img src=".\resources\DCU-gestion-usuario.png"/>
+</p>
 
-![](.\resources\DCU-Gestiondearchivos.png)
+
+
+<p align="center">
+<img src=".\resources\DCU-Gestiondearchivos.png"/>
+</p>
+
+<p align="center">
+<img src=".\resources\DCU-gestiondechats.png"/>
+</p>
+
+<p align="center">
+<img src=".\resources\DCU-Gestióndeeventos.png"/>
+</p>
+
+<p align="center">
+<img src=".\resources\DCU-gestiondepeticiones.png"/>
+</p>
 
 
 

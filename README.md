@@ -30,7 +30,7 @@
 <a name="1"></a>
 # LICENCIA Y AUTORES
 
-Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> bajo licencia Creative Commons.  
+Este material ha sido producido por <b>Manuel Santos</b>, <b>Victor Ruiz</b> y <b>Miguel Rodríguez</b> bajo licencia Creative Commons.  
 
 <br>
 

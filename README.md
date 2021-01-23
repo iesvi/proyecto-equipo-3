@@ -2,7 +2,7 @@
 <img src="/resources/cabecera.png"/>
 </p>
 
-# <p align="center">PROYECTO PSP 20/21</p>
+# <p align="center">PROYECTO PSP/AAD 20/21</p>
 
 ## <p align="center">GAMER HUB</p>
 
@@ -43,9 +43,9 @@ Este material ha sido producido por <b>Manuel Santos</b> y <b>Victor Ruiz</b> ba
 <a name="2"></a>
 # PRESENTACIÓN
 
-¡Hola! Somos el equipo 3, formado por los alumnos Manuel Santos y Víctor Ruiz.
+¡Hola! Somos el equipo 3, formado por los alumnos Manuel Santos, Víctor Ruiz y Miguel Rodríguez.
 Somos estudiantes de 2º curso de ciclo FP superior DAM y este es un proyecto
-que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle Inclán.
+que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Valle Inclán.
 
 <a name="3"></a>
 # FASE 1: ANÁLISIS Y DISEÑO
@@ -119,8 +119,9 @@ que estamos realizando para la asignatura de PSP en el I.E.S Ramón del Valle In
 1.  Lenguaje: Java.
 2.  Entorno de Desarrollo: IntelliJ.
 3.  Control de versiones: GitHub Classroom
-4.  Arquitectura MVC.
+4.  Arquitectura MVC/Cliente-Servidor .
 5.  Maven.
+6.  Spring.
 <br>
 
 <a name="7"></a>

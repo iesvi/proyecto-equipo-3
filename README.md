@@ -20,11 +20,16 @@
 # <p align="center">Índice</p>
 > **[1. Licencia y Autores](#1)**<br>
 > **[2. Presentación](#2)**<br>
-> **[3. FASE 1: Análisis y diseño](#3)**<br>
+> **[3. FASE 1: Análisis](#3)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 1: Requisitos no funcionales](#4)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 2: Requisitos funcionales. Definición del problema.](#5)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 3: Entorno de trabajo.](#6)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 4: Análisis de requisitos funcionales. Casos de uso.](#7)**<br>
+> **[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Gestión de usuarios.](#USUARIOS)**<br>
+> **[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Gestión del servidor de archivos.](#ARCHIVOS)**<br>
+> **[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Gestión de chat.](#CHATS)**<br>
+> **[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Gestión de eventos..](#EVENTOS)**<br>
+> **[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Gestión de peticiones/incidencias.](#PETICIONES)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 5: Modelo de objetos del negocio.](#8)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 6: Interfaz gráfica.](#9)**<br>
 <br>
@@ -44,6 +49,7 @@ Este material ha sido producido por <b>Manuel Santos</b>, <b>Victor Ruiz</b> y <
 <br>
 
 <a name="2"></a>
+
 # PRESENTACIÓN
 
 ¡Hola! Somos el equipo 3, formado por los alumnos Manuel Santos, Víctor Ruiz y Miguel Rodríguez.
@@ -51,7 +57,7 @@ Somos estudiantes de 2º curso de ciclo FP superior DAM y este es un proyecto
 que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Valle Inclán.
 
 <a name="3"></a>
-# FASE 1: ANÁLISIS Y DISEÑO
+# FASE 1: ANÁLISIS
 
 <br>
 
@@ -136,33 +142,11 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 ### <b>DIAGRAMA CASOS DE USO</b>
 
 <br>
-
+<a name="USUARIOS"></a>
 <p align="center">
 <img src=".\resources\DCU-gestion-usuario.png"/>
 </p>
-
-
-
-<p align="center">
-<img src=".\resources\DCU-Gestiondearchivos.png"/>
-</p>
-
-<p align="center">
-<img src=".\resources\DCU-gestiondechats.png"/>
-</p>
-
-<p align="center">
-<img src=".\resources\DCU-Gestióndeeventos.png"/>
-</p>
-
-<p align="center">
-<img src=".\resources\DCU-gestiondepeticiones.png"/>
-</p>
-
-
-
 <br>
-
 
 <table style="width:100%">
   <tr>
@@ -171,7 +155,7 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>REGISTRO USUARIO/ CREACIÓN DE CUENTA </td>
+    <td>REGISTRO DE USUARIO</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
@@ -221,7 +205,6 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 </table>
 
 <br>
-<br>
 
 <table style="width:100%">
   <tr>
@@ -230,11 +213,11 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>LOGIN O ACCESO A LA CUENTA</td>
+    <td>INICIAR SESION</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Victor</td>
+  <td>Equipo</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -268,12 +251,13 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   <td>
  4.  Error de conexión con el server.<br>
 
+
 		4.1.  Nombre de usuario/ E-mail o contraseñas incorrectos.
 		4.2.  El nombre de usuario no existe.
+
 </td>
 </table>
 
-<br>
 <br>
 
 <table style="width:100%">
@@ -283,11 +267,11 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>MODIFICAR PERFIL</td>
+    <td>CONSULTAR PERFIL USUARIO</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Manuel</td>
+  <td>Equipo</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -322,55 +306,11 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 </td>
 </table>
 
-<br>
-<br>
-
-<table style="width:100%">
-  <tr>
-    <td><b>ID: </b></td>
-    <td>CU-4</td>
-  </tr>
-  <tr>
-    <td><b>Nombre: </b></td>
-    <td>BUSCAR/AÑADIR AMIGOS</td>
-  </tr>
-  <tr>
-  <td><b>Equipo/Individual<b></td>
-  <td>Equipo</td>
-  </tr>
-  <tr>
-    <td><b>Descripción:</b></td>
-    <td>Se accede a una pantalla donde el usuario podrá buscar a cualquier usuario de la plataforma por su nombre/nickname y agregarlo como amigo.</td>
-  </tr>
-  <tr>
-    <td><b>Actores:</b></td>
-    <td>Cliente/Usuario</td>
-  </tr>
-  <tr>
-  <td><b>Precondiciones:</b></td>
-  <td>Tener una cuenta y acceder a la misma.</td>
-  </tr>
-    <tr>
-  <td><b>Curso normal:</b></td>
-  <td>
-1.  En la vista buscar amigos, el usuario introducirá el nick del amigo que quiera buscar en la barra de búsqueda.<br><br>
-2.  Aparecerán los usuarios del sistema que se llamen igual al puesto y el usuario podrá añadir a su amigo haciendo click en el icono de agregar.
-  </td>
-  </tr>
-  <tr>
-  <td><b>Postcondiciones:</b></td>
-  <td>Se actualizará la lista de amigos para chatear o insertar en un canal al usuario agregado.<br>
-  </td>
-</td>
-  </tr>
-  <tr>
-  <td><b>Alternativas/Excepciones:</b></td>
-  <td>
-2. No se encuentra al usuario introducido en la barra de búsqueda y el sistema notificará al usuario.
-</td>
-</table>
 
 <br>
+
+<table style="width:100%">  <tr>    <td><b>ID: </b></td>    <td>CU-4</td>  </tr>  <tr>    <td><b>Nombre: </b></td>    <td>ENVIAR PETICIÓN DE AMISTAD</td>  </tr>  <tr>  <td><b>Equipo/Individual<b></td>  <td>Equipo</td>  </tr>  <tr>    <td><b>Descripción:</b></td>    <td>Se accede a una pantalla donde el usuario podrá buscar a cualquier usuario de la plataforma por su nombre/nickname y agregarlo como amigo.</td>  </tr>  <tr>    <td><b>Actores:</b></td>    <td>Cliente/Usuario</td>  </tr>  <tr>  <td><b>Precondiciones:</b></td>  <td>Tener una cuenta y acceder a la misma.</td>  </tr>    <tr>  <td><b>Curso normal:</b></td>  <td>1.  En la vista buscar amigos, el usuario introducirá el nick del amigo que quiera buscar en la barra de búsqueda.<br><br>2.  Aparecerán los usuarios del sistema que se llamen igual al puesto y el usuario podrá añadir a su amigo haciendo click en el icono de agregar.  </td>  </tr>  <tr>  <td><b>Postcondiciones:</b></td>  <td>Se actualizará la lista de amigos para chatear o insertar en un canal al usuario agregado.<br>  </td></td>  </tr>  <tr>  <td><b>Alternativas/Excepciones:</b></td>  <td>2. No se encuentra al usuario introducido en la barra de búsqueda y el sistema notificará al usuario.</td></table>
+
 <br>
 
 <table style="width:100%">
@@ -380,15 +320,15 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>ABRIR CHAT</td>
+    <td>GESTIONAR LISTA DE AMIGOS</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Victor</td>
+  <td>Equipo</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
-    <td>Se accede a la vista de chat eligiendo el usuario o grupo.</td>
+    <td>El usuario accede a su lista de amigos pudiendo ver y eliminar su perfil.</td>
   </tr>
   <tr>
     <td><b>Actores:</b></td>
@@ -396,32 +336,31 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
-  <td>Tener una cuenta, acceder a la misma y tener agregado al usuario o grupo con el que quiere chatear.</td>
+  <td>Tener una cuenta y acceder a la misma.</td>
   </tr>
     <tr>
   <td><b>Curso normal:</b></td>
   <td>
-1.  En la lista de amigos/grupos estando en la vista principal, el usuario selecciona el que quiera.<br><br>
-2.  Se abre la vista chat con la conversación anterior si hubiera.<br><br>
-3.  El usuario introduce el mensaje en la barra de mensajes y lo envía pulsando el botón de enviar.<br><br>
-4.  El sistema envía el mensaje al chat.<br><br>
-5.  Se envía satisfactoriamente el mensaje.
+1.  El usuario hace clic en el amigo que quiera dentro de su lista de amigos.<br><br>
+2.  Se abrirá una nueva vista con los datos del amigo.<br><br>
+3.  El usuario ve los datos del amigo.
   </td>
   </tr>
   <tr>
   <td><b>Postcondiciones:</b></td>
-  <td>El usuario chatea con otro usuario o en un grupo.
+  <td>El usuario ve los amigos que tiene y accede a su perfil público.
   </td>
 </td>
   </tr>
   <tr>
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
-5. El mensaje no puede enviarse y el sistema notifica al usuario.
+3.  El usuario hace clic en eliminar.<br><br>
+4.  El sistema confirma que quiere eliminar.<br><br>
+5.  El usuario elimina al amigo.
 </td>
 </table>
 
-<br>
 <br>
 
 <table style="width:100%">
@@ -431,160 +370,11 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>CREAR CANAL/GRUPO</td>
-  </tr>
-  <tr>
-  <td><b>Equipo/Individual<b></td>
-  <td>Manuel</td>
-  </tr>
-  <tr>
-    <td><b>Descripción:</b></td>
-    <td>Se accede a la vista de creación de grupo donde se seleccionará un nombre y se agregaran a los amigos que quiera y tenga el usuario.</td>
-  </tr>
-  <tr>
-    <td><b>Actores:</b></td>
-    <td>Cliente/Administrador</td>
-  </tr>
-  <tr>
-  <td><b>Precondiciones:</b></td>
-  <td>Tener una cuenta, acceder a la misma y tener agregados usuarios como amigos.</td>
-  </tr>
-    <tr>
-  <td><b>Curso normal:</b></td>
-  <td>
-1.  El usuario hace clic en crear canal.<br><br>
-2.  Se abre una nueva vista que pide al usuario que introduzca un nombre del canal y que introduzca a los amigos que quiera agregar al canal.<br><br>
-3.  El usuario introduce los datos.<br><br>
-4.  El sistema crea el grupo/canal con las personas seleccionadas por el usuario.
-  </td>
-  </tr>
-  <tr>
-  <td><b>Postcondiciones:</b></td>
-  <td>El usuario crea el canal/grupo para chatear correctamente.
-  </td>
-</td>
-  </tr>
-  <tr>
-  <td><b>Alternativas/Excepciones:</b></td>
-  <td>
-Ninguna.
-</td>
-</table>
-
-<br>
-<br>
-
-<table style="width:100%">
-  <tr>
-    <td><b>ID: </b></td>
-    <td>CU-7</td>
-  </tr>
-  <tr>
-    <td><b>Nombre: </b></td>
-    <td>ENVIAR MENSAJE A ADMIN</td>
+    <td>GESTIONAR USUARIOS</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
   <td>Equipo</td>
-  </tr>
-  <tr>
-    <td><b>Descripción:</b></td>
-    <td>El usuario manda un mensaje de incidencia al administrador.</td>
-  </tr>
-  <tr>
-    <td><b>Actores:</b></td>
-    <td>Cliente/Usuario</td>
-  </tr>
-  <tr>
-  <td><b>Precondiciones:</b></td>
-  <td>Tener una cuenta y acceder a la misma.</td>
-  </tr>
-    <tr>
-  <td><b>Curso normal:</b></td>
-  <td>
-1.  El usuario hace clic en ayuda en la vista principal de la aplicación.<br><br>
-2.  Se abrirá una nueva vista en la que se le pedirá que indique su problema y detalle el mismo.<br><br>
-3.  El usuario introduce los datos.<br><br>
-4.  El sistema envía la incidencia a la base de datos donde se guardará.
-  </td>
-  </tr>
-  <tr>
-  <td><b>Postcondiciones:</b></td>
-  <td>El mensaje de incidencia se envía correctamente al administrador.
-  </td>
-</td>
-  </tr>
-  <tr>
-  <td><b>Alternativas/Excepciones:</b></td>
-  <td>
-5. El sistema notifica al usuario que no se ha podido enviar la incidencia y que lo intente más tarde.
-</td>
-</table>
-
-<br>
-<br>
-
-<table style="width:100%">
-  <tr>
-    <td><b>ID: </b></td>
-    <td>CU-8</td>
-  </tr>
-  <tr>
-    <td><b>Nombre: </b></td>
-    <td>ADMINISTRAR MENSAJES DE INCIDENCIAS</td>
-  </tr>
-  <tr>
-  <td><b>Equipo/Individual<b></td>
-  <td>Victor</td>
-  </tr>
-  <tr>
-    <td><b>Descripción:</b></td>
-    <td>El administrador ve y responde los mensajes de incidencias de los usuarios.</td>
-  </tr>
-  <tr>
-    <td><b>Actores:</b></td>
-    <td>Administrador</td>
-  </tr>
-  <tr>
-  <td><b>Precondiciones:</b></td>
-  <td>Ser administrador y acceder a la aplicación.</td>
-  </tr>
-    <tr>
-  <td><b>Curso normal:</b></td>
-  <td>
-1.  El administrador hace clic en incidencias.<br><br>
-2.  Se abrirá una nueva vista con una lista de las incidencias que los usuarios les han mandado.<br><br>
-3.  Podrá ver, responder al usuario y eliminar la incidencia con sus respectivos botones.
-  </td>
-  </tr>
-  <tr>
-  <td><b>Postcondiciones:</b></td>
-  <td>El administrador ve las incidencias.
-  </td>
-</td>
-  </tr>
-  <tr>
-  <td><b>Alternativas/Excepciones:</b></td>
-  <td>
-Ninguna.
-</td>
-</table>
-
-<br>
-<br>
-
-<table style="width:100%">
-  <tr>
-    <td><b>ID: </b></td>
-    <td>CU-9</td>
-  </tr>
-  <tr>
-    <td><b>Nombre: </b></td>
-    <td>MODIFICAR PERFILES</td>
-  </tr>
-  <tr>
-  <td><b>Equipo/Individual<b></td>
-  <td>Manuel</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -621,6 +411,168 @@ Ninguna.
 </table>
 
 <br>
+
+
+<a name="ARCHIVOS"></a>
+<p align="center">
+<img src=".\resources\DCU-Gestiondearchivos.png"/>
+</p>
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-7</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>SUBIR ARCHIVOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Víctor</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario sube un archivo que podra descargar cualquier usuario de la plataforma. </td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Usuario</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  En la vista principal, el usuario hará clic en subir archivo.<br><br>
+2.  Se abrira una pequeña ventana donde se especificará la ruta del archivo.<br><br>
+3.  El archivo se subirá al servidor.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario consigue subir el archivo al servidor para los demas usuarios.<br>
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+3.1 Ocurre un error en la conexion.<br><br>
+3.2 No es posible subir el archivo debido a su tamaño.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-8</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>BAJAR ARCHIVOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Víctor</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>Se accede a la pantalla de ficheros donde el usuario podrá ver y descargar un archivo del servidor.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Usuario</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  En la vista principal, el usuario hará clic en ver archivos.<br><br>
+2.  Se abrirá una nueva pantalla donde podrá ver los archivos subidos.<br><br>
+3.  El usuario hará clic en descargar en el archivo deseado.<br><br>
+4.  El archivo se descargará correctamente.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario consigue subir el archivo al servidor para los demas usuarios.<br>
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+4.1 Ocurre un error en la conexion.<br><br>
+4.2 No es posible descargar el archivo debido a que está dañado.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-9</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ELIMINAR ARCHIVOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Víctor</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>Se accede a la pantalla de ficheros donde el usuario podrá ver y eliminar un archivo suyo del servidor.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Usuario</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta, acceder a la misma y ser dueño del archivo subido.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  En la vista principal, el usuario hará clic en ver archivos.<br><br>
+2.  Se abrirá una nueva pantalla donde podrá ver los archivos subidos.<br><br>
+3.  El usuario hará clic en eliminar en el archivo deseado.<br><br>
+4.  El archivo se eliminará correctamente.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario consigue eliminar el archivo del servidor.<br>
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+4.1 Ocurre un error en la conexion.<br><br>
+4.2 No es posible eliminar el archivo debido a que no ha sido subido por él.
+</td>
+</table>
+
+<br>
+
+<a name="CHATS"></a>
+
+<p align="center">
+<img src=".\resources\DCU-gestiondechats.png"/>
+</p>
 <br>
 
 <table style="width:100%">
@@ -630,15 +582,15 @@ Ninguna.
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>VER PERFILES</td>
+    <td>CREAR CHAT</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Equipo</td>
+  <td>Víctor</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
-    <td>El usuario selecciona el perfil del amigo que quiera ver y , en caso de querer, lo elimina.</td>
+    <td>Se accede a la vista de creación de chat donde se seleccionará un nombre y se agregaran a los amigos que quiera y tenga el usuario.</td>
   </tr>
   <tr>
     <td><b>Actores:</b></td>
@@ -646,32 +598,30 @@ Ninguna.
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
-  <td>Tener una cuenta y acceder a la misma.</td>
+  <td>Tener una cuenta, acceder a la misma y tener agregados usuarios como amigos.</td>
   </tr>
     <tr>
   <td><b>Curso normal:</b></td>
   <td>
-1.  El usuario hace clic en el amigo que quiera dentro de su lista de amigos.<br><br>
-2.  Se abrirá una nueva vista con los datos del amigo.<br><br>
-3.  El usuario ve los datos del amigo.
+1.  El usuario hace clic en crear chat.<br><br>
+2.  Se abre una nueva vista que pide al usuario que introduzca un nombre del canal y que introduzca a los amigos que quiera agregar al canal.<br><br>
+3.  El usuario introduce los datos.<br><br>
+4.  El sistema crea el chat con las personas seleccionadas por el usuario.
   </td>
   </tr>
   <tr>
   <td><b>Postcondiciones:</b></td>
-  <td>El usuario accede al perfil del amigo que quiere ver.
+  <td>El usuario crea el chat para chatear correctamente.
   </td>
 </td>
   </tr>
   <tr>
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
-3.  El usuario hace clic en eliminar.<br><br>
-4.  El sistema confirma que quiere eliminar.<br><br>
-5.  El usuario elimina al amigo.
+Ninguna.
 </td>
 </table>
 
-<br>
 <br>
 
 <table style="width:100%">
@@ -681,11 +631,256 @@ Ninguna.
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>CREAR EVENTO</td>
+    <td>UNIRSE A UN CHAT</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
-  <td>Equipo</td>
+  <td>Víctor</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>Se accede a la vista de chat eligiendo el chat correspondiente.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta, acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  En la lista de chats estando en la vista principal, el usuario selecciona el que quiera.<br><br>
+2.  Se abre la vista chat con la conversación anterior si hubiera.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario se une al chat.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+2. No pudo abrirse la vista chat, se especifica el error al usuario.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-12</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ENVIAR/RECIBIR MENSAJES</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Víctor</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>Desde la vista chat, el usuario envia y recibe mensajes.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta, acceder a la misma y haberse unido a un chat previamente.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1. El usuario introduce el mensaje en la barra de mensajes y lo envía pulsando el botón de enviar.<br><br>
+2.  El sistema envía el mensaje al chat.<br><br>
+3.  Se envía satisfactoriamente el mensaje.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario chatea con otro usuario o en un grupo.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+3. El mensaje no puede enviarse y el sistema notifica al usuario.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-13</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ABANDONAR CHAT</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario abandona el chat que quiera.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta, acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  En la lista de chats estando en la vista principal, el usuario selecciona el que quiera.<br><br>
+2.  Una vez abierto el chat, el usuario hace clic en abandonar chat.<br><br>
+3.  El sistema elimina al usuario del chat.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario abandona el chat.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+3. Error del sistema al echar al usuario.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-14</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ELIMINAR CHAT</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario elimina un chat que creó previamente.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta, acceder a la misma y haber creado una cuenta.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  En la lista de chats estando en la vista principal, el usuario selecciona el que quiera.<br><br>
+2.  Una vez abierto el chat, el usuario hace clic en eliminar chat.<br><br>
+3.  El sistema elimina el chat.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario elimina el chat.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+3. Error al eliminar el chat, el usuario no es el creador del chat.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-15</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>MODIFICAR CHAT</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador modifica mensajes y elimina cualquier chat.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El administrador hace clic en el chat que desee en la vista principal de la aplicación.<br><br>
+2.  El administrador gestiona el chat modificando lo que vea conveniente..<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El administrador gestiona un chat.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+<br>
+
+<a name="EVENTOS"></a>
+
+<p align="center">
+<img src=".\resources\DCU-Gestióndeeventos.png"/>
+</p>
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-16</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>DAR DE ALTA UN EVENTO</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
@@ -720,7 +915,403 @@ Ninguna.
 4. Error al introducir algún campo.
 </td>
 </table>
-<br> 
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-17</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ELIMINAR UN EVENTO</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario elimina un evento.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El usuario selecciona un evento en la vista de eventos.<br><br>
+2.  El usuario hace clic en eliminar evento.<br><br>
+3.  El evento se eliminará correctamente
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario elimina un evento correctamente.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+3. Error del sistema al eliminar un evento.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-18</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>CONSULTAR EVENTOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario consulta los datos de un evento.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El usuario hace clic en el evento que quiera de la vista de eventos. <br><br>
+2.  Se abrirá una ventana con los datos del evento.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario consulta un evento correctamente.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-19</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>MODIFICAR EVENTO</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Miguel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario modifica los datos de un evento.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El usuario hace clic en el evento que quiera de la vista de eventos. <br><br>
+2.  Se abrirá una ventana con los datos del evento.<br><br>
+3.  El usuario hace clic en modificar evento.
+4.  El usuario introduce los datos en sus respectivos campos.<br><br>
+5.  El evento se modificará correctamente.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario consulta un evento correctamente.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+5. Error al introducir algún campo.
+</td>
+</table>
+
+<br>
+
+<a name="PETICIONES"></a>
+
+<p align="center">
+<img src=".\resources\DCU-gestiondepeticiones.png"/>
+</p>
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-20</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ENVIAR UNA PETICIÓN AL ADMINISTRADOR</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Miguel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario manda un mensaje de incidencia o petición al administrador.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Usuario</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El usuario hace clic en ayuda en la vista principal de la aplicación.<br><br>
+2.  Se abrirá una nueva vista en la que se le pedirá que indique su problema o petición y detalle el mismo.<br><br>
+3.  El usuario introduce los datos.<br><br>
+4.  El sistema envía la petición a la base de datos donde se guardará.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El mensaje de incidencia se envía correctamente al administrador.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+5.1 El sistema notifica al usuario que no se ha podido enviar la incidencia y que lo intente más tarde.
+5.2 El sistema notifica que ha alcanzado el cupo de peticiones al dia que puede enviar.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-21</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>CONSULTAR PETICIONES ENVIADAS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Miguel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario consulta las peticiones enviadas al administrador y su estado.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Usuario</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El usuario hace clic en ver peticiones/incidencias enviadas en la vista principal de la aplicación.<br><br>
+2.  Se abrirá una nueva vista en la que se le mostrará las peticiones enviadas previamente y su estado.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario ve las incidencias correctamente.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-22</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>CONSULTAR PETICIONES RECIBIDAS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Miguel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador consulta las peticiones recibidas de los usuarios.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El administrador hace clic en ver peticiones/incidencias recibidas en la vista principal de la aplicación.<br><br>
+2.  Se abrirá una nueva vista en la que se le mostrará las peticiones recibidas.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El administrador ve las peticiones recibidas.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-23</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ENVIAR UNA RESPUESTA A LA PETICION</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Miguel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador responde las peticiones recibidas de los usuarios.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El administrador hace clic en ver peticiones/incidencias recibidas en la vista principal de la aplicación.<br><br>
+2.  Se abrirá una nueva vista en la que se le mostrará las peticiones recibidas.<br><br>
+3. El administrador selecciona responder.<br><br>
+4. Se abrira una pequeña ventana donde podrá escribir un mensaje que recibirá el usuario de la peticion.<br><br>
+5. El mensaje se envia correctamente.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El administrador envia una respuesta a las peticiones de los usuarios.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-24</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ELIMINAR PETICION</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Miguel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador elimina las peticiones recibidas de los usuarios.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El administrador hace clic en ver peticiones/incidencias recibidas en la vista principal de la aplicación.<br><br>
+2.  Se abrirá una nueva vista en la que se le mostrará las peticiones recibidas.<br><br>
+3. El administrador selecciona eliminar.<br><br>
+5. La peticion se elimina correctamente y al usuario se le pasa el estado a concluido.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El administrador elimina las peticiones de los usuarios.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+
 
 <a name="8"></a>
 ## ACTIVIDAD 5: MODELO DE OBJETOS DEL NEGOCIO.
@@ -735,8 +1326,9 @@ Ninguna.
 #### Diagrama Servidor
 
 <p align="center">
-<img src="/resources/diagramas_clases_gamerhub.png"/>
+<img src="./resources/diagramas_clases_gamerhub.png"/>
 </p>
+
 
 
 <br>

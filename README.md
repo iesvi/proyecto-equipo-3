@@ -139,7 +139,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 
 - Arquitectura: Usaremos 2 principalmente:
 
-  -  [MVC](https://desarrolloweb.com/articulos/que-es-mvc.html): La aplicación tendrá un apartado cliente-servidor donde aplicaremos esta arquitectura.
+  -  [MVC](https://desarrolloweb.com/articulos/que-es-mvc.html): La aplicación de escritorio será realizada con este patrón.
   - [Arquitectura limpia por capas](https://www.genbeta.com/desarrollo/principios-de-una-arquitectura-limpia-mantenible-y-testeable)
 
 - Maven.

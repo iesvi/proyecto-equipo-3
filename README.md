@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
 <img src="./resources/cabecera.png"/>
 </p>
 
@@ -53,13 +53,11 @@ Este material ha sido producido por <b>Manuel Santos</b>, <b>Victor Ruiz</b> y <
 # PRESENTACIÓN
 
 ¡Hola! Somos el equipo 3, formado por los alumnos Manuel Santos, Víctor Ruiz y Miguel Rodríguez.
-Somos estudiantes de 2º curso de ciclo FP superior DAM y este es un proyecto
-que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Valle Inclán.
+Somos estudiantes de 2º curso del ciclo FP superior DAM y este es un proyecto
+que estamos realizando para el módulo de Programación de Servicios y Procesos con nuestro profesor José Luis Rodríguez Rodríguez y el módulo de Acceso a Datos con nuestro profesor Jesús García Rodríguez en el I.E.S Ramón del Valle Inclán.
 
 <a name="3"></a>
 # FASE 1: ANÁLISIS
-
-<br>
 
 <a name="4"></a>
 ## ACTIVIDAD 1: REQUISITOS NO FUNCIONALES.
@@ -107,17 +105,17 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 
 
 1. <b>TÍTULO: </b> GAMER HUB
-2. <b>RESUMEN: </b> Nuestro proyecto constituye una aplicación cliente servidor para jugadores, parecida a Discord. Esta aplicación va a requerir de varios clientes que se conecten a un servidor, mediante un login. Sus características incluirán:
+2. <b>OBJETIVO: </b> Nuestro proyecto constituye una aplicación, parecida a Discord, cuyo objetivo es la comunicación entre jugadores en directo, los cuales además de chatear, podrán intercambiarse ficheros y administrar eventos que pueden crear como recordatorios. Sus características incluirán:
 - Registrar una cuenta.
 - Un perfil del cliente que el mismo podrá modificar a gusto propio.
 - Salas de chats o canales para hablar con amigos.
 - Una funcionalidad que permite enviar mensajes (peticiones o incidencias) al administrador del sistema.
-- APIs: que nos proporcionarán datos de los juegos (Steam) o música (Spotify) que nosotros o nuestros amigos están jugando o escuchando en ese momento.
+- APIs: que nos proporcionarán información de nuestros amigos sobre que juego está jugando (Steam) o que están escuchando en ese mismo instante (Spotify).
 - Un calendario de eventos.
-
-- En la pantalla de login o registro una opción de recuperación de la cuenta si se olvidan el correo, nombre de usuario o contraseña.
+- En la pantalla de iniciar sesión o registro una opción de recuperación de la cuenta si se olvidan el correo, nombre de usuario o contraseña.
 - Añadir/Eliminar amigo
 - Ver perfil de amigo
+- Subir/Descargar/Eliminar archivos de un servidor.
 
 
 <br>
@@ -125,13 +123,29 @@ que estamos realizando para la asignatura de PSP y AAD en el I.E.S Ramón del Va
 <a name="6"></a>
 ## ACTIVIDAD 3: ENTORNO DE TRABAJO
 
-1.  Lenguaje: Java.
-2.  Entorno de Desarrollo: IntelliJ.
-3.  Control de versiones: GitHub Classroom
-4.  Arquitectura MVC/Cliente-Servidor .
-5.  Maven.
-6.  Spring.
-<br>
+- Lenguaje: Java.
+
+- Entorno de Desarrollo: [IntelliJ](https://www.jetbrains.com/es-es/idea/download/#section=windows).
+
+- SDK: [Java SE Development Kit 8.](https://www.oracle.com/es/java/technologies/javase/javase-jdk8-downloads.html)
+
+- Control de versiones: Usaremos GitHub Classroom donde trabajaremos en 2 ramas fundamentalmente:
+
+  - Rama main donde subiremos la parte de codificación de la aplicación.
+
+  - Rama documentación donde subiremos el manual técnico que recogerá todo el apartado técnico de la aplicación, así como un manual de usuario explicando cómo puede acceder a nuestra aplicación.
+
+    Cada rama tiene su rama release, que usaremos para preproducción una vez terminado el proyecto.
+
+- Arquitectura: Usaremos 2 principalmente:
+
+  -  [MVC](https://desarrolloweb.com/articulos/que-es-mvc.html): La aplicación tendrá un apartado cliente-servidor donde aplicaremos esta arquitectura.
+  - [Arquitectura limpia por capas](https://www.genbeta.com/desarrollo/principios-de-una-arquitectura-limpia-mantenible-y-testeable)
+
+- Maven.
+
+- Spring.
+  <br>
 
 <a name="7"></a>
 
@@ -1295,7 +1309,7 @@ Ninguna.
 1.  El administrador hace clic en ver peticiones/incidencias recibidas en la vista principal de la aplicación.<br><br>
 2.  Se abrirá una nueva vista en la que se le mostrará las peticiones recibidas.<br><br>
 3. El administrador selecciona eliminar.<br><br>
-5. La peticion se elimina correctamente y al usuario se le pasa el estado a concluido.
+5. La peticion se elimina correctamente y el sistema le pasa el estado concluido al usuario.
   </td>
   </tr>
   <tr>
@@ -1310,6 +1324,7 @@ Ninguna.
 Ninguna.
 </td>
 </table>
+
 
 
 

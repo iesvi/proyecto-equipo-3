@@ -1022,6 +1022,7 @@ Ninguna.
   <td>
 1.  En la lista de chats estando en la vista principal, el usuario selecciona el que quiera.<br><br>
 2.  Una vez abierto el chat, el usuario hace clic en eliminar chat.<br><br>
+3.  El sistema comprueba que el usuario es el creador del chat.<br><br>
 3.  El sistema elimina el chat.
   </td>
   </tr>
@@ -1034,7 +1035,7 @@ Ninguna.
   <tr>
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
-3. Error al eliminar el chat, el usuario no es el creador del chat.
+4. Error al eliminar el chat, el usuario no es el creador del chat.
 </td>
 </table>
 

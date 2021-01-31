@@ -1462,7 +1462,9 @@ Ninguna.
 <a name="9"></a>
 
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.
-<td>  Interfaz WEB con ADOBE XD  </td>
+
+### Interfaz WEB con ADOBE XD
+<br>
 <p align="center">
 <img src="./resources/loginInterfazWeb.PNG"/>
 </p>
@@ -1475,3 +1477,19 @@ Ninguna.
 <p align="center">
 <img src="./resources/homeInterfazWeb.PNG"/>
 </p>
+
+<br><br>
+
+### Interfaz ESCRITORIO con Scene Builder
+####Vista inicio
+<p><img src="./resources/vista-inicio.PNG"/></p>
+####Vista home
+<p><img src="./resources/vista-home.PNG"/></p>
+####Vista perfil
+<p><img src="./resources/vista-perfil.PNG"/></p>
+####Vista registro
+<p><img src="./resources/vista-registro.PNG"/></p>
+####Vista evento
+<p><img src="./resources/vista-evento-dialog.PNG"/></p>
+####Vista ayuda
+<p><img src="./resources/vista-ayuda-dialog.PNG"/></p>

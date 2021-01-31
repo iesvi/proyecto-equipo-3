@@ -1345,13 +1345,13 @@ Ninguna.
 
 #### Diagrama modelo
 <p align="center">
-<img src="./resources/diagrama_clases_modelo.png"/>
+<img src="./resources/diagrama-clases-modelo.png"/>
 </p>
 
 
 #### Diagrama vistas
 <p align="center">
-<img src="./resources/diagrama_clases_vistas.png"/>
+<img src="./resources/diagrama-clases-vistas.png"/>
 </p>
 
 <br>

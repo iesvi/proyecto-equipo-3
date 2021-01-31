@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="">
+   <children>
+      <AnchorPane layoutX="50.0" layoutY="24.0" prefHeight="403.0" prefWidth="301.0" style="-fx-background-radius: 10; -fx-background-color: #aafe79;">
+         <children>
+            <Label layoutX="91.0" layoutY="20.0" text="Nuevo evento">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="56.0" layoutY="64.0" prefHeight="35.0" prefWidth="189.0" promptText="Nombre" style="-fx-background-radius: 10;" />
+            <TextField layoutX="56.0" layoutY="114.0" prefHeight="66.0" prefWidth="189.0" promptText="Descripción" style="-fx-background-radius: 10;" />
+            <ChoiceBox layoutX="60.0" layoutY="225.0" prefHeight="25.0" prefWidth="181.0" />
+            <DatePicker layoutX="64.0" layoutY="267.0" promptText="Fecha de inicio" />
+            <Label layoutX="65.0" layoutY="200.0" text="Prioridad">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="64.0" layoutY="307.0" promptText="Fecha de fin" />
+            <Button layoutX="69.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Enviar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

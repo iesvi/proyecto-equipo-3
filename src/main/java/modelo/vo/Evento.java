@@ -14,6 +14,7 @@ public class Evento {
     private ObjectProperty<LocalDate> fecha_fin;
 
     public Evento() {
+
     }
 
     public Evento(String nombre, String descripcion, Usuario usuario,

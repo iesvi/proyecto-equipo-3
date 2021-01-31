@@ -1481,15 +1481,15 @@ Ninguna.
 <br><br>
 
 ### Interfaz ESCRITORIO con Scene Builder
-####Vista inicio
-<p><img src="./resources/vista-inicio.PNG"/></p>
-####Vista home
-<p><img src="./resources/vista-home.PNG"/></p>
-####Vista perfil
-<p><img src="./resources/vista-perfil.PNG"/></p>
-####Vista registro
-<p><img src="./resources/vista-registro.PNG"/></p>
-####Vista evento
-<p><img src="./resources/vista-evento-dialog.PNG"/></p>
-####Vista ayuda
-<p><img src="./resources/vista-ayuda-dialog.PNG"/></p>
+#### Vista inicio
+<p><img src="./resources/vista-inicio.png"/></p>
+#### Vista home
+<p><img src="./resources/vista-home.png"/></p>
+#### Vista perfil
+<p><img src="./resources/vista-perfil.png"/></p>
+#### Vista registro
+<p><img src="./resources/vista-registro.png"/></p>
+#### Vista evento
+<p><img src="./resources/vista-evento-dialog.png"/></p>
+#### Vista ayuda
+<p><img src="./resources/vista-ayuda-dialog.png"/></p>

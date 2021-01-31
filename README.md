@@ -158,8 +158,9 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 <br>
 <a name="USUARIOS"></a>
 <p align="center">
-<img src=".\resources\DCU-gestion-usuario.png"/>
+<img src=".\resources\DCU-gestion-usuario v2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
@@ -429,8 +430,9 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 
 <a name="ARCHIVOS"></a>
 <p align="center">
-<img src=".\resources\DCU-Gestiondearchivos.png"/>
+<img src=".\resources\DCU-Gestiondearchivos_v2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
@@ -585,8 +587,9 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 <a name="CHATS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-gestiondechats.png"/>
+<img src=".\resources\DCU-gestiondechats_v2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
@@ -879,8 +882,9 @@ Ninguna.
 <a name="EVENTOS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-Gestióndeeventos.png"/>
+<img src=".\resources\DCU-Gestióndeeventos_2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
@@ -1080,8 +1084,9 @@ Ninguna.
 <a name="PETICIONES"></a>
 
 <p align="center">
-<img src=".\resources\DCU-gestiondepeticiones.png"/>
+<img src=".\resources\DCU-gestiondepeticiones_v2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
@@ -1454,3 +1459,16 @@ Ninguna.
 <a name="9"></a>
 
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.
+<td>  Interfaz WEB con ADOBE XD  </td>
+<p align="center">
+<img src="./resources/loginInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/crearCuentaInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/modificarCuentaInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/homeInterfazWeb.PNG"/>
+</p>

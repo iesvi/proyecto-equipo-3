@@ -1459,3 +1459,16 @@ Ninguna.
 <a name="9"></a>
 
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.
+<td>  Interfaz WEB con ADOBE XD  </td>
+<p align="center">
+<img src="./resources/loginInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/crearCuentaInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/modificarCuentaInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/homeInterfazWeb.PNG"/>
+</p>

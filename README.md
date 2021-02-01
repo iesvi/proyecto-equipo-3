@@ -1609,19 +1609,19 @@ Ninguna.
 ### Diagrama de clases
 
 
-#### Diagrama modelo
+#### Diagrama de clase del modelo del servidor
 <p align="center">
 <img src="./resources/diagrama-clases-modelo.png"/>
 </p>
 
 
-#### Diagrama vistas
+#### Diagrama de clase de la vista de escritorio
 <p align="center">
 <img src="./resources/diagrama-clases-vistas.png"/>
 </p>
 <br>
 
-Diagrama Controladores
+#### Diagrama Controladores
 
 <p align="center">
 <img src="./resources/diagrama-clases-controlador.png"/>

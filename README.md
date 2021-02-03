@@ -157,9 +157,12 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 
 <br>
 <a name="USUARIOS"></a>
+
 <p align="center">
 <img src=".\resources\DCU-gestion-usuario.png"/>
 </p>
+
+
 <br>
 
 <table style="width:100%">
@@ -239,7 +242,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   </tr>
   <tr>
     <td><b>Actores:</b></td>
-    <td>Cliente/Usuario</td>
+    <td>Usuario/Administrador</td>
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
@@ -264,6 +267,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
  4.  Error de conexión con el server.<br>
+
 
 
 		4.1.  Nombre de usuario/ E-mail o contraseñas incorrectos.
@@ -323,14 +327,62 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 
 <br>
 
-<table style="width:100%">  <tr>    <td><b>ID: </b></td>    <td>CU-4</td>  </tr>  <tr>    <td><b>Nombre: </b></td>    <td>ENVIAR PETICIÓN DE AMISTAD</td>  </tr>  <tr>  <td><b>Equipo/Individual<b></td>  <td>Equipo</td>  </tr>  <tr>    <td><b>Descripción:</b></td>    <td>Se accede a una pantalla donde el usuario podrá buscar a cualquier usuario de la plataforma por su nombre/nickname y agregarlo como amigo.</td>  </tr>  <tr>    <td><b>Actores:</b></td>    <td>Cliente/Usuario</td>  </tr>  <tr>  <td><b>Precondiciones:</b></td>  <td>Tener una cuenta y acceder a la misma.</td>  </tr>    <tr>  <td><b>Curso normal:</b></td>  <td>1.  En la vista buscar amigos, el usuario introducirá el nick del amigo que quiera buscar en la barra de búsqueda.<br><br>2.  Aparecerán los usuarios del sistema que se llamen igual al puesto y el usuario podrá añadir a su amigo haciendo click en el icono de agregar.  </td>  </tr>  <tr>  <td><b>Postcondiciones:</b></td>  <td>Se actualizará la lista de amigos para chatear o insertar en un canal al usuario agregado.<br>  </td></td>  </tr>  <tr>  <td><b>Alternativas/Excepciones:</b></td>  <td>2. No se encuentra al usuario introducido en la barra de búsqueda y el sistema notificará al usuario.</td></table>
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-4</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>RECUPERAR LISTA DE AMIGOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Equipo</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El sistema recupera una lista de amigos.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Sistema</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td></td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El sistema recupera la lista de amigos del usuario que accede a la gestion de amigos.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>Se recupera la lista de amigos.<br>
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna
+</td>
+</table>
+
+<br>
+
+
+
+<table style="width:100%">  <tr>    <td><b>ID: </b></td>    <td>CU-5</td>  </tr>  <tr>    <td><b>Nombre: </b></td>    <td>ENVIAR PETICIÓN DE AMISTAD</td>  </tr>  <tr>  <td><b>Equipo/Individual<b></td>  <td>Equipo</td>  </tr>  <tr>    <td><b>Descripción:</b></td>    <td>Se accede a una pantalla donde el usuario podrá buscar a cualquier usuario de la plataforma por su nombre/nickname y agregarlo como amigo.</td>  </tr>  <tr>    <td><b>Actores:</b></td>    <td>Usuario/Administrador</td>  </tr>  <tr>  <td><b>Precondiciones:</b></td>  <td>Tener una cuenta y acceder a la misma.</td>  </tr>    <tr>  <td><b>Curso normal:</b></td>  <td>1.  En la vista buscar amigos, el usuario introducirá el nick del amigo que quiera buscar en la barra de búsqueda.<br><br>2.  Aparecerán los usuarios del sistema que se llamen igual al puesto y el usuario podrá añadir a su amigo haciendo click en el icono de agregar.  </td>  </tr>  <tr>  <td><b>Postcondiciones:</b></td>  <td>Se actualizará la lista de amigos para chatear o insertar en un canal al usuario agregado.<br>  </td></td>  </tr>  <tr>  <td><b>Alternativas/Excepciones:</b></td>  <td>2. No se encuentra al usuario introducido en la barra de búsqueda y el sistema notificará al usuario.</td></table>
 
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-5</td>
+    <td>CU-6</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -357,7 +409,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   <td>
 1.  El usuario hace clic en el amigo que quiera dentro de su lista de amigos.<br><br>
 2.  Se abrirá una nueva vista con los datos del amigo.<br><br>
-3.  El usuario ve los datos del amigo.
+3.  El usuario ve los datos del amigo y tiene la opcion de realizar eliminar amigo.
   </td>
   </tr>
   <tr>
@@ -369,9 +421,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   <tr>
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
-3.  El usuario hace clic en eliminar.<br><br>
-4.  El sistema confirma que quiere eliminar.<br><br>
-5.  El usuario elimina al amigo.
+Ninguna.
 </td>
 </table>
 
@@ -380,11 +430,11 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-6</td>
+    <td>CU-7</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
-    <td>GESTIONAR USUARIOS</td>
+    <td>ELIMINAR AMIGO</td>
   </tr>
   <tr>
   <td><b>Equipo/Individual<b></td>
@@ -392,7 +442,60 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
-    <td>El administrador modifica, suspende temporalmente o elimina a los usuarios de la aplicación.</td>
+    <td>El usuario accede a su lista de amigos y elimina un perfil.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Cliente/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  Realiza GESTIONAR LISTA DE AMIGOS.
+2.  El usuario hace clic en eliminar.<br><br>
+3.  El sistema confirma que quiere eliminar.<br><br>
+4.  El sistema elimina al amigo.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario ve los amigos que tiene y accede a su perfil público.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+      4. El sistema no puede eliminar al amigo
+      </td>
+</table>
+
+
+
+<br>
+
+
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-8</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>MODIFICAR USUARIOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Equipo</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador modifica los usuarios de la aplicación.</td>
   </tr>
   <tr>
     <td><b>Actores:</b></td>
@@ -407,13 +510,14 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   <td>
 1.  El administrador hace clic en administrar usuarios.<br><br>
 2.  Se abrirá una vista con la lista de usuarios del sistema.<br><br> 
-3.  el administrador hará clic en el usuario deseado y podrá hacer clic en modificar, suspender temporalmente y eliminar.<br><br>
+3.  El administrador hará clic en el usuario deseado y hace clic en modificar usuario.<br><br>
+3.  El administrador modifica los campos deseados y hace clic en aceptar.<br><br>
 4.  Se realiza la modificación correctamente.
   </td>
   </tr>
   <tr>
   <td><b>Postcondiciones:</b></td>
-  <td>Se administra el usuario deseado por el administrador.
+  <td>Se modifica el usuario deseado por el administrador.
   </td>
 </td>
   </tr>
@@ -426,17 +530,116 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 
 <br>
 
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-9</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>SUSPENDER USUARIOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Equipo</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador suspende temporalmente a usuarios de la aplicación.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Ser administrador y acceder a la aplicación.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El administrador hace clic en administrar usuarios.<br><br>
+2.  Se abrirá una vista con la lista de usuarios del sistema.<br><br> 
+3.  el administrador hará clic en el usuario deseado y hará clic en suspender temporalmente.<br><br>
+4.  Se realiza la suspensión correctamente.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>Se suspende temporalmente al usuario deseado por el administrador.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
 
-<a name="ARCHIVOS"></a>
-<p align="center">
-<img src=".\resources\DCU-Gestiondearchivos.png"/>
-</p>
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-7</td>
+    <td>CU-10</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>ELIMINAR USUARIOS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Equipo</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El administrador elimina a un usuario de la aplicación.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Ser administrador y acceder a la aplicación.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El administrador hace clic en administrar usuarios.<br><br>
+2.  Se abrirá una vista con la lista de usuarios del sistema.<br><br> 
+3.  el administrador hará clic en el usuario deseado y hace clic en eliminar.<br><br>
+4.  Se realiza la eliminación correctamente.
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>Se administra el usuario deseado por el administrador.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
+<br>
+
+<a name="ARCHIVOS"></a>
+
+<p align="center">
+<img src=".\resources\DCU-Gestiondearchivos_v2.png"/>
+</p>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-11</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -452,7 +655,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   </tr>
   <tr>
     <td><b>Actores:</b></td>
-    <td>Cliente/Usuario</td>
+    <td>Usuario/Administrador</td>
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
@@ -480,12 +683,13 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-8</td>
+    <td>CU-12</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -501,7 +705,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   </tr>
   <tr>
     <td><b>Actores:</b></td>
-    <td>Cliente/Usuario</td>
+    <td>Usuario/Administrador</td>
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
@@ -530,12 +734,13 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-9</td>
+    <td>CU-13</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -551,7 +756,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
   </tr>
   <tr>
     <td><b>Actores:</b></td>
-    <td>Cliente/Usuario</td>
+    <td>Usuario/Administrador</td>
   </tr>
   <tr>
   <td><b>Precondiciones:</b></td>
@@ -580,19 +785,21 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 </td>
 </table>
 
+
 <br>
 
 <a name="CHATS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-gestiondechats.png"/>
+<img src=".\resources\DCU-gestiondechats_v2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-10</td>
+    <td>CU-14</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -620,7 +827,7 @@ que estamos realizando para el módulo de Programación de Servicios y Procesos 
 1.  El usuario hace clic en crear chat.<br><br>
 2.  Se abre una nueva vista que pide al usuario que introduzca un nombre del canal y que introduzca a los amigos que quiera agregar al canal.<br><br>
 3.  El usuario introduce los datos.<br><br>
-4.  El sistema crea el chat con las personas seleccionadas por el usuario.
+4.  El sistema crea el chat con las personas seleccionadas por el usuario y la añade a la vista de chats.
   </td>
   </tr>
   <tr>
@@ -636,12 +843,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-11</td>
+    <td>CU-15</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -683,12 +891,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-12</td>
+    <td>CU-16</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -731,12 +940,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-13</td>
+    <td>CU-17</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -779,12 +989,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-14</td>
+    <td>CU-18</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -811,6 +1022,7 @@ Ninguna.
   <td>
 1.  En la lista de chats estando en la vista principal, el usuario selecciona el que quiera.<br><br>
 2.  Una vez abierto el chat, el usuario hace clic en eliminar chat.<br><br>
+3.  El sistema comprueba que el usuario es el creador del chat.<br><br>
 3.  El sistema elimina el chat.
   </td>
   </tr>
@@ -823,16 +1035,17 @@ Ninguna.
   <tr>
   <td><b>Alternativas/Excepciones:</b></td>
   <td>
-3. Error al eliminar el chat, el usuario no es el creador del chat.
+4. Error al eliminar el chat, el usuario no es el creador del chat.
 </td>
 </table>
+
 
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-15</td>
+    <td>CU-19</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -876,17 +1089,63 @@ Ninguna.
 
 <br>
 
+<table style="width:100%">
+  <tr>
+    <td><b>ID: </b></td>
+    <td>CU-20</td>
+  </tr>
+  <tr>
+    <td><b>Nombre: </b></td>
+    <td>CONSULTAR CHATS</td>
+  </tr>
+  <tr>
+  <td><b>Equipo/Individual<b></td>
+  <td>Manuel</td>
+  </tr>
+  <tr>
+    <td><b>Descripción:</b></td>
+    <td>El usuario consulta los chats ya creados.</td>
+  </tr>
+  <tr>
+    <td><b>Actores:</b></td>
+    <td>Usuario/Administrador</td>
+  </tr>
+  <tr>
+  <td><b>Precondiciones:</b></td>
+  <td>Tener una cuenta y acceder a la misma.</td>
+  </tr>
+    <tr>
+  <td><b>Curso normal:</b></td>
+  <td>
+1.  El usuario hace clic en consultar chats en la vista principal de la aplicación.<br><br>
+2.  El sistema devuelve la lista de chats disponibles.<br><br>
+  </td>
+  </tr>
+  <tr>
+  <td><b>Postcondiciones:</b></td>
+  <td>El usuario consulta los chats.
+  </td>
+</td>
+  </tr>
+  <tr>
+  <td><b>Alternativas/Excepciones:</b></td>
+  <td>
+Ninguna.
+</td>
+</table>
+
 <a name="EVENTOS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-Gestióndeeventos.png"/>
+<img src=".\resources\DCU-Gestióndeeventos_2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-16</td>
+    <td>CU-21</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -930,12 +1189,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-17</td>
+    <td>CU-22</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -960,9 +1220,10 @@ Ninguna.
     <tr>
   <td><b>Curso normal:</b></td>
   <td>
-1.  El usuario selecciona un evento en la vista de eventos.<br><br>
-2.  El usuario hace clic en eliminar evento.<br><br>
-3.  El evento se eliminará correctamente
+1.  Realiza Consultar eventos.<br><br>
+2.  El usuario selecciona un evento en la vista de eventos.<br><br>
+3.  El usuario hace clic en eliminar evento.<br><br>
+4.  El evento se eliminará correctamente
   </td>
   </tr>
   <tr>
@@ -978,12 +1239,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-18</td>
+    <td>CU-23</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -995,7 +1257,7 @@ Ninguna.
   </tr>
   <tr>
     <td><b>Descripción:</b></td>
-    <td>El usuario consulta los datos de un evento.</td>
+    <td>El usuario consulta los datos de los eventos.</td>
   </tr>
   <tr>
     <td><b>Actores:</b></td>
@@ -1008,8 +1270,8 @@ Ninguna.
     <tr>
   <td><b>Curso normal:</b></td>
   <td>
-1.  El usuario hace clic en el evento que quiera de la vista de eventos. <br><br>
-2.  Se abrirá una ventana con los datos del evento.<br><br>
+1.  El usuario hace clic en cosultar eventos. <br><br>
+2.  Se le devuelve una lista con los eventos creados por el usuario.<br><br>
   </td>
   </tr>
   <tr>
@@ -1025,12 +1287,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-19</td>
+    <td>CU-24</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -1055,16 +1318,17 @@ Ninguna.
     <tr>
   <td><b>Curso normal:</b></td>
   <td>
-1.  El usuario hace clic en el evento que quiera de la vista de eventos. <br><br>
-2.  Se abrirá una ventana con los datos del evento.<br><br>
-3.  El usuario hace clic en modificar evento.
-4.  El usuario introduce los datos en sus respectivos campos.<br><br>
-5.  El evento se modificará correctamente.
+1.  Realiza Consultar eventos.<br><br>
+2.  El usuario hace clic en el evento que quiera de la vista de eventos. <br><br>
+3.  Se abrirá una ventana con los datos del evento.<br><br>
+4.  El usuario hace clic en modificar evento.
+5.  El usuario introduce los datos en sus respectivos campos.<br><br>
+6.  El evento se modificará correctamente.
   </td>
   </tr>
   <tr>
   <td><b>Postcondiciones:</b></td>
-  <td>El usuario consulta un evento correctamente.
+  <td>El usuario modifica un evento correctamente.
   </td>
 </td>
   </tr>
@@ -1075,19 +1339,21 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <a name="PETICIONES"></a>
 
 <p align="center">
-<img src=".\resources\DCU-gestiondepeticiones.png"/>
+<img src=".\resources\DCU-gestiondepeticiones_v2.png"/>
 </p>
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-20</td>
+    <td>CU-25</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -1132,12 +1398,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-21</td>
+    <td>CU-26</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -1179,12 +1446,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-22</td>
+    <td>CU-27</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -1226,12 +1494,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-23</td>
+    <td>CU-28</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -1276,12 +1545,13 @@ Ninguna.
 </td>
 </table>
 
+
 <br>
 
 <table style="width:100%">
   <tr>
     <td><b>ID: </b></td>
-    <td>CU-24</td>
+    <td>CU-29</td>
   </tr>
   <tr>
     <td><b>Nombre: </b></td>
@@ -1328,6 +1598,7 @@ Ninguna.
 
 
 
+
 <a name="8"></a>
 ## ACTIVIDAD 5: MODELO DE OBJETOS DEL NEGOCIO.
 
@@ -1338,15 +1609,23 @@ Ninguna.
 ### Diagrama de clases
 
 
-#### Diagrama Servidor
-
+#### Diagrama de clase del modelo del servidor
 <p align="center">
-<img src="./resources/diagramas_clases_gamerhub.png"/>
+<img src="./resources/diagrama-clases-modelo.png"/>
 </p>
 
 
-
+#### Diagrama de clase de la vista de escritorio
+<p align="center">
+<img src="./resources/diagrama-clases-vistas.png"/>
+</p>
 <br>
+
+#### Diagrama Controladores
+
+<p align="center">
+<img src="./resources/diagrama-clases-controlador.png"/>
+</p>
 
 ### Descripción del diagrama de clases
 <br>
@@ -1454,3 +1733,34 @@ Ninguna.
 <a name="9"></a>
 
 ## ACTIVIDAD 6: INTERFAZ GRÁFICA.
+
+### Interfaz WEB con ADOBE XD
+<br>
+<p align="center">
+<img src="./resources/loginInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/crearCuentaInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/modificarCuentaInterfazWeb.PNG"/>
+</p>
+<p align="center">
+<img src="./resources/homeInterfazWeb.PNG"/>
+</p>
+
+<br><br>
+
+### Interfaz ESCRITORIO con Scene Builder
+#### Vista inicio
+<p><img src="./resources/vista-inicio.png"/></p>
+#### Vista home
+<p><img src="./resources/vista-home.png"/></p>
+#### Vista perfil
+<p><img src="./resources/vista-perfil.png"/></p>
+#### Vista registro
+<p><img src="./resources/vista-registro.png"/></p>
+#### Vista evento
+<p><img src="./resources/vista-evento-dialog.png"/></p>
+#### Vista ayuda
+<p><img src="./resources/vista-ayuda-dialog.png"/></p>

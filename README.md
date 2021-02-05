@@ -1139,7 +1139,7 @@ Ninguna.
 <a name="EVENTOS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-Gestióndeevento.png"/>
+<img src=".\resources\DCU-Gestióndeeventos.png"/>
 </p>
 
 <br>

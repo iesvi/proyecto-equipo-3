@@ -631,8 +631,9 @@ Ninguna.
 <a name="ARCHIVOS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-Gestiondearchivos_v2.png"/>
+<img src=".\resources\DCU-Gestiondearchivos.png"/>
 </p>
+
 
 <br>
 
@@ -791,8 +792,9 @@ Ninguna.
 <a name="CHATS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-gestiondechats_v2.png"/>
+<img src=".\resources\DCU-gestiondechats.png"/>
 </p>
+
 
 <br>
 
@@ -1137,7 +1139,7 @@ Ninguna.
 <a name="EVENTOS"></a>
 
 <p align="center">
-<img src=".\resources\DCU-Gestióndeeventos_2.png"/>
+<img src=".\resources\DCU-Gestióndeeventos.png"/>
 </p>
 
 <br>
@@ -1345,8 +1347,9 @@ Ninguna.
 <a name="PETICIONES"></a>
 
 <p align="center">
-<img src=".\resources\DCU-gestiondepeticiones_v2.png"/>
+<img src=".\resources\DCU-gestiondepeticiones.png"/>
 </p>
+
 
 <br>
 
@@ -1623,9 +1626,8 @@ Ninguna.
 
 #### Diagrama Controladores
 
-<p align="center">
-<img src="./resources/diagrama-clases-controlador.png"/>
-</p>
+
+
 
 ### Descripción del diagrama de clases
 <br>

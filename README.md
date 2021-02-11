@@ -1658,16 +1658,6 @@ Ninguna.
 
 <tr>
 	
-</table>
-
-
-<br>
-
-<br>
-
-<table>
-
-
 <tr>
 
 <td>  Atributos  </td>
@@ -1687,17 +1677,6 @@ Ninguna.
 <td></td>
 
 <tr>
-	
-</table>
-
-
-<br>
-
-<br>
-
-<table>
-
-
 <tr>
 
 <td>  Métodos  </td>

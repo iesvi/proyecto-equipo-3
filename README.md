@@ -1638,47 +1638,47 @@ Ninguna.
 
 <tr>
 <td>  Nombre de la clase  </td>
-<td>  		  </td>	
+<td>Chat</td>	
 </tr>
 
 <tr>
 <td>  Descripción  </td>
-<td>  	  </td>
+<td>En esta tabla se registrarán los usuarios los cuales participan en dicho chat y se le adjudicará el historial de mensjes que será de tipo mensaje</td>
 </tr>
 
 <tr> 
 <td> Relaciones </td>
-<td>		</td>
+<td>Tendrá relación 1 con Mensaje y 0N 01 con Usuario	</td>
 </tr>
 	
 <tr>
 <td>  Atributos  </td>
-<td>    </td>	
+<td>Id/Nombre/Usuarios/Historial</td>	
 </tr>
 
 <tr>
 <td>  Atributos propios de la clase  </td>
-<td>    </td>
+<td>Id/Nombre</td>
 </tr>
 
 <tr> 
 <td> Atributos propios de la relación </td>
-<td>		</td>
+<td>Usuarios/Historial</td>
 </tr>
 
 <tr>
 <td>  Métodos  </td>
-<td>    </td>	
+<td>  Getters y Setter  </td>	
 </tr>
 
 <tr>
 <td>  Función  </td>
-<td>    </td>
+<td>   No se </td>
 </tr>
 
 <tr> 
 <td> Sintaxis del método </td>
-<td>			</td>
+<td>Complemento Directo</td>
 </tr>	
 </table>
 

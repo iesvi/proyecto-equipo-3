@@ -1636,67 +1636,50 @@ Ninguna.
 
 <table>
 
-
-
 <tr>
-
 <td>  Nombre de la clase  </td>
-<td>    </td>
-	
+<td>  		  </td>	
 </tr>
 
 <tr>
 <td>  Descripción  </td>
-<td>    </td>
-
+<td>  	  </td>
 </tr>
 
 <tr> 
-
 <td> Relaciones </td>
-<td></td>
-
-<tr>
+<td>		</td>
+</tr>
 	
 <tr>
-
 <td>  Atributos  </td>
-<td>    </td>
-	
+<td>    </td>	
 </tr>
 
 <tr>
 <td>  Atributos propios de la clase  </td>
 <td>    </td>
-
 </tr>
 
 <tr> 
-
 <td> Atributos propios de la relación </td>
-<td></td>
+<td>		</td>
+</tr>
 
 <tr>
-<tr>
-
 <td>  Métodos  </td>
-<td>    </td>
-	
+<td>    </td>	
 </tr>
 
 <tr>
 <td>  Función  </td>
 <td>    </td>
-
 </tr>
 
 <tr> 
-
 <td> Sintaxis del método </td>
-<td></td>
-
-<tr>
-	
+<td>			</td>
+</tr>	
 </table>
 
 <br>

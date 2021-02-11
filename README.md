@@ -682,6 +682,13 @@ Ninguna.
 3.1 Ocurre un error en la conexion.<br><br>
 3.2 No es posible subir el archivo debido a su tamaño.
 </td>
+</tr>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Protocolo FTP<br><br>
+</td>
+</tr>
 </table>
 
 
@@ -733,6 +740,13 @@ Ninguna.
 4.1 Ocurre un error en la conexion.<br><br>
 4.2 No es posible descargar el archivo debido a que está dañado.
 </td>
+</tr>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Protocolo FTP<br><br>
+</td>
+</tr>
 </table>
 
 
@@ -784,6 +798,13 @@ Ninguna.
 4.1 Ocurre un error en la conexion.<br><br>
 4.2 No es posible eliminar el archivo debido a que no ha sido subido por él.
 </td>
+</tr>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Protocolo FTP<br><br>
+</td>
+</tr>
 </table>
 
 

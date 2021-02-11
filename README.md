@@ -1643,12 +1643,12 @@ Ninguna.
 
 <tr>
 <td>  Descripción  </td>
-<td>En esta tabla se registrarán los usuarios los cuales participan en dicho chat y se le adjudicará el historial de mensjes que será de tipo mensaje</td>
+<td>En esta tabla se registrarán los usuarios los cuales participan en dicho chat y se le adjudicará el historial de mensajes que será de tipo mensaje</td>
 </tr>
 
 <tr> 
 <td> Relaciones </td>
-<td>Tendrá relación 1 con Mensaje y 0N 01 con Usuario	</td>
+<td>Tendrá relación 1-1 con Mensaje y 0N-01 con Usuario	</td>
 </tr>
 	
 <tr>
@@ -1673,12 +1673,7 @@ Ninguna.
 
 <tr>
 <td>  Función  </td>
-<td>   No se </td>
-</tr>
-
-<tr> 
-<td> Sintaxis del método </td>
-<td>Complemento Directo</td>
+<td>   Devolver y establecer valores de los atributos</td>
 </tr>	
 </table>
 

@@ -912,6 +912,12 @@ Ninguna.
   <td>
 2. No pudo abrirse la vista chat, se especifica el error al usuario.
 </td>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Hilos<br><br>
+</td>
+</tr>
 </table>
 
 

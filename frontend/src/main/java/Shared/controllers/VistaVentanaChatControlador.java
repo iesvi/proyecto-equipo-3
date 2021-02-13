@@ -1,4 +1,4 @@
-package GestionUsuarios.controller;
+package Shared.controllers;
 
 public class VistaVentanaChatControlador {
 }

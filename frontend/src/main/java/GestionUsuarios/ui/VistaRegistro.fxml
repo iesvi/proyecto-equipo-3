@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionUsuarios.controller.VistaRegistroControlador">
+<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <AnchorPane layoutX="60.0" layoutY="25.0" prefHeight="500.0" prefWidth="281.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
          <children>

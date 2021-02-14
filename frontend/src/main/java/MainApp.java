@@ -1,4 +1,5 @@
 import GestionUsuarios.model.dto.UsuarioDTO;
+import GestionUsuarios.model.vo.UsuarioVO;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +13,7 @@ public class MainApp extends Application {
     private AnchorPane anchorPane;
     private Stage stage;
 
-    private ObservableList<UsuarioDTO> usuarios =  FXCollections.observableArrayList();
+    private ObservableList<UsuarioVO> usuarios =  FXCollections.observableArrayList();
 
     public MainApp() {
     }

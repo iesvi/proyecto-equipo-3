@@ -3,6 +3,9 @@ package GamerHUB.GestionEventos.model;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.model.vo.EventoVO;
 
+/**
+ *
+ */
 public class Conversor {
 
     public Conversor(){

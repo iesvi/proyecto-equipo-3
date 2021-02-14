@@ -17,7 +17,12 @@ public class MainApp extends Application {
 
     private ObservableList<UsuarioDTO> usuarios =  FXCollections.observableArrayList();
 
+
     public MainApp() {
+    }
+
+    public ObservableList<UsuarioDTO> getUsuarios() {
+        return usuarios;
     }
 
     @Override

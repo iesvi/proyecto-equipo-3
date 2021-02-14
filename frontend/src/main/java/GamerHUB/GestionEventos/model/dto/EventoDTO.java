@@ -6,6 +6,9 @@ import javafx.beans.property.StringProperty;
 
 import java.time.LocalDate;
 
+/**
+ *
+ */
 public class EventoDTO {
 
     private IntegerProperty id;
@@ -18,6 +21,14 @@ public class EventoDTO {
     public EventoDTO() {
     }
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param descripcion
+     * @param fecha
+     * @param usuario
+     */
     public EventoDTO(IntegerProperty id, StringProperty nombre, StringProperty descripcion, LocalDate fecha, IntegerProperty usuario) {
         this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
         this.nombre = nombre;

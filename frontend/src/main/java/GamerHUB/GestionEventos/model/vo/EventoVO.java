@@ -2,6 +2,9 @@ package GamerHUB.GestionEventos.model.vo;
 
 import java.util.Date;
 
+/**
+ *
+ */
 public class EventoVO {
 
     private int id;
@@ -13,6 +16,14 @@ public class EventoVO {
     public EventoVO() {
     }
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param descripcion
+     * @param fecha
+     * @param usuario
+     */
     public EventoVO(int id, String nombre, String descripcion, Date fecha, int usuario) {
         this.id = id;
         this.nombre = nombre;

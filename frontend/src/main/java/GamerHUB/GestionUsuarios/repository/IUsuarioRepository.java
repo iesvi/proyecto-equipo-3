@@ -1,15 +1,16 @@
 package GamerHUB.GestionUsuarios.repository;
 
 
-import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
+
+import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 
 import java.util.List;
 
 public interface IUsuarioRepository  {
 
-    boolean add(UsuarioDTO usuarioDTO);
+    boolean add(UsuarioVO usuarioVO);
     boolean remove(int id);
-    boolean update(UsuarioDTO usuarioDTO);
-    List<UsuarioDTO> retrieveUsers();
+    boolean update(UsuarioVO usuarioVO);
+    List<UsuarioVO> retrieveUsers();
 
 }

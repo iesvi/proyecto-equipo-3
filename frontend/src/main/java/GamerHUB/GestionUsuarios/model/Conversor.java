@@ -22,7 +22,7 @@ public class Conversor {
      * @param usuarioVO
      * @return
      */
-    public UsuarioDTO voToDto(UsuarioVO usuarioVO) {
+    public static UsuarioDTO voToDto(UsuarioVO usuarioVO) {
 
         UsuarioDTO usuarioDTO = new UsuarioDTO();
 
@@ -44,7 +44,7 @@ public class Conversor {
      * @param usuarioDTO
      * @return
      */
-    public UsuarioVO dtoToVo(UsuarioDTO usuarioDTO) {
+    public static UsuarioVO dtoToVo(UsuarioDTO usuarioDTO) {
 
         UsuarioVO usuarioVO = new UsuarioVO();
 

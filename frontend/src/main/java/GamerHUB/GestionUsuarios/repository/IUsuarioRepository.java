@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface IUsuarioRepository  {
 
-    public boolean add(UsuarioDTO usuarioDTO);
-    public boolean remove(int id);
-    public boolean update(UsuarioDTO usuarioDTO);
-    public List<UsuarioDTO> retrieveUsers();
+    boolean add(UsuarioDTO usuarioDTO);
+    boolean remove(int id);
+    boolean update(UsuarioDTO usuarioDTO);
+    List<UsuarioDTO> retrieveUsers();
 
 }

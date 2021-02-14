@@ -10,6 +10,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class UsuarioDTO {
 
         private IntegerProperty id;
@@ -19,14 +22,14 @@ public class UsuarioDTO {
         private ObjectProperty<LocalDate> fecha_nacimiento;
         private IntegerProperty telefono;
         private StringProperty rol;
-        private ObservableList<UsuarioDTO> amigos;
+        private ObservableList<IntegerProperty> amigos;
         private ObservableList<EventoDTO> eventos;
 
         public UsuarioDTO() {
         }
 
-        public UsuarioDTO(IntegerProperty id, StringProperty nombre, StringProperty password, StringProperty email, ObjectProperty<LocalDate> fecha_nacimiento, IntegerProperty telefono, StringProperty rol, ObservableList<UsuarioDTO> amigos, ObservableList<EventoDTO> eventos ) {
-                this.id = id;
+        public UsuarioDTO(IntegerProperty id, StringProperty nombre, StringProperty password, StringProperty email, ObjectProperty<LocalDate> fecha_nacimiento, IntegerProperty telefono, StringProperty rol, ObservableList<IntegerProperty> amigos, ObservableList<EventoDTO> eventos ) {
+                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));;
                 this.nombre = nombre;
                 this.password = password;
                 this.email = email;
@@ -37,7 +40,7 @@ public class UsuarioDTO {
                 this.eventos = eventos;
         }
 
-        public UsuarioDTO(int id, String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioDTO> amigos, ArrayList<EventoDTO> eventos) {
+        public UsuarioDTO(int id, String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
                 this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
                 this.nombre =new SimpleStringProperty(nombre);
                 this.password = new SimpleStringProperty(password);
@@ -133,11 +136,11 @@ public class UsuarioDTO {
                 this.rol.set(rol);
         }
 
-        public ObservableList<UsuarioDTO> getAmigos() {
+        public ObservableList<IntegerProperty> getAmigos() {
                 return amigos;
         }
 
-        public void setAmigos(ObservableList<UsuarioDTO> amigos) {
+        public void setAmigos(ObservableList<IntegerProperty> amigos) {
                 this.amigos = amigos;
         }
 

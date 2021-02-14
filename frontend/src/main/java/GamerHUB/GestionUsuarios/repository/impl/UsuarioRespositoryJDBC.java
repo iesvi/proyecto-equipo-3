@@ -5,6 +5,9 @@ import GamerHUB.GestionUsuarios.repository.IUsuarioRepository;
 
 import java.util.List;
 
+/**
+ *
+ */
 public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     @Override

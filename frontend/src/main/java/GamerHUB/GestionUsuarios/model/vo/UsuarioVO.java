@@ -9,6 +9,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class UsuarioVO {
 
     private int id;
@@ -18,14 +21,15 @@ public class UsuarioVO {
     private Date fecha_nacimiento;
     private int telefono;
     private String rol;
-    private ArrayList<UsuarioVO> amigos;
+    private ArrayList<Integer> amigos;
     private ArrayList<EventoVO> evento;
+
 
 
     public UsuarioVO() {
     }
 
-    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos) {
+    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<Integer> amigos, ArrayList<EventoVO> evento) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
@@ -34,6 +38,7 @@ public class UsuarioVO {
         this.telefono = telefono;
         this.rol = rol;
         this.amigos = amigos;
+        this.evento = evento;
     }
 
     public int getId() {
@@ -92,11 +97,11 @@ public class UsuarioVO {
         this.rol = rol;
     }
 
-    public ArrayList<UsuarioVO> getAmigos() {
+    public ArrayList<Integer> getAmigos() {
         return amigos;
     }
 
-    public void setAmigos(ArrayList<UsuarioVO> amigos) {
+    public void setAmigos(ArrayList<Integer> amigos) {
         this.amigos = amigos;
     }
 

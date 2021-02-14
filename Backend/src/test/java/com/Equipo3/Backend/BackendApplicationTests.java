@@ -1,10 +1,10 @@
-package com.Equipo3.GamerHub;
+package com.Equipo3.Backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GamerHubApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {

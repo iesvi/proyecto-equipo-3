@@ -1,5 +1,6 @@
 package GamerHUB;
 
+import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -14,7 +15,7 @@ public class MainApp extends Application {
     private AnchorPane anchorPane;
     private Stage stage;
 
-    private ObservableList<UsuarioVO> usuarios =  FXCollections.observableArrayList();
+    private ObservableList<UsuarioDTO> usuarios =  FXCollections.observableArrayList();
 
     public MainApp() {
     }

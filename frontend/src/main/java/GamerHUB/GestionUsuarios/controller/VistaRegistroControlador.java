@@ -63,10 +63,10 @@ public class VistaRegistroControlador {
     private void handleOk() {
         if (isInputValid()) {
 
-            usuarioDTO.setUsuario(campoUsuario.getText());
+           /* usuarioDTO.setUsuario(campoUsuario.getText());
             usuarioDTO.setEmail(campoEmail.getText());
             usuarioDTO.setPassword(campoPass.getText());
-            usuarioDTO.setFecha_nacimiento(fechaNac);
+            usuarioDTO.setFecha_nacimiento(fechaNac);*/
 
             okClicked = true;
             dialogStage.close();

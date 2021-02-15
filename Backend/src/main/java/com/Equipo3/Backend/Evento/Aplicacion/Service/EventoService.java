@@ -41,5 +41,12 @@ public class EventoService {
         eventoRepo.save(event);
     }
 
+    public void delete(EventoDTO eventodto) throws Exception {
+        Evento nbd = eventoRepo.getOne(eventodto.getId());
+        if (nbd == null)
+            throw new Exception("Evento no existe");
 
+        //Borra el evento si está en la base de datos
+        eventoRepo.delete(nbd);
+    }
 }

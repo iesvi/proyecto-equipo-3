@@ -22,8 +22,8 @@ public class UsuarioService {
     @Transactional
     public Usuario crearUsuario(UsuarioDTO usuariodto) {
 
-        Usuario user = new Usuario(usuariodto.getId(),usuariodto.getNombre(),usuariodto.getPassword(),usuariodto.getEmail(),usuariodto.getFecha_nacimiento(),usuariodto.getTelefono(),usuariodto.getRol(),usuariodto.getAmigos(),usuariodto.getEventos());
-
+        //Crear Usuario-entity desde UsuarioDTO (por ahora lo creamos manualmente)
+        Usuario user = new Usuario(usuariodto.getId(), usuariodto.getNombre(), usuariodto.getPassword(), usuariodto.getEmail(), usuariodto.getFecha_nacimiento(), usuariodto.getTelefono(), usuariodto.getRol(), usuariodto.getAmigos(), usuariodto.getEventos());
         return usuarioRepo.save(user);
     }
 
@@ -31,17 +31,25 @@ public class UsuarioService {
         return usuarioRepo.getOne(id);
     }
 
-
     @Transactional
     public void update(UsuarioDTO usuariodto) throws Exception {
 
         Usuario nbd = usuarioRepo.getOne(usuariodto.getId());
-        if (nbd==null)
+        if (nbd == null)
             throw new Exception("Usuario no existe");
 
-        Usuario user = new Usuario(nbd.getId(),nbd.getNombre(),nbd.getPassword(),nbd.getEmail(),nbd.getFecha_nacimiento(),nbd.getTelefono(),nbd.getRol(),nbd.getAmigos(),nbd.getEventos());
-
+        //Crear Usuario-entity desde UsuarioDTO (por ahora lo creamos manualmente)
+        Usuario user = new Usuario(nbd.getId(), nbd.getNombre(), nbd.getPassword(), nbd.getEmail(), nbd.getFecha_nacimiento(), nbd.getTelefono(), nbd.getRol(), nbd.getAmigos(), nbd.getEventos());
         usuarioRepo.save(user);
     }
 
+    @Transactional
+    public void delete(UsuarioDTO usuariodto) throws Exception {
+        Usuario nbd = usuarioRepo.getOne(usuariodto.getId());
+        if (nbd == null)
+            throw new Exception("Usuario no existe");
+
+        //Borra el evento si está en la base de datos
+        usuarioRepo.delete(nbd);
+    }
 }

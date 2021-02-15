@@ -54,7 +54,7 @@ public class MainApp extends Application {
     public void init() throws CustomException, IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("vistas/VistaInicio.fxml"));
+        loader.setLocation(MainApp.class.getResource("../vistas/VistaInicio.fxml"));
         anchorPane = (AnchorPane) loader.load();
 
         Scene scene = new Scene(anchorPane);
@@ -76,7 +76,7 @@ public class MainApp extends Application {
     public void launchHomeView(UsuarioDTO usuarioDTO)throws CustomException, IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("vistas/VistaHome.fxml"));
+        loader.setLocation(MainApp.class.getResource("../vistas/VistaHome.fxml"));
         anchorPane = (AnchorPane) loader.load();
 
         Scene scene = new Scene(anchorPane);

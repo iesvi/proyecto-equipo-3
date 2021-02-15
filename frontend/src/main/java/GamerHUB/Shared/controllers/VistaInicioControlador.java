@@ -8,10 +8,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import javax.swing.text.Element;
-import javax.swing.text.html.ImageView;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -48,11 +48,11 @@ public class VistaInicioControlador {
      *
      */
     public VistaInicioControlador() {
-        try {
-            imageView = new ImageView((Element) new Image(new FileInputStream("C:/Users/Vic/Desktop/proyecto-equipo-3/proyecto-equipo-3/frontend/src/main/resources/images/gamerhublogo.png")));
+       /* try {
+            imageView = new ImageView(new Image(new FileInputStream("C:/Users/Vic/Desktop/proyecto-equipo-3/proyecto-equipo-3/frontend/src/main/resources/images/gamerhublogo.png")));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     /**

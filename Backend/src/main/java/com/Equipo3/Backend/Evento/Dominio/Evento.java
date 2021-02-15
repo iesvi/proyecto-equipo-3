@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 
 @Getter
@@ -19,18 +19,23 @@ public class Evento implements Serializable {
     private int id;
     private String nombre;
     private Date fecha;
-    @ManyToOne(fetch= FetchType.LAZY)
-    private Usuario usuario;
+    private int idusuario;
     private String descripcion;
 
     public Evento() {
     }
 
-    public Evento(int id, String nombre, Date fecha, Usuario usuario, String descripcion) {
+    public Evento(int id, String nombre, Date fecha, int idusuario, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
-        this.usuario = usuario;
+        this.idusuario = idusuario;
+        this.descripcion = descripcion;
+    }
+    public Evento(String nombre, Date fecha, int idusuario, String descripcion) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.idusuario = idusuario;
         this.descripcion = descripcion;
     }
 }

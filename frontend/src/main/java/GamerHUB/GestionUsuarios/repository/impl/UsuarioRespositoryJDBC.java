@@ -24,6 +24,8 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     @Override
     public boolean remove(int id) {
+
+
         return false;
     }
 

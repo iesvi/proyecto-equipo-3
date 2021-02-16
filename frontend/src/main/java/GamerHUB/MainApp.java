@@ -23,7 +23,7 @@ import java.io.IOException;
  */
 public class MainApp extends Application {
 
-    private Stage primaryStage = new Stage();
+    private Stage primaryStage= new  Stage();
     private BorderPane rootLayout;
 
 
@@ -63,13 +63,11 @@ public class MainApp extends Application {
 
         Scene scene = new Scene(rootLayout);
 
-                //update application thread
                 primaryStage.setScene(scene);
                 RootLayoutController controladorInicio = loader.getController();
                 controladorInicio.setMainApp(this);
 
                 primaryStage.show();
-
 
     }
 

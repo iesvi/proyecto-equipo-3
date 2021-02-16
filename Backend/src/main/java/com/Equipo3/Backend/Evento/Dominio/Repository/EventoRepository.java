@@ -1,9 +1,13 @@
 package com.Equipo3.Backend.Evento.Dominio.Repository;
 
-import com.Equipo3.Backend.Evento.Dominio.Evento;
+import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Shared.Dominio.Repository.GenericRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface EventoRepository extends GenericRepository<Evento,Integer> {
+/**
+ * Clase interfaz EventoRepository la cual extiende de GenericRepository
+ */
+@Repository
+public interface EventoRepository extends GenericRepository<EventoVO,Integer> {
 
 }

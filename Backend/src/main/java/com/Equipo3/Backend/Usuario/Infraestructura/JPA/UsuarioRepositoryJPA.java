@@ -3,11 +3,13 @@ package com.Equipo3.Backend.Usuario.Infraestructura.JPA;
 
 import com.Equipo3.Backend.Shared.Infraestructura.JPA.GenericRepositoryJPA;
 import com.Equipo3.Backend.Usuario.Dominio.Repository.UsuarioRepository;
-import com.Equipo3.Backend.Usuario.Dominio.Usuario;
+import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 
-public class UsuarioRepositoryJPA extends GenericRepositoryJPA<Usuario,Integer> implements UsuarioRepository {
+/**
+ * Implementación del repositorio de usuarios parra Java Peristence Api
+ */
+public class UsuarioRepositoryJPA extends GenericRepositoryJPA<UsuarioVO,Integer> implements UsuarioRepository {
     public UsuarioRepositoryJPA() {
-        super(Usuario.class);
+        super(UsuarioVO.class);
     }
-
 }

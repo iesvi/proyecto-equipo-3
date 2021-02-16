@@ -1,6 +1,7 @@
 package com.Equipo3.Backend.Evento.Aplicacion.Test;
 
-import com.Equipo3.Backend.Evento.Dominio.Evento;
+import com.Equipo3.Backend.Evento.Dominio.EventoVO;
+import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
 import com.Equipo3.Backend.Evento.Infraestructura.JPA.EventoRepositoryJPA;
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,7 +9,8 @@ import org.junit.Test;
 import javax.transaction.Transactional;
 import java.util.Date;
 
-public class EventoTests extends JPAUnitTest {
+public class EventoVOTests extends JPAUnitTest {
+
 
     EventoRepositoryJPA repo;
 
@@ -27,19 +29,19 @@ public class EventoTests extends JPAUnitTest {
     @Test
     public void ConsultarEvento() {
         em.clear();
-        Evento evento = repo.findOne(1);
-        Assert.assertEquals("Encuentra noticia id=1",evento.getId(),1);
+        EventoVO eventoVO = repo.findOne(1);
+        Assert.assertEquals("Encuentra noticia id=1", eventoVO.getId(),1);
     }
 
     @Test
     @Transactional
     public void DardeAltaunEvento() {
 
-        Evento newevento = new Evento("Cumpleaños Melania",new Date(),1,"Es el cumpleaños de Melania");
+        EventoVO newevento = new EventoVOBuilder().build();
 
-        Evento evento = repo.save(newevento);
+        EventoVO eventoVO = repo.save(newevento);
 
-        Assert.assertEquals(newevento,evento);
+        Assert.assertEquals(newevento, eventoVO);
     }
 
     /*@Test
@@ -95,24 +97,24 @@ public class EventoTests extends JPAUnitTest {
     @Transactional
     public void ModificarEvento() {
 
-        Evento evento =repo.findOne(1);
-        evento.setNombre("Cumpleaños Julio");
-        evento.setDescripcion("Cumpleaños Julio.");
+        EventoVO eventoVO =repo.findOne(1);
+        eventoVO.setNombre("Cumpleaños Julio");
+        eventoVO.setDescripcion("Cumpleaños Julio.");
 
-        repo.save(evento);
+        repo.save(eventoVO);
         em.clear();
 
-        Evento eventoBd = em.find(Evento.class,1);
+        EventoVO eventoVOBd = em.find(EventoVO.class,1);
 
-        Assert.assertNotEquals(evento,eventoBd);
+        Assert.assertNotEquals(eventoVO, eventoVOBd);
     }
 
     @Test
     @Transactional
     public void EliminarEvento() {
-        Evento eventoDel = em.find(Evento.class,1);
-        repo.delete(eventoDel); //ACT
-        Evento eventoBd = em.find(Evento.class,1);
-        Assert.assertNull(eventoBd);
+        EventoVO eventoVODel = em.find(EventoVO.class,1);
+        repo.delete(eventoVODel); //ACT
+        EventoVO eventoVOBd = em.find(EventoVO.class,1);
+        Assert.assertNull(eventoVOBd);
     }
 }

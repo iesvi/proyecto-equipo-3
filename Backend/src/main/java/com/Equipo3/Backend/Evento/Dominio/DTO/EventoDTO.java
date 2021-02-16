@@ -1,64 +1,42 @@
 package com.Equipo3.Backend.Evento.Dominio.DTO;
 
-import com.Equipo3.Backend.Usuario.Dominio.Usuario;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import javax.persistence.Column;
+import java.util.Date;
 
+/**
+ * Clase EventoDTO
+ */
+@NoArgsConstructor
+@Getter
+@AllArgsConstructor
 public class EventoDTO {
+
+    /**
+     * id tipo int
+     */
     private int id;
+
+    /**
+     * nombre tipo String
+     */
     private String nombre;
+
+    /**
+     * fecha tipo Date
+     */
     private Date fecha;
+
+    /**
+     * idusuario tipo int
+     */
     private int idusuario;
+
+    /**
+     * descripcion tipo descripcion
+     */
     private String descripcion;
-
-    public EventoDTO() {
-    }
-
-    public EventoDTO(int id, String nombre, Date fecha, int idusuario, String descripcion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.fecha = fecha;
-        this.idusuario = idusuario;
-        this.descripcion = descripcion;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public int getUsuario() {
-        return idusuario;
-    }
-
-    public void setUsuario(int idusuario) {
-        this.idusuario = idusuario;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

@@ -59,7 +59,7 @@ public class EventoService {
     /**
      * Método para consultar un evento en función a la id que se le pase
      * @param id
-     * @return
+     * @return eventoRepo.findOne(id)
      */
     public EventoVO consultarEventos(int id) {
         return eventoRepo.findOne(id);

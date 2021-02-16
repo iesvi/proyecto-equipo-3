@@ -7,15 +7,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Casos de uso de la entidad usuario
+ */
 @Service
 public class UsuarioService {
+
+    /**
+     * usuarioRepo tipo UsuarioRepository
+     */
     @Autowired
     UsuarioRepository usuarioRepo;
 
+    /**
+     * Metodo que instancia en atributo usuarioRepo
+     * @param usuarioRepo
+     */
     public void setUsuarioRepo(UsuarioRepository usuarioRepo) {
         this.usuarioRepo = usuarioRepo;
     }
 
+    /**
+     * Método para dar de alta un nuevo usuario. Tambien se convierte un UsuarioDTO a UsuarioVO
+     * @param usuariodto
+     * @return usuarioRepo.save(user)
+     */
     @Transactional
     public UsuarioVO Registro_De_Usuario(UsuarioDTO usuariodto) {
 
@@ -24,10 +40,20 @@ public class UsuarioService {
         return usuarioRepo.save(user);
     }
 
+    /**
+     * Método para consultar un usuario en función a la id que se le pase
+     * @param id
+     * @return usuarioRepo.findOne(id)
+     */
     public UsuarioVO ConsultarPerfilUsuario(int id) {
         return usuarioRepo.findOne(id);
     }
 
+    /**
+     * Método para modificar un usuario en función a la id que se le pase. Si no existe se genera una excepción. Tambien se convierte un UsuarioDTO a UsuarioVO
+     * @param usuariodto
+     * @throws Exception
+     */
     @Transactional
     public void Modificar_Usuario(UsuarioDTO usuariodto) throws Exception {
         UsuarioVO nbd = usuarioRepo.findOne(usuariodto.getId());
@@ -37,6 +63,11 @@ public class UsuarioService {
         usuarioRepo.save(user);
     }
 
+    /**
+     * Método para eliminar un usuario
+     * @param usuariodto
+     * @throws Exception
+     */
     @Transactional
     public void Eliminar_Usuario(UsuarioDTO usuariodto) throws Exception {
         UsuarioVO nbd = usuarioRepo.findOne(usuariodto.getId());

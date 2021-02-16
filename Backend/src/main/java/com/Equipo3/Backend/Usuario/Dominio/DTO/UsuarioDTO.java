@@ -7,31 +7,57 @@ import lombok.*;
 import java.sql.Date;
 import java.util.List;
 
+/**
+ * Clase UsuarioDTO
+ */
+@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 public class UsuarioDTO {
+
+    /**
+     * id tipo int
+     */
     private int id;
+
+    /**
+     * nombre tipo String
+     */
     private String nombre;
+
+    /**
+     * password tipo String
+     */
     private String password;
+
+    /**
+     * email tipo String
+     */
     private String email;
+
+    /**
+     * fecha_nacimiento tipo Date
+     */
     private Date fecha_nacimiento;
+
+    /**
+     * telefono tipo int
+     */
     private int telefono;
+
+    /**
+     * rol tipo String
+     */
     private String rol;
+
+    /**
+     * idamigos tipo List<UsuarioVO>
+     */
     private List<UsuarioVO> idamigos;
+
+    /**
+     * ideventos tipo List<EventoVO>
+     */
     private List<EventoVO> ideventos;
-
-    public UsuarioDTO() {
-    }
-
-    public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<UsuarioVO> idamigos, List<EventoVO> ideventos) {
-        this.id = id;
-        this.nombre = nombre;
-        this.password = password;
-        this.email = email;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.telefono = telefono;
-        this.rol = rol;
-        this.idamigos = idamigos;
-        this.ideventos = ideventos;
-    }
 }

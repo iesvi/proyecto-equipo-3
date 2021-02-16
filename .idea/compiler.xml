@@ -19,8 +19,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="proyecto-equipo-3" />
         <module name="backend" />
-        <module name="Backend" />
         <module name="Proyectopsp2021_Grupo_B" />
+        <module name="Backend" />
         <module name="Frontend" />
       </profile>
     </annotationProcessing>

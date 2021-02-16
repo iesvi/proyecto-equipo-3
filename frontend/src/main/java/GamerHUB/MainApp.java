@@ -23,10 +23,16 @@ import java.io.IOException;
  */
 public class MainApp extends Application {
 
-    private Stage primaryStage= new  Stage();
+    /**
+     *
+     */
+    private Stage primaryStage;
     private BorderPane rootLayout;
 
 
+    /**
+     *
+     */
     private ObservableList<UsuarioDTO> usuarios = FXCollections.observableArrayList();
 
 
@@ -58,14 +64,13 @@ public class MainApp extends Application {
     public void init() throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("./Shared/vistas/RootLayout.fxml"));
+        loader.setLocation(MainApp.class.getResource("/vistas/RootLayout.fxml"));
         rootLayout = (BorderPane) loader.load();
 
         Scene scene = new Scene(rootLayout);
 
                 primaryStage.setScene(scene);
-                RootLayoutController controladorInicio = loader.getController();
-                controladorInicio.setMainApp(this);
+
 
                 primaryStage.show();
 
@@ -75,7 +80,7 @@ public class MainApp extends Application {
     public void launchInicio() throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("./Shared/vistas/VistaInicio.fxml"));
+        loader.setLocation(MainApp.class.getResource("/vistas/VistaInicio.fxml"));
         AnchorPane inicio = (AnchorPane) loader.load();
 
         rootLayout.setCenter(inicio);

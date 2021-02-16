@@ -20,12 +20,11 @@
         <module name="proyecto-equipo-3" />
         <module name="backend" />
         <module name="Backend" />
-        <module name="Proyectopsp2021_Grupo_B" />
         <module name="Frontend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Backend" target="11" />
+      <module name="Backend" target="1.8" />
       <module name="backend" target="1.8" />
       <module name="Frontend" target="8" />
       <module name="frontend" target="8" />

@@ -16,13 +16,13 @@ public class UsuarioDTO {
     private Date fecha_nacimiento;
     private int telefono;
     private String rol;
-    private List<Usuario> amigos;
-    private List<Evento> eventos;
+    private List<Integer> idamigos;
+    private List<Integer> ideventos;
 
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<Usuario> amigos, List<Evento> eventos) {
+    public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<Integer> idamigos, List<Integer> ideventos) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
@@ -30,8 +30,8 @@ public class UsuarioDTO {
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.rol = rol;
-        this.amigos = amigos;
-        this.eventos = eventos;
+        this.idamigos = idamigos;
+        this.ideventos = ideventos;
     }
 
     public int getId() {
@@ -90,19 +90,19 @@ public class UsuarioDTO {
         this.rol = rol;
     }
 
-    public List<Usuario> getAmigos() {
-        return amigos;
+    public List<Integer> getAmigos() {
+        return idamigos;
     }
 
-    public void setAmigos(List<Usuario> amigos) {
-        this.amigos = amigos;
+    public void setAmigos(List<Integer> idamigos) {
+        this.idamigos = idamigos;
     }
 
-    public List<Evento> getEventos() {
-        return eventos;
+    public List<Integer> getEventos() {
+        return ideventos;
     }
 
-    public void setEventos(List<Evento> eventos) {
-        this.eventos = eventos;
+    public void setEventos(List<Integer> ideventos) {
+        this.ideventos = ideventos;
     }
 }

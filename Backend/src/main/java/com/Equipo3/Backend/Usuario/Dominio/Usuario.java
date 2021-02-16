@@ -24,15 +24,13 @@ public class Usuario implements Serializable {
     private Date fecha_nacimiento;
     private int telefono;
     private String rol;
-    @OneToMany(mappedBy="usuario",cascade= CascadeType.ALL)
-    private List<Usuario> amigos;
-    @OneToMany(mappedBy="usuario",cascade= CascadeType.ALL)
-    private List<Evento> eventos;
+    private List<Integer> idamigos;
+    private List<Integer> ideventos;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<Usuario> amigos, List<Evento> eventos) {
+    public Usuario(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<Integer> idamigos, List<Integer> ideventos) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
@@ -40,8 +38,8 @@ public class Usuario implements Serializable {
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.rol = rol;
-        this.amigos = amigos;
-        this.eventos = eventos;
+        this.idamigos = idamigos;
+        this.ideventos = ideventos;
     }
 
 

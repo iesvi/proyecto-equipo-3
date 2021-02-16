@@ -8,17 +8,17 @@ public class EventoDTO {
     private int id;
     private String nombre;
     private Date fecha;
-    private Usuario usuario;
+    private int idusuario;
     private String descripcion;
 
     public EventoDTO() {
     }
 
-    public EventoDTO(int id, String nombre, Date fecha, Usuario Usuario, String descripcion) {
+    public EventoDTO(int id, String nombre, Date fecha, int idusuario, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
-        this.usuario = Usuario;
+        this.idusuario = idusuario;
         this.descripcion = descripcion;
     }
 
@@ -46,12 +46,12 @@ public class EventoDTO {
         this.fecha = fecha;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public int getUsuario() {
+        return idusuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(int idusuario) {
+        this.idusuario = idusuario;
     }
 
     public String getDescripcion() {

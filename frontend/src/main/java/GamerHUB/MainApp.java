@@ -1,13 +1,10 @@
 package GamerHUB;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
-import GamerHUB.Shared.controllers.RootLayoutController;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.controllers.VistaInicioControlador;
 import GamerHUB.Shared.exception.CustomException;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -50,8 +47,8 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("Welcome to GamerHub!");
 
 
-        init();
-        launchInicio();
+        Init();
+        LaunchInicio();
 
 
     }
@@ -61,7 +58,7 @@ public class MainApp extends Application {
     }
 
 
-    public void init() throws IOException {
+    public void Init() throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/RootLayout.fxml"));
@@ -77,7 +74,7 @@ public class MainApp extends Application {
     }
 
 
-    public void launchInicio() throws IOException {
+    public void LaunchInicio() throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/VistaInicio.fxml"));
@@ -100,7 +97,7 @@ public class MainApp extends Application {
     public void launchHomeView(UsuarioDTO usuarioDTO)throws CustomException, IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("./Shared/vistas/VistaHome.fxml"));
+        loader.setLocation(MainApp.class.getResource("/vistas/VistaHome.fxml"));
         rootLayout = (BorderPane) loader.load();
 
         Scene scene = new Scene(rootLayout);

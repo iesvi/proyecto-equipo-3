@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
+<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
    <children>
       <AnchorPane layoutX="38.0" layoutY="35.0" prefHeight="518.0" prefWidth="275.0" style="-fx-background-color: #aafe79; -fx-background-radius: 15;">
          <opaqueInsets>
@@ -40,7 +43,7 @@
                   <Font name="Open Sans Semibold" size="12.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="63.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="150.0" layoutX="63.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="184.0" layoutY="457.0" text="Registrarse" underline="true" />
             <PasswordField fx:id="campoPass" layoutX="50.0" layoutY="315.0" prefHeight="35.0" prefWidth="189.0" promptText="Contraseña" style="-fx-background-radius: 10;" />
          </children>

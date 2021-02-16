@@ -13,9 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 
 
 public class VistaInicioControlador {
@@ -51,7 +53,10 @@ public class VistaInicioControlador {
 
     @FXML
     private void initialize() {
-
+        URL url = getClass().getResource("/images/gamerhublogo.png");
+        File file = new File(url.getPath());
+        Image image = new Image(file.toURI().toString());
+        imageView.setImage(image);
     }
 
     /**

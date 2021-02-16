@@ -64,7 +64,7 @@ public class MainApp extends Application {
         loader.setLocation(MainApp.class.getResource("/vistas/RootLayout.fxml"));
         rootLayout = (BorderPane) loader.load();
 
-        Scene scene = new Scene(rootLayout);
+        Scene scene = new Scene(rootLayout,350,600);
 
                 primaryStage.setScene(scene);
 
@@ -83,6 +83,7 @@ public class MainApp extends Application {
         rootLayout.setCenter(inicio);
 
         VistaInicioControlador controladorInicio = loader.getController();
+        controladorInicio.setdialogStage(primaryStage);
         controladorInicio.setMain(this);
 
     }

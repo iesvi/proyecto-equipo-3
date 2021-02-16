@@ -6,6 +6,7 @@ import GamerHUB.Shared.exception.CustomException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,7 +25,7 @@ public class VistaInicioControlador {
     @FXML
     private TextField campoUsuario;
     @FXML
-    private TextField campoPass;
+    private PasswordField campoPass;
     @FXML
     Label accederARegistro;
 
@@ -40,8 +41,17 @@ public class VistaInicioControlador {
         return main;
     }
 
+    public void setdialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
+
     public void setMain(MainApp main) {
         this.main = main;
+    }
+
+    @FXML
+    private void initialize() {
+
     }
 
     /**
@@ -56,7 +66,6 @@ public class VistaInicioControlador {
     }
 
     /**
-     *
      * @throws IOException
      * @throws CustomException
      */
@@ -119,21 +128,20 @@ public class VistaInicioControlador {
 
         String errorMsg = "";
 
-        if (campoUsuario.getText().isEmpty() || campoUsuario.getText() == null) {
-            errorMsg += "Introduce un nombre de usuario válido";
+        if (campoUsuario == null || campoUsuario.getText().isEmpty()) {
+            errorMsg += "Introduce un nombre de usuario válido.\n ";
         }
-
-        if (campoPass.getText().isEmpty() || campoPass.getText() == null) {
+        if (campoPass == null || campoPass.getText().isEmpty()) {
             errorMsg += "Introduce una contraseña válida.";
         }
-        if (errorMsg.length() == 0) {
+        if (errorMsg.isEmpty()) {
             return true;
         } else {
             // Show the error message.
             Alert alerta = new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error en los campos.");
             alerta.setHeaderText(null);
-            alerta.setContentText("Por favor, revisa algún dato que no esté correcto.");
+            alerta.setContentText(errorMsg);
             alerta.showAndWait();
             return false;
         }

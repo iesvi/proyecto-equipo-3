@@ -5,11 +5,13 @@ import GamerHUB.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import javax.swing.text.TableView;
-import javax.swing.text.html.ImageView;
+
+
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
@@ -95,7 +97,8 @@ public class VistaHomeControlador {
      * @param mouseEvent
      * @throws IOException
      */
-    public void launchPerfil(MouseEvent mouseEvent) throws IOException {
+    @FXML
+    public void LaunchPerfil(MouseEvent mouseEvent) throws IOException {
         mainApp.LaunchVistaPerfil(userLogeado);
     }
 }

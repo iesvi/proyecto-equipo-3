@@ -39,7 +39,7 @@ public class MainApp extends Application {
     private Scene scene;
 
     private BorderPane rootLayout;
-    private AnchorPane inicio, home, signup, perfil ;
+    private AnchorPane inicio, home, signup, perfil, evento;
 
     /**
      * Lista con los datos de usuarios de tipo DTO, que usará la aplicación para
@@ -207,19 +207,13 @@ public class MainApp extends Application {
         Scene scene = new Scene(signup, 400, 500);
         Stage dialogStage = new Stage();
         dialogStage.setScene(scene);
-        //rootLayout.setCenter(signup);
         dialogStage.setTitle("Únete a gamerhub!");
-       // Stage dialogStage = new Stage();
         dialogStage.initModality(Modality.APPLICATION_MODAL);
-        //primaryStage.setScene(new Scene(rootLayout, 400, 550));
-        //primaryStage.sizeToScene();
-        //dialogStage.setScene();
 
         VistaRegistroControlador controladorRegistro = loader.getController();
         controladorRegistro.setDialogStage(dialogStage);
         controladorRegistro.setMainApp(this);
 
-        //primaryStage.show();
        dialogStage.show();
 
 
@@ -248,6 +242,15 @@ public class MainApp extends Application {
         controladorHome.setMainApp(this);
 
         dialogStage.show();
+    }
+
+    public void LaunchVistaEvento(){
+
+
+
+
+
+
     }
 
 }

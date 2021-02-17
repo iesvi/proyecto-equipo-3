@@ -2,7 +2,6 @@ package com.Equipo3.Backend.Shared.Infraestructura.JPA;
 
 import com.Equipo3.Backend.Shared.Dominio.Repository.GenericRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -11,6 +10,7 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+
 @Repository
 public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K> {
     @PersistenceContext
@@ -20,10 +20,6 @@ public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K
 
     public GenericRepositoryJPA(Class<T> type) {
         this.type = type;
-    }
-
-    public void setEntityManager(EntityManager em) {
-        this.em = em;
     }
 
     public T findOne(K pk) {

@@ -5,18 +5,30 @@ import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
 import GamerHUB.MainApp;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class VistaRegistroControlador {
 
-    @FXML
-    private TextField campoUsuario, campoEmail, campoPass;
 
+    @FXML
+    private TextField campoUsuario;
+    @FXML
+    private TextField campoEmail;
+    @FXML
+    private TextField campoPass;
+    @FXML
+    private ComboBox<String> campoRol = new ComboBox<String>();;
     @FXML
     private DatePicker fechaNac;
     @FXML
@@ -25,11 +37,19 @@ public class VistaRegistroControlador {
     @FXML
     private Button botonOk = new Button();
 
-    private UsuarioRespositoryJDBC usuarioRespositoryJDBC =new UsuarioRespositoryJDBC();
+    private UsuarioRespositoryJDBC usuarioRespositoryJDBC = new UsuarioRespositoryJDBC();
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
     private boolean okClicked = false;
+    private ArrayList<String> roles;
+    {
+        roles = new ArrayList<String>() {
+            {  add("cliente");
+                add("admin");  }
+
+        };
+    }
 
     private MainApp mainApp = new MainApp();
 
@@ -39,6 +59,7 @@ public class VistaRegistroControlador {
     public VistaRegistroControlador() {
         //Inicializamos un valor por defecto para la fecha de nacimiento o cumpleaños
         //fechaNac = LocalDate.now();
+        campoRol.setItems(FXCollections.observableArrayList(roles));
 
         if (checkBoxPoliticas.isSelected())
             botonOk.setDisable(false);
@@ -87,20 +108,32 @@ public class VistaRegistroControlador {
     private void handleOk() {
         if (isInputValid()) {
 
-                UsuarioDTO usuarioDTO = new UsuarioDTO();
+            UsuarioDTO usuarioDTO = new UsuarioDTO(
+                    campoUsuario.getText(),
+                    campoPass.getText(),
+                    campoEmail.getText(),
+                    fechaNac.getValue(),
+                    0,
+                    campoRol.getValue(),
+                    new ArrayList<>(),
+                    new ArrayList<>()
 
-                usuarioDTO.setNombre(campoUsuario.getText().toString());
-                usuarioDTO.setPassword(campoPass.getText());
-                usuarioDTO.setEmail(campoEmail.getText());
-                usuarioDTO.setFecha_nacimiento(fechaNac.getValue());
-                usuarioDTO.setTelefono(000);
-                usuarioDTO.setAmigos(null);
-                usuarioDTO.setEventos(null);
+            );
 
-                usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
 
-                okClicked = true;
-                dialogStage.close();
+
+            usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
+            info("Usuario registrado correctamente."
+                    , "Bienvenido a Gamerhub, disfruta de cheetos, doritos y mucho hentai.\n"+
+                    usuarioDTO.toString());
+
+
+
+            campoUsuario.setText("");
+            campoPass.setText("");
+            campoEmail.setText("");
+            checkBoxPoliticas.setSelected(false);
+
 
         }
     }
@@ -132,7 +165,7 @@ public class VistaRegistroControlador {
         if (campoPass.getText() == null || campoPass.getText().length() == 0) {
             errorMessage += "Contraseña no válidos!\n";
         }
-        if (fechaNac == null) {
+        if (fechaNac.getValue() == null) {
             errorMessage += "Fecha de cumpleaños no válida!\n";
         }
 
@@ -152,11 +185,26 @@ public class VistaRegistroControlador {
 
 
     /**
-     *
+     * Volver a la pantalla de inicio de la app.
      */
     @FXML
     public void handleVolver() throws IOException {
         mainApp.Init();
+        mainApp.LaunchInicio();
+        dialogStage.close();
+    }
+
+    /**
+     *
+     * @param title
+     * @param msg
+     */
+    public void info(String title, String msg){
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(title);
+        alerta.setHeaderText(null);
+        alerta.setContentText(msg);
+        alerta.showAndWait();
     }
 
 }

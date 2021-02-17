@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="61.0" layoutY="14.0" prefHeight="426.0" prefWidth="279.0" style="-fx-background-color: #2fdd72; -fx-background-radius: 10;">
          <children>
@@ -22,9 +21,9 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <TextField layoutX="55.0" layoutY="138.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
-            <TextField layoutX="54.0" layoutY="201.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
-            <TextField layoutX="53.0" layoutY="265.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
+            <TextField editable="false" layoutX="55.0" layoutY="138.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
+            <TextField editable="false" layoutX="54.0" layoutY="201.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
+            <TextField editable="false" layoutX="53.0" layoutY="265.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
             <Label layoutX="53.0" layoutY="115.0" text="Usuario">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -40,7 +39,6 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="55.0" layoutY="332.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-radius: 5;" />
             <Label layoutX="54.0" layoutY="309.0" text="Fecha de nacimiento">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -51,6 +49,8 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <ImageView fitHeight="69.0" fitWidth="70.0" layoutX="194.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <DatePicker layoutX="53.0" layoutY="336.0" showWeekNumbers="true" />
          </children>
       </AnchorPane>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0" style="-fx-background-radius: 20; -fx-background-color: #30afb5;" />

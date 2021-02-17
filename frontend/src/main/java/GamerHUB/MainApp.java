@@ -1,5 +1,6 @@
 package GamerHUB;
 
+import GamerHUB.GestionUsuarios.controller.VistaPerfilControlador;
 import GamerHUB.GestionUsuarios.controller.VistaRegistroControlador;
 import GamerHUB.GestionUsuarios.model.Conversor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
@@ -16,14 +17,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 
 /**
- *
+ * Controlador principal de la aplicación. Se encargará de lanzar los métodos de renderizado de las vistas
+ * y las listas en memoria.
  */
 public class MainApp extends Application {
 
@@ -32,8 +37,9 @@ public class MainApp extends Application {
      */
     private Stage primaryStage;
     private Scene scene;
-    private BorderPane rootLayout;
 
+    private BorderPane rootLayout;
+    private AnchorPane inicio, home, signup, perfil ;
 
     /**
      * Lista con los datos de usuarios de tipo DTO, que usará la aplicación para
@@ -47,10 +53,30 @@ public class MainApp extends Application {
 
     private Set<UsuarioVO> usuarios_bbdd = new TreeSet<UsuarioVO>();
 
+    /**
+     *
+     */
+    private UsuarioDTO usuarioLogeado = new UsuarioDTO();
+
 
     public MainApp() {
 
         //usuarios.add(new UsuarioDTO( new SimpleStringProperty("kk")));
+
+        LocalDate localDate = LocalDate.now();
+        UsuarioDTO usuarioDTO = new UsuarioDTO(
+                "user",
+                "user",
+                "email",
+                localDate,
+                0,
+                "admin",
+                new ArrayList<>(),
+                new ArrayList<>()
+
+        );
+
+        usuarios.add(usuarioDTO);
 
         if (!usuarios_bd.isEmpty()) {
             for (UsuarioVO user : usuarios_bd) {
@@ -75,6 +101,14 @@ public class MainApp extends Application {
         return usuarios_bbdd;
     }
 
+    public UsuarioDTO getUsuarioLogeado() {
+        return usuarioLogeado;
+    }
+
+    public void setUsuarioLogeado(UsuarioDTO usuarioLogeado) {
+        this.usuarioLogeado = usuarioLogeado;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -96,6 +130,7 @@ public class MainApp extends Application {
      * Método que inicializa el componente padre de la ventana de la interfaz.
      * El resto de vistas se mostrán anidadas dentro de esta, según las acciones
      * de los usuarios.
+     *
      * @throws IOException
      */
     public void Init() throws IOException {
@@ -114,15 +149,16 @@ public class MainApp extends Application {
 
     /**
      * Vista de acceso o "logeo" a la aplicación. Se solicitan los datos nombre de usuario
-     * y contraseña al usuario para poder acceder al resto de la aplicación, si esta registrado.,
+     * y contraseña al usuario para poder acceder al resto de la aplicación, si esta registrado,
      * o en su defecto registrarse antes.
+     *
      * @throws IOException
      */
     public void LaunchInicio() throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/shared/VistaInicio.fxml"));
-        AnchorPane inicio = (AnchorPane) loader.load();
+        inicio = (AnchorPane) loader.load();
 
         rootLayout.setCenter(inicio);
 
@@ -134,24 +170,24 @@ public class MainApp extends Application {
 
 
     /**
-     *
-     * @param usuarioDTO
      * @throws CustomException
      * @throws IOException
      */
-    public void LaunchHomeView(UsuarioDTO usuarioDTO) throws CustomException, IOException {
+    public void LaunchHomeView() throws CustomException, IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome.fxml"));
-        rootLayout = (BorderPane) loader.load();
+        home = (AnchorPane) loader.load();
 
-        Scene scene = new Scene(rootLayout, 350, 600);
+        Scene scene = new Scene(home, 800, 525);
         Stage dialogStage = new Stage();
         dialogStage.setScene(scene);
 
+        dialogStage.setTitle("Bienvenido "+usuarioLogeado.getNombre()+"!");
+
         VistaHomeControlador controladorHome = loader.getController();
         controladorHome.setDialogStage(dialogStage);
-        controladorHome.setUsuarioDTO(usuarioDTO);
+        controladorHome.setUsuarioDTO(usuarioLogeado);
         controladorHome.setMainApp(this);
 
         dialogStage.show();
@@ -159,29 +195,58 @@ public class MainApp extends Application {
     }
 
     /**
-     *
      * @throws IOException
      */
     public void LaunchSignUpView() throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/gestionusuario/VistaRegistro.fxml"));
-        AnchorPane signup = (AnchorPane) loader.load();
-        rootLayout.setCenter(signup);
+        signup = (AnchorPane) loader.load();
 
+        Scene scene = new Scene(signup, 400, 500);
         Stage dialogStage = new Stage();
-
-        primaryStage.setScene(new Scene(rootLayout, 400, 550));
-        primaryStage.sizeToScene();
+        dialogStage.setScene(scene);
+        //rootLayout.setCenter(signup);
+        dialogStage.setTitle("Únete a gamerhub!");
+       // Stage dialogStage = new Stage();
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        //primaryStage.setScene(new Scene(rootLayout, 400, 550));
+        //primaryStage.sizeToScene();
         //dialogStage.setScene();
 
-        VistaRegistroControlador controladorHome = loader.getController();
+        VistaRegistroControlador controladorRegistro = loader.getController();
+        controladorRegistro.setDialogStage(dialogStage);
+        controladorRegistro.setMainApp(this);
+
+        //primaryStage.show();
+       dialogStage.show();
+
+
+    }
+
+    /**
+     *
+     * @param usuarioDTO
+     * @throws IOException
+     */
+    public void LaunchVistaPerfil(UsuarioDTO usuarioDTO) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("/vistas/gestionusuario/VistaPerfil.fxml"));
+        perfil = (AnchorPane) loader.load();
+
+        Scene scene = new Scene(home, 400, 500);
+        Stage dialogStage = new Stage();
+        dialogStage.setScene(scene);
+
+        dialogStage.setTitle("Configuración");
+
+        VistaPerfilControlador controladorHome = loader.getController();
+        controladorHome.setDialogStage(dialogStage);
+        controladorHome.setUsuarioDTO(usuarioDTO);
         controladorHome.setMainApp(this);
 
-        primaryStage.show();
-        //dialogStage.show();
-
-
+        dialogStage.show();
     }
 
 }

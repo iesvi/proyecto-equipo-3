@@ -4,10 +4,7 @@ import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.exception.CustomException;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -33,11 +30,14 @@ public class VistaInicioControlador {
     Label accederARegistro;
 
     @FXML
+    private Button aceptar;
+
+    @FXML
     private ImageView imageView;
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
-    private boolean okClicked = false;
+
 
 
     public MainApp getMain() {
@@ -66,39 +66,35 @@ public class VistaInicioControlador {
     public VistaInicioControlador() {
     }
 
+
+
     /**
+     *
      * @throws IOException
      * @throws CustomException
      */
-    public void login() throws IOException, CustomException {
+    public void Login() throws IOException, CustomException {
 
+        boolean correct = false;
         usuarioDTO = new UsuarioDTO();
 
-            String username = campoUsuario.getText();
-            String pass = campoPass.getText();
+        String username = campoUsuario.getText();
+        String pass = campoPass.getText();
 
-            for (UsuarioDTO user : main.getUsuarios()) {
+        for (UsuarioDTO user : main.getUsuarios()) {
 
-                if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                    main.LaunchHomeView(user);
-                    break;
-                }
-
+            if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
+                main.setUsuarioLogeado(user);
+                main.LaunchHomeView();
+                dialogStage.close();
             }
 
-
+        }
 
 
     }
 
-    /**
-     * Returns true if the user clicked OK, false otherwise.
-     *
-     * @return
-     */
-    public boolean isOkClicked() {
-        return okClicked;
-    }
+
 
     /**
      * Called when the user clicks ok.
@@ -106,11 +102,7 @@ public class VistaInicioControlador {
     @FXML
     private void handleOk() throws IOException, CustomException {
         if (isInputValid()) {
-
-            login();
-
-            okClicked = true;
-            dialogStage.close();
+            Login();
         }
     }
 
@@ -141,7 +133,13 @@ public class VistaInicioControlador {
         }
     }
 
+    /**
+     *
+     * @param mouseEvent
+     * @throws IOException
+     */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
         main.LaunchSignUpView();
+        this.dialogStage.close();
     }
 }

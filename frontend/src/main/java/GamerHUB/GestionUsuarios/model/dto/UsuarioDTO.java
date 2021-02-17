@@ -28,9 +28,8 @@ public class UsuarioDTO {
         public UsuarioDTO() {
         }
 
-        public UsuarioDTO(IntegerProperty id, StringProperty nombre, StringProperty password, StringProperty email, ObjectProperty<LocalDate> fecha_nacimiento, IntegerProperty telefono, StringProperty rol, ObservableList<IntegerProperty> amigos, ObservableList<EventoDTO> eventos ) {
-                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));;
-                this.nombre = nombre;
+        public UsuarioDTO( StringProperty nombre, StringProperty password, StringProperty email, ObjectProperty<LocalDate> fecha_nacimiento, IntegerProperty telefono, StringProperty rol, ObservableList<IntegerProperty> amigos, ObservableList<EventoDTO> eventos ) {
+                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));                this.nombre = nombre;
                 this.password = password;
                 this.email = email;
                 this.fecha_nacimiento = fecha_nacimiento;
@@ -40,7 +39,7 @@ public class UsuarioDTO {
                 this.eventos = eventos;
         }
 
-        public UsuarioDTO( String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
+        public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
                 this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
                 this.nombre =new SimpleStringProperty(nombre);
                 this.password = new SimpleStringProperty(password);
@@ -156,13 +155,13 @@ public class UsuarioDTO {
         public String toString() {
                 return "UsuarioDTO{" +
                         "id=" + id +
-                        ", nombre=" + nombre +
-                        ", password=" + password +
-                        ", email=" + email +
-                        ", fecha_nacimiento=" + fecha_nacimiento +
-                        ", telefono=" + telefono +
-                        ", rol=" + rol +
-                        ", amigos=" + amigos +
+                        "\n, nombre=" + nombre +
+                        "\n, password=" + password +
+                        "\n, email=" + email +
+                        "\n, fecha_nacimiento=" + fecha_nacimiento +
+                        "\n, telefono=" + telefono +
+                        "\n, rol=" + rol +
+                        "\n, amigos=" + amigos +
                         '}';
         }
 }

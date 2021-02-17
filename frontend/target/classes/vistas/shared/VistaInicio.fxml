@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
+<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
    <children>
       <AnchorPane layoutX="38.0" layoutY="35.0" prefHeight="518.0" prefWidth="275.0" style="-fx-background-color: #aafe79; -fx-background-radius: 15;">
          <opaqueInsets>
@@ -15,7 +16,7 @@
          </opaqueInsets>
          <children>
             <TextField fx:id="campoUsuario" layoutX="49.0" layoutY="237.0" prefHeight="35.0" prefWidth="189.0" promptText="Usuario" style="-fx-background-radius: 10;" />
-            <Button layoutX="50.0" layoutY="398.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Acceder">
+            <Button fx:id="aceptar" layoutX="50.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="44.0" prefWidth="189.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Acceder">
                <font>
                   <Font size="22.0" />
                </font>

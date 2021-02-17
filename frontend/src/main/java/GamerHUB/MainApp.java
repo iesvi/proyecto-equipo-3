@@ -182,13 +182,14 @@ public class MainApp extends Application {
         Scene scene = new Scene(home, 800, 525);
         Stage dialogStage = new Stage();
         dialogStage.setScene(scene);
-
-        dialogStage.setTitle("Bienvenido "+usuarioLogeado.getNombre()+"!");
-
         VistaHomeControlador controladorHome = loader.getController();
         controladorHome.setDialogStage(dialogStage);
         controladorHome.setUsuarioDTO(usuarioLogeado);
         controladorHome.setMainApp(this);
+        controladorHome.setUsuario();
+        dialogStage.setTitle("Bienvenido "+usuarioLogeado.getNombre()+"!");
+
+
 
         dialogStage.show();
 

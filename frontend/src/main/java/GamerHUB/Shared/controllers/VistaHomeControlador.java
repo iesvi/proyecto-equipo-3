@@ -39,7 +39,7 @@ public class VistaHomeControlador {
     public Button btnConfig, btnAyuda, btnSubirArchivo, btnVerArchivos, btnNuevoCanal, btnNuevoEvento;
 
     public VistaHomeControlador() {
-        userLogeado = mainApp.getUsuarioLogeado();
+
     }
 
     public Stage getDialogStage() {
@@ -48,6 +48,10 @@ public class VistaHomeControlador {
 
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
+    }
+
+    public void setUsuario() {
+        userLogeado = mainApp.getUsuarioLogeado();
     }
 
     public VistaHomeControlador(UsuarioDTO usuarioDTO) {

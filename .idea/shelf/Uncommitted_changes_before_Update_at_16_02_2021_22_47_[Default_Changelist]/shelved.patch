@@ -1,0 +1,132 @@
+Index: frontend/src/main/java/GamerHUB/MainApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GamerHUB;\r\n\r\nimport GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;\r\nimport GamerHUB.Shared.controllers.VistaHomeControlador;\r\nimport GamerHUB.Shared.controllers.VistaInicioControlador;\r\nimport GamerHUB.Shared.exception.CustomException;\r\nimport javafx.application.Application;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.scene.layout.BorderPane;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\n/**\r\n *\r\n */\r\npublic class MainApp extends Application {\r\n\r\n    /**\r\n     *\r\n     */\r\n    private Stage primaryStage;\r\n    private BorderPane rootLayout;\r\n\r\n\r\n    /**\r\n     *\r\n     */\r\n    private ObservableList<UsuarioDTO> usuarios = FXCollections.observableArrayList();\r\n\r\n\r\n    public MainApp() {\r\n    }\r\n\r\n    public ObservableList<UsuarioDTO> getUsuarios() {\r\n        return usuarios;\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage primaryStage) throws Exception {\r\n\r\n        this.primaryStage = primaryStage;\r\n        this.primaryStage.setTitle(\"Welcome to GamerHub!\");\r\n\r\n\r\n        Init();\r\n        LaunchInicio();\r\n\r\n\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n\r\n\r\n    public void Init() throws IOException {\r\n\r\n        FXMLLoader loader = new FXMLLoader();\r\n        loader.setLocation(MainApp.class.getResource(\"/vistas/RootLayout.fxml\"));\r\n        rootLayout = (BorderPane) loader.load();\r\n\r\n        Scene scene = new Scene(rootLayout);\r\n\r\n                primaryStage.setScene(scene);\r\n\r\n\r\n                primaryStage.show();\r\n\r\n    }\r\n\r\n\r\n    public void LaunchInicio() throws IOException {\r\n\r\n        FXMLLoader loader = new FXMLLoader();\r\n        loader.setLocation(MainApp.class.getResource(\"/vistas/VistaInicio.fxml\"));\r\n        AnchorPane inicio = (AnchorPane) loader.load();\r\n\r\n        rootLayout.setCenter(inicio);\r\n\r\n        VistaInicioControlador controladorInicio = loader.getController();\r\n        controladorInicio.setMain(this);\r\n\r\n    }\r\n\r\n\r\n    /**\r\n     *\r\n     * @param usuarioDTO\r\n     * @throws CustomException\r\n     * @throws IOException\r\n     */\r\n    public void launchHomeView(UsuarioDTO usuarioDTO)throws CustomException, IOException {\r\n\r\n        FXMLLoader loader = new FXMLLoader();\r\n        loader.setLocation(MainApp.class.getResource(\"/vistas/VistaHome.fxml\"));\r\n        rootLayout = (BorderPane) loader.load();\r\n\r\n        Scene scene = new Scene(rootLayout);\r\n        Stage dialogStage = new Stage();\r\n        dialogStage.setScene(scene);\r\n\r\n        VistaHomeControlador controladorHome = loader.getController();\r\n        controladorHome.setUsuarioDTO(usuarioDTO);\r\n        controladorHome.setMainApp(this);\r\n\r\n        dialogStage.show();\r\n\r\n    }\r\n\r\n    public void launchSignUpView(){\r\n\r\n\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/main/java/GamerHUB/MainApp.java b/frontend/src/main/java/GamerHUB/MainApp.java
+--- a/frontend/src/main/java/GamerHUB/MainApp.java	(revision b5b2ba76a84e6a080bcdf36f41c9e3804754db0c)
++++ b/frontend/src/main/java/GamerHUB/MainApp.java	(date 1613502422528)
+@@ -64,7 +64,7 @@
+         loader.setLocation(MainApp.class.getResource("/vistas/RootLayout.fxml"));
+         rootLayout = (BorderPane) loader.load();
+ 
+-        Scene scene = new Scene(rootLayout);
++        Scene scene = new Scene(rootLayout, 350, 600);
+ 
+                 primaryStage.setScene(scene);
+ 
+Index: frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GamerHUB.Shared.controllers;\r\n\r\nimport GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;\r\nimport GamerHUB.MainApp;\r\nimport GamerHUB.Shared.exception.CustomException;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.stage.Stage;\r\n\r\n\r\nimport java.io.FileInputStream;\r\nimport java.io.FileNotFoundException;\r\nimport java.io.IOException;\r\n\r\n\r\npublic class VistaInicioControlador {\r\n\r\n    private MainApp main;\r\n\r\n    @FXML\r\n    private TextField campoUsuario;\r\n    @FXML\r\n    private TextField campoPass;\r\n    @FXML\r\n    Label accederARegistro;\r\n\r\n    @FXML\r\n    private ImageView imageView;\r\n\r\n    private Stage dialogStage;\r\n    private UsuarioDTO usuarioDTO;\r\n    private boolean okClicked = false;\r\n\r\n\r\n    public MainApp getMain() {\r\n        return main;\r\n    }\r\n\r\n    public void setMain(MainApp main) {\r\n        this.main = main;\r\n    }\r\n\r\n    /**\r\n     *\r\n     */\r\n    public VistaInicioControlador() {\r\n       /* try {\r\n            imageView = new ImageView(new Image(new FileInputStream(\"C:/Users/Vic/Desktop/proyecto-equipo-3/proyecto-equipo-3/frontend/src/main/resources/images/gamerhublogo.png\")));\r\n        } catch (FileNotFoundException e) {\r\n            e.printStackTrace();\r\n        }*/\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @throws IOException\r\n     * @throws CustomException\r\n     */\r\n    public void login() throws IOException, CustomException {\r\n\r\n        usuarioDTO = new UsuarioDTO();\r\n\r\n        if (isInputValid()) {\r\n            String username = campoUsuario.getText();\r\n            String pass = campoPass.getText();\r\n\r\n            for (UsuarioDTO user : main.getUsuarios()) {\r\n\r\n                if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {\r\n                    main.launchHomeView(user);\r\n                    break;\r\n                }\r\n\r\n            }\r\n\r\n\r\n        } else {\r\n\r\n        }\r\n\r\n\r\n    }\r\n\r\n    /**\r\n     * Returns true if the user clicked OK, false otherwise.\r\n     *\r\n     * @return\r\n     */\r\n    public boolean isOkClicked() {\r\n        return okClicked;\r\n    }\r\n\r\n    /**\r\n     * Called when the user clicks ok.\r\n     */\r\n    @FXML\r\n    private void handleOk() {\r\n        if (isInputValid()) {\r\n\r\n           /* usuarioDTO.setUsuario(campoUsuario.getText());\r\n            usuarioDTO.setEmail(campoEmail.getText());\r\n            usuarioDTO.setPassword(campoPass.getText());\r\n            usuarioDTO.setFecha_nacimiento(fechaNac);*/\r\n\r\n            okClicked = true;\r\n            dialogStage.close();\r\n        }\r\n    }\r\n\r\n\r\n    /**\r\n     * @return\r\n     */\r\n    public boolean isInputValid() {\r\n\r\n        String errorMsg = \"\";\r\n\r\n        if (campoUsuario.getText().isEmpty() || campoUsuario.getText() == null) {\r\n            errorMsg += \"Introduce un nombre de usuario válido\";\r\n        }\r\n\r\n        if (campoPass.getText().isEmpty() || campoPass.getText() == null) {\r\n            errorMsg += \"Introduce una contraseña válida.\";\r\n        }\r\n        if (errorMsg.length() == 0) {\r\n            return true;\r\n        } else {\r\n            // Show the error message.\r\n            Alert alerta = new Alert(Alert.AlertType.ERROR);\r\n            alerta.setTitle(\"Error en los campos.\");\r\n            alerta.setHeaderText(null);\r\n            alerta.setContentText(\"Por favor, revisa algún dato que no esté correcto.\");\r\n            alerta.showAndWait();\r\n            return false;\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java b/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java
+--- a/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java	(revision b5b2ba76a84e6a080bcdf36f41c9e3804754db0c)
++++ b/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java	(date 1613502881637)
+@@ -48,11 +48,11 @@
+      *
+      */
+     public VistaInicioControlador() {
+-       /* try {
++        try {
+             imageView = new ImageView(new Image(new FileInputStream("C:/Users/Vic/Desktop/proyecto-equipo-3/proyecto-equipo-3/frontend/src/main/resources/images/gamerhublogo.png")));
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+-        }*/
++        }
+     }
+ 
+     /**
+@@ -98,9 +98,11 @@
+      * Called when the user clicks ok.
+      */
+     @FXML
+-    private void handleOk() {
++    private void handleOk() throws IOException, CustomException {
+         if (isInputValid()) {
+ 
++            login();
++
+            /* usuarioDTO.setUsuario(campoUsuario.getText());
+             usuarioDTO.setEmail(campoEmail.getText());
+             usuarioDTO.setPassword(campoPass.getText());
+Index: frontend/src/main/resources/vistas/VistaInicio.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.image.*?>\r\n<?import javafx.scene.text.*?>\r\n<?import javafx.geometry.*?>\r\n<?import javafx.scene.effect.*?>\r\n<?import java.lang.*?>\r\n<?import java.util.*?>\r\n<?import javafx.scene.*?>\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.layout.*?>\r\n\r\n<AnchorPane prefHeight=\"600.0\" prefWidth=\"350.0\" style=\"-fx-background-color: #adf4ae;\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"GamerHUB.Shared.controllers.VistaInicioControlador\">\r\n   <children>\r\n      <AnchorPane layoutX=\"38.0\" layoutY=\"35.0\" prefHeight=\"518.0\" prefWidth=\"275.0\" style=\"-fx-background-color: #aafe79; -fx-background-radius: 15;\">\r\n         <opaqueInsets>\r\n            <Insets />\r\n         </opaqueInsets>\r\n         <children>\r\n            <TextField layoutX=\"49.0\" layoutY=\"237.0\" prefHeight=\"35.0\" prefWidth=\"189.0\" promptText=\"Usuario\" style=\"-fx-background-radius: 10;\" />\r\n            <Button layoutX=\"50.0\" layoutY=\"398.0\" mnemonicParsing=\"false\" onAction=\"#handleOk\" prefHeight=\"44.0\" prefWidth=\"189.0\" style=\"-fx-background-radius: 15; -fx-background-color: #2fdd72;\" text=\"Acceder\">\r\n               <font>\r\n                  <Font size=\"22.0\" />\r\n               </font>\r\n            </Button>\r\n            <Label layoutX=\"86.0\" layoutY=\"362.0\" text=\"¿Has olvidado tu contraseña?\">\r\n               <font>\r\n                  <Font size=\"9.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label layoutX=\"50.0\" layoutY=\"457.0\" text=\"...o crea una nueva¡\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"12.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label layoutX=\"50.0\" layoutY=\"222.0\" text=\"Usuario o correo electrónico\">\r\n               <font>\r\n                  <Font name=\"Open Sans Semibold\" size=\"11.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label layoutX=\"49.0\" layoutY=\"300.0\" text=\"Contraseña\">\r\n               <font>\r\n                  <Font name=\"Open Sans Semibold\" size=\"12.0\" />\r\n               </font>\r\n            </Label>\r\n            <ImageView fitHeight=\"150.0\" fitWidth=\"150.0\" layoutX=\"63.0\" layoutY=\"30.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\r\n            <Label layoutX=\"184.0\" layoutY=\"457.0\" text=\"Registrarse\" underline=\"true\" />\r\n            <TextField layoutX=\"50.0\" layoutY=\"315.0\" prefHeight=\"35.0\" prefWidth=\"189.0\" promptText=\"Contraseña\" style=\"-fx-background-radius: 10;\" />\r\n         </children>\r\n         <effect>\r\n            <ColorAdjust brightness=\"-0.07\" />\r\n         </effect>\r\n      </AnchorPane>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/main/resources/vistas/VistaInicio.fxml b/frontend/src/main/resources/vistas/VistaInicio.fxml
+--- a/frontend/src/main/resources/vistas/VistaInicio.fxml	(revision b5b2ba76a84e6a080bcdf36f41c9e3804754db0c)
++++ b/frontend/src/main/resources/vistas/VistaInicio.fxml	(date 1613503142844)
+@@ -10,7 +10,7 @@
+ <?import javafx.scene.control.*?>
+ <?import javafx.scene.layout.*?>
+ 
+-<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
++<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
+    <children>
+       <AnchorPane layoutX="38.0" layoutY="35.0" prefHeight="518.0" prefWidth="275.0" style="-fx-background-color: #aafe79; -fx-background-radius: 15;">
+          <opaqueInsets>
+@@ -18,7 +18,7 @@
+          </opaqueInsets>
+          <children>
+             <TextField layoutX="49.0" layoutY="237.0" prefHeight="35.0" prefWidth="189.0" promptText="Usuario" style="-fx-background-radius: 10;" />
+-            <Button layoutX="50.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="44.0" prefWidth="189.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Acceder">
++            <Button layoutX="50.0" layoutY="398.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Acceder">
+                <font>
+                   <Font size="22.0" />
+                </font>
+Index: .idea/libraries/Maven__org_yaml_snakeyaml_android_1_23.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Maven__org_yaml_snakeyaml_android_1_23.xml b/.idea/libraries/Maven__org_yaml_snakeyaml_android_1_23.xml
+new file mode 100644
+--- /dev/null	(date 1613502362833)
++++ b/.idea/libraries/Maven__org_yaml_snakeyaml_android_1_23.xml	(date 1613502362833)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.yaml:snakeyaml:android:1.23">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.23/snakeyaml-1.23-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.23/snakeyaml-1.23-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__com_github_javafaker_javafaker_1_0_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Maven__com_github_javafaker_javafaker_1_0_2.xml b/.idea/libraries/Maven__com_github_javafaker_javafaker_1_0_2.xml
+new file mode 100644
+--- /dev/null	(date 1613502362819)
++++ b/.idea/libraries/Maven__com_github_javafaker_javafaker_1_0_2.xml	(date 1613502362819)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: com.github.javafaker:javafaker:1.0.2">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file

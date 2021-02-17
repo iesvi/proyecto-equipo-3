@@ -1,13 +1,12 @@
 package GamerHUB.GestionUsuarios.controller;
 
+import GamerHUB.GestionUsuarios.model.Conversor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
+import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
 import GamerHUB.MainApp;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,24 +15,37 @@ import java.time.LocalDate;
 public class VistaRegistroControlador {
 
     @FXML
-    private TextField campoUsuario;
-    @FXML
-    private TextField campoEmail;
-    @FXML
-    private TextField campoPass;
-    @FXML
-    private LocalDate fechaNac;
-    @FXML
-   private CheckBox checkBoxPoliticas;
+    private TextField campoUsuario, campoEmail, campoPass;
 
     @FXML
-    private Button botonOk;
+    private DatePicker fechaNac;
+    @FXML
+    private CheckBox checkBoxPoliticas = new CheckBox();
+
+    @FXML
+    private Button botonOk = new Button();
+
+    private UsuarioRespositoryJDBC usuarioRespositoryJDBC =new UsuarioRespositoryJDBC();
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
     private boolean okClicked = false;
 
-    private MainApp mainApp;
+    private MainApp mainApp = new MainApp();
+
+    /**
+     *
+     */
+    public VistaRegistroControlador() {
+        //Inicializamos un valor por defecto para la fecha de nacimiento o cumpleaños
+        //fechaNac = LocalDate.now();
+
+        if (checkBoxPoliticas.isSelected())
+            botonOk.setDisable(false);
+        else botonOk.setDisable(true);
+
+
+    }
 
     public MainApp getMainApp() {
         return mainApp;
@@ -52,13 +64,8 @@ public class VistaRegistroControlador {
         this.dialogStage = dialogStage;
     }
 
-    public VistaRegistroControlador() {
-        //Inicializamos un valor por defecto para la fecha de nacimiento o cumpleaños
-        botonOk.setDisable(true);
-        fechaNac = LocalDate.now();
-    }
 
-    public void setUsuario(UsuarioDTO usuario){
+    public void setUsuario(UsuarioDTO usuario) {
 
 
     }
@@ -79,18 +86,24 @@ public class VistaRegistroControlador {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            if(checkBoxPoliticas.isSelected()){
 
                 UsuarioDTO usuarioDTO = new UsuarioDTO();
 
+                usuarioDTO.setNombre(campoUsuario.getText().toString());
+                usuarioDTO.setPassword(campoPass.getText());
+                usuarioDTO.setEmail(campoEmail.getText());
+                usuarioDTO.setFecha_nacimiento(fechaNac.getValue());
+                usuarioDTO.setTelefono(000);
+                usuarioDTO.setAmigos(null);
+                usuarioDTO.setEventos(null);
 
+                usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
 
                 okClicked = true;
                 dialogStage.close();
-            }
+
         }
     }
-
 
 
     /**
@@ -141,6 +154,7 @@ public class VistaRegistroControlador {
     /**
      *
      */
+    @FXML
     public void handleVolver() throws IOException {
         mainApp.Init();
     }

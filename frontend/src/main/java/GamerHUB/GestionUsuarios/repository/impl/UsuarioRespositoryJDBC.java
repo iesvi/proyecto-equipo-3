@@ -8,16 +8,25 @@ import GamerHUB.MainApp;
 
 import java.util.List;
 
+
 /**
  *
  */
 public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
+
+
+    public UsuarioRespositoryJDBC(){
+
+    }
+
+
     private MainApp mainApp = new MainApp();
+
     @Override
     public boolean add(UsuarioVO usuarioVO) {
         if(usuarioVO!=null){
-            mainApp.getUsuarios().add(Conversor.voToDto(usuarioVO));
+            mainApp.getUsuarios_bd().add(usuarioVO);
             return true;
         } else return false;
     }
@@ -25,7 +34,7 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
     @Override
     public boolean remove(int id) {
 
-        for(UsuarioDTO user: mainApp.getUsuarios()){
+        for(UsuarioVO user: mainApp.getUsuarios_bd()){
             mainApp.getUsuarios().remove(id);
             return true;
         }
@@ -34,11 +43,19 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     @Override
     public boolean update(UsuarioVO usuarioDTO) {
+
+
+
+
+
         return false;
     }
 
     @Override
     public List<UsuarioVO> retrieveUsers() {
+
+
+
         return null;
     }
 }

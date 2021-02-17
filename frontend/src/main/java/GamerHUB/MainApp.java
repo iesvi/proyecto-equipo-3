@@ -19,6 +19,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -34,25 +36,43 @@ public class MainApp extends Application {
 
 
     /**
-     *
+     * Lista con los datos de usuarios de tipo DTO, que usará la aplicación para
+     * mostrar y manipular.
      */
     private ObservableList<UsuarioDTO> usuarios = FXCollections.observableArrayList();
+    /**
+     * Lista con los datos de usuarios de tipo VO, que simulará una bbdd.
+     */
     private ObservableList<UsuarioVO> usuarios_bd = FXCollections.observableArrayList();
+
+    private Set<UsuarioVO> usuarios_bbdd = new TreeSet<UsuarioVO>();
+
 
     public MainApp() {
 
         //usuarios.add(new UsuarioDTO( new SimpleStringProperty("kk")));
 
+        if (!usuarios_bd.isEmpty()) {
+            for (UsuarioVO user : usuarios_bd) {
+                usuarios.add(Conversor.voToDto(user));
 
-        if(!usuarios_bd.isEmpty()){
-        for(UsuarioVO user: usuarios_bd){
-            usuarios.add(Conversor.voToDto(user));
-        }}
+            }
+            usuarios_bbdd.addAll(usuarios_bd);
+        }
 
     }
 
     public ObservableList<UsuarioDTO> getUsuarios() {
         return usuarios;
+    }
+
+    public ObservableList<UsuarioVO> getUsuarios_bd() {
+        return usuarios_bd;
+    }
+
+
+    public Set<UsuarioVO> getUsuarios_bbdd() {
+        return usuarios_bbdd;
     }
 
     @Override
@@ -73,6 +93,9 @@ public class MainApp extends Application {
 
 
     /**
+     * Método que inicializa el componente padre de la ventana de la interfaz.
+     * El resto de vistas se mostrán anidadas dentro de esta, según las acciones
+     * de los usuarios.
      * @throws IOException
      */
     public void Init() throws IOException {
@@ -90,6 +113,9 @@ public class MainApp extends Application {
 
 
     /**
+     * Vista de acceso o "logeo" a la aplicación. Se solicitan los datos nombre de usuario
+     * y contraseña al usuario para poder acceder al resto de la aplicación, si esta registrado.,
+     * o en su defecto registrarse antes.
      * @throws IOException
      */
     public void LaunchInicio() throws IOException {
@@ -108,6 +134,7 @@ public class MainApp extends Application {
 
 
     /**
+     *
      * @param usuarioDTO
      * @throws CustomException
      * @throws IOException
@@ -132,6 +159,7 @@ public class MainApp extends Application {
     }
 
     /**
+     *
      * @throws IOException
      */
     public void LaunchSignUpView() throws IOException {

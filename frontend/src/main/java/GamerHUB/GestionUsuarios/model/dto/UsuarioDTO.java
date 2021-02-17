@@ -144,7 +144,13 @@ public class UsuarioDTO {
                 this.amigos = amigos;
         }
 
+        public ObservableList<EventoDTO> getEventos() {
+                return eventos;
+        }
 
+        public void setEventos(ObservableList<EventoDTO> eventos) {
+                this.eventos = eventos;
+        }
 
         @Override
         public String toString() {

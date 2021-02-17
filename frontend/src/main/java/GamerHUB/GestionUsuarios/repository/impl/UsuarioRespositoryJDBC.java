@@ -25,7 +25,10 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
     @Override
     public boolean remove(int id) {
 
-
+        for(UsuarioDTO user: mainApp.getUsuarios()){
+            mainApp.getUsuarios().remove(id);
+            return true;
+        }
         return false;
     }
 

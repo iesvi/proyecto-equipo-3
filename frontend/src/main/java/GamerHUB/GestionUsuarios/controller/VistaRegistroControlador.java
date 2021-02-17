@@ -1,12 +1,16 @@
 package GamerHUB.GestionUsuarios.controller;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
+import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
+import GamerHUB.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class VistaRegistroControlador {
@@ -22,9 +26,22 @@ public class VistaRegistroControlador {
     @FXML
    private CheckBox checkBoxPoliticas;
 
+    @FXML
+    private Button botonOk;
+
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
     private boolean okClicked = false;
+
+    private MainApp mainApp;
+
+    public MainApp getMainApp() {
+        return mainApp;
+    }
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
 
     /**
      * Sets the stage of this dialog.
@@ -37,11 +54,11 @@ public class VistaRegistroControlador {
 
     public VistaRegistroControlador() {
         //Inicializamos un valor por defecto para la fecha de nacimiento o cumpleaños
+        botonOk.setDisable(true);
         fechaNac = LocalDate.now();
     }
 
     public void setUsuario(UsuarioDTO usuario){
-
 
 
     }
@@ -62,16 +79,19 @@ public class VistaRegistroControlador {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
+            if(checkBoxPoliticas.isSelected()){
 
-           /* usuarioDTO.setUsuario(campoUsuario.getText());
-            usuarioDTO.setEmail(campoEmail.getText());
-            usuarioDTO.setPassword(campoPass.getText());
-            usuarioDTO.setFecha_nacimiento(fechaNac);*/
+                UsuarioDTO usuarioDTO = new UsuarioDTO();
 
-            okClicked = true;
-            dialogStage.close();
+
+
+                okClicked = true;
+                dialogStage.close();
+            }
         }
     }
+
+
 
     /**
      * Called when the user clicks cancel.
@@ -99,10 +119,9 @@ public class VistaRegistroControlador {
         if (campoPass.getText() == null || campoPass.getText().length() == 0) {
             errorMessage += "Contraseña no válidos!\n";
         }
-        if (fechaNac == null ) {
+        if (fechaNac == null) {
             errorMessage += "Fecha de cumpleaños no válida!\n";
         }
-
 
 
         if (errorMessage.length() == 0) {
@@ -118,5 +137,12 @@ public class VistaRegistroControlador {
         }
     }
 
+
+    /**
+     *
+     */
+    public void handleVolver() throws IOException {
+        mainApp.Init();
+    }
 
 }

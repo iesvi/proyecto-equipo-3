@@ -7,14 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="60.0" layoutY="25.0" prefHeight="500.0" prefWidth="281.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
          <children>
-            <TextField layoutX="46.0" layoutY="115.0" prefHeight="35.0" prefWidth="189.0" style="-fx-background-radius: 5;" />
-            <TextField layoutX="46.0" layoutY="185.0" prefHeight="35.0" prefWidth="189.0" style="-fx-background-radius: 5;" />
-            <TextField layoutX="46.0" layoutY="262.0" prefHeight="35.0" prefWidth="189.0" style="-fx-background-radius: 5;" />
+            <TextField layoutX="46.0" layoutY="115.0" prefHeight="35.0" prefWidth="189.0" promptText="Usuario" style="-fx-background-radius: 5;" />
+            <TextField layoutX="46.0" layoutY="185.0" prefHeight="35.0" prefWidth="189.0" promptText="E-mail" style="-fx-background-radius: 5;" />
+            <TextField layoutX="46.0" layoutY="262.0" prefHeight="35.0" prefWidth="189.0" promptText="contraseña" style="-fx-background-radius: 5;" />
             <Label layoutX="28.0" layoutY="24.0" text="Crear una cuenta">
                <font>
                   <Font name="Arial Black" size="24.0" />
@@ -25,7 +24,7 @@
                   <Font name="Open Sans Semibold" size="18.0" />
                </font>
             </Button>
-            <DatePicker layoutX="44.0" layoutY="332.0" prefHeight="35.0" prefWidth="189.0" />
+            <DatePicker layoutX="44.0" layoutY="332.0" prefHeight="35.0" prefWidth="189.0" promptText="Fecha de nacimiento" />
             <Label layoutX="44.0" layoutY="84.0" prefHeight="25.0" prefWidth="69.0" text="Usuario">
                <font>
                   <Font size="16.0" />
@@ -49,5 +48,6 @@
             <CheckBox layoutX="37.0" layoutY="381.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="211.0" text="He leído y acepto las Condiciones del Servicio y la Política de Privacidad de Gamer Hub" wrapText="true" />
          </children>
       </AnchorPane>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="39.0" style="-fx-background-radius: 20; -fx-background-color: #2fdd72;" />
    </children>
 </AnchorPane>

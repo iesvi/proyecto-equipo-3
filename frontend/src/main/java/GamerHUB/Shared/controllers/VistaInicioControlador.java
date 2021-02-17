@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
@@ -63,11 +64,6 @@ public class VistaInicioControlador {
      *
      */
     public VistaInicioControlador() {
-       /* try {
-            imageView = new ImageView(new Image(new FileInputStream("C:/Users/Vic/Desktop/proyecto-equipo-3/proyecto-equipo-3/frontend/src/main/resources/images/gamerhublogo.png")));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }*/
     }
 
     /**
@@ -78,23 +74,19 @@ public class VistaInicioControlador {
 
         usuarioDTO = new UsuarioDTO();
 
-        if (isInputValid()) {
             String username = campoUsuario.getText();
             String pass = campoPass.getText();
 
             for (UsuarioDTO user : main.getUsuarios()) {
 
                 if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                    main.launchHomeView(user);
+                    main.LaunchHomeView(user);
                     break;
                 }
 
             }
 
 
-        } else {
-
-        }
 
 
     }
@@ -112,13 +104,10 @@ public class VistaInicioControlador {
      * Called when the user clicks ok.
      */
     @FXML
-    private void handleOk() {
+    private void handleOk() throws IOException, CustomException {
         if (isInputValid()) {
 
-           /* usuarioDTO.setUsuario(campoUsuario.getText());
-            usuarioDTO.setEmail(campoEmail.getText());
-            usuarioDTO.setPassword(campoPass.getText());
-            usuarioDTO.setFecha_nacimiento(fechaNac);*/
+            login();
 
             okClicked = true;
             dialogStage.close();
@@ -152,4 +141,7 @@ public class VistaInicioControlador {
         }
     }
 
+    public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
+        main.LaunchSignUpView();
+    }
 }

@@ -40,7 +40,7 @@ public class UsuarioDTO {
                 this.eventos = eventos;
         }
 
-        public UsuarioDTO(int id, String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
+        public UsuarioDTO( String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
                 this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
                 this.nombre =new SimpleStringProperty(nombre);
                 this.password = new SimpleStringProperty(password);

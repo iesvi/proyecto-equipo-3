@@ -1,5 +1,6 @@
 package com.Equipo3.Backend.Usuario.Dominio.DTO;
 
+
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.*;

@@ -1,6 +1,0 @@
-evento: &evento
-  id: ${faker.number.numberBetween(2,1000)}
-  nombre: ${faker.name.fullname}
-  fecha: ${faker.date.between('2010-01-01', '2022-01-01')}
-  idusuario: ${faker.number.numberBetween(2,1000)}
-  descripcion: ${faker.HowIMetYourMother.catchPhrase}

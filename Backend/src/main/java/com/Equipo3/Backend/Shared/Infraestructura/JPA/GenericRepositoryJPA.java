@@ -1,7 +1,6 @@
 package com.Equipo3.Backend.Shared.Infraestructura.JPA;
 
 import com.Equipo3.Backend.Shared.Dominio.Repository.GenericRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -11,7 +10,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-@Repository
 public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K> {
     @PersistenceContext
     private EntityManager em;
@@ -45,9 +43,9 @@ public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K
     }
 
     @Transactional
-    public void delete(T tipo)
-    {
+    public boolean delete(K tipo) {
         em.remove(tipo);
+        return true;
     }
 
 

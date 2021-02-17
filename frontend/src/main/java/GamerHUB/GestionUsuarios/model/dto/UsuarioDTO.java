@@ -6,7 +6,6 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 

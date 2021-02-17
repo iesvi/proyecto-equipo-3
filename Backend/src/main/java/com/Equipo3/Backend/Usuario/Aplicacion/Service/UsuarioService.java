@@ -1,5 +1,6 @@
 package com.Equipo3.Backend.Usuario.Aplicacion.Service;
 
+import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.Repository.UsuarioRepository;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
@@ -19,13 +20,6 @@ public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepo;
 
-    /**
-     * Metodo que instancia en atributo usuarioRepo
-     * @param usuarioRepo
-     */
-    public void setUsuarioRepo(UsuarioRepository usuarioRepo) {
-        this.usuarioRepo = usuarioRepo;
-    }
 
     /**
      * Método para dar de alta un nuevo usuario. Tambien se convierte un UsuarioDTO a UsuarioVO
@@ -65,14 +59,15 @@ public class UsuarioService {
 
     /**
      * Método para eliminar un usuario
-     * @param usuariodto
+     * @param id
      * @throws Exception
      */
     @Transactional
-    public void Eliminar_Usuario(UsuarioDTO usuariodto) throws Exception {
-        UsuarioVO nbd = usuarioRepo.findOne(usuariodto.getId());
+    public boolean Eliminar_Usuario(Integer id)  {
+        UsuarioVO nbd = usuarioRepo.findOne(id);
         if (nbd == null)
-            throw new Exception("Usuario no existe");
-        usuarioRepo.delete(nbd);
+            throw new EntityNotExist(UsuarioVO.class.toString(),id);
+
+        return usuarioRepo.delete(id);
     }
 }

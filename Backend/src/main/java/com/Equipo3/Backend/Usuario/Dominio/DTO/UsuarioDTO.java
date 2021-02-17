@@ -5,7 +5,7 @@ import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.*;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@With
 @AllArgsConstructor
 public class UsuarioDTO {
 

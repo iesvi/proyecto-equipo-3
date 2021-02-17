@@ -3,6 +3,7 @@ package com.Equipo3.Backend.Evento.Aplicacion.Service;
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
+import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +21,6 @@ public class EventoService {
     @Autowired
     EventoRepository eventoRepo;
 
-    /**
-     * Metodo que instancia en atributo eventoRepo
-     * @param eventoRepo
-     */
-    public void setUsuarioRepo(EventoRepository eventoRepo) {
-        this.eventoRepo = eventoRepo;
-    }
-
 
     /**
      * Método para dar de alta un nuevo evento. Tambien se convierte un EventoDTO a EventoVO
@@ -44,16 +37,16 @@ public class EventoService {
 
     /**
      * Método para eliminar un evento
-     * @param eventodto
+     * @param id
      * @throws Exception
      */
-    public void eliminarUnEvento(EventoDTO eventodto) throws Exception {
-        EventoVO nbd = eventoRepo.findOne(eventodto.getId());
+    public boolean eliminarUnEvento(int id){
+        EventoVO nbd = eventoRepo.findOne(id);
         if (nbd == null)
-            throw new Exception("Evento no existe");
+            throw new EntityNotExist(EventoVO.class.toString(),id);
 
         //Borra el evento si está en la base de datos
-        eventoRepo.delete(nbd);
+        return eventoRepo.delete(nbd.getId());
     }
 
     /**

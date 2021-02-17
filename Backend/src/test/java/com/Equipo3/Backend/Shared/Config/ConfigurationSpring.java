@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.persistence.EntityManagerFactory;
 
 @Configuration
-@ComponentScan("com.Equipo3")
+@ComponentScan("com.Equipo3.Backend.*")
 @EnableTransactionManagement
 @Import(ConfigurationPersistence.class)
 public class ConfigurationSpring {

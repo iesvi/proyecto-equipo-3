@@ -4,7 +4,7 @@ import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import lombok.*;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,7 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
+@With
+@Entity(name="Usuario")
 public class UsuarioVO {
 
     /**
@@ -73,4 +74,13 @@ public class UsuarioVO {
     @Column
     @OneToMany
     private List<EventoVO> ideventos;
+
+    public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.rol = rol;
+    }
 }

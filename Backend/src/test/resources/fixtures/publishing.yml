@@ -1,0 +1,16 @@
+# test/resources/fixtures/publishing.yml
+
+evento: &evento
+  id: ${faker.number.numberBetween(2,1000)}
+  nombre: ${faker.name.fullName}
+  fecha: ${faker.date.between('2010-01-01', '2022-01-01')}
+  idusuario: ${faker.number.numberBetween(2,1000)}
+  descripcion: ${faker.job.title}
+
+UsuarioVO: &usuario
+    id: ${faker.number.numberBetween(2,1000)}
+    nombre: ${faker.name.fullName}
+    password: ${faker.internet.password}
+    email: ${faker.internet.emailAddress}
+    fecha_nacimiento: ${faker.date.birthday}
+    telefono: ${faker.phoneNumber.phoneNumber}

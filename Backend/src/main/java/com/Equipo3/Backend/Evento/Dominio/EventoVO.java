@@ -1,7 +1,9 @@
 package com.Equipo3.Backend.Evento.Dominio;
 import lombok.*;
 
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,8 +13,10 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-public class EventoVO {
+@With
+@EqualsAndHashCode
+@Entity(name="Evento")
+public class EventoVO implements Serializable {
 
     /**
      * id tipo int el cual es el Id en la base de datos
@@ -24,24 +28,31 @@ public class EventoVO {
     /**
      * nombre tipo String
      */
-    @Column
+    @Column(length = 500)
     private String nombre;
 
     /**
      * fecha tipo Date
      */
-    @Column
+    @Column(length = 500)
     private Date fecha;
 
     /**
      * idusuario tipo int
      */
-    @Column
+    @Column(length = 500)
     private int idusuario;
 
     /**
      * descripcion tipo String
      */
-    @Column
+    @Column(length = 500)
     private String descripcion;
+
+    public EventoVO(String nombre, Date fecha, int idusuario, String descripcion) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.idusuario = idusuario;
+        this.descripcion = descripcion;
+    }
 }

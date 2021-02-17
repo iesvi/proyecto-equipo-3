@@ -1,9 +1,6 @@
 package com.Equipo3.Backend.Evento.Dominio.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -13,6 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
+@With
 @AllArgsConstructor
 public class EventoDTO {
 

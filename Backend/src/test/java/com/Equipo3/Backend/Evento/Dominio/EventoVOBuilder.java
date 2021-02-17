@@ -6,7 +6,6 @@ import java.util.Date;
 
 public class EventoVOBuilder {
 
-    private int id;
     private String nombre;
     private Date fecha;
     private int idusuario;
@@ -34,7 +33,6 @@ public class EventoVOBuilder {
         EventoVO nmother= om.bear("evento", EventoVO.class);
 
         return new EventoVO(
-                id!=0 ? id : nmother.getId(),
                 nombre!=null ? nombre : nmother.getNombre(),
                 fecha!=null ? fecha : nmother.getFecha(),
                 idusuario!=0 ? idusuario : nmother.getIdusuario(),

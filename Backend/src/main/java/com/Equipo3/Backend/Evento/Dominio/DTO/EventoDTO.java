@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @With
+@EqualsAndHashCode
 @AllArgsConstructor
 public class EventoDTO {
 

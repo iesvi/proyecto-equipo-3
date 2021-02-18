@@ -15,6 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @With
+@EqualsAndHashCode
 @Entity(name="Usuario")
 public class UsuarioVO {
 
@@ -65,7 +66,7 @@ public class UsuarioVO {
      * idamigos tipo List<UsuarioVO>
      */
     @Column
-    @OneToMany
+    @ManyToMany
     private List<UsuarioVO> idamigos;
 
     /**

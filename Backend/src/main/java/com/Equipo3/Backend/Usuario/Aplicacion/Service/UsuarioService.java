@@ -63,11 +63,11 @@ public class UsuarioService {
      * @throws Exception
      */
     @Transactional
-    public boolean Eliminar_Usuario(Integer id)  {
+    public boolean Eliminar_Usuario(int id)  {
         UsuarioVO nbd = usuarioRepo.findOne(id);
         if (nbd == null)
             throw new EntityNotExist(UsuarioVO.class.toString(),id);
 
-        return usuarioRepo.delete(id);
+        return usuarioRepo.delete(nbd);
     }
 }

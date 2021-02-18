@@ -46,7 +46,7 @@ public class EventoService {
             throw new EntityNotExist(EventoVO.class.toString(),id);
 
         //Borra el evento si está en la base de datos
-        return eventoRepo.delete(nbd.getId());
+        return eventoRepo.delete(nbd);
     }
 
     /**

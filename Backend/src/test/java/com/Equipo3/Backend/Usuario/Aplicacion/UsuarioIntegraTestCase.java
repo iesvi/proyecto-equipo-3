@@ -54,7 +54,10 @@ public class UsuarioIntegraTestCase {
         UsuarioVO usuarioYaExistente = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
         //Act
-        userService.Eliminar_Usuario(usuarioYaExistente.getId());
+
+
+        //assert
+        Assert.assertEquals(true, userService.Eliminar_Usuario(usuarioYaExistente.getId()));
     }
 
     @Test
@@ -63,7 +66,7 @@ public class UsuarioIntegraTestCase {
         // **** Arrange
         UsuarioVO usuarioYaExistente = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
-        //Act
+     //Assert
         Assert.assertEquals(true, userService.Eliminar_Usuario(usuarioYaExistente.getId()));
 
     }

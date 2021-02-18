@@ -5,6 +5,7 @@ import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -55,12 +56,12 @@ public class UsuarioDTO {
     private String rol;
 
     /**
-     * idamigos tipo List<UsuarioVO>
+     * amigos tipo List<UsuarioVO>
      */
-    private List<UsuarioVO> idamigos;
+    private List<UsuarioDTO> amigos = new ArrayList<>();
 
     /**
-     * ideventos tipo List<EventoVO>
+     * amigosde tipo List<UsuarioDTO>
      */
-    private List<EventoVO> ideventos;
+    private List<UsuarioDTO> amigosde = new ArrayList<>();
 }

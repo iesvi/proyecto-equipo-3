@@ -20,8 +20,6 @@ public class UsuarioVOBuilder {
     private Date fecha_nacimiento;
     private int telefono;
     private String rol;
-    private List<UsuarioVO> idamigos;
-    private List<EventoVO> ideventos;
 
 
     public UsuarioVO build(){
@@ -34,9 +32,7 @@ public class UsuarioVOBuilder {
                 email!=null ? email : mother.getEmail(),
                 fecha_nacimiento!=null ? fecha_nacimiento : mother.getFecha_nacimiento(),
                 telefono!=0 ? telefono : mother.getTelefono(),
-                rol!=null ? rol : "admin",
-                idamigos!=null ? idamigos : null,
-                ideventos!=null ? ideventos : null
+                rol!=null ? rol : "admin"
         );
     }
 }

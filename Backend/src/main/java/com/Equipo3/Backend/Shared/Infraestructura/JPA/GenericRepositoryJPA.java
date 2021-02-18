@@ -43,8 +43,8 @@ public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K
     }
 
     @Transactional
-    public boolean delete(T tipo) {
-        em.remove(tipo);
+    public boolean delete(T entidad) {
+        em.remove(entidad);
         return true;
     }
 

@@ -16,7 +16,7 @@ import java.util.Date;
 @With
 @EqualsAndHashCode
 @Entity(name="Evento")
-public class EventoVO implements Serializable {
+public class EventoVO {
 
     /**
      * id tipo int el cual es el Id en la base de datos

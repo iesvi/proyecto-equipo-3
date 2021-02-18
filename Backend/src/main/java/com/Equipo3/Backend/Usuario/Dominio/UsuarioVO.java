@@ -1,9 +1,12 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
+import com.Equipo3.Backend.Usuario.Err.PersonaErr;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +18,9 @@ import java.util.List;
 @Getter
 @Setter
 @With
-@EqualsAndHashCode
+@EqualsAndHashCode (exclude = {"friends","friendOf"})
 @Entity(name="Usuario")
-public class UsuarioVO {
+public class UsuarioVO implements Serializable  {
 
     /**
      * id tipo int el cual es el Id en la base de datos
@@ -29,19 +32,19 @@ public class UsuarioVO {
     /**
      * nombre tipo String
      */
-    @Column
+    @Column(unique = true, nullable = false)
     private String nombre;
 
     /**
      * password tipo String
      */
-    @Column
+    @Column(length = 30, nullable = false)
     private String password;
 
     /**
      * email tipo String
      */
-    @Column
+    @Column(length = 50, nullable = false)
     private String email;
 
     /**
@@ -53,37 +56,74 @@ public class UsuarioVO {
     /**
      * telefono tipo int
      */
-    @Column
+    @Column(length = 50)
     private int telefono;
 
     /**
      * rol tipo String
      */
-    @Column
+    @Column(length = 150, nullable = false)
     private String rol;
 
     /**
-     * idamigos tipo List<UsuarioVO>
+     * amigos tipo List<UsuarioVO>
      */
-    @Column
     @ManyToMany
-    private List<UsuarioVO> idamigos;
+    @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="amigoId"))
+    private List<UsuarioVO> amigos = new ArrayList<>();
 
     /**
-     * ideventos tipo List<EventoVO>
+     * amigosde tipo List<UsuarioVO>
      */
-    @Column
-    @OneToMany
-    private List<EventoVO> ideventos;
+    @ManyToMany
+    @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="amigoId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
+    private List<UsuarioVO> amigosde = new ArrayList<>();
 
-    public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<UsuarioVO> idamigos, List<EventoVO> ideventos) {
+    public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.rol = rol;
-        this.idamigos = idamigos;
-        this.ideventos = ideventos;
     }
+
+    public void añadirAmigo(UsuarioVO amigo) {
+        if (amigos==null)
+            amigos = new ArrayList<>();
+
+        amigos.add(amigo); //Usuario agrega a su amigo
+        amigo.añadirAmigode(this); //Amigo agrega al usuario como amigo tambien
+    }
+
+    public void eliminarAmigo(UsuarioVO amigo) {
+        if (amigos==null)
+            throw new PersonaErr("PER.REM.FRIEND.NULL","REMOVE FRIEND PARAM IS NULL");
+
+        if (!amigos.contains(amigo))
+            return;
+
+        amigos.remove(amigo); //Usuario elimina a su amigo
+        amigo.eliminarAmigode(this); //Amigo elimina al usuario como amigo tambien
+    }
+
+    public void añadirAmigode(UsuarioVO amigo) {
+        if (amigosde==null)
+            amigosde = new ArrayList<>();
+
+        amigosde.add(amigo);
+
+    }
+
+    public void eliminarAmigode(UsuarioVO amigo) {
+        if (amigosde==null)
+            throw new PersonaErr("PER.REM.FRIEND.NULL","REMOVE FRIEND PARAM IS NULL");
+
+        if (!amigosde.contains(amigo))
+            return;
+
+        amigosde.remove(amigo); //Usuario elimina a su amigo
+        //amigo.addAmigoDe(this); //Amigo elimina al usuario como amigo tambien
+    }
+
 }

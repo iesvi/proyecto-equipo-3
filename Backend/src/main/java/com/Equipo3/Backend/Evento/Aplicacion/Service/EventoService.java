@@ -3,6 +3,7 @@ package com.Equipo3.Backend.Evento.Aplicacion.Service;
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
+import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,23 +31,27 @@ public class EventoService {
     @Transactional
     public EventoVO darDeAltaUnEvento(EventoDTO eventodto) {
 
-        //Crear Evento-entity desde EventoDTO (por ahora lo creamos manualmente)
-        EventoVO event = new EventoVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
+        EventoVO event = eventoRepo.findOne(eventodto.getId());
+        if (event!=null)
+            throw new EntityExist(EventoVO.class.toString(),event.getId());
+
+
+        event = new EventoVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
         return eventoRepo.save(event);
     }
 
     /**
      * Método para eliminar un evento
      * @param id
-     * @throws Exception
      */
+    @Transactional
     public boolean eliminarUnEvento(int id){
-        EventoVO nbd = eventoRepo.findOne(id);
-        if (nbd == null)
+        EventoVO event = eventoRepo.findOne(id);
+        if (event == null)
             throw new EntityNotExist(EventoVO.class.toString(),id);
 
         //Borra el evento si está en la base de datos
-        return eventoRepo.delete(nbd);
+        return eventoRepo.delete(event);
     }
 
     /**
@@ -54,24 +59,27 @@ public class EventoService {
      * @param id
      * @return eventoRepo.findOne(id)
      */
+    @Transactional
     public EventoVO consultarEventos(int id) {
+        EventoVO event = eventoRepo.findOne(id);
+        if (event == null)
+            throw new EntityNotExist(EventoVO.class.toString(),id);
+
         return eventoRepo.findOne(id);
     }
 
     /**
      * Método para modificar un evento en función a la id que se le pase. Si no existe se genera una excepción. Tambien se convierte un EventoDTO a EventoVO
      * @param eventodto
-     * @throws Exception
      */
     @Transactional
-    public void modificarEvento(EventoDTO eventodto) throws Exception {
+    public EventoVO modificarEvento(EventoDTO eventodto) {
 
-        EventoVO nbd = eventoRepo.findOne(eventodto.getId());
-        if (nbd == null)
-            throw new Exception("Evento no existe");
+        EventoVO newevent = eventoRepo.findOne(eventodto.getId());
+        if (newevent == null)
+            throw new EntityNotExist(EventoVO.class.toString(),eventodto.getId());
 
-        //Crear Evento-entity desde EventoDTO (por ahora lo creamos manualmente)
         EventoVO event = new EventoVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
-        eventoRepo.save(event);
+        return eventoRepo.save(event);
     }
 }

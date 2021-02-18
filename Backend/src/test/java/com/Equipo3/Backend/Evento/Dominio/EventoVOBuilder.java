@@ -1,9 +1,15 @@
 package com.Equipo3.Backend.Evento.Dominio;
 
 import io.beanmother.core.ObjectMother;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.With;
 
 import java.util.Date;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@With
 public class EventoVOBuilder {
 
     private String nombre;
@@ -11,22 +17,6 @@ public class EventoVOBuilder {
     private int idusuario;
     private String descripcion;
 
-    public EventoVOBuilder withnombre(String nombre) {
-        this.nombre = nombre;
-        return this;
-    }
-    public EventoVOBuilder withfecha(Date fecha) {
-        this.fecha = fecha;
-        return this;
-    }
-    public EventoVOBuilder withidusuario(int idusuario) {
-        this.idusuario = idusuario;
-        return this;
-    }
-    public EventoVOBuilder withdescripcion(String descripcion) {
-        this.descripcion = descripcion;
-        return this;
-    }
 
     public EventoVO build() {
         ObjectMother om = ObjectMother.getInstance();

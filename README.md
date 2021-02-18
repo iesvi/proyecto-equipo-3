@@ -682,6 +682,13 @@ Ninguna.
 3.1 Ocurre un error en la conexion.<br><br>
 3.2 No es posible subir el archivo debido a su tamaño.
 </td>
+</tr>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Protocolo FTP<br><br>
+</td>
+</tr>
 </table>
 
 
@@ -733,6 +740,13 @@ Ninguna.
 4.1 Ocurre un error en la conexion.<br><br>
 4.2 No es posible descargar el archivo debido a que está dañado.
 </td>
+</tr>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Protocolo FTP<br><br>
+</td>
+</tr>
 </table>
 
 
@@ -784,6 +798,13 @@ Ninguna.
 4.1 Ocurre un error en la conexion.<br><br>
 4.2 No es posible eliminar el archivo debido a que no ha sido subido por él.
 </td>
+</tr>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Protocolo FTP<br><br>
+</td>
+</tr>
 </table>
 
 
@@ -891,6 +912,12 @@ Ninguna.
   <td>
 2. No pudo abrirse la vista chat, se especifica el error al usuario.
 </td>
+<tr>
+<td><b>RNF</b></td>
+ <td>
+Hilos<br><br>
+</td>
+</tr>
 </table>
 
 
@@ -1636,88 +1663,271 @@ Ninguna.
 
 <table>
 
-
-
 <tr>
-
 <td>  Nombre de la clase  </td>
-<td>    </td>
-	
+<td>Chat</td>	
 </tr>
 
 <tr>
 <td>  Descripción  </td>
-<td>    </td>
-
+<td>En esta clase se registrarán los usuarios los cuales participan en dicho chat y se le adjudicará el historial de mensajes que será de tipo mensaje</td>
 </tr>
 
 <tr> 
-
 <td> Relaciones </td>
-<td></td>
-
-<tr>
+<td>Tendrá relación 1-1 con Mensaje y 0N-01 con Usuario	</td>
+</tr>
 	
-</table>
-
-
-<br>
-
-<br>
-
-<table>
-
-
 <tr>
-
 <td>  Atributos  </td>
-<td>    </td>
-	
+<td>Id/Nombre/Usuarios/Historial</td>	
 </tr>
 
 <tr>
 <td>  Atributos propios de la clase  </td>
-<td>    </td>
-
+<td>Id/Nombre</td>
 </tr>
 
 <tr> 
-
 <td> Atributos propios de la relación </td>
-<td></td>
+<td>Usuarios/Historial</td>
+</tr>
 
 <tr>
-	
+<td>  Métodos  </td>
+<td>  Getters y Setter  </td>	
+</tr>
+
+<tr>
+<td>  Función  </td>
+<td>   Devolver y establecer valores de los atributos</td>
+</tr>	
 </table>
-
-
-<br>
 
 <br>
 
 <table>
 
+<tr>
+<td>  Nombre de la clase  </td>
+<td>Mensaje</td>	
+</tr>
 
 <tr>
+<td>  Descripción  </td>
+<td>En esta clase se registrará los valores del chat los cuales se introducirán mas tarde en un fichero para tener el historial de mensajes enviados por los usuarios</td>
+</tr>
 
-<td>  Métodos  </td>
-<td>    </td>
+<tr> 
+<td> Relaciones </td>
+<td>Tendrá relación 1-1 con Chat</td>
+</tr>
 	
+<tr>
+<td>  Atributos  </td>
+<td>Id/IdChat/Contenido</td>	
+</tr>
+
+<tr>
+<td>  Atributos propios de la clase  </td>
+<td>Id/Contenido</td>
+</tr>
+
+<tr> 
+<td> Atributos propios de la relación </td>
+<td>IdChat</td>
+</tr>
+
+<tr>
+<td>  Métodos  </td>
+<td>  Getters y Setter  </td>	
 </tr>
 
 <tr>
 <td>  Función  </td>
-<td>    </td>
+<td>   Devolver y establecer valores de los atributos</td>
+</tr>	
+</table>
 
+<br>
+
+<table>
+
+<tr>
+<td>  Nombre de la clase  </td>
+<td>Evento</td>	
+</tr>
+
+<tr>
+<td>  Descripción  </td>
+<td>En esta clase se registrará los valores del evento generado por el usuario</td>
 </tr>
 
 <tr> 
-
-<td> Sintaxis del método </td>
-<td></td>
+<td> Relaciones </td>
+<td>Tendrá relación 0N-01 con Usuario</td>
+</tr>
+	
+<tr>
+<td>  Atributos  </td>
+<td>Id/Nombre/Fecha/Usuario/Descripcion</td>	
+</tr>
 
 <tr>
+<td>  Atributos propios de la clase  </td>
+<td>Id/Nombre/Fecha/Descripcion</td>
+</tr>
+
+<tr> 
+<td> Atributos propios de la relación </td>
+<td>Usuario</td>
+</tr>
+
+<tr>
+<td>  Métodos  </td>
+<td>  Getters y Setter  </td>	
+</tr>
+
+<tr>
+<td>  Función  </td>
+<td>   Devolver y establecer valores de los atributos</td>
+</tr>	
+</table>
+
+<br>
+
+
+<table>
+
+<tr>
+<td>  Nombre de la clase  </td>
+<td>Archivo</td>	
+</tr>
+
+<tr>
+<td>  Descripción  </td>
+<td>En esta clase se registrará los valores de los archivos subido por el usuario</td>
+</tr>
+
+<tr> 
+<td> Relaciones </td>
+<td>Tendrá relación 0N-1 con Usuario</td>
+</tr>
 	
+<tr>
+<td>  Atributos  </td>
+<td>Id/Nombre/Fecha_creacion/Fichero/Descripcion/Tag/IdUsuario</td>	
+</tr>
+
+<tr>
+<td>  Atributos propios de la clase  </td>
+<td>Id/Nombre/Fecha_creacion/Fichero/Descripcion/Tag</td>
+</tr>
+
+<tr> 
+<td> Atributos propios de la relación </td>
+<td>IdUsuario</td>
+</tr>
+
+<tr>
+<td>  Métodos  </td>
+<td>  Getters y Setter  </td>	
+</tr>
+
+<tr>
+<td>  Función  </td>
+<td>   Devolver y establecer valores de los atributos</td>
+</tr>	
+</table>
+
+<br>
+
+<table>
+
+<tr>
+<td>  Nombre de la clase  </td>
+<td>Usuario</td>	
+</tr>
+
+<tr>
+<td>  Descripción  </td>
+<td>En esta clase se registrará los valores de los usuarios los cuales están registrados en nuestra app</td>
+</tr>
+
+<tr> 
+<td> Relaciones </td>
+<td>Tendrá relación 01-1N con Chat, tendrá relación 01-0N con Evento, tendrá relación 1-01 con Peticion, tendrá relación 1-0N con Archivo y tendrá relación 0N-0N con Usuario</td>
+</tr>
+	
+<tr>
+<td>  Atributos  </td>
+<td>Id/Nombre/Password/Email/Fecha_nacimiento/Telefono/Rol/Amigos</td>	
+</tr>
+
+<tr>
+<td>  Atributos propios de la clase  </td>
+<td>Id/Nombre/Password/Email/Fecha_nacimiento/Telefono/Rol</td>
+</tr>
+
+<tr> 
+<td> Atributos propios de la relación </td>
+<td>Amigos</td>
+</tr>
+
+<tr>
+<td>  Métodos  </td>
+<td>  Getters y Setter  </td>	
+</tr>
+
+<tr>
+<td>  Función  </td>
+<td>   Devolver y establecer valores de los atributos</td>
+</tr>	
+</table>
+
+<br>
+
+<table>
+
+<tr>
+<td>  Nombre de la clase  </td>
+<td>Peticion</td>	
+</tr>
+
+<tr>
+<td>  Descripción  </td>
+<td>En esta clase se registrará las peticiones de los usuarios los cuales se la envian a los administradores</td>
+</tr>
+
+<tr> 
+<td> Relaciones </td>
+<td>Tendrá relación 01-1 con Usuario</td>
+</tr>
+	
+<tr>
+<td>  Atributos  </td>
+<td>Id/Nombre/Usuario/Descripcion/Respuesta/Estado</td>	
+</tr>
+
+<tr>
+<td>  Atributos propios de la clase  </td>
+<td>Id/Nombre/Descripcion/Respuesta/Estado</td>
+</tr>
+
+<tr> 
+<td> Atributos propios de la relación </td>
+<td>Usuario</td>
+</tr>
+
+<tr>
+<td>  Métodos  </td>
+<td>  Getters y Setter  </td>	
+</tr>
+
+<tr>
+<td>  Función  </td>
+<td>   Devolver y establecer valores de los atributos</td>
+</tr>	
 </table>
 
 <br>

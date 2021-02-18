@@ -52,7 +52,7 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
 
         //Assert
         UsuarioVO userBd = em.find(UsuarioVO.class, user.getId());
-        Assert.assertNotEquals(userEdit, userBd);
+        Assert.assertEquals(userEdit, userBd);
     }
 
     @Test

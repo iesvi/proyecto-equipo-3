@@ -76,12 +76,14 @@ public class UsuarioVO {
     @OneToMany
     private List<EventoVO> ideventos;
 
-    public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
+    public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, List<UsuarioVO> idamigos, List<EventoVO> ideventos) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.rol = rol;
+        this.idamigos = idamigos;
+        this.ideventos = ideventos;
     }
 }

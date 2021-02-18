@@ -34,7 +34,9 @@ public class UsuarioVOBuilder {
                 email!=null ? email : mother.getEmail(),
                 fecha_nacimiento!=null ? fecha_nacimiento : mother.getFecha_nacimiento(),
                 telefono!=0 ? telefono : mother.getTelefono(),
-                rol!=null ? rol : "admin"
+                rol!=null ? rol : "admin",
+                idamigos!=null ? idamigos : null,
+                ideventos!=null ? ideventos : null
         );
     }
 }

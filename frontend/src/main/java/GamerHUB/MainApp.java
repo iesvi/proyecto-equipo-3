@@ -263,6 +263,7 @@ public class MainApp extends Application {
         controladorHome.setMainApp(this);
         controladorHome.setUsuario();
         controladorHome.setImagenLupa();
+        controladorHome.iniciar_Reloj();
     }
 
     /**

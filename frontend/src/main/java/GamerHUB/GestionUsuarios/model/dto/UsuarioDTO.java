@@ -1,13 +1,11 @@
 package GamerHUB.GestionUsuarios.model.dto;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
-import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 /**
  *
@@ -39,14 +37,23 @@ public class UsuarioDTO {
         }
 
 
-
         public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono) {
-                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
-                this.nombre =new SimpleStringProperty(nombre);
+                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));
+                this.nombre = new SimpleStringProperty(nombre);
                 this.password = new SimpleStringProperty(password);
-                this.email =new SimpleStringProperty(email) ;
-                this.fecha_nacimiento =new SimpleObjectProperty<LocalDate>(fecha_nacimiento) ;
-                this.telefono =new SimpleIntegerProperty(telefono);
+                this.email = new SimpleStringProperty(email);
+                this.fecha_nacimiento = new SimpleObjectProperty<LocalDate>(fecha_nacimiento);
+                this.telefono = new SimpleIntegerProperty(telefono);
+        }
+
+        public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol) {
+                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));
+                this.nombre = new SimpleStringProperty(nombre);
+                this.password = new SimpleStringProperty(password);
+                this.email = new SimpleStringProperty(email);
+                this.fecha_nacimiento = new SimpleObjectProperty<LocalDate>(fecha_nacimiento);
+                this.telefono = new SimpleIntegerProperty(telefono);
+                this.rol = new SimpleStringProperty(rol);
         }
 
         public int getId() {

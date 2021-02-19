@@ -69,8 +69,10 @@ public class EventoService {
     }
 
     /**
-     * Método para modificar un evento en función a la id que se le pase. Si no existe se genera una excepción. Tambien se convierte un EventoDTO a EventoVO
+     * * Método para modificar un evento en función a la id que se le pase. Si no existe se genera una excepción. Tambien se convierte un EventoDTO a EventoVO
+     *
      * @param eventodto
+     * @return
      */
     @Transactional
     public EventoVO modificarEvento(EventoDTO eventodto) {

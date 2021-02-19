@@ -12,6 +12,7 @@ import java.util.List;
 public interface IEventoRepository{
 
     /**
+     * Método para registrar un nuevo evento.
      *
      * @param eventoVO
      * @return
@@ -19,6 +20,7 @@ public interface IEventoRepository{
     boolean add(EventoVO eventoVO);
 
     /**
+     * Método para eliminar un evento registrado, por su id.
      *
      * @param id
      * @return
@@ -26,14 +28,14 @@ public interface IEventoRepository{
     boolean remove(int id);
 
     /**
-     *
+     *Método para actualizar un evento.
      * @param eventoVO
      * @return
      */
     boolean update(EventoVO eventoVO);
 
     /**
-     *
+     *Método para obtener todos los eventos,asociados a un usuario.
      * @return
      */
     List<EventoVO> retrieveEvents();

@@ -9,25 +9,39 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-
+/**
+ *
+ */
 public class VistaPerfilControlador {
 
     private MainApp mainApp;
     private UsuarioDTO usuarioDTO;
     private Stage dialogStage;
 
+    /**
+     *
+     */
     private UsuarioDTO userLogeado = mainApp.getUsuarioLogeado();
 
+    /**
+     *
+     */
     @FXML
     private TextField campoNombre, campoEmail, campoTelefono;
 
+    /**
+     *
+     */
     @FXML
     private DatePicker fechaNac;
 
+    /**
+     *
+     */
     @FXML
     private Button btnBack, btnEditar, btnCambiarPass, btnAjustesAvanzados;
 
-    public VistaPerfilControlador(){
+    public VistaPerfilControlador() {
     }
 
 

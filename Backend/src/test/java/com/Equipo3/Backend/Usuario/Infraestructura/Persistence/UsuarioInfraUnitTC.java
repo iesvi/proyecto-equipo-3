@@ -3,7 +3,6 @@ package com.Equipo3.Backend.Usuario.Infraestructura.Persistence;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
 import com.Equipo3.Backend.Shared.UnitTestCase;
 import com.Equipo3.Backend.Usuario.Dominio.Builder.UsuarioVOBuilder;
-import com.Equipo3.Backend.Usuario.Dominio.Builder.UsuarioVOMother;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import org.junit.Assert;
 import org.junit.Test;
@@ -96,7 +95,7 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
         UsuarioVO manuel = createAndSaveNewUserwithnombre("Manuel");
         UsuarioVO miguel = createAndSaveNewUserwithnombre("Miguel");
 
-        manuel.añadirAmigo(miguel);
+        manuel.addAmigo(miguel);
 
         em.persist(manuel);
 
@@ -121,7 +120,7 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
         UsuarioVO manuel = createAndSaveNewUserwithnombre("Manuel");
         UsuarioVO miguel = createAndSaveNewUserwithnombre("Miguel");
 
-        manuel.añadirAmigo(miguel);
+        manuel.addAmigo(miguel);
         em.persist(manuel);
 
         //Act

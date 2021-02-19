@@ -2,15 +2,10 @@ package GamerHUB.GestionUsuarios.model;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.collections.FXCollections;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- *
+ * Clase conversor de la entidad Usuario. Convierte tipos VO a DTO y viceversa
+ * * según los datos que maneja la aplicación (DTO) y los que se persisten en la BBDD (VO).
  */
 public class Conversor {
 
@@ -19,6 +14,8 @@ public class Conversor {
 
 
     /**
+     * Convierte un objeto tipo UsuarioDTO a UsuarioVO
+     *
      * @param usuarioVO
      * @return
      */
@@ -41,6 +38,7 @@ public class Conversor {
     }
 
     /**
+     *  Convierte un objeto tipo UsuarioVO a UsuarioDTO
      * @param usuarioDTO
      * @return
      */

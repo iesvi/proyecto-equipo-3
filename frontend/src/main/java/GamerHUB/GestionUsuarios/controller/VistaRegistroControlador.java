@@ -2,32 +2,41 @@ package GamerHUB.GestionUsuarios.controller;
 
 import GamerHUB.GestionUsuarios.model.Conversor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
 import GamerHUB.MainApp;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import GamerHUB.Shared.util.ActionDialogs;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class VistaRegistroControlador {
 
 
+    /**
+     *
+     */
     @FXML
     private TextField campoUsuario;
+    /**
+     *
+     */
     @FXML
     private TextField campoEmail;
+    /**
+     *
+     */
     @FXML
     private TextField campoPass;
 
+    /**
+     *
+     */
     @FXML
     private DatePicker fechaNac;
     @FXML
@@ -116,14 +125,11 @@ public class VistaRegistroControlador {
             );
 
 
-
             mainApp.getUsuarios().add(usuarioDTO);
             usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
-            info("Usuario registrado correctamente."
-                    , "Bienvenido a Gamerhub, disfruta de cheetos, doritos y mucho hentai.\n"+
+
+            ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos, doritos y mucho hentai.\n" +
                     usuarioDTO.toString());
-
-
 
             campoUsuario.setText("");
             campoPass.setText("");
@@ -170,11 +176,7 @@ public class VistaRegistroControlador {
             return true;
         } else {
             // Show the error message.
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error en los campos.");
-            alerta.setHeaderText(null);
-            alerta.setContentText("Por favor, revisa algún dato que no esté correcto.");
-            alerta.showAndWait();
+            ActionDialogs.error("Error en los campos.", "Por favor, revisa algún dato que no esté correcto.");
             return false;
         }
     }
@@ -190,17 +192,5 @@ public class VistaRegistroControlador {
         dialogStage.close();
     }
 
-    /**
-     *
-     * @param title
-     * @param msg
-     */
-    public void info(String title, String msg){
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle(title);
-        alerta.setHeaderText(null);
-        alerta.setContentText(msg);
-        alerta.showAndWait();
-    }
 
 }

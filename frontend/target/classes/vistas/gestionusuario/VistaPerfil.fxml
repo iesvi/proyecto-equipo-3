@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 <AnchorPane prefHeight="525.0" prefWidth="275.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="6.0" layoutY="25.0" prefHeight="418.0" prefWidth="222.0" style="-fx-background-color: #2fdd72; -fx-background-radius: 10;">
@@ -53,7 +51,8 @@
             <DatePicker layoutX="53.0" layoutY="336.0" showWeekNumbers="true" />
          </children>
       </AnchorPane>
-      <Button layoutX="30.0" layoutY="460.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0" style="-fx-background-radius: 20; -fx-background-color: #30afb5;" />
+      <Button layoutX="30.0" layoutY="460.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0"
+              style="-fx-background-radius: 20; -fx-background-color: #30afb5;" text="&lt;-"/>
       <Button layoutX="118.0" layoutY="465.0" mnemonicParsing="false" style="-fx-background-color: #c80815; -fx-background-radius: 10;" text="Ajustes avanzados" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />

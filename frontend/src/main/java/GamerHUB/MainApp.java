@@ -12,8 +12,6 @@ import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.controllers.VistaInicioControlador;
 import GamerHUB.Shared.exception.CustomException;
 import javafx.application.Application;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +24,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -41,7 +38,6 @@ public class MainApp extends Application {
      */
     private Stage primaryStage;
     private Scene scene;
-
 
     /**
      *
@@ -87,6 +83,7 @@ public class MainApp extends Application {
         //usuarios.add(new UsuarioDTO( new SimpleStringProperty("kk")));
 
         LocalDate localDate = LocalDate.now();
+        //Usuario normal
         UsuarioDTO usuarioDTO = new UsuarioDTO(
                 "user",
                 "user",
@@ -95,7 +92,25 @@ public class MainApp extends Application {
                 0
         );
 
+        UsuarioDTO admin = new UsuarioDTO(
+                "admin",
+                "admin",
+                "email",
+                localDate,
+                0,
+                "admin"
+        );
+        EventoDTO eventoDTO = new EventoDTO(
+                "evento1",
+                "desc",
+                localDate,
+                localDate,
+                11
+        );
         usuarios.add(usuarioDTO);
+        usuarios.add(admin);
+
+        getEventos().add(eventoDTO);
 
         if (!usuarios_bd.isEmpty()) {
             for (UsuarioVO user : usuarios_bd) {
@@ -143,7 +158,6 @@ public class MainApp extends Application {
     public void setPane(SplitPane pane) {
         this.pane = pane;
     }
-
 
 
     /**
@@ -225,20 +239,12 @@ public class MainApp extends Application {
         Scene scene = new Scene(home, 800, 525);
         dialogStage = new Stage();
         dialogStage.setScene(scene);
-         pane = (SplitPane) home.getChildren().get(0);
+        pane = (SplitPane) home.getChildren().get(0);
 
-        /**
-         *
-         */
         loadHomeView1(dialogStage);
-
-        /**
-         *
-         */
         loadHomeView2(dialogStage);
 
         pane.setDividerPositions(0.32);
-
 
         VistaHomeControlador controladorHome = loader.getController();
         controladorHome.setDialogStage(dialogStage);
@@ -259,6 +265,7 @@ public class MainApp extends Application {
         loader1.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome1.fxml"));
         AnchorPane anchorPane = loader1.load();
         pane.getItems().set(0, anchorPane);
+
         VistaHomeControlador controladorHome = loader1.getController();
         controladorHome.setDialogStage(dialog);
         controladorHome.setMainApp(this);
@@ -294,8 +301,7 @@ public class MainApp extends Application {
 
         EventoController eventocontrol = loader2.getController();
         eventocontrol.setdialogStage(dialog);
-        eventocontrol.setmainApp(this);
-
+        eventocontrol.setMainApp(this);
 
 
     }
@@ -346,6 +352,42 @@ public class MainApp extends Application {
         controladorHome.setMainApp(this);
 
         dialogStage.show();
+    }
+
+    /**
+     * @throws IOException
+     */
+    public void LaunchaddEvent() throws IOException {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("/vistas/gestioneventos/VistaAddEventoDialog.fxml"));
+        AnchorPane addEvento = (AnchorPane) loader.load();
+
+        Scene scene = new Scene(addEvento, 400, 450);
+        Stage dialogStage = new Stage();
+        dialogStage.setScene(scene);
+        dialogStage.setTitle("Nuevo evento");
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+
+        EventoController eventoController = loader.getController();
+        eventoController.setdialogStage(dialogStage);
+        eventoController.setMainApp(this);
+
+        dialogStage.show();
+
+    }
+
+
+    public void LaunchVistaAdmin() throws IOException {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("/vistas/gestionusuario/VistaAdmin.fxml"));
+        home = (AnchorPane) loader.load();
+        Stage dialogStage = new Stage();
+        Scene scene = new Scene(home, 800, 525);
+        dialogStage = new Stage();
+        dialogStage.setScene(scene);
+
     }
 
 

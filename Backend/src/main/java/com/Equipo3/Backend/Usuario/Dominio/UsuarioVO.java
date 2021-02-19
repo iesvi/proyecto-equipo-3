@@ -1,6 +1,5 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Usuario.Err.PersonaErr;
 import lombok.*;
 
@@ -93,8 +92,8 @@ public class UsuarioVO implements Serializable  {
         this.rol = rol;
     }
 
-    public void añadirAmigo(UsuarioVO amigo) {
-        if (amigos==null)
+    public void addAmigo(UsuarioVO amigo) {
+        if (amigos == null)
             amigos = new ArrayList<>();
 
         amigos.add(amigo); //Usuario agrega a su amigo
@@ -102,8 +101,8 @@ public class UsuarioVO implements Serializable  {
     }
 
     public void eliminarAmigo(UsuarioVO amigo) {
-        if (amigos==null)
-            throw new PersonaErr("PER.REM.FRIEND.NULL","REMOVE FRIEND PARAM IS NULL");
+        if (amigos == null)
+            throw new PersonaErr("PER.REM.FRIEND.NULL", "REMOVE FRIEND PARAM IS NULL");
 
         if (!amigos.contains(amigo))
             return;

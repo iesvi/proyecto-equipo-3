@@ -1,5 +1,6 @@
 package GamerHUB;
 
+import GamerHUB.GestionEventos.controller.EventoController;
 import GamerHUB.GestionUsuarios.controller.VistaPerfilControlador;
 import GamerHUB.GestionUsuarios.controller.VistaRegistroControlador;
 import GamerHUB.GestionUsuarios.model.Conversor;
@@ -39,6 +40,7 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private Scene scene;
 
+
     /**
      *
      */
@@ -65,6 +67,7 @@ public class MainApp extends Application {
      */
     private ObservableList<UsuarioVO> usuarios_bd = FXCollections.observableArrayList();
 
+
     private Set<UsuarioVO> usuarios_bbdd = new TreeSet<UsuarioVO>();
 
     /**
@@ -83,10 +86,7 @@ public class MainApp extends Application {
                 "user",
                 "email",
                 localDate,
-                0,
-                new ArrayList<>(),
-                new ArrayList<>()
-
+                0
         );
 
         usuarios.add(usuarioDTO);
@@ -129,6 +129,8 @@ public class MainApp extends Application {
     public void setPane(SplitPane pane) {
         this.pane = pane;
     }
+
+
 
     /**
      *
@@ -205,9 +207,9 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome.fxml"));
         home = (AnchorPane) loader.load();
-
-        Scene scene = new Scene(home, 800, 525);
         Stage dialogStage = new Stage();
+        Scene scene = new Scene(home, 800, 525);
+        dialogStage = new Stage();
         dialogStage.setScene(scene);
          pane = (SplitPane) home.getChildren().get(0);
 
@@ -270,11 +272,18 @@ public class MainApp extends Application {
      *
      * @throws IOException
      */
-    public void loadEventoView() throws IOException {
+    public void loadEventoView(Stage dialog) throws IOException {
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(MainApp.class.getResource("/vistas/gestioneventos/VistaGestionEventos.fxml"));
         AnchorPane anchorPane1 = loader2.load();
         pane.getItems().set(1, anchorPane1);
+
+        EventoController eventocontrol = loader2.getController();
+        eventocontrol.setdialogStage(dialog);
+        eventocontrol.setmainApp(this);
+
+
+
     }
 
     /**

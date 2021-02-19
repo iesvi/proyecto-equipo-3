@@ -17,23 +17,41 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 
-
+/**
+ * Clase controlador de la vista de acceso a la aplicación (Login).
+ */
 public class VistaInicioControlador {
 
     private MainApp main;
 
+    /**
+     *
+     */
     @FXML
     private TextField campoUsuario;
+    /**
+     *
+     */
     @FXML
     private PasswordField campoPass;
+    /**
+     *
+     */
     @FXML
     Label accederARegistro;
 
+    /**
+     *
+     */
     @FXML
     private Button aceptar;
 
+    /**
+     *
+     */
     @FXML
     private ImageView imageView;
+
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
@@ -52,6 +70,9 @@ public class VistaInicioControlador {
         this.main = main;
     }
 
+    /**
+     *
+     */
     @FXML
     private void initialize() {
         URL url = getClass().getResource("/images/gamerhublogo.png");

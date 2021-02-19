@@ -79,29 +79,37 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
         em.persist(user);
         return user;
     }
+    private UsuarioVO createAndSaveNewUserwithnombre(String nombre) {
+        UsuarioVO user = new UsuarioVOBuilder()
+                .withNombre(nombre)
+                .withFecha_nacimiento(null)
+                .build();
+        em.persist(user);
+        return user;
+    }
 
     @Test
     @Transactional
     //@Commit
     public void ShouldPersona_AddAmigoTest() {
         //Arrange
-        UsuarioVO user = createAndSaveNewUser(UsuarioVOMother.manuel());
-        UsuarioVO juan = Registro_De_Usuario(UsuarioVOMother.juan());
+        UsuarioVO manuel = createAndSaveNewUserwithnombre("Manuel");
+        UsuarioVO miguel = createAndSaveNewUserwithnombre("Miguel");
 
-        user.addAmigo(juan);
+        manuel.añadirAmigo(miguel);
 
-        em.persist(user);
+        em.persist(manuel);
 
         em.flush();
         em.clear();
 
         //Assert
-        UsuarioVO userBd = em.find(UsuarioVO.class,user.getId());
-        UsuarioVO juanBd = em.find(UsuarioVO.class,juan.getId());
+        UsuarioVO userBd = em.find(UsuarioVO.class,manuel.getId());
+        UsuarioVO juanBd = em.find(UsuarioVO.class,miguel.getId());
 
-        Assert.assertEquals("Personas iguales ok", user, userBd);
-        Assert.assertEquals("Manuel tiene amigo Juan", juan, userBd.getFriends().get(0));
-        Assert.assertEquals("Juan es amimgo de Manuel", juanBd.getFriendOf().get(0) , user);
+        Assert.assertEquals("Personas iguales ok", manuel, userBd);
+        Assert.assertEquals("Manuel tiene amigo Miguel", miguel, userBd.getAmigos().get(0));
+        Assert.assertEquals("Miguel es amigo de Manuel", juanBd.getAmigosde().get(0) , manuel);
 
     }
 
@@ -110,26 +118,26 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
     //@Commit
     public void ShouldPersona_RemoveAmigoTest() {
         //Arrange
-        UsuarioVO user = createAndSaveNewPersona(UsuarioVOMother.manuel());
-        UsuarioVO juan = createAndSaveNewPersona(UsuarioVOMother.juan());
+        UsuarioVO manuel = createAndSaveNewUserwithnombre("Manuel");
+        UsuarioVO miguel = createAndSaveNewUserwithnombre("Miguel");
 
-        user.addAmigo(juan);
-        em.persist(user);
+        manuel.añadirAmigo(miguel);
+        em.persist(manuel);
 
         //Act
-        user.removeAmigo(juan);
-        em.persist(user);
+        manuel.eliminarAmigo(miguel);
+        em.persist(manuel);
 
         em.flush();
         em.clear();
 
 
         //Assert
-        PersonaVO userBd = em.find(PersonaVO.class,user.getId());
-        PersonaVO juanBd = em.find(PersonaVO.class,juan.getId());
+        UsuarioVO userBd = em.find(UsuarioVO.class,manuel.getId());
+        UsuarioVO juanBd = em.find(UsuarioVO.class,miguel.getId());
 
-        Assert.assertFalse("Manuel no tiene amigo a Juan", userBd.getFriends().contains(juan));
-        Assert.assertFalse("Juan NO es amimgo de Manuel", juanBd.getFriendOf().contains(user));
+        Assert.assertFalse("Manuel no tiene amigo a Miguel", userBd.getAmigos().contains(miguel));
+        Assert.assertFalse("Miguel NO es amigo de Manuel", juanBd.getAmigosde().contains(manuel));
 
     }
 }

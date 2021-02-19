@@ -33,9 +33,9 @@ public class Conversor {
         usuarioDTO.setTelefono(usuarioVO.getTelefono());
         usuarioDTO.setFecha_nacimiento(usuarioVO.getFecha_nacimiento().toLocalDate());
 
-        for (int i = 0; i < usuarioVO.getAmigos().size(); i++) {
-            usuarioDTO.getAmigos().add(new SimpleIntegerProperty(usuarioVO.getAmigos().get(i)));
-        }
+//        for (int i = 0; i < usuarioVO.getAmigos().size(); i++) {
+//            usuarioDTO.getAmigos().add(new SimpleIntegerProperty(usuarioVO.getAmigos().get(i)));
+//        }
 
         return usuarioDTO;
     }
@@ -55,9 +55,9 @@ public class Conversor {
         usuarioDTO.setTelefono(usuarioDTO.getTelefono());
         usuarioDTO.setFecha_nacimiento(usuarioDTO.getFecha_nacimiento());
 
-        for (int i = 0; i < usuarioDTO.getAmigos().size(); i++) {
-            usuarioVO.getAmigos().add(usuarioDTO.getAmigos().get(i).getValue());
-        }
+//        for (int i = 0; i < usuarioDTO.getAmigos().size(); i++) {
+//            usuarioVO.getAmigos().add(usuarioDTO.getAmigos().get(i).getValue());
+//        }
 
 
         return usuarioVO;

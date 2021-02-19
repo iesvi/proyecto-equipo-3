@@ -21,7 +21,8 @@ public class UsuarioVO {
     private Date fecha_nacimiento;
     private int telefono;
     private String rol;
-    private ArrayList<Integer> amigos;
+    private ArrayList<UsuarioVO> amigos;
+    private ArrayList<UsuarioVO> amigosde;
     private ArrayList<EventoVO> evento;
 
 
@@ -29,7 +30,7 @@ public class UsuarioVO {
     public UsuarioVO() {
     }
 
-    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<Integer> amigos, ArrayList<EventoVO> evento) {
+    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos,ArrayList<UsuarioVO> amigosde , ArrayList<EventoVO> evento) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
@@ -38,6 +39,7 @@ public class UsuarioVO {
         this.telefono = telefono;
         this.rol = rol;
         this.amigos = amigos;
+        this.amigosde = amigosde;
         this.evento = evento;
     }
 
@@ -97,12 +99,20 @@ public class UsuarioVO {
         this.rol = rol;
     }
 
-    public ArrayList<Integer> getAmigos() {
+    public ArrayList<UsuarioVO> getAmigos() {
         return amigos;
     }
 
-    public void setAmigos(ArrayList<Integer> amigos) {
+    public void setAmigos(ArrayList<UsuarioVO> amigos) {
         this.amigos = amigos;
+    }
+
+    public ArrayList<UsuarioVO> getAmigosDe() {
+        return amigosde;
+    }
+
+    public void setAmigosDe(ArrayList<UsuarioVO> amigosde) {
+        this.amigosde = amigosde;
     }
 
     public ArrayList<EventoVO> getEvento() {

@@ -80,6 +80,10 @@ public class UsuarioVO implements Serializable  {
     @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="amigoId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
     private List<UsuarioVO> amigosde = new ArrayList<>();
 
+    /*@OneToMany
+    @JoinTable(name="Evento")
+    private List<UsuarioVO> eventos = new ArrayList<>();*/
+
     public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;
         this.password = password;
@@ -105,8 +109,24 @@ public class UsuarioVO implements Serializable  {
             return;
 
         amigos.remove(amigo); //Usuario elimina a su amigo
-
     }
+
+    /*public void añadirEvento(EventoVO evento) {
+        if (eventos==null)
+            eventos = new ArrayList<>();
+
+        eventos.addEvento(evento); //Usuario añade a su evento
+    }
+
+    public void eliminarEvento(EventoVO evento) {
+        if (eventos==null)
+            throw new EventErr("PER.REM.EVENT.NULL","REMOVE EVENT PARAM IS NULL");
+
+        if (!eventos.contains(evento))
+            return;
+
+        eventos.remove(evento); //Usuario elimina a su evento
+    }*/
 
     @Override
     public boolean equals(Object o) {

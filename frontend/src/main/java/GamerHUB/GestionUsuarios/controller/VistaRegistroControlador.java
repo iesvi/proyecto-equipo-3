@@ -112,9 +112,7 @@ public class VistaRegistroControlador {
                     campoPass.getText(),
                     campoEmail.getText(),
                     fechaNac.getValue(),
-                    0,
-                    new ArrayList<>(),
-                    new ArrayList<>()
+                    0
             );
 
 

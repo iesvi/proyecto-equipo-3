@@ -7,7 +7,7 @@ import javafx.beans.property.StringProperty;
 import java.time.LocalDate;
 
 /**
- *
+ *Tipo DTO de la entidad Evento. Es el tipo de dato que maneja la aplicación desde el front.
  */
 public class EventoDTO {
 

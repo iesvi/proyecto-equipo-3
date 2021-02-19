@@ -21,34 +21,32 @@ public class UsuarioDTO {
         private ObjectProperty<LocalDate> fecha_nacimiento;
         private IntegerProperty telefono;
         private StringProperty rol;
-        private ObservableList<IntegerProperty> amigos;
-        private ObservableList<EventoDTO> eventos;
+        private ObservableList<UsuarioDTO> amigos = FXCollections.observableArrayList();
+        private ObservableList<UsuarioDTO> amigosde = FXCollections.observableArrayList();
+        private ObservableList<EventoDTO> eventos = FXCollections.observableArrayList();
 
         public UsuarioDTO() {
         }
 
-        public UsuarioDTO( StringProperty nombre, StringProperty password, StringProperty email, ObjectProperty<LocalDate> fecha_nacimiento, IntegerProperty telefono, StringProperty rol, ObservableList<IntegerProperty> amigos, ObservableList<EventoDTO> eventos ) {
-                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));                this.nombre = nombre;
+        public UsuarioDTO( StringProperty nombre, StringProperty password, StringProperty email, ObjectProperty<LocalDate> fecha_nacimiento, IntegerProperty telefono, StringProperty rol) {
+                this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
+                this.nombre = nombre;
                 this.password = password;
                 this.email = email;
                 this.fecha_nacimiento = fecha_nacimiento;
                 this.telefono = telefono;
                 this.rol = rol;
-                this.amigos = amigos;
-                this.eventos = eventos;
         }
 
 
 
-        public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
+        public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono) {
                 this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
                 this.nombre =new SimpleStringProperty(nombre);
                 this.password = new SimpleStringProperty(password);
                 this.email =new SimpleStringProperty(email) ;
                 this.fecha_nacimiento =new SimpleObjectProperty<LocalDate>(fecha_nacimiento) ;
                 this.telefono =new SimpleIntegerProperty(telefono);
-                this.amigos = FXCollections.observableArrayList(amigos);
-                this.eventos = FXCollections.observableArrayList(eventos);
         }
 
         public int getId() {
@@ -135,12 +133,20 @@ public class UsuarioDTO {
                 this.rol.set(rol);
         }
 
-        public ObservableList<IntegerProperty> getAmigos() {
+        public ObservableList<UsuarioDTO> getAmigos() {
                 return amigos;
         }
 
-        public void setAmigos(ObservableList<IntegerProperty> amigos) {
+        public void setAmigos(ObservableList<UsuarioDTO> amigos) {
                 this.amigos = amigos;
+        }
+
+        public ObservableList<UsuarioDTO> getAmigosDe() {
+                return amigosde;
+        }
+
+        public void setAmigosDe(ObservableList<UsuarioDTO> amigosde) {
+                this.amigosde = amigosde;
         }
 
         public ObservableList<EventoDTO> getEventos() {

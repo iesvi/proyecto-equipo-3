@@ -4,13 +4,17 @@ import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 
 /**
- *
+ *Controlador de la vista de los eventos que crea el usuario.
  */
 public class EventoController {
 
+    private Stage dialogStage;
 
     /**
      * Variable de acceso al controlador principal.
@@ -58,6 +62,18 @@ public class EventoController {
     }
 
 
+    @FXML
+    public void volver() throws IOException {
+        mainApp.loadHomeView2(dialogStage);
+    }
+
+    public void setdialogStage(Stage dialog){
+        this.dialogStage=dialog;
+    }
+
+    public void setmainApp(MainApp main){
+        this.mainApp = main;
+    }
 
 
 

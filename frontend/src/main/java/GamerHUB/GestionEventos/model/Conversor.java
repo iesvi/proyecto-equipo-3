@@ -7,7 +7,8 @@ import javafx.beans.property.SimpleIntegerProperty;
 import java.sql.Date;
 
 /**
- *
+ * Clase conversor de la entidad Evento. Convierte tipos VO a DTO y viceversa
+ * según los datos que maneja la aplicación (DTO) y los que se persisten en la BBDD (VO).
  */
 public class Conversor {
 
@@ -16,7 +17,7 @@ public class Conversor {
     }
 
     /**
-     *
+     *Convierte un objeto tipo EventoDTO a EventoVO
      * @param eventoVO
      * @return
      */
@@ -33,7 +34,7 @@ public class Conversor {
     }
 
     /**
-     *
+     * Convierte un objeto tipo EventoVO a EventoDTO
      * @param eventoDTO
      * @return
      */

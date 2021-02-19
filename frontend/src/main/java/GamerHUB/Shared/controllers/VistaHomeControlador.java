@@ -23,7 +23,7 @@ import java.time.LocalTime;
 import java.util.Calendar;
 
 /**
- *
+ *Controlador de la
  */
 public class VistaHomeControlador {
 
@@ -91,6 +91,9 @@ public class VistaHomeControlador {
 
     }
 
+    /**
+     * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.
+     */
     public void iniciar_Reloj(){
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
@@ -149,7 +152,7 @@ public class VistaHomeControlador {
 
 
     /**
-     *
+     *Método para salir de la aplicación (Log-out)
      * @throws IOException
      */
     @FXML
@@ -160,7 +163,7 @@ public class VistaHomeControlador {
     }
 
     /**
-     *
+     *Método que carga la vista del perfil del usuario.
      * @param mouseEvent
      * @throws IOException
      */
@@ -170,10 +173,10 @@ public class VistaHomeControlador {
     }
 
     /**
-     *
+     *Método para cargar la vista del formulario y tablas de los eventos.
      * @throws IOException
      */
     public void LoadEventoView() throws IOException {
-        getMainApp().loadEventoView();
+        getMainApp().loadEventoView(dialogStage);
     }
 }

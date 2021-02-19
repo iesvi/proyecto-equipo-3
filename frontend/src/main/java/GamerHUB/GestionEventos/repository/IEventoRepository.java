@@ -5,6 +5,10 @@ import GamerHUB.GestionEventos.model.vo.EventoVO;
 
 import java.util.List;
 
+/**
+ *  Interfaz en la que se definen los métodos para las operaciones CRUD con
+ *  *los eventos.
+ */
 public interface IEventoRepository{
 
     /**

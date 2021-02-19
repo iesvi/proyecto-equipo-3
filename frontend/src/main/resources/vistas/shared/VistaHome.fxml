@@ -1,140 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaHomeControlador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaHomeControlador">
    <children>
       <SplitPane dividerPositions="0.3383458646616541" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="403.0" style="-fx-background-color: #aafe79;">
-               <children>
-                  <SplitPane dividerPositions="0.5" layoutX="23.0" layoutY="178.0" orientation="VERTICAL" prefHeight="302.0" prefWidth="221.0" style="-fx-background-radius: 10;">
-                     <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="216.0" style="-fx-background-radius: 10;">
-                           <children>
-                              <TableView fx:id="amigos" layoutX="10.0" layoutY="-12.0" prefHeight="147.0" prefWidth="219.0" style="-fx-background-radius: 10; -fx-background-color: #2fdd72;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <columns>
-                                    <TableColumn prefWidth="218.0" style="-fx-background-radius: 10;" text="Amigos" />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="195.0">
-                           <children>
-                              <TableView fx:id="canales" layoutX="10.0" layoutY="-13.0" prefHeight="147.0" prefWidth="219.0" style="-fx-background-radius: 10; -fx-background-color: #2fdd72;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <columns>
-                                    <TableColumn prefWidth="218.0" text="Canales" />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                     </items>
-                  </SplitPane>
-                  <AnchorPane layoutX="28.0" layoutY="52.0" prefHeight="114.0" prefWidth="212.0" style="-fx-background-color: #2fdd72; -fx-background-radius: 10;">
-                     <children>
-                        <Label fx:id="username" layoutX="17.0" layoutY="29.0" prefHeight="26.0" prefWidth="95.0" style="-fx-background-radius: 10;" text="user" wrapText="true" />
-                        <ImageView fx:id="fotoUser" fitHeight="76.0" fitWidth="76.0" layoutX="121.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button fx:id="btnConfig" layoutX="13.0" layoutY="67.0" mnemonicParsing="false" style="-fx-background-radius: 10; -fx-background-color: #235971;" text="Configuración" textFill="WHITE" />
-                     </children>
-                  </AnchorPane>
-                  <Button fx:id="btnNuevoCanal" layoutX="117.0" layoutY="480.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="24.0" style="-fx-background-radius: 30; -fx-background-color: #ffed00;" text="+">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Button>
-                  <MenuBar layoutX="-11.0" prefHeight="29.0" prefWidth="267.0" scaleShape="false" style="-fx-background-color: #2fdd72;" AnchorPane.bottomAnchor="494.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="Archivo">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Close" />
-                        </items>
-                      </Menu>
-                      <Menu mnemonicParsing="false" text="Opciones">
-                        <items>
-                          <MenuItem mnemonicParsing="false" text="Salir" />
-                        </items>
-                      </Menu>
-                    </menus>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </MenuBar>
-               </children>
-            </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="525.0" style="-fx-background-color: #aafe79;">
-               <children>
-                  <ImageView fx:id="fotoBusqueda" fitHeight="34.0" fitWidth="34.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextField fx:id="searchBar" layoutX="72.0" layoutY="13.0" prefHeight="37.0" prefWidth="250.0" promptText="Busca amigos, canales..." style="-fx-background-radius: 5;" />
-                  <BorderPane layoutX="13.0" layoutY="60.0" prefHeight="408.0" prefWidth="359.0" style="-fx-background-radius: 15;">
-                     <center>
-                        <SplitPane dividerPositions="0.8838526912181303" orientation="VERTICAL" prefHeight="161.0" prefWidth="242.0" BorderPane.alignment="CENTER">
-                           <items>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                 <children>
-                                    <TextArea disable="true" editable="false" layoutX="59.0" layoutY="26.0" prefHeight="309.0" prefWidth="357.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                 <children>
-                                    <TextField fx:id="msgBar" layoutX="14.0" layoutY="19.0" prefHeight="63.0" prefWidth="357.0" promptText="Escribe algo..." style="-fx-background-color: #e1ffcf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                 </children>
-                              </AnchorPane>
-                           </items>
-                        </SplitPane>
-                     </center>
-                     <top>
-                        <SplitPane dividerPositions="0.7927170868347339" prefHeight="53.0" prefWidth="242.0" BorderPane.alignment="CENTER">
-                           <items>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="10.0" text="Chat">
-                                       <font>
-                                          <Font name="Arial Black" size="22.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="165.0">
-                                 <children>
-                                    <ImageView fitHeight="48.0" fitWidth="52.0" layoutX="10.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
-                                 </children>
-                              </AnchorPane>
-                           </items>
-                        </SplitPane>
-                     </top>
-                  </BorderPane>
-                  <TableView fx:id="eventos" layoutX="378.0" layoutY="60.0" prefHeight="194.0" prefWidth="130.0" style="-fx-background-color: #2fdd72;">
-                     <columns>
-                        <TableColumn prefWidth="129.0" text="EVENTOS" />
-                     </columns>
-                  </TableView>
-                  <Button fx:id="btnNuevoEvento" layoutX="478.0" layoutY="264.0" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-background-color: #ffed00;" text="+" />
-                  <ToggleButton layoutX="389.0" layoutY="340.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="109.0" style="-fx-background-radius: 30; -fx-background-color: #30afb5;" text="Subir archivo">
-                     <font>
-                        <Font name="Arial Black" size="12.0" />
-                     </font>
-                  </ToggleButton>
-                  <Button fx:id="btnAyuda" layoutX="347.0" layoutY="13.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" style="-fx-background-radius: 5; -fx-background-color: #235971;" text="Ayuda" textFill="#59d3ff">
-                     <font>
-                        <Font name="Arial Black" size="17.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="380.0" layoutY="268.0" text="Añadir evento">
-                     <font>
-                        <Font name="Arial Black" size="12.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="394.0" layoutY="443.0" mnemonicParsing="false" style="-fx-background-radius: 5; -fx-background-color: #30afb5;" text="Ver archivos">
-                     <font>
-                        <Font name="Arial Black" size="12.0" />
-                     </font>
-                  </Button>
-               </children>
-            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="523.0" prefWidth="259.0" style="-fx-background-color: #aafe79;" />
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="525.0" style="-fx-background-color: #aafe79;" />
          </items>
       </SplitPane>
    </children>

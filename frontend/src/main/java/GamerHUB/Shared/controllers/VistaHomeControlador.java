@@ -3,17 +3,17 @@ package GamerHUB.Shared.controllers;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
 
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 /**
  *
@@ -21,9 +21,7 @@ import java.io.IOException;
 public class VistaHomeControlador {
 
     private MainApp mainApp;
-    private UsuarioDTO usuarioDTO;
     private Stage dialogStage;
-
     private UsuarioDTO userLogeado;
 
     @FXML
@@ -38,11 +36,12 @@ public class VistaHomeControlador {
     private TextField searchBar, msgBar;
 
     @FXML
-    public Button btnConfig, btnAyuda, btnSubirArchivo, btnVerArchivos, btnNuevoCanal, btnNuevoEvento;
+    public Button btnConfig, btnAyuda, btnSubirArchivo, btnVerArchivos, btnNuevoCanal, btnNuevoEvento, btnConfigEventos;
 
-    public VistaHomeControlador() {
+    @FXML
+    public MenuItem btnSalir;
 
-    }
+
 
     public Stage getDialogStage() {
         return dialogStage;
@@ -52,20 +51,12 @@ public class VistaHomeControlador {
         this.dialogStage = dialogStage;
     }
 
+
+    public UsuarioDTO getUsuarioLogeado() {
+        return userLogeado;
+    }
     public void setUsuario() {
-        userLogeado = mainApp.getUsuarioLogeado();
-    }
-
-    public VistaHomeControlador(UsuarioDTO usuarioDTO) {
-        this.usuarioDTO = usuarioDTO;
-    }
-
-    public UsuarioDTO getUsuarioDTO() {
-        return usuarioDTO;
-    }
-
-    public void setUsuarioDTO(UsuarioDTO usuarioDTO) {
-        this.usuarioDTO = usuarioDTO;
+        this.userLogeado = mainApp.getUsuarioLogeado();
     }
 
     public MainApp getMainApp() {
@@ -76,7 +67,19 @@ public class VistaHomeControlador {
         this.mainApp = mainApp;
     }
 
+    public VistaHomeControlador() {
+      //
+
+    }
     ////
+    @FXML
+    public void initialize(){
+       // userName.setText(this.getUsuarioLogeado().getNombre().toString());
+        URL url = getClass().getResource("/images/search.png");
+        File file = new File(url.getPath());
+        Image image = new Image(file.toURI().toString());
+        //fotoBusqueda.setImage(image);
+    }
 
     public void llenarTablaAmigos(){
 
@@ -91,6 +94,12 @@ public class VistaHomeControlador {
     }
 
 
+    @FXML
+    public void Logout() throws IOException {
+        mainApp.Init();
+        mainApp.LaunchInicio();
+        dialogStage.close();
+    }
 
     /**
      *
@@ -100,5 +109,9 @@ public class VistaHomeControlador {
     @FXML
     public void LaunchPerfil(MouseEvent mouseEvent) throws IOException {
         mainApp.LaunchVistaPerfil(userLogeado);
+    }
+
+    public void LoadEventoView() throws IOException {
+        getMainApp().loadEventoView();
     }
 }

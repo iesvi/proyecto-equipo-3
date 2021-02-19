@@ -122,6 +122,7 @@ public class VistaRegistroControlador {
 
 
 
+            mainApp.getUsuarios().add(usuarioDTO);
             usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
             info("Usuario registrado correctamente."
                     , "Bienvenido a Gamerhub, disfruta de cheetos, doritos y mucho hentai.\n"+

@@ -15,6 +15,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -40,6 +41,7 @@ public class MainApp extends Application {
 
     private BorderPane rootLayout;
     private AnchorPane inicio, home, signup, perfil, evento;
+    private SplitPane pane;
 
     /**
      * Lista con los datos de usuarios de tipo DTO, que usará la aplicación para
@@ -107,6 +109,14 @@ public class MainApp extends Application {
 
     public void setUsuarioLogeado(UsuarioDTO usuarioLogeado) {
         this.usuarioLogeado = usuarioLogeado;
+    }
+
+    public SplitPane getPane() {
+        return pane;
+    }
+
+    public void setPane(SplitPane pane) {
+        this.pane = pane;
     }
 
     @Override
@@ -182,17 +192,62 @@ public class MainApp extends Application {
         Scene scene = new Scene(home, 800, 525);
         Stage dialogStage = new Stage();
         dialogStage.setScene(scene);
+         pane = (SplitPane) home.getChildren().get(0);
+
+        /**
+         *
+         */
+        loadHomeView1();
+
+        /**
+         *
+         */
+        loadHomeView2();
+
+        pane.setDividerPositions(0.32);
+
+
         VistaHomeControlador controladorHome = loader.getController();
         controladorHome.setDialogStage(dialogStage);
-        controladorHome.setUsuarioDTO(usuarioLogeado);
         controladorHome.setMainApp(this);
         controladorHome.setUsuario();
-        dialogStage.setTitle("Bienvenido "+usuarioLogeado.getNombre()+"!");
-
-
+        dialogStage.setTitle("Bienvenido " + usuarioLogeado.getNombre() + "!");
 
         dialogStage.show();
 
+    }
+
+    /**
+     *
+     * @throws IOException
+     */
+    public void loadHomeView1() throws IOException {
+        FXMLLoader loader1 = new FXMLLoader();
+        loader1.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome1.fxml"));
+        AnchorPane anchorPane = loader1.load();
+        pane.getItems().set(0, anchorPane);
+    }
+
+    /**
+     *
+     * @throws IOException
+     */
+    public void loadHomeView2() throws IOException {
+        FXMLLoader loader2 = new FXMLLoader();
+        loader2.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome2.fxml"));
+        AnchorPane anchorPane1 = loader2.load();
+        pane.getItems().set(1, anchorPane1);
+    }
+
+    /**
+     *
+     * @throws IOException
+     */
+    public void loadEventoView() throws IOException {
+        FXMLLoader loader2 = new FXMLLoader();
+        loader2.setLocation(MainApp.class.getResource("/vistas/gestioneventos/VistaGestionEventos.fxml"));
+        AnchorPane anchorPane1 = loader2.load();
+        pane.getItems().set(1, anchorPane1);
     }
 
     /**
@@ -214,13 +269,12 @@ public class MainApp extends Application {
         controladorRegistro.setDialogStage(dialogStage);
         controladorRegistro.setMainApp(this);
 
-       dialogStage.show();
+        dialogStage.show();
 
 
     }
 
     /**
-     *
      * @param usuarioDTO
      * @throws IOException
      */
@@ -244,13 +298,5 @@ public class MainApp extends Application {
         dialogStage.show();
     }
 
-    public void LaunchVistaEvento(){
-
-
-
-
-
-
-    }
 
 }

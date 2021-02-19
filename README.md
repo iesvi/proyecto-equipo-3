@@ -32,6 +32,7 @@
 > **[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Gestión de peticiones/incidencias.](#PETICIONES)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 5: Modelo de objetos del negocio.](#8)**<br>
 > **[&nbsp;&nbsp;&nbsp; Actividad 6: Interfaz gráfica.](#9)**<br>
+> **[&nbsp;&nbsp;&nbsp; MANUAL TÉCNICO.](#10)**<br>
 <br>
 
 <a name="1"></a>
@@ -1976,3 +1977,11 @@ Ninguna.
 <p><img src="./resources/vista-evento-dialog.png"/></p>
 #### Vista ayuda
 <p><img src="./resources/vista-ayuda-dialog.png"/></p>
+
+<br>
+<a name="10"></a>
+
+## MANUAL TECNICO.
+<br>
+La versión usada de SDK es Java8 y usamos tambien IntelliJ. No es necesario nada mas para lanzar nuestra aplicación ya que todas las dependencias necesarias las descargará Maven automaticamente.
+</p>

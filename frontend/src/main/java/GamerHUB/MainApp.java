@@ -39,8 +39,20 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private Scene scene;
 
+    /**
+     *
+     */
     private BorderPane rootLayout;
-    private AnchorPane inicio, home, signup, perfil, evento;
+    /**
+     *
+     */
+    private AnchorPane inicio;
+    private AnchorPane home;
+    private AnchorPane perfil;
+    private AnchorPane evento;
+    /**
+     *
+     */
     private SplitPane pane;
 
     /**
@@ -72,7 +84,6 @@ public class MainApp extends Application {
                 "email",
                 localDate,
                 0,
-                "admin",
                 new ArrayList<>(),
                 new ArrayList<>()
 
@@ -119,6 +130,11 @@ public class MainApp extends Application {
         this.pane = pane;
     }
 
+    /**
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -172,6 +188,7 @@ public class MainApp extends Application {
 
         rootLayout.setCenter(inicio);
 
+        //inicio.setBackground();
         VistaInicioControlador controladorInicio = loader.getController();
         controladorInicio.setdialogStage(primaryStage);
         controladorInicio.setMain(this);
@@ -266,7 +283,7 @@ public class MainApp extends Application {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/vistas/gestionusuario/VistaRegistro.fxml"));
-        signup = (AnchorPane) loader.load();
+        AnchorPane signup = (AnchorPane) loader.load();
 
         Scene scene = new Scene(signup, 400, 500);
         Stage dialogStage = new Stage();

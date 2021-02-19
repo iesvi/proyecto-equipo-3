@@ -26,18 +26,50 @@ public class VistaHomeControlador {
 
     @FXML
     private TableView amigos, canales, eventos;
+
+    /**
+     *
+     */
+    @FXML
+    private TableColumn<UsuarioDTO, String> colAmigo;
+    /**
+     *
+     */
+    @FXML
+    private TableColumn<UsuarioDTO, String> colCanal;
+    /**
+     *
+     */
+    @FXML
+    private TableColumn<UsuarioDTO, String> colEvento;
+
+    /**
+     *
+     */
     @FXML
     private Label userName;
 
+    /**
+     *
+     */
     @FXML
     private ImageView fotoUser, fotoBusqueda;
 
+    /**
+     *
+     */
     @FXML
     private TextField searchBar, msgBar;
 
+    /**
+     *
+     */
     @FXML
     public Button btnConfig, btnAyuda, btnSubirArchivo, btnVerArchivos, btnNuevoCanal, btnNuevoEvento, btnConfigEventos;
 
+    /**
+     *
+     */
     @FXML
     public MenuItem btnSalir;
 
@@ -68,15 +100,8 @@ public class VistaHomeControlador {
     }
 
     public VistaHomeControlador() {
-      //
-
     }
-    ////
-    @FXML
-    public void initialize(){
-       // userName.setText(this.getUsuarioLogeado().getNombre().toString());
 
-    }
     public void setImagenLupa(){
         URL url = getClass().getResource("/images/search.png");
         File file = new File(url.getPath());
@@ -96,6 +121,10 @@ public class VistaHomeControlador {
     }
 
 
+    /**
+     *
+     * @throws IOException
+     */
     @FXML
     public void Logout() throws IOException {
         mainApp.Init();
@@ -113,6 +142,10 @@ public class VistaHomeControlador {
         mainApp.LaunchVistaPerfil(userLogeado);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     public void LoadEventoView() throws IOException {
         getMainApp().loadEventoView();
     }

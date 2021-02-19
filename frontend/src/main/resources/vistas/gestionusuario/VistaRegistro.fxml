@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="523.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.GestionUsuarios.controller.VistaRegistroControlador">
+<AnchorPane prefHeight="476.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.GestionUsuarios.controller.VistaRegistroControlador">
    <children>
-      <AnchorPane layoutX="60.0" layoutY="25.0" prefHeight="474.0" prefWidth="281.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
+      <AnchorPane layoutX="60.0" layoutY="25.0" prefHeight="424.0" prefWidth="281.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
          <children>
             <TextField fx:id="campoUsuario" layoutX="45.0" layoutY="79.0" prefHeight="35.0" prefWidth="189.0" promptText="Usuario" style="-fx-background-radius: 5;" />
             <TextField fx:id="campoEmail" layoutX="44.0" layoutY="133.0" prefHeight="35.0" prefWidth="189.0" promptText="E-mail" style="-fx-background-radius: 5;" />
@@ -19,14 +19,13 @@
                   <Font name="Arial Black" size="24.0" />
                </font>
             </Label>
-            <Button fx:id="botonOk" layoutX="62.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="25.0" prefWidth="158.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Continuar">
+            <Button fx:id="botonOk" layoutX="63.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="25.0" prefWidth="158.0" style="-fx-background-radius: 15; -fx-background-color: #2fdd72;" text="Continuar">
                <font>
                   <Font name="Open Sans Semibold" size="18.0" />
                </font>
             </Button>
             <DatePicker fx:id="fechaNac" layoutX="44.0" layoutY="233.0" prefHeight="35.0" prefWidth="189.0" promptText="Fecha de nacimiento" />
-            <CheckBox fx:id="checkBoxPoliticas" layoutX="45.0" layoutY="335.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="211.0" text="He leído y acepto las Condiciones del Servicio y la Política de Privacidad de Gamer Hub" wrapText="true" />
-            <ComboBox fx:id="campoRol" layoutX="48.0" layoutY="288.0" prefHeight="25.0" prefWidth="181.0" promptText="Elige rol" />
+            <CheckBox fx:id="checkBoxPoliticas" layoutX="45.0" layoutY="291.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="211.0" text="He leído y acepto las Condiciones del Servicio y la Política de Privacidad de Gamer Hub" wrapText="true" />
          </children>
       </AnchorPane>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleVolver" prefHeight="37.0" prefWidth="39.0" style="-fx-background-radius: 20; -fx-background-color: #2fdd72;" />

@@ -38,14 +38,15 @@ public class UsuarioDTO {
                 this.eventos = eventos;
         }
 
-        public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
+
+
+        public UsuarioDTO(String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, ArrayList<IntegerProperty> amigos, ArrayList<EventoDTO> eventos) {
                 this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
                 this.nombre =new SimpleStringProperty(nombre);
                 this.password = new SimpleStringProperty(password);
                 this.email =new SimpleStringProperty(email) ;
                 this.fecha_nacimiento =new SimpleObjectProperty<LocalDate>(fecha_nacimiento) ;
                 this.telefono =new SimpleIntegerProperty(telefono);
-                this.rol =new SimpleStringProperty(rol) ;
                 this.amigos = FXCollections.observableArrayList(amigos);
                 this.eventos = FXCollections.observableArrayList(eventos);
         }

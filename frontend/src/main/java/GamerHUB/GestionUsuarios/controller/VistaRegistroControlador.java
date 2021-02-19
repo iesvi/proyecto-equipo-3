@@ -27,8 +27,7 @@ public class VistaRegistroControlador {
     private TextField campoEmail;
     @FXML
     private TextField campoPass;
-    @FXML
-    private ComboBox<String> campoRol = new ComboBox<String>();;
+
     @FXML
     private DatePicker fechaNac;
     @FXML
@@ -59,7 +58,7 @@ public class VistaRegistroControlador {
     public VistaRegistroControlador() {
         //Inicializamos un valor por defecto para la fecha de nacimiento o cumpleaños
         //fechaNac = LocalDate.now();
-        campoRol.setItems(FXCollections.observableArrayList(roles));
+
 
         if (checkBoxPoliticas.isSelected())
             botonOk.setDisable(false);
@@ -114,10 +113,8 @@ public class VistaRegistroControlador {
                     campoEmail.getText(),
                     fechaNac.getValue(),
                     0,
-                    campoRol.getValue(),
                     new ArrayList<>(),
                     new ArrayList<>()
-
             );
 
 

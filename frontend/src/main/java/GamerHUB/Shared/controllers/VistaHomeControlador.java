@@ -75,12 +75,14 @@ public class VistaHomeControlador {
     @FXML
     public void initialize(){
        // userName.setText(this.getUsuarioLogeado().getNombre().toString());
+
+    }
+    public void setImagenLupa(){
         URL url = getClass().getResource("/images/search.png");
         File file = new File(url.getPath());
         Image image = new Image(file.toURI().toString());
-        //fotoBusqueda.setImage(image);
+        fotoBusqueda.setImage(image);
     }
-
     public void llenarTablaAmigos(){
 
     }

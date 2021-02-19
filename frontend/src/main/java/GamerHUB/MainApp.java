@@ -197,12 +197,12 @@ public class MainApp extends Application {
         /**
          *
          */
-        loadHomeView1();
+        loadHomeView1(dialogStage);
 
         /**
          *
          */
-        loadHomeView2();
+        loadHomeView2(dialogStage);
 
         pane.setDividerPositions(0.32);
 
@@ -221,22 +221,31 @@ public class MainApp extends Application {
      *
      * @throws IOException
      */
-    public void loadHomeView1() throws IOException {
+    public void loadHomeView1(Stage dialog) throws IOException {
         FXMLLoader loader1 = new FXMLLoader();
         loader1.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome1.fxml"));
         AnchorPane anchorPane = loader1.load();
         pane.getItems().set(0, anchorPane);
+        VistaHomeControlador controladorHome = loader1.getController();
+        controladorHome.setDialogStage(dialog);
+        controladorHome.setMainApp(this);
+        controladorHome.setUsuario();
     }
 
     /**
      *
      * @throws IOException
      */
-    public void loadHomeView2() throws IOException {
+    public void loadHomeView2(Stage dialog) throws IOException {
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(MainApp.class.getResource("/vistas/shared/VistaHome2.fxml"));
         AnchorPane anchorPane1 = loader2.load();
         pane.getItems().set(1, anchorPane1);
+        VistaHomeControlador controladorHome = loader2.getController();
+        controladorHome.setDialogStage(dialog);
+        controladorHome.setMainApp(this);
+        controladorHome.setUsuario();
+        controladorHome.setImagenLupa();
     }
 
     /**

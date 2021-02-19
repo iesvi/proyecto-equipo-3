@@ -1982,6 +1982,5 @@ Ninguna.
 <a name="10"></a>
 
 ## MANUAL TECNICO.
-<br>
 La versión usada de SDK es Java8 y usamos tambien IntelliJ. No es necesario nada mas para lanzar nuestra aplicación ya que todas las dependencias necesarias las descargará Maven automaticamente.
 </p>

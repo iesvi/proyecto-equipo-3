@@ -18,7 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @With
-@EqualsAndHashCode (exclude = {"friends","friendOf"})
+//@EqualsAndHashCode (exclude = {"friends","friendOf"})
 @Entity(name="Usuario")
 public class UsuarioVO implements Serializable  {
 
@@ -51,6 +51,7 @@ public class UsuarioVO implements Serializable  {
      * fecha_nacimiento tipo Date
      */
     @Column
+    @Temporal(value = TemporalType.DATE)
     private Date fecha_nacimiento;
 
     /**
@@ -93,7 +94,7 @@ public class UsuarioVO implements Serializable  {
             amigos = new ArrayList<>();
 
         amigos.add(amigo); //Usuario agrega a su amigo
-        amigo.añadirAmigode(this); //Amigo agrega al usuario como amigo tambien
+
     }
 
     public void eliminarAmigo(UsuarioVO amigo) {
@@ -104,26 +105,36 @@ public class UsuarioVO implements Serializable  {
             return;
 
         amigos.remove(amigo); //Usuario elimina a su amigo
-        amigo.eliminarAmigode(this); //Amigo elimina al usuario como amigo tambien
-    }
-
-    public void añadirAmigode(UsuarioVO amigo) {
-        if (amigosde==null)
-            amigosde = new ArrayList<>();
-
-        amigosde.add(amigo);
 
     }
 
-    public void eliminarAmigode(UsuarioVO amigo) {
-        if (amigosde==null)
-            throw new PersonaErr("PER.REM.FRIEND.NULL","REMOVE FRIEND PARAM IS NULL");
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        if (!amigosde.contains(amigo))
-            return;
+        UsuarioVO usuarioVO = (UsuarioVO) o;
 
-        amigosde.remove(amigo); //Usuario elimina a su amigo
-        //amigo.addAmigoDe(this); //Amigo elimina al usuario como amigo tambien
+        if (id != usuarioVO.id) return false;
+        if (telefono != usuarioVO.telefono) return false;
+        if (!nombre.equals(usuarioVO.nombre)) return false;
+        if (!password.equals(usuarioVO.password)) return false;
+        if (!email.equals(usuarioVO.email)) return false;
+        //Fecha de momento comentada hasta solucion definitiva
+        if (fecha_nacimiento != null ? !fecha_nacimiento.equals(usuarioVO.fecha_nacimiento) : usuarioVO.fecha_nacimiento != null)
+            return false;
+        return rol.equals(usuarioVO.rol);
     }
 
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + nombre.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + email.hashCode();
+        result = 31 * result + (fecha_nacimiento != null ? fecha_nacimiento.hashCode() : 0);
+        result = 31 * result + telefono;
+        result = 31 * result + rol.hashCode();
+        return result;
+    }
 }

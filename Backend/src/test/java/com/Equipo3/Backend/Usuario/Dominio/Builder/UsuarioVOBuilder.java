@@ -30,7 +30,7 @@ public class UsuarioVOBuilder {
                 nombre!=null ? nombre : mother.getNombre(),
                 password!=null ? password : mother.getPassword(),
                 email!=null ? email : mother.getEmail(),
-                fecha_nacimiento!=null ? fecha_nacimiento : mother.getFecha_nacimiento(),
+                fecha_nacimiento!=null ? fecha_nacimiento : new Date(),
                 telefono!=0 ? telefono : mother.getTelefono(),
                 rol!=null ? rol : "admin"
         );

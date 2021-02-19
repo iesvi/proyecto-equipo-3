@@ -12,5 +12,5 @@ UsuarioVO: &usuario
     nombre: ${faker.name.fullName}
     password: ${faker.internet.password}
     email: ${faker.internet.emailAddress}
-    fecha_nacimiento: ${faker.date.birthday}
+    fecha_nacimiento: ${faker.date.between('2000-01-01', '2022-01-01')}
     telefono: ${faker.phoneNumber.phoneNumber}

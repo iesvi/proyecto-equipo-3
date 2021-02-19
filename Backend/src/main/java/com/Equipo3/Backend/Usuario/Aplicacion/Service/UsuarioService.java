@@ -59,8 +59,13 @@ public class UsuarioService {
         UsuarioVO nbd = usuarioRepo.findOne(usuariodto.getId());
         if (nbd==null)
             throw new EntityNotExist(UsuarioVO.class.toString(),usuariodto.getId());
-        UsuarioVO user = new UsuarioVO(nbd.getId(), nbd.getNombre(), nbd.getPassword(), nbd.getEmail(), nbd.getFecha_nacimiento(), nbd.getTelefono(), nbd.getRol(), null, null);
-       return usuarioRepo.save(user);
+        nbd.setNombre(usuariodto.getNombre());
+        nbd.setPassword(usuariodto.getPassword());
+        nbd.setEmail(usuariodto.getEmail());
+        nbd.setFecha_nacimiento(usuariodto.getFecha_nacimiento());
+        nbd.setTelefono(usuariodto.getTelefono());
+        nbd.setRol(usuariodto.getRol());
+       return usuarioRepo.save(nbd);
     }
 
     /**

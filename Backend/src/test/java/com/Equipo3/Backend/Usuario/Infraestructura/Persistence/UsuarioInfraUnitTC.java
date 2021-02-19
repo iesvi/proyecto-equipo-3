@@ -43,7 +43,7 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
         //Arrange
         UsuarioVO user = createAndSaveNewUser();
         UsuarioVO userEdit = em.find(UsuarioVO.class, user.getId());
-        userEdit.setNombre("Manuel");
+        userEdit.setNombre("Miguel");
 
         //Act
         em.persist(userEdit);
@@ -51,8 +51,8 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
         em.clear();
 
         //Assert
-        UsuarioVO userBd = em.find(UsuarioVO.class, user.getId());
-        Assert.assertEquals(userEdit, userBd);
+         userEdit = em.find(UsuarioVO.class, user.getId());
+        Assert.assertEquals(userEdit, user);
     }
 
     @Test
@@ -72,7 +72,9 @@ public class UsuarioInfraUnitTC extends UnitTestCase {
     }
 
     private UsuarioVO createAndSaveNewUser() {
-        UsuarioVO user = new UsuarioVOBuilder().build();
+        UsuarioVO user = new UsuarioVOBuilder()
+                .withFecha_nacimiento(null)
+                .build();
         em.persist(user);
         return user;
     }

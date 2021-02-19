@@ -79,7 +79,9 @@ public class EventoService {
         if (newevent == null)
             throw new EntityNotExist(EventoVO.class.toString(),eventodto.getId());
 
-        EventoVO event = new EventoVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
-        return eventoRepo.save(event);
+        newevent.setNombre(eventodto.getNombre());
+        newevent.setDescripcion(eventodto.getDescripcion());
+        newevent.setFecha(eventodto.getFecha());
+        return eventoRepo.save(newevent);
     }
 }

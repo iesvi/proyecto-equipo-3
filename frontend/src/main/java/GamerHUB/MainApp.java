@@ -1,6 +1,8 @@
 package GamerHUB;
 
 import GamerHUB.GestionEventos.controller.EventoController;
+import GamerHUB.GestionEventos.model.dto.EventoDTO;
+import GamerHUB.GestionEventos.model.vo.EventoVO;
 import GamerHUB.GestionUsuarios.controller.VistaPerfilControlador;
 import GamerHUB.GestionUsuarios.controller.VistaRegistroControlador;
 import GamerHUB.GestionUsuarios.model.Conversor;
@@ -67,6 +69,10 @@ public class MainApp extends Application {
      */
     private ObservableList<UsuarioVO> usuarios_bd = FXCollections.observableArrayList();
 
+    private ObservableList<EventoDTO> evento_list = FXCollections.observableArrayList();
+
+    private ObservableList<EventoVO> evento_bd = FXCollections.observableArrayList();
+
 
     private Set<UsuarioVO> usuarios_bbdd = new TreeSet<UsuarioVO>();
 
@@ -107,6 +113,14 @@ public class MainApp extends Application {
 
     public ObservableList<UsuarioVO> getUsuarios_bd() {
         return usuarios_bd;
+    }
+
+    public ObservableList<EventoDTO> getEventos() {
+        return evento_list;
+    }
+
+    public ObservableList<EventoVO> getEventos_bd() {
+        return evento_bd;
     }
 
 

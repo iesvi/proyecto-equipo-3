@@ -26,7 +26,8 @@ public class Conversor {
 
         eventoDTO.setId(eventoVO.getId());
         eventoDTO.setNombre(eventoVO.getNombre());
-        eventoDTO.setFecha(eventoVO.getFecha().toLocalDate());
+        eventoDTO.setFechaini(eventoVO.getFecha_ini().toLocalDate());
+        eventoDTO.setFechaf(eventoVO.getFecha_final().toLocalDate());
         eventoDTO.setDescripcion(eventoVO.getDescripcion());
         eventoDTO.setUsuario(eventoVO.getUsuario());
 
@@ -43,7 +44,8 @@ public class Conversor {
 
         eventoVO.setId(eventoDTO.getId());
         eventoVO.setNombre(eventoDTO.getNombre());
-        eventoVO.setFecha(Date.valueOf(eventoDTO.getFecha()));
+        eventoVO.setFecha_ini(Date.valueOf(eventoDTO.getFechaini()));
+        eventoVO.setFecha_final(Date.valueOf(eventoDTO.getFechaf()));
         eventoVO.setDescripcion(eventoDTO.getDescripcion());
         eventoVO.setUsuario(eventoDTO.getUsuario());
 

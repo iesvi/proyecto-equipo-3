@@ -1,14 +1,20 @@
 package GamerHUB.Shared.controllers;
 
+import GamerHUB.GestionEventos.controller.EventoController;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -179,4 +185,23 @@ public class VistaHomeControlador {
     public void LoadEventoView() throws IOException {
         getMainApp().loadEventoView(dialogStage);
     }
+//    @FXML ¡No funciona!
+//    public void AbrirdialogAñadirEvento() throws IOException{
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(MainApp.class.getResource("/vistas/gestioneventos/VistaAddEventoDialog.fxml"));
+//        AnchorPane Aevent = (AnchorPane) loader.load();
+//
+//        Stage newevent = new Stage();
+//        newevent.setTitle("Añadir Evento");
+//        newevent.initModality(Modality.WINDOW_MODAL);
+//        newevent.initOwner(dialogStage);
+//        Scene scene = new Scene(Aevent);
+//        newevent.setScene(scene);
+//
+//        EventoController contevnt = loader.getController();
+//        contevnt.setdialogStage(dialogStage);
+//        contevnt.setmainApp(mainApp);
+//
+//        dialogStage.showAndWait();
+//    }
 }

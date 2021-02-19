@@ -10,7 +10,8 @@ public class EventoVO {
     private int id;
     private String nombre;
     private String descripcion;
-    private Date fecha;
+    private Date fecha_ini;
+    private Date fecha_final;
     private int usuario;
 
     public EventoVO() {
@@ -21,14 +22,16 @@ public class EventoVO {
      * @param id
      * @param nombre
      * @param descripcion
-     * @param fecha
+     * @param fechaini
+     * @param fechaf
      * @param usuario
      */
-    public EventoVO(int id, String nombre, String descripcion, Date fecha, int usuario) {
+    public EventoVO(int id, String nombre, String descripcion, Date fechaini, Date fechaf, int usuario) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.fecha = fecha;
+        this.fecha_ini = fechaini;
+        this.fecha_final = fechaf;
         this.usuario = usuario;
     }
 
@@ -56,12 +59,20 @@ public class EventoVO {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public Date getFecha_ini() {
+        return fecha_ini;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setFecha_ini(Date fecha_ini) {
+        this.fecha_ini = fecha_ini;
+    }
+
+    public Date getFecha_final() {
+        return fecha_final;
+    }
+
+    public void setFecha_final(Date fecha_final) {
+        this.fecha_final = fecha_final;
     }
 
     public int getUsuario() {
@@ -78,7 +89,8 @@ public class EventoVO {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", fecha=" + fecha +
+                ", fecha_ini=" + fecha_ini +
+                ", fecha_final=" + fecha_final +
                 ", usuario=" + usuario +
                 '}';
     }

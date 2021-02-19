@@ -1,20 +1,19 @@
 package GamerHUB.GestionEventos.model.dto;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 import java.time.LocalDate;
 
 /**
- *Tipo DTO de la entidad Evento. Es el tipo de dato que maneja la aplicación desde el front.
+ * Tipo DTO de la entidad Evento. Es el tipo de dato que maneja la aplicación desde el front.
  */
 public class EventoDTO {
 
     private IntegerProperty id;
     private StringProperty nombre;
     private StringProperty descripcion;
-    private LocalDate fecha;
+    private ObjectProperty<LocalDate> fechaini;
+    private ObjectProperty<LocalDate> fechaf;
     private IntegerProperty usuario;
 
 
@@ -22,19 +21,28 @@ public class EventoDTO {
     }
 
     /**
-     *
-     * @param id
      * @param nombre
      * @param descripcion
-     * @param fecha
+     * @param fechaini
+     * @param fechaf
      * @param usuario
      */
-    public EventoDTO(IntegerProperty id, StringProperty nombre, StringProperty descripcion, LocalDate fecha, IntegerProperty usuario) {
-        this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis()/10000));
+    public EventoDTO(StringProperty nombre, StringProperty descripcion, ObjectProperty<LocalDate> fechaini, ObjectProperty<LocalDate> fechaf, IntegerProperty usuario) {
+        this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.fecha = fecha;
+        this.fechaini = fechaini;
+        this.fechaf = fechaf;
         this.usuario = usuario;
+    }
+
+    public EventoDTO(String nombre, String descripcion, LocalDate fechaini, LocalDate fechaf, Integer usuario) {
+        this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));
+        this.nombre = new SimpleStringProperty(nombre);
+        this.descripcion = new SimpleStringProperty(descripcion);
+        this.fechaini = new SimpleObjectProperty<LocalDate>(fechaini);
+        this.fechaf = new SimpleObjectProperty<LocalDate>(fechaf);
+        this.usuario = new SimpleIntegerProperty(usuario);
     }
 
     public int getId() {
@@ -73,12 +81,28 @@ public class EventoDTO {
         this.descripcion.set(descripcion);
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    public LocalDate getFechaini() {
+        return fechaini.get();
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    public ObjectProperty<LocalDate> fechainiProperty() {
+        return fechaini;
+    }
+
+    public void setFechaini(LocalDate fechaini) {
+        this.fechaini.set(fechaini);
+    }
+
+    public LocalDate getFechaf() {
+        return fechaf.get();
+    }
+
+    public ObjectProperty<LocalDate> fechafProperty() {
+        return fechaf;
+    }
+
+    public void setFechaf(LocalDate fechaf) {
+        this.fechaf.set(fechaf);
     }
 
     public int getUsuario() {
@@ -99,7 +123,8 @@ public class EventoDTO {
                 "id=" + id +
                 ", nombre=" + nombre +
                 ", descripcion=" + descripcion +
-                ", fecha=" + fecha +
+                ", fechaini=" + fechaini +
+                ", fechaf=" + fechaf +
                 ", usuario=" + usuario +
                 '}';
     }

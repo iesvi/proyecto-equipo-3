@@ -1,5 +1,6 @@
 package GamerHUB.Shared.controllers;
 
+
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
 import javafx.animation.Animation;

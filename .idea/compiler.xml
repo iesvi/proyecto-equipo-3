@@ -11,5 +11,31 @@
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="proyecto-equipo-3" />
+        <module name="backend" />
+        <module name="Proyectopsp2021_Grupo_B" />
+        <module name="Backend" />
+        <module name="Frontend" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Backend" target="8" />
+      <module name="backend" target="1.8" />
+      <module name="Frontend" target="8" />
+      <module name="frontend" target="8" />
+      <module name="proyecto-equipo-3" target="8" />
+      <module name="Proyectopsp2021_Grupo_B" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Backend" options="" />
+    </option>
   </component>
 </project>

@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_17_02_2021_13_09_[Default_Changelist]" date="1613563757207" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_13_09_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 17/02/2021 13:09 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="frontend/target/classes/GamerHUB/GestionUsuarios/model/dto/UsuarioDTO.class" />
+    <option name="AFTER_PATH" value="frontend/target/classes/GamerHUB/GestionUsuarios/model/dto/UsuarioDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_13_09_[Default_Changelist]/UsuarioDTO.class" />
+  </binary>
+</changelist>

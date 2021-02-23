@@ -6,19 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="subiendo plantilla proyecto">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_49.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_11_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_11_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_11_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_13.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/proyecto-equipo-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto-equipo-3.iml" afterDir="false" />
@@ -27,30 +14,43 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Aplicacion/UsuarioIntegraTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Aplicacion/UsuarioIntegraTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Dominio/Builder/UsuarioVOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Dominio/Builder/UsuarioVOBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Infraestructura/Persistence/UsuarioInfraUnitTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Infraestructura/Persistence/UsuarioInfraUnitTC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Proyectopsp2021_Grupo_B.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Proyectopsp2021_Grupo_B.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/frontend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/proyectopsp2021-grupoB.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/Conversor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/dto/EventoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/dto/EventoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/vo/EventoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/vo/EventoVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/IEventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/IEventoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaPerfilControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaPerfilControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaRegistroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaRegistroControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/Conversor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/dto/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/vo/UsuarioVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/vo/UsuarioVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/IUsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/IUsuarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/RootLayoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ActionDialogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ActionDialogs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestioneventos/VistaAddEventoDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestioneventos/VistaAddEventoDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestioneventos/VistaGestionEventos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestioneventos/VistaGestionEventos.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestionusuario/VistaAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestionusuario/VistaAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestionusuario/VistaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestionusuario/VistaPerfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestionusuario/VistaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/gestionusuario/VistaRegistro.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/shared/VistaHome1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/shared/VistaHome1.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/shared/VistaHome2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/shared/VistaHome2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/vistas/shared/VistaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/vistas/shared/VistaInicio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/gestioneventos/VistaAddEventoDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/gestioneventos/VistaAddEventoDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/gestioneventos/VistaGestionEventos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/gestioneventos/VistaGestionEventos.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/gestionusuario/VistaAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/gestionusuario/VistaAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/gestionusuario/VistaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/gestionusuario/VistaPerfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/gestionusuario/VistaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/gestionusuario/VistaRegistro.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/shared/VistaHome1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/shared/VistaHome1.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/shared/VistaHome2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/shared/VistaHome2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/vistas/shared/VistaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/vistas/shared/VistaInicio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,9 +153,20 @@
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.com.Equipo3.Backend in Backend">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,19 +205,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
+    <configuration name="UsuarioInfraUnitTC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Equipo3.Backend.Usuario.Infraestructura.Persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Equipo3.Backend.Usuario.Infraestructura.Persistence" />
+      <option name="MAIN_CLASS_NAME" value="com.Equipo3.Backend.Usuario.Infraestructura.Persistence.UsuarioInfraUnitTC" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Equipo3.Backend in Backend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Equipo3.Backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Equipo3.Backend" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -236,6 +273,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.Equipo3.Backend in Backend" />
+        <item itemvalue="JUnit.UsuarioInfraUnitTC" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">

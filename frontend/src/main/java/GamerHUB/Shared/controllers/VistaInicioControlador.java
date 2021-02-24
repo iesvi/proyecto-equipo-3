@@ -3,6 +3,7 @@ package GamerHUB.Shared.controllers;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.exception.CustomException;
+import GamerHUB.Shared.view.VentanaInicioVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -22,7 +23,7 @@ import java.net.URL;
  */
 public class VistaInicioControlador {
 
-    private MainApp main;
+    private VentanaInicioVista vista;
 
     /**
      *
@@ -52,22 +53,15 @@ public class VistaInicioControlador {
     @FXML
     private ImageView imageView;
 
-
-    private Stage dialogStage;
+    private Stage stageinicio;
     private UsuarioDTO usuarioDTO;
 
 
 
-    public MainApp getMain() {
-        return main;
-    }
 
-    public void setdialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
-
-    public void setMain(MainApp main) {
-        this.main = main;
+    public void setVista(VentanaInicioVista vista, Stage stageinicio) {
+        this.stageinicio= stageinicio;
+        this.vista = vista;
     }
 
     /**

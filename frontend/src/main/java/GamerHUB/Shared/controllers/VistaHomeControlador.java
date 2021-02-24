@@ -3,6 +3,8 @@ package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
+import GamerHUB.Shared.view.VentanaEventoVista;
+import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -23,9 +25,11 @@ import java.time.LocalTime;
  */
 public class VistaHomeControlador {
 
-    private MainApp mainApp;
     private Stage dialogStage;
     private UsuarioDTO userLogeado;
+    private VentanaHomeVista vista;
+    private VentanaEventoVista vistaevento;
+    private SplitPane pane;
 
     @FXML
     private TableView amigos, canales, eventos;
@@ -108,12 +112,10 @@ public class VistaHomeControlador {
         clock.play();
     }
 
-    public Stage getDialogStage() {
-        return dialogStage;
-    }
-
-    public void setDialogStage(Stage dialogStage) {
+    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
         this.dialogStage = dialogStage;
+        this.vista = vista;
+        this.pane = pane;
     }
 
 
@@ -125,9 +127,6 @@ public class VistaHomeControlador {
         this.userLogeado = mainApp.getUsuarioLogeado();
     }
 
-    public MainApp getMainApp() {
-        return mainApp;
-    }
 
     /**
      *
@@ -141,10 +140,6 @@ public class VistaHomeControlador {
         return menu;
     }
 
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-        // eventos.setItems(getMainApp().getEventos());
-    }
 
 
     public void llenarTablaAmigos() {
@@ -221,7 +216,8 @@ public class VistaHomeControlador {
      * @throws IOException
      */
     public void LoadEventoView() throws IOException {
-        getMainApp().loadEventoView(dialogStage);
+        vistaevento = new VentanaEventoVista(dialogStage);
+        vistaevento.loadEventoView(pane);
     }
 
     /**

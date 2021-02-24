@@ -3,6 +3,7 @@ package GamerHUB.GestionEventos.controller;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.view.VentanaEventoVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -18,10 +19,7 @@ public class EventoController {
 
     private Stage dialogStage;
 
-    /**
-     * Variable de acceso al controlador principal.
-     */
-    private MainApp mainApp;
+    private VentanaEventoVista vista;
 
     /**
      * Tabla que muestra todos los eventos de la plataforma
@@ -39,7 +37,7 @@ public class EventoController {
      * de la tabla.
      */
     @FXML
-    private TextField campoNombreEvento, campoAddName, campoAddDesc;
+    private TextField campoNombreEvento;
     /**
      * Campo con la descripción y los detalles del evento.
      */
@@ -49,14 +47,14 @@ public class EventoController {
      * Fecha de inicio y de fin del evento propuesto.
      */
     @FXML
-    private DatePicker fecha_i, fecha_f, fechainicioAdd, fechafinalAdd;
+    private DatePicker fecha_i, fecha_f;
 
     /**
      * Botones para editar o eliminar el evento seleccionado. Otro para volver a la
      * vista anterior.
      */
     @FXML
-    private Button btnEditarEvento, btnEliminarEvento, btnVolver, BotonAdd;
+    private Button btnEditarEvento, btnEliminarEvento, btnVolver;
 
 
     public EventoController() {
@@ -69,71 +67,11 @@ public class EventoController {
         mainApp.loadHomeView2(dialogStage);
     }
 
-    public void setdialogStage(Stage dialog) {
+    public void setVista(VentanaEventoVista vista,Stage dialog) {
         this.dialogStage = dialog;
+        this.vista = vista;
     }
 
-    public MainApp getMainApp() {
-        return mainApp;
-    }
-
-    public void setMainApp(MainApp main) {
-        this.mainApp = main;
-        //  eventos.setItems(getMainApp().getEventos());
-    }
-
-    @FXML
-    public void addEvento() {
-
-        if (isInputValid()) {
-            String nombre = campoAddName.getText();
-            String Descripcion = campoAddDesc.getText();
-            LocalDate fecha_ini = fechainicioAdd.getValue();
-            LocalDate fecha_f = fechafinalAdd.getValue();
-            int idusuario = mainApp.getUsuarioLogeado().getId();
-
-            EventoDTO newevento = new EventoDTO(nombre, Descripcion, fecha_ini, fecha_f, idusuario);
-
-            mainApp.getEventos().add(newevento);
-
-            ActionDialogs.info("Evento añadido correctamente.", "Evento añadido.\n" +
-                    newevento.toString());
-
-            dialogStage.close();
-        }
-
-    }
-
-
-    /**
-     * @return
-     */
-    public boolean isInputValid() {
-
-        String errorMsg = "";
-
-        if (campoAddName == null || campoAddName.getText().isEmpty()) {
-            errorMsg += "Introduce un nombre de evento válido.\n ";
-        }
-        if (campoAddDesc == null || campoAddDesc.getText().isEmpty()) {
-            errorMsg += "Introduce una descripción válida.";
-        }
-
-        if (fechainicioAdd.getValue() == null) {
-            errorMsg += "Introduce una fecha de inicio válida.";
-        }
-        if (fechafinalAdd.getValue() == null) {
-            errorMsg += "Introduce una fecha de fin válida.";
-        }
-
-        if (errorMsg.isEmpty()) {
-            return true;
-        } else {
-            // Show the error message.
-            ActionDialogs.error("Error en los campos", errorMsg);
-            return false;
-        }
-    }
 
 
 }

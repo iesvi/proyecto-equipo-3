@@ -5,6 +5,7 @@ import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.view.VentanaSignUpVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -16,6 +17,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class VistaRegistroControlador {
+
+    private VentanaSignUpVista vista;
 
 
     /**
@@ -59,8 +62,6 @@ public class VistaRegistroControlador {
         };
     }
 
-    private MainApp mainApp = new MainApp();
-
     /**
      *
      */
@@ -76,21 +77,15 @@ public class VistaRegistroControlador {
 
     }
 
-    public MainApp getMainApp() {
-        return mainApp;
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-    }
 
     /**
      * Sets the stage of this dialog.
      *
      * @param dialogStage
      */
-    public void setDialogStage(Stage dialogStage) {
+    public void setVista(VentanaSignUpVista vista, Stage dialogStage) {
         this.dialogStage = dialogStage;
+        this.vista = vista;
     }
 
 

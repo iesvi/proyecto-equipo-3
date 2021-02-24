@@ -2,6 +2,7 @@ package GamerHUB.GestionUsuarios.controller;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
+import GamerHUB.Shared.view.VentanaPerfilVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -13,8 +14,7 @@ import javafx.stage.Stage;
  *
  */
 public class VistaPerfilControlador {
-
-    private MainApp mainApp;
+    private VentanaPerfilVista vista;
     private UsuarioDTO usuarioDTO;
     private Stage dialogStage;
 
@@ -45,14 +45,6 @@ public class VistaPerfilControlador {
     }
 
 
-    public MainApp getMainApp() {
-        return mainApp;
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-    }
-
     public UsuarioDTO getUsuarioDTO() {
         return usuarioDTO;
     }
@@ -61,11 +53,9 @@ public class VistaPerfilControlador {
         this.usuarioDTO = usuarioDTO;
     }
 
-    public Stage getDialogStage() {
-        return dialogStage;
-    }
 
-    public void setDialogStage(Stage dialogStage) {
+    public void setVista(VentanaPerfilVista vista, Stage dialogStage) {
         this.dialogStage = dialogStage;
+        this.vista = vista;
     }
 }

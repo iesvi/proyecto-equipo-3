@@ -5,6 +5,7 @@ import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
+import GamerHUB.Shared.util.ProcessHora;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.animation.Animation;
@@ -33,6 +34,7 @@ public class VistaHomeControlador {
     private VentanaEventoVista vistaevento;
     private SplitPane pane;
     private ListaUsuario listaUsuario;
+    private ProcessHora hora;
 
 
     @FXML
@@ -93,6 +95,7 @@ public class VistaHomeControlador {
 
 
     public VistaHomeControlador() {
+        hora = new ProcessHora();
         llenarTablaEventos();
         // addOpcionAdmin();
     }
@@ -100,9 +103,9 @@ public class VistaHomeControlador {
     /**
      * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.
      */
-    public void iniciar_Reloj() {
+    public void iniciar_Reloj(){
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            LocalTime currentTime = LocalTime.now();
+            LocalTime currentTime = hora.procesoHora();
             time.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
         }),
                 new KeyFrame(Duration.seconds(1))

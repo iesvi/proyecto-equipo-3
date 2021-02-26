@@ -13,30 +13,50 @@ import java.time.LocalTime;
 
 public class ProcessHora {
 
+    public ProcessHora() {
+    }
 
-    private int minute;
-    private int hour;
-    private int second;
-
-//    public LocalTime procesoHora() throws IOException {
-//        String hora;
-//        if(OsUtil.isWindows()){
-//            ProcessBuilder pb = new ProcessBuilder("TIME /T");
-//            Process p = pb.start();
-//            try {
-//                InputStream is = p.getInputStream();
-//                int c;
-//                while ((c = is.read()) != -1) {
-//                    hora =+ ((char) c);
-//                }
-//                is.close();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }else if (OsUtil.isUnix()){
-//
-//        }
-//    }
+    public LocalTime procesoHora() {
+        String hora = "";
+        if(OsUtil.isWindows()){
+            try{
+            ProcessBuilder pb = new ProcessBuilder("CMD","/C", "echo %time%");
+            Process p = pb.start();
+            try {
+                InputStream is = p.getInputStream();
+                int c;
+                int n = 0;
+                while ((c = is.read()) != -1 && n < 8) {
+                    n++;
+                    hora = hora + ((char) c);
+                }
+                is.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }}
+            catch(IOException e) {
+                e.printStackTrace();
+            }
+        }else if (OsUtil.isUnix()){
+            try{
+            ProcessBuilder pb = new ProcessBuilder("date '+%H:%M:%S'");
+            Process p = pb.start();
+            try {
+                InputStream is = p.getInputStream();
+                int c;
+                while ((c = is.read()) != -1) {
+                    hora = hora + ((char) c);
+                }
+                is.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }}
+            catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return LocalTime.parse(hora);
+    }
 
 
 

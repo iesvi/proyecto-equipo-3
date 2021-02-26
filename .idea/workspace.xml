@@ -49,7 +49,6 @@
     <list id="24a26919-abfb-4b40-b115-3b0aab506d2f" name="Changes by Manuel Santos" comment="" />
     <list id="33518009-771b-4157-98c7-2926d8cc2012" name="Changes by Vic" comment="">
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,20 +143,6 @@
         <range start1="59" end1="60" start2="62" end2="63" changelist="33518009-771b-4157-98c7-2926d8cc2012" />
         <range start1="62" end1="62" start2="65" end2="68" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
         <range start1="73" end1="73" start2="79" end2="84" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="33518009-771b-4157-98c7-2926d8cc2012" />
-        <range start1="7" end1="7" start2="8" end2="12" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="12" end1="12" start2="17" end2="18" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="16" end1="16" start2="22" end2="23" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="81" end1="81" start2="88" end2="91" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="93" end1="94" start2="103" end2="111" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="107" end1="109" start2="124" end2="126" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="180" end1="183" start2="197" end2="199" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="200" end1="201" start2="216" end2="217" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="209" end1="209" start2="225" end2="227" changelist="33518009-771b-4157-98c7-2926d8cc2012" />
       </ranges>
     </file>
   </component>
@@ -419,6 +404,17 @@
     <MESSAGE value="subiendo plantilla proyecto" />
     <MESSAGE value="..." />
     <option name="LAST_COMMIT_MESSAGE" value="..." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ProcessHora.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

@@ -1,7 +1,7 @@
 package GamerHUB.GestionEventos.ui;
 
 import GamerHUB.GestionEventos.controller.EventoController;
-import GamerHUB.MainApp;
+import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.SplitPane;
@@ -16,15 +16,16 @@ public class VentanaEventoVista {
 
     private Stage stageppal;
     private VentanaHomeVista ventanaHomeVista;
+    private ListaEvento listaEvento;
 
-    public VentanaEventoVista(Stage stageppal, VentanaHomeVista ventanaHomeVista) {
+    public VentanaEventoVista(Stage stageppal, VentanaHomeVista ventanaHomeVista, ListaEvento listaEvento) {
         this.stageppal = stageppal;
         this.ventanaHomeVista = ventanaHomeVista;
+        this.listaEvento = listaEvento;
     }
 
 
     /**
-     *
      * @throws IOException
      */
     public void loadEventoView(SplitPane pane) throws IOException {
@@ -35,10 +36,9 @@ public class VentanaEventoVista {
         pane.getItems().set(1, anchorPane1);
 
         EventoController eventocontrol = loader2.getController();
+        eventocontrol.setVista(this, stageppal, listaEvento);
         eventocontrol.iniciarEventos();
         eventocontrol.setVentanahome(ventanaHomeVista);
-        eventocontrol.setVista(this, stageppal);
-
     }
 
 }

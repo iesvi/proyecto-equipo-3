@@ -2,10 +2,10 @@ package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaInicioVista;
-import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -25,7 +25,7 @@ public class VistaInicioControlador {
 
     private VentanaInicioVista vista;
     private UsuarioDTO usuarioLogeado = new UsuarioDTO();
-    private ListaUsuario listaUsuario = new ListaUsuario();
+    private ListaUsuario listaUsuario;
     private VentanaSignUpVista ventanaSignUpVista;
 
     /**
@@ -60,11 +60,10 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioDTO;
 
 
-
-
-    public void setVista(VentanaInicioVista vista, Stage stageinicio) {
-        this.stageinicio= stageinicio;
+    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario) {
+        this.stageinicio = stageinicio;
         this.vista = vista;
+        this.listaUsuario = listaUsuario;
     }
 
     public UsuarioDTO getUsuarioLogeado() {
@@ -93,9 +92,7 @@ public class VistaInicioControlador {
     }
 
 
-
     /**
-     *
      * @throws IOException
      * @throws CustomException
      */
@@ -109,17 +106,28 @@ public class VistaInicioControlador {
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
+                correct = true;
 
+            } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                home.LaunchHomeView();
+                vista.getStageppal().close();
+                correct = true;
             }
-
+        }
+        if (!correct) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error con las credenciales");
+            alert.setHeaderText("Usuario/contraseña incorrectos.");
+            alert.setContentText("Vuelva a intentarlo de nuevo.");
+            alert.showAndWait();
         }
 
 
     }
-
 
 
     /**
@@ -160,11 +168,11 @@ public class VistaInicioControlador {
     }
 
     /**
-     *
      * @param mouseEvent
      * @throws IOException
      */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
+        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario);
         ventanaSignUpVista.LaunchSignUpView();
         vista.getStageppal().close();
     }

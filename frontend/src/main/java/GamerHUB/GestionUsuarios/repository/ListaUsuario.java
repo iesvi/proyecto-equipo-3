@@ -1,6 +1,5 @@
 package GamerHUB.GestionUsuarios.repository;
 
-import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import javafx.collections.FXCollections;
@@ -15,7 +14,8 @@ public class ListaUsuario {
     private VistaHomeControlador vistaHomeControlador;
 
     private UsuarioDTO usuarioLogeado;
-    public ListaUsuario(){
+
+    public ListaUsuario() {
 
 
         LocalDate localDate = LocalDate.now();
@@ -43,6 +43,7 @@ public class ListaUsuario {
     public ObservableList<UsuarioDTO> getUsers() {
         return users;
     }
+
     public UsuarioDTO getUsuarioLogeado() {
         return usuarioLogeado;
     }

@@ -1,7 +1,7 @@
 package GamerHUB.GestionUsuarios.ui;
 
 import GamerHUB.GestionUsuarios.controller.VistaRegistroControlador;
-import GamerHUB.MainApp;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -15,16 +15,18 @@ import java.net.URL;
 public class VentanaSignUpVista {
 
     private Stage stageppal;
+    private ListaUsuario listaUsuario;
 
-    public VentanaSignUpVista(Stage stageppal) {
+    public VentanaSignUpVista(Stage stageppal, ListaUsuario listaUsuario) {
         this.stageppal = stageppal;
+        this.listaUsuario = listaUsuario;
     }
 
     /**
      * @throws IOException
      */
     public void LaunchSignUpView() throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaRegistro.fxml").toURI().toURL();
+        URL url = new File("frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaRegistro.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane signup = (AnchorPane) loader.load();
@@ -36,7 +38,7 @@ public class VentanaSignUpVista {
         dialogStage.initModality(Modality.APPLICATION_MODAL);
 
         VistaRegistroControlador controladorRegistro = loader.getController();
-        controladorRegistro.setVista(this, dialogStage);
+        controladorRegistro.setVista(this, dialogStage, listaUsuario);
 
         dialogStage.show();
 

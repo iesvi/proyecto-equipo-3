@@ -17,7 +17,8 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     private ListaUsuario listaUsuario;
 
-    public UsuarioRespositoryJDBC(){
+    public UsuarioRespositoryJDBC(ListaUsuario listaUsuario) {
+        this.listaUsuario = listaUsuario;
 
     }
 
@@ -26,7 +27,7 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     @Override
     public boolean add(UsuarioDTO usuarioDTO) {
-        if(usuarioDTO!=null){
+        if (usuarioDTO != null) {
             listaUsuario.getUsers().add(usuarioDTO);
             return true;
         } else return false;
@@ -35,8 +36,8 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
     @Override
     public boolean remove(int id) {
 
-        for(UsuarioDTO user: listaUsuario.getUsers()){
-            if(user.getId()==id){
+        for (UsuarioDTO user : listaUsuario.getUsers()) {
+            if (user.getId() == id) {
                 listaUsuario.getUsers().remove(user);
                 return true;
             }
@@ -49,15 +50,11 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
     public boolean update(UsuarioVO usuarioDTO) {
 
 
-
-
-
         return false;
     }
 
     @Override
     public List<UsuarioVO> retrieveUsers() {
-
 
 
         return null;

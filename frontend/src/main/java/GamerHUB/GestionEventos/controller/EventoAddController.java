@@ -2,10 +2,10 @@ package GamerHUB.GestionEventos.controller;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.repository.ListaEvento;
+import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.util.ActionDialogs;
-import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -29,7 +29,7 @@ public class EventoAddController {
 
     private VentanaAddEventVista vista;
 
-    private ListaEvento listaEvento = new ListaEvento();
+    private ListaEvento listaEvento;
     private ListaUsuario listaUsuario;
 
     private UsuarioDTO user;
@@ -94,5 +94,9 @@ public class EventoAddController {
     public void setVista(VentanaAddEventVista vista, Stage dialogStage) {
         this.dialogStage = dialogStage;
         this.vista = vista;
+    }
+
+    public void setlistaEventos(ListaEvento listaEvento) {
+        this.listaEvento = listaEvento;
     }
 }

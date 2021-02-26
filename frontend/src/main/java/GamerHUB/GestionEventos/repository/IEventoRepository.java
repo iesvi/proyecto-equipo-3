@@ -6,10 +6,10 @@ import GamerHUB.GestionEventos.model.vo.EventoVO;
 import java.util.List;
 
 /**
- *  Interfaz en la que se definen los métodos para las operaciones CRUD con
- *  *los eventos.
+ * Interfaz en la que se definen los métodos para las operaciones CRUD con
+ * *los eventos.
  */
-public interface IEventoRepository{
+public interface IEventoRepository {
 
     /**
      * Método para registrar un nuevo evento.
@@ -28,14 +28,16 @@ public interface IEventoRepository{
     boolean remove(int id);
 
     /**
-     *Método para actualizar un evento.
+     * Método para actualizar un evento.
+     *
      * @param eventoVO
      * @return
      */
     boolean update(EventoVO eventoVO);
 
     /**
-     *Método para obtener todos los eventos,asociados a un usuario.
+     * Método para obtener todos los eventos,asociados a un usuario.
+     *
      * @return
      */
     List<EventoVO> retrieveEvents();

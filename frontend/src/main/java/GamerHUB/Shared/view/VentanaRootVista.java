@@ -1,5 +1,6 @@
 package GamerHUB.Shared.view;
 
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -13,20 +14,20 @@ public class VentanaRootVista {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private ListaUsuario listaUsuario;
 
 
-    public void inicioStage(Stage primaryStage) throws IOException {
+    public void inicioStage(Stage primaryStage, ListaUsuario listaUsuario) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Welcome to GamerHub!");
 
         Init();
 
-        VentanaInicioVista inicio = new VentanaInicioVista(primaryStage,rootLayout);
+        VentanaInicioVista inicio = new VentanaInicioVista(primaryStage, rootLayout, listaUsuario);
         inicio.LaunchInicio();
 
 
     }
-
 
 
     /**

@@ -1,8 +1,8 @@
 package GamerHUB.Shared.view;
 
+import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
-import GamerHUB.MainApp;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.exception.CustomException;
 import javafx.fxml.FXMLLoader;
@@ -22,9 +22,10 @@ public class VentanaHomeVista {
     private ListaUsuario listaUsuario;
     private UsuarioDTO user;
 
-    public VentanaHomeVista (Stage stageppal, UsuarioDTO user) {
+    public VentanaHomeVista(Stage stageppal, UsuarioDTO user, ListaUsuario listaUsuario) {
         this.stageppal = stageppal;
         this.user = user;
+        this.listaUsuario = listaUsuario;
     }
 
     /**
@@ -42,20 +43,21 @@ public class VentanaHomeVista {
         pane = (SplitPane) home.getChildren().get(0);
 
         loadHomeView1(dialogStage);
-        loadHomeView2(dialogStage);
+        loadHomeView2(dialogStage, null);
 
         pane.setDividerPositions(0.32);
 
         VistaHomeControlador controladorHome = loader.getController();
         controladorHome.setVista(this, dialogStage, pane);
         controladorHome.setUsuario(user);
+        controladorHome.setlistaUsuarios(listaUsuario);
         dialogStage.setTitle("Bienvenido " + user.getNombre() + "!");
 
         dialogStage.show();
 
     }
+
     /**
-     *
      * @throws IOException
      */
     public void loadHomeView1(Stage dialog) throws IOException {
@@ -67,14 +69,17 @@ public class VentanaHomeVista {
 
         VistaHomeControlador controladorHome = loader1.getController();
         controladorHome.setVista(this, dialog, pane);
+        controladorHome.setlistaUsuarios(listaUsuario);
         controladorHome.setUsuario(user);
+        controladorHome.setUserNameLabel();
+
+        pane.setDividerPositions(0.32);
     }
 
     /**
-     *
      * @throws IOException
      */
-    public void loadHomeView2(Stage dialog) throws IOException {
+    public void loadHomeView2(Stage dialog, ListaEvento listaEvento) throws IOException {
         URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml").toURI().toURL();
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(url);
@@ -83,8 +88,13 @@ public class VentanaHomeVista {
         VistaHomeControlador controladorHome = loader2.getController();
         controladorHome.setVista(this, dialog, pane);
         controladorHome.setUsuario(user);
+        controladorHome.setlistaUsuarios(listaUsuario);
+        controladorHome.setEventos(listaEvento);
         controladorHome.setImagenLupa();
         controladorHome.iniciar_Reloj();
+        controladorHome.llenarTablaEventos();
+
+        pane.setDividerPositions(0.32);
     }
 
 

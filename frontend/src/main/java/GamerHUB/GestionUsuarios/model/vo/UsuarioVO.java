@@ -1,12 +1,8 @@
 package GamerHUB.GestionUsuarios.model.vo;
 
 import GamerHUB.GestionEventos.model.vo.EventoVO;
-import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import javafx.beans.property.*;
 
-import javax.lang.model.type.ArrayType;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -26,11 +22,10 @@ public class UsuarioVO {
     private ArrayList<EventoVO> evento;
 
 
-
     public UsuarioVO() {
     }
 
-    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos,ArrayList<UsuarioVO> amigosde , ArrayList<EventoVO> evento) {
+    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos, ArrayList<UsuarioVO> amigosde, ArrayList<EventoVO> evento) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;

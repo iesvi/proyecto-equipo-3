@@ -1,5 +1,6 @@
 package GamerHUB;
 
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,30 +20,26 @@ public class MainApp extends Application {
 
     private AnchorPane home;
     //private AnchorPane perfil;
-   // private AnchorPane evento;
+    // private AnchorPane evento;
     /**
      *
      */
 
 
-
     /**
      *
      */
 
 
-
-
-
     /**
-     *
      * @param primaryStage
      * @throws Exception
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
+        ListaUsuario listausuario = new ListaUsuario();
         ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(primaryStage);
+        ventanaRoot.inicioStage(primaryStage, listausuario);
 
     }
 

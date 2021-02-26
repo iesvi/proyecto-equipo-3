@@ -1,5 +1,6 @@
 package GamerHUB.Shared.view;
 
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.controllers.VistaInicioControlador;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -14,10 +15,12 @@ public class VentanaInicioVista {
 
     private Stage stageppal;
     private BorderPane rootLayout;
+    private ListaUsuario listaUsuario;
 
-    public VentanaInicioVista(Stage stageppal, BorderPane rootLayout) {
+    public VentanaInicioVista(Stage stageppal, BorderPane rootLayout, ListaUsuario listaUsuario) {
         this.stageppal = stageppal;
         this.rootLayout = rootLayout;
+        this.listaUsuario = listaUsuario;
     }
 
     /**
@@ -38,7 +41,7 @@ public class VentanaInicioVista {
 
         //inicio.setBackground();
         VistaInicioControlador controladorInicio = loader.getController();
-        controladorInicio.setVista(this, stageppal);
+        controladorInicio.setVista(this, stageppal, listaUsuario);
 
     }
 

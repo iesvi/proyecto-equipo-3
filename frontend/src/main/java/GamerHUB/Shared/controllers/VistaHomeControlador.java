@@ -1,10 +1,13 @@
 package GamerHUB.Shared.controllers;
 
 
+import GamerHUB.GestionEventos.model.dto.EventoDTO;
+import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
+import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
-import GamerHUB.GestionEventos.ui.VentanaEventoVista;
+import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
 import GamerHUB.Shared.util.ProcessHora;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaRootVista;
@@ -24,7 +27,7 @@ import java.net.URL;
 import java.time.LocalTime;
 
 /**
- *Controlador de la
+ * Controlador de la
  */
 public class VistaHomeControlador {
 
@@ -35,6 +38,7 @@ public class VistaHomeControlador {
     private SplitPane pane;
     private ListaUsuario listaUsuario;
     private ProcessHora hora;
+    private ListaEvento listaEvento;
 
 
     @FXML
@@ -54,7 +58,7 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private TableColumn<UsuarioDTO, String> colEvento;
+    private TableColumn<EventoDTO, String> colEvento;
 
     @FXML
     private MenuBar menu;
@@ -93,17 +97,27 @@ public class VistaHomeControlador {
     private Label time;
 
 
-
     public VistaHomeControlador() {
         hora = new ProcessHora();
-        llenarTablaEventos();
         // addOpcionAdmin();
+    }
+
+    public void setEventos(ListaEvento listaEvento) {
+        if (listaEvento == null) {
+            if (userLogeado.getEventos().isEmpty()) {
+                this.listaEvento = new ListaEvento();
+            } else {
+                this.listaEvento = new ListaEvento(userLogeado.getEventos());
+            }
+        } else {
+            this.listaEvento = listaEvento;
+        }
     }
 
     /**
      * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.
      */
-    public void iniciar_Reloj(){
+    public void iniciar_Reloj() {
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = hora.procesoHora();
             time.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
@@ -143,7 +157,6 @@ public class VistaHomeControlador {
     }
 
 
-
     public void llenarTablaAmigos() {
 
     }
@@ -156,8 +169,8 @@ public class VistaHomeControlador {
      *
      */
     public void llenarTablaEventos() {
-
-
+        eventos.setItems(listaEvento.getEvents());
+        colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
     }
 
 
@@ -199,16 +212,23 @@ public class VistaHomeControlador {
     @FXML
     public void Logout() throws IOException {
         VentanaRootVista ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(dialogStage);
+        ventanaRoot.inicioStage(new Stage(), listaUsuario);
+        dialogStage.close();
     }
 
     /**
      * *Método que carga la vista del perfil del usuario.
+     *
      * @throws IOException
      */
     @FXML
     public void LaunchPerfil() throws IOException {
-       // mainApp.LaunchVistaPerfil(userLogeado);
+        VentanaPerfilVista ventanavista = new VentanaPerfilVista(dialogStage,vista);
+        ventanavista.LaunchVistaPerfil(pane, userLogeado);
+    }
+
+    public void setUserNameLabel(){
+        userName.setText(userLogeado.getNombre());
     }
 
     /**
@@ -217,7 +237,7 @@ public class VistaHomeControlador {
      * @throws IOException
      */
     public void LoadEventoView() throws IOException {
-        vistaevento = new VentanaEventoVista(dialogStage, vista);
+        vistaevento = new VentanaEventoVista(dialogStage, vista, listaEvento);
         vistaevento.loadEventoView(pane);
     }
 
@@ -226,9 +246,9 @@ public class VistaHomeControlador {
      */
     @FXML
     public void LoadAddEvent() throws IOException {
-        VentanaAddEventVista ventanaAddEventVista= new VentanaAddEventVista(dialogStage,userLogeado);
+        VentanaAddEventVista ventanaAddEventVista = new VentanaAddEventVista(dialogStage, userLogeado, listaEvento);
         ventanaAddEventVista.LaunchaddEvent();
-       // getMainApp().LaunchaddEvent();
+        // getMainApp().LaunchaddEvent();
     }
 
 
@@ -252,4 +272,8 @@ public class VistaHomeControlador {
 
         dialogStage.showAndWait();
     }*/
+
+    public void setlistaUsuarios(ListaUsuario listaUsuario) {
+        this.listaUsuario = listaUsuario;
+    }
 }

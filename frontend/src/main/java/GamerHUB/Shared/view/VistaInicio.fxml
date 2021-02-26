@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-
-<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
+<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #adf4ae;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaInicioControlador">
    <children>
       <AnchorPane layoutX="38.0" layoutY="35.0" prefHeight="518.0" prefWidth="275.0" style="-fx-background-color: #aafe79; -fx-background-radius: 15;">
          <opaqueInsets>

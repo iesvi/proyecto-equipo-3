@@ -1,4 +1,4 @@
-package GamerHUB.Shared.view;
+package GamerHUB.GestionUsuarios.ui;
 
 import GamerHUB.GestionUsuarios.controller.VistaPerfilControlador;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;

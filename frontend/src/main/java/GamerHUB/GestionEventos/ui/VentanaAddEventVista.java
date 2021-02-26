@@ -1,7 +1,6 @@
-package GamerHUB.Shared.view;
+package GamerHUB.GestionEventos.ui;
 
 import GamerHUB.GestionEventos.controller.EventoAddController;
-import GamerHUB.GestionEventos.controller.EventoController;
 import GamerHUB.MainApp;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +8,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class VentanaAddEventVista {
 
@@ -23,9 +24,9 @@ public class VentanaAddEventVista {
      * @throws IOException
      */
     public void LaunchaddEvent() throws IOException {
-
+        URL url = new File("frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaAddEventoDialog.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("/Shared/view/VistaAddEventoDialog.fxml"));
+        loader.setLocation(url);
         AnchorPane addEvento = (AnchorPane) loader.load();
 
         Scene scene = new Scene(addEvento, 400, 450);

@@ -1,15 +1,13 @@
 package GamerHUB.GestionEventos.controller;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
-import GamerHUB.MainApp;
-import GamerHUB.Shared.util.ActionDialogs;
-import GamerHUB.Shared.view.VentanaEventoVista;
+import GamerHUB.GestionEventos.ui.VentanaEventoVista;
+import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 
 /**
@@ -20,6 +18,7 @@ public class EventoController {
     private Stage dialogStage;
 
     private VentanaEventoVista vista;
+    private VentanaHomeVista ventanaHomeVista;
 
     /**
      * Tabla que muestra todos los eventos de la plataforma
@@ -64,7 +63,8 @@ public class EventoController {
 
     @FXML
     public void volver() throws IOException {
-        mainApp.loadHomeView2(dialogStage);
+        ventanaHomeVista.loadHomeView2(dialogStage);
+        //mainApp.loadHomeView2(dialogStage);
     }
 
     public void setVista(VentanaEventoVista vista,Stage dialog) {

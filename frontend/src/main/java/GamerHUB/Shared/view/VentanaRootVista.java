@@ -1,12 +1,13 @@
 package GamerHUB.Shared.view;
 
-import GamerHUB.MainApp;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class VentanaRootVista {
 
@@ -19,6 +20,9 @@ public class VentanaRootVista {
         this.primaryStage.setTitle("Welcome to GamerHub!");
 
         Init();
+
+        VentanaInicioVista inicio = new VentanaInicioVista(primaryStage,rootLayout);
+        inicio.LaunchInicio();
 
 
     }
@@ -33,16 +37,17 @@ public class VentanaRootVista {
      * @throws IOException
      */
     public void Init() throws IOException {
-
+        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/RootLayout.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("Shared/view/RootLayout.fxml"));
+        loader.setLocation(url);
         rootLayout = (BorderPane) loader.load();
-
         Scene scene = new Scene(rootLayout, 350, 600);
-
         primaryStage.setScene(scene);
         primaryStage.show();
 
     }
 
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
 }

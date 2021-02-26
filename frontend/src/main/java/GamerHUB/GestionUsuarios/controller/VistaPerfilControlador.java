@@ -1,8 +1,8 @@
 package GamerHUB.GestionUsuarios.controller;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.MainApp;
-import GamerHUB.Shared.view.VentanaPerfilVista;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -17,11 +17,11 @@ public class VistaPerfilControlador {
     private VentanaPerfilVista vista;
     private UsuarioDTO usuarioDTO;
     private Stage dialogStage;
-
+private ListaUsuario listaUsuario;
     /**
      *
      */
-    private UsuarioDTO userLogeado = mainApp.getUsuarioLogeado();
+    private UsuarioDTO userLogeado = listaUsuario.getUsuarioLogeado();
 
     /**
      *

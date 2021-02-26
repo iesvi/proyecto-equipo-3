@@ -2,6 +2,7 @@ package GamerHUB.GestionUsuarios.repository;
 
 
 
+import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 
 import java.util.List;
@@ -13,11 +14,11 @@ import java.util.List;
 public interface IUsuarioRepository  {
 
     /**
-     *Método que se llama al registrar un nuevo usuario.
-     * @param usuarioVO
+     *   *Método que se llama al registrar un nuevo usuario.
+     * @param usuarioDTO
      * @return
      */
-    boolean add(UsuarioVO usuarioVO);
+    boolean add(UsuarioDTO usuarioDTO);
 
     /**
      *Método para eliminar usuario.

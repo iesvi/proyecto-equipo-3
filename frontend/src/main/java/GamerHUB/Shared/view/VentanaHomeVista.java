@@ -1,6 +1,6 @@
 package GamerHUB.Shared.view;
 
-import GamerHUB.GestionEventos.controller.EventoController;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.exception.CustomException;
@@ -8,16 +8,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class VentanaHomeVista {
 
     private SplitPane pane;
-
     private Stage stageppal;
+    private ListaUsuario listaUsuario;
 
     public VentanaHomeVista (Stage stageppal) {
         this.stageppal = stageppal;
@@ -28,9 +29,9 @@ public class VentanaHomeVista {
      * @throws IOException
      */
     public void LaunchHomeView() throws CustomException, IOException {
-
+        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaHome.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("Shared/view/VistaHome.fxml"));
+        loader.setLocation(url);
         AnchorPane home = (AnchorPane) loader.load();
         Stage dialogStage = new Stage();
         Scene scene = new Scene(home, 800, 525);
@@ -45,7 +46,7 @@ public class VentanaHomeVista {
         VistaHomeControlador controladorHome = loader.getController();
         controladorHome.setVista(this, dialogStage, pane);
         controladorHome.setUsuario();
-        dialogStage.setTitle("Bienvenido " + usuarioLogeado.getNombre() + "!");
+        dialogStage.setTitle("Bienvenido " + listaUsuario.getUsuarioLogeado().getNombre() + "!");
 
         dialogStage.show();
 
@@ -55,8 +56,9 @@ public class VentanaHomeVista {
      * @throws IOException
      */
     public void loadHomeView1(Stage dialog) throws IOException {
+        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaHome.fxml").toURI().toURL();
         FXMLLoader loader1 = new FXMLLoader();
-        loader1.setLocation(MainApp.class.getResource("/Shared/view/VistaHome1.fxml"));
+        loader1.setLocation(url);
         AnchorPane anchorPane = loader1.load();
         pane.getItems().set(0, anchorPane);
 
@@ -82,7 +84,7 @@ public class VentanaHomeVista {
     }
 
 
-
-
-
+    public Stage getStageppal() {
+        return stageppal;
+    }
 }

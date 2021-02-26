@@ -1,13 +1,14 @@
 package GamerHUB.Shared.view;
 
-import GamerHUB.MainApp;
 import GamerHUB.Shared.controllers.VistaInicioControlador;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class VentanaInicioVista {
 
@@ -28,8 +29,9 @@ public class VentanaInicioVista {
      */
     public void LaunchInicio() throws IOException {
 
+        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaInicio.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("Shared/view/VistaInicio.fxml"));
+        loader.setLocation(url);
         AnchorPane inicio = (AnchorPane) loader.load();
 
         rootLayout.setCenter(inicio);
@@ -40,5 +42,7 @@ public class VentanaInicioVista {
 
     }
 
-
+    public Stage getStageppal() {
+        return stageppal;
+    }
 }

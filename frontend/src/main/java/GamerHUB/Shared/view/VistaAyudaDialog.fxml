@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="417.0" prefWidth="603.0" style="-fx-background-color: #adf4ae;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <AnchorPane layoutX="57.0" layoutY="32.0" prefHeight="365.0" prefWidth="489.0" style="-fx-background-radius: 10; -fx-background-color: #aafe79;">

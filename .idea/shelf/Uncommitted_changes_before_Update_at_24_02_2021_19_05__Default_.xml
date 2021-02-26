@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]" date="1614189972402" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 24/02/2021 19:05 [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="frontend/target/classes/GamerHUB/GestionUsuarios/controller/VistaPerfilControlador.class" />
+    <option name="AFTER_PATH" value="frontend/target/classes/GamerHUB/GestionUsuarios/controller/VistaPerfilControlador.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/VistaPerfilControlador.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_22_47_[Default_Changelist]/MainApp.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="frontend/target/classes/GamerHUB/Shared/controllers/VistaHomeControlador.class" />
+    <option name="AFTER_PATH" value="frontend/target/classes/GamerHUB/Shared/controllers/VistaHomeControlador.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/VistaHomeControlador.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="frontend/target/classes/GamerHUB/GestionUsuarios/model/Conversor.class" />
+    <option name="AFTER_PATH" value="frontend/target/classes/GamerHUB/GestionUsuarios/model/Conversor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/Conversor.class" />
+  </binary>
+</changelist>

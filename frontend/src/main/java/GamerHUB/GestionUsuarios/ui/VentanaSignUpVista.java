@@ -1,4 +1,4 @@
-package GamerHUB.Shared.view;
+package GamerHUB.GestionUsuarios.ui;
 
 import GamerHUB.GestionUsuarios.controller.VistaRegistroControlador;
 import GamerHUB.MainApp;
@@ -8,7 +8,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class VentanaSignUpVista {
 
@@ -22,9 +24,9 @@ public class VentanaSignUpVista {
      * @throws IOException
      */
     public void LaunchSignUpView() throws IOException {
-
+        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaRegistro.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("Shared/view/VistaRegistro.fxml"));
+        loader.setLocation(url);
         AnchorPane signup = (AnchorPane) loader.load();
 
         Scene scene = new Scene(signup, 400, 500);

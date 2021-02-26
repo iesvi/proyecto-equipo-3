@@ -1,9 +1,9 @@
 package GamerHUB.GestionUsuarios.repository.impl;
 
-import GamerHUB.GestionUsuarios.model.Conversor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import GamerHUB.GestionUsuarios.repository.IUsuarioRepository;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.MainApp;
 
 import java.util.List;
@@ -15,6 +15,7 @@ import java.util.List;
 public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
 
+    private ListaUsuario listaUsuario;
 
     public UsuarioRespositoryJDBC(){
 
@@ -24,9 +25,9 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
     private MainApp mainApp = new MainApp();
 
     @Override
-    public boolean add(UsuarioVO usuarioVO) {
-        if(usuarioVO!=null){
-            mainApp.getUsuarios_bd().add(usuarioVO);
+    public boolean add(UsuarioDTO usuarioDTO) {
+        if(usuarioDTO!=null){
+            listaUsuario.getUsers().add(usuarioDTO);
             return true;
         } else return false;
     }
@@ -34,9 +35,12 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
     @Override
     public boolean remove(int id) {
 
-        for(UsuarioVO user: mainApp.getUsuarios_bd()){
-            mainApp.getUsuarios().remove(id);
-            return true;
+        for(UsuarioDTO user: listaUsuario.getUsers()){
+            if(user.getId()==id){
+                listaUsuario.getUsers().remove(user);
+                return true;
+            }
+
         }
         return false;
     }

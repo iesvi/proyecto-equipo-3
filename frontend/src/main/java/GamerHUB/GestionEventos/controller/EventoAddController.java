@@ -1,8 +1,10 @@
 package GamerHUB.GestionEventos.controller;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
+import GamerHUB.GestionEventos.repository.ListaEvento;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.util.ActionDialogs;
-import GamerHUB.Shared.view.VentanaAddEventVista;
+import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -17,7 +19,7 @@ public class EventoAddController {
     private TextField campoAddName, campoAddDesc;
 
     @FXML
-    private DatePicker  fechainicioadd, fechafinaladd;
+    private DatePicker fechainicioadd, fechafinaladd;
 
     @FXML
     private Button BotonAdd;
@@ -25,6 +27,9 @@ public class EventoAddController {
     private Stage dialogStage;
 
     private VentanaAddEventVista vista;
+
+    private ListaEvento listaEvento = new ListaEvento();
+    private ListaUsuario listaUsuario;
 
     @FXML
     public void addEvento() {
@@ -34,11 +39,12 @@ public class EventoAddController {
             String Descripcion = campoAddDesc.getText();
             LocalDate fecha_ini = fechainicioadd.getValue();
             LocalDate fecha_f = fechafinaladd.getValue();
-            int idusuario = mainApp.getUsuarioLogeado().getId();
+            int idusuario = listaUsuario.getUsuarioLogeado().getId();
 
             EventoDTO newevento = new EventoDTO(nombre, Descripcion, fecha_ini, fecha_f, idusuario);
 
-            mainApp.getEventos().add(newevento);
+            listaEvento.getEvents().add(newevento);
+
 
             ActionDialogs.info("Evento añadido correctamente.", "Evento añadido.\n" +
                     newevento.toString());
@@ -47,6 +53,7 @@ public class EventoAddController {
         }
 
     }
+
     /**
      * @return
      */

@@ -2,23 +2,18 @@ package GamerHUB.Shared.controllers;
 
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.MainApp;
-import GamerHUB.Shared.view.VentanaEventoVista;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.Shared.view.VentanaHomeVista;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalTime;
 
 /**
  *Controlador de la
@@ -30,6 +25,8 @@ public class VistaHomeControlador {
     private VentanaHomeVista vista;
     private VentanaEventoVista vistaevento;
     private SplitPane pane;
+    private ListaUsuario listaUsuario;
+
 
     @FXML
     private TableView amigos, canales, eventos;
@@ -83,15 +80,7 @@ public class VistaHomeControlador {
     @FXML
     public MenuItem btnSalir;
 
-    /**
-     *
-     */
-    @FXML
-    private Label time;
 
-    private int minute;
-    private int hour;
-    private int second;
 
     public VistaHomeControlador() {
         llenarTablaEventos();
@@ -102,14 +91,7 @@ public class VistaHomeControlador {
      * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.
      */
     public void iniciar_Reloj() {
-        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            LocalTime currentTime = LocalTime.now();
-            time.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
-        }),
-                new KeyFrame(Duration.seconds(1))
-        );
-        clock.setCycleCount(Animation.INDEFINITE);
-        clock.play();
+
     }
 
     public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
@@ -124,7 +106,7 @@ public class VistaHomeControlador {
     }
 
     public void setUsuario() {
-        this.userLogeado = mainApp.getUsuarioLogeado();
+        this.userLogeado = listaUsuario.getUsuarioLogeado();
     }
 
 
@@ -196,8 +178,8 @@ public class VistaHomeControlador {
      */
     @FXML
     public void Logout() throws IOException {
-        mainApp.Init();
-        mainApp.LaunchInicio();
+        /*mainApp.Init();
+        mainApp.LaunchInicio();*/
         dialogStage.close();
     }
 
@@ -207,7 +189,7 @@ public class VistaHomeControlador {
      */
     @FXML
     public void LaunchPerfil() throws IOException {
-        mainApp.LaunchVistaPerfil(userLogeado);
+       // mainApp.LaunchVistaPerfil(userLogeado);
     }
 
     /**
@@ -225,7 +207,7 @@ public class VistaHomeControlador {
      */
     @FXML
     public void LoadAddEvent() throws IOException {
-        getMainApp().LaunchaddEvent();
+       // getMainApp().LaunchaddEvent();
     }
 
 

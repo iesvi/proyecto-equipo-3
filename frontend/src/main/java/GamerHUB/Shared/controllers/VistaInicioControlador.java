@@ -1,9 +1,10 @@
 package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.MainApp;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.view.VentanaInicioVista;
+import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -11,10 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 
@@ -23,8 +21,11 @@ import java.net.URL;
  */
 public class VistaInicioControlador {
 
-    private VentanaInicioVista vista;
 
+    private VentanaInicioVista vista;
+    private UsuarioDTO usuarioLogeado = new UsuarioDTO();
+    private ListaUsuario listaUsuario = new ListaUsuario();
+    private VentanaSignUpVista ventanaSignUpVista;
     /**
      *
      */
@@ -64,6 +65,14 @@ public class VistaInicioControlador {
         this.vista = vista;
     }
 
+    public UsuarioDTO getUsuarioLogeado() {
+        return usuarioLogeado;
+    }
+
+    public void setUsuarioLogeado(UsuarioDTO usuarioLogeado) {
+        this.usuarioLogeado = usuarioLogeado;
+    }
+
     /**
      *
      */
@@ -96,12 +105,12 @@ public class VistaInicioControlador {
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
 
-        for (UsuarioDTO user : main.getUsuarios()) {
+        for (UsuarioDTO user : listaUsuario.getUsers()) {
 
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                main.setUsuarioLogeado(user);
-                main.LaunchHomeView();
-                dialogStage.close();
+                setUsuarioLogeado(user);
+                vista.getStageppal().close();
+
             }
 
         }
@@ -154,7 +163,7 @@ public class VistaInicioControlador {
      * @throws IOException
      */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
-        main.LaunchSignUpView();
-        this.dialogStage.close();
+        ventanaSignUpVista.LaunchSignUpView();
+        vista.getStageppal().close();
     }
 }

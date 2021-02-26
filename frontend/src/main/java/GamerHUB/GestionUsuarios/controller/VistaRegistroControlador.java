@@ -1,11 +1,12 @@
 package GamerHUB.GestionUsuarios.controller;
 
-import GamerHUB.GestionUsuarios.model.Conversor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
-import GamerHUB.MainApp;
 import GamerHUB.Shared.util.ActionDialogs;
-import GamerHUB.Shared.view.VentanaSignUpVista;
+import GamerHUB.Shared.view.VentanaInicioVista;
+import GamerHUB.Shared.view.VentanaRootVista;
+import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -19,7 +20,9 @@ import java.util.ArrayList;
 public class VistaRegistroControlador {
 
     private VentanaSignUpVista vista;
-
+    private VentanaInicioVista ventanaInicioVista;
+    VentanaRootVista ventanaRootVista;
+ private ListaUsuario listaUsuario;
 
     /**
      *
@@ -120,8 +123,8 @@ public class VistaRegistroControlador {
             );
 
 
-            mainApp.getUsuarios().add(usuarioDTO);
-            usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
+            listaUsuario.getUsers().add(usuarioDTO);
+            usuarioRespositoryJDBC.add(usuarioDTO);
 
             ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos, doritos y mucho hentai.\n" +
                     usuarioDTO.toString());
@@ -182,8 +185,8 @@ public class VistaRegistroControlador {
      */
     @FXML
     public void handleVolver() throws IOException {
-        mainApp.Init();
-        mainApp.LaunchInicio();
+        ventanaRootVista.Init();
+        ventanaInicioVista.LaunchInicio();
         dialogStage.close();
     }
 

@@ -39,12 +39,14 @@ public class ProcessHora {
             }
         }else if (OsUtil.isUnix()){
             try{
-            ProcessBuilder pb = new ProcessBuilder("date '+%H:%M:%S'");
+            ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-c", "date '+%H:%M:%S'");
             Process p = pb.start();
             try {
                 InputStream is = p.getInputStream();
                 int c;
-                while ((c = is.read()) != -1) {
+                int n = 0;
+                while ((c = is.read()) != -1 && n < 8) {
+                    n++;
                     hora = hora + ((char) c);
                 }
                 is.close();

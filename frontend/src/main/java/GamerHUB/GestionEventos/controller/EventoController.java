@@ -1,6 +1,7 @@
 package GamerHUB.GestionEventos.controller;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
+import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXML;
@@ -19,6 +20,8 @@ public class EventoController {
 
     private VentanaEventoVista vista;
     private VentanaHomeVista ventanaHomeVista;
+
+    private ListaEvento listaEvento = new ListaEvento();
 
     /**
      * Tabla que muestra todos los eventos de la plataforma
@@ -57,9 +60,12 @@ public class EventoController {
 
 
     public EventoController() {
-        //colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
+
     }
 
+    public void setVentanahome(VentanaHomeVista ventanaHomeVista) {
+        this.ventanaHomeVista = ventanaHomeVista;
+    }
 
     @FXML
     public void volver() throws IOException {
@@ -70,6 +76,11 @@ public class EventoController {
     public void setVista(VentanaEventoVista vista,Stage dialog) {
         this.dialogStage = dialog;
         this.vista = vista;
+    }
+
+    public void iniciarEventos(){
+        eventos.setItems(listaEvento.getEvents());
+        colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
     }
 
 

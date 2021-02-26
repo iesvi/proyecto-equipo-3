@@ -3,6 +3,7 @@ package GamerHUB.Shared.controllers;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.exception.CustomException;
+import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaInicioVista;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import javafx.fxml.FXML;
@@ -26,6 +27,7 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioLogeado = new UsuarioDTO();
     private ListaUsuario listaUsuario = new ListaUsuario();
     private VentanaSignUpVista ventanaSignUpVista;
+
     /**
      *
      */
@@ -106,9 +108,9 @@ public class VistaInicioControlador {
         String pass = campoPass.getText();
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
-
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                setUsuarioLogeado(user);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user);
+                home.LaunchHomeView();
                 vista.getStageppal().close();
 
             }

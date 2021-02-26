@@ -7,30 +7,39 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalTime;
 
 public class ProcessHora {
 
-    /**
-     *
-     */
-    @FXML
-    private Label time;
 
     private int minute;
     private int hour;
     private int second;
 
-    public void displayLiveTime(){
-        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            LocalTime currentTime = LocalTime.now();
-            time.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
-        }),
-                new KeyFrame(Duration.seconds(1))
-        );
-        clock.setCycleCount(Animation.INDEFINITE);
-        clock.play();
-    }
+//    public LocalTime procesoHora() throws IOException {
+//        String hora;
+//        if(OsUtil.isWindows()){
+//            ProcessBuilder pb = new ProcessBuilder("TIME /T");
+//            Process p = pb.start();
+//            try {
+//                InputStream is = p.getInputStream();
+//                int c;
+//                while ((c = is.read()) != -1) {
+//                    hora =+ ((char) c);
+//                }
+//                is.close();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }else if (OsUtil.isUnix()){
+//
+//        }
+//    }
+
+
+
 
 
 

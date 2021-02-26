@@ -2,6 +2,7 @@ package GamerHUB.GestionEventos.ui;
 
 import GamerHUB.GestionEventos.controller.EventoController;
 import GamerHUB.MainApp;
+import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
@@ -14,9 +15,11 @@ import java.net.URL;
 public class VentanaEventoVista {
 
     private Stage stageppal;
+    private VentanaHomeVista ventanaHomeVista;
 
-    public VentanaEventoVista(Stage stageppal) {
+    public VentanaEventoVista(Stage stageppal, VentanaHomeVista ventanaHomeVista) {
         this.stageppal = stageppal;
+        this.ventanaHomeVista = ventanaHomeVista;
     }
 
 
@@ -32,6 +35,8 @@ public class VentanaEventoVista {
         pane.getItems().set(1, anchorPane1);
 
         EventoController eventocontrol = loader2.getController();
+        eventocontrol.iniciarEventos();
+        eventocontrol.setVentanahome(ventanaHomeVista);
         eventocontrol.setVista(this, stageppal);
 
     }

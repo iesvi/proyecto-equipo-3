@@ -1,6 +1,7 @@
 package GamerHUB.GestionEventos.ui;
 
 import GamerHUB.GestionEventos.controller.EventoAddController;
+import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.MainApp;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,9 +16,11 @@ import java.net.URL;
 public class VentanaAddEventVista {
 
     private Stage stageppal;
+    private UsuarioDTO user;
 
-    public VentanaAddEventVista(Stage stageppal) {
+    public VentanaAddEventVista(Stage stageppal, UsuarioDTO user) {
         this.stageppal = stageppal;
+        this.user = user;
     }
 
     /**
@@ -36,6 +39,7 @@ public class VentanaAddEventVista {
         dialogStage.initModality(Modality.APPLICATION_MODAL);
 
         EventoAddController eventoaddController = loader.getController();
+        eventoaddController.setUsuarioLogeado(user);
         eventoaddController.setVista(this,dialogStage);
 
         dialogStage.show();

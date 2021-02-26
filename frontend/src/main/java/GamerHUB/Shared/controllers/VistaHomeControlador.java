@@ -1,19 +1,26 @@
 package GamerHUB.Shared.controllers;
 
 
+import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.Shared.view.VentanaHomeVista;
+import GamerHUB.Shared.view.VentanaRootVista;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalTime;
 
 /**
  *Controlador de la
@@ -80,6 +87,9 @@ public class VistaHomeControlador {
     @FXML
     public MenuItem btnSalir;
 
+    @FXML
+    private Label time;
+
 
 
     public VistaHomeControlador() {
@@ -91,7 +101,14 @@ public class VistaHomeControlador {
      * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.
      */
     public void iniciar_Reloj() {
-
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalTime currentTime = LocalTime.now();
+            time.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
     }
 
     public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
@@ -105,8 +122,8 @@ public class VistaHomeControlador {
         return userLogeado;
     }
 
-    public void setUsuario() {
-        this.userLogeado = listaUsuario.getUsuarioLogeado();
+    public void setUsuario(UsuarioDTO user) {
+        this.userLogeado = user;
     }
 
 
@@ -178,9 +195,8 @@ public class VistaHomeControlador {
      */
     @FXML
     public void Logout() throws IOException {
-        /*mainApp.Init();
-        mainApp.LaunchInicio();*/
-        dialogStage.close();
+        VentanaRootVista ventanaRoot = new VentanaRootVista();
+        ventanaRoot.inicioStage(dialogStage);
     }
 
     /**
@@ -198,7 +214,7 @@ public class VistaHomeControlador {
      * @throws IOException
      */
     public void LoadEventoView() throws IOException {
-        vistaevento = new VentanaEventoVista(dialogStage);
+        vistaevento = new VentanaEventoVista(dialogStage, vista);
         vistaevento.loadEventoView(pane);
     }
 
@@ -207,6 +223,8 @@ public class VistaHomeControlador {
      */
     @FXML
     public void LoadAddEvent() throws IOException {
+        VentanaAddEventVista ventanaAddEventVista= new VentanaAddEventVista(dialogStage,userLogeado);
+        ventanaAddEventVista.LaunchaddEvent();
        // getMainApp().LaunchaddEvent();
     }
 

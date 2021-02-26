@@ -2,6 +2,7 @@ package GamerHUB.GestionEventos.controller;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.repository.ListaEvento;
+import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
@@ -31,6 +32,8 @@ public class EventoAddController {
     private ListaEvento listaEvento = new ListaEvento();
     private ListaUsuario listaUsuario;
 
+    private UsuarioDTO user;
+
     @FXML
     public void addEvento() {
 
@@ -39,7 +42,7 @@ public class EventoAddController {
             String Descripcion = campoAddDesc.getText();
             LocalDate fecha_ini = fechainicioadd.getValue();
             LocalDate fecha_f = fechafinaladd.getValue();
-            int idusuario = listaUsuario.getUsuarioLogeado().getId();
+            int idusuario = user.getId();
 
             EventoDTO newevento = new EventoDTO(nombre, Descripcion, fecha_ini, fecha_f, idusuario);
 
@@ -52,6 +55,10 @@ public class EventoAddController {
             dialogStage.close();
         }
 
+    }
+
+    public void setUsuarioLogeado(UsuarioDTO user) {
+        this.user = user;
     }
 
     /**

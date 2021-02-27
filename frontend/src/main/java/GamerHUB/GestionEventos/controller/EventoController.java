@@ -3,6 +3,7 @@ package GamerHUB.GestionEventos.controller;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
+import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -67,18 +68,31 @@ public class EventoController {
         this.ventanaHomeVista = ventanaHomeVista;
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     @FXML
     public void volver() throws IOException {
         ventanaHomeVista.loadHomeView2(dialogStage, listaEvento);
         //mainApp.loadHomeView2(dialogStage);
     }
 
+    /**
+     *
+     * @param vista
+     * @param dialog
+     * @param listaEvento
+     */
     public void setVista(VentanaEventoVista vista, Stage dialog, ListaEvento listaEvento) {
         this.dialogStage = dialog;
         this.vista = vista;
         this.listaEvento = listaEvento;
     }
 
+    /**
+     *
+     */
     public void iniciarEventos() {
         eventos.setItems(listaEvento.getEvents());
         colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
@@ -87,6 +101,10 @@ public class EventoController {
                 (observable, oldValue, newValue) -> showEventoDetails(newValue));
     }
 
+    /**
+     *
+     * @param evento
+     */
     public void showEventoDetails(EventoDTO evento) {
         if (evento != null) {
             campoNombreEvento.setText(evento.getNombre());
@@ -102,6 +120,9 @@ public class EventoController {
         }
     }
 
+    /**
+     *
+     */
     @FXML
     public void eliminarEvento() {
         boolean correct = false;
@@ -114,23 +135,19 @@ public class EventoController {
                 fecha_i.setValue(null);
                 fecha_f.setValue(null);
                 correct = true;
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Eliminado");
-                alert.setHeaderText("El evento ha sido eliminado correctamente.");
-                alert.setContentText("");
-                alert.showAndWait();
+                ActionDialogs.info("Eliminado", "El evento ha sido eliminado correctamente.");
+
                 break;
             }
         }
         if (!correct) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("No se ha seleccionado ningun evento.");
-            alert.setContentText("Selecciona uno para poder eliminarlo");
-            alert.showAndWait();
+            ActionDialogs.error("Error", "Selecciona uno para poder eliminarlo");
         }
     }
 
+    /**
+     *
+     */
     @FXML
     public void editarEvento() {
         String nombre = campoNombreEvento.getText();
@@ -138,11 +155,7 @@ public class EventoController {
         LocalDate fechainicial = fecha_i.getValue();
         LocalDate fechafinal = fecha_f.getValue();
         if (nombre.compareToIgnoreCase("") == 0 || Descripcion.compareToIgnoreCase("") == 0 || fechainicial == null || fechafinal == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Debes especificar todos los campos.");
-            alert.setContentText("Vuelva a intentarlo de nuevo.");
-            alert.showAndWait();
+           ActionDialogs.error("Error", "Debes especificar todos los campos.\n"+"Vuelva a intentarlo de nuevo.");
         } else if (currentEvento == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -157,11 +170,7 @@ public class EventoController {
                     event.setFechaini(fechainicial);
                     event.setFechaf(fechafinal);
                     currentEvento = event;
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Editado");
-                    alert.setHeaderText("El evento ha sido editado correctamente.");
-                    alert.setContentText("");
-                    alert.showAndWait();
+                    ActionDialogs.info("Editado", "El evento ha sido editado correctamente.");
                     break;
                 }
             }

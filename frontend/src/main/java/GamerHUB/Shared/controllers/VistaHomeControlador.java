@@ -5,6 +5,7 @@ import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
+import GamerHUB.GestionPeticiones.ui.VentanaPeticionVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
@@ -190,6 +191,7 @@ public class VistaHomeControlador {
 
             menuItem.setOnAction(event -> {
 
+
             });
         }
     }
@@ -252,6 +254,13 @@ public class VistaHomeControlador {
     }
 
 
+    @FXML
+    private void LaunchVistaPeticion() throws IOException {
+
+        VentanaPeticionVista ventanaPeticionVista = new VentanaPeticionVista(dialogStage);
+        ventanaPeticionVista.LaunchVistaPeticion();
+
+    }
 
     /*@FXML
     public void AbrirdialogAñadirEvento() throws IOException{

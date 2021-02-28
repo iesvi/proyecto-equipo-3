@@ -1,5 +1,6 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
+import com.Equipo3.Backend.Chat.Dominio.ChatVO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Shared.Dominio.Audit.AuditableEntity;
 import com.Equipo3.Backend.Usuario.Err.PersonaErr;
@@ -85,6 +86,10 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
     @OneToMany
     @JoinTable(name="Evento")
     private List<EventoVO> eventos = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="chatId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
+    private List<ChatVO> chats = new ArrayList<>();
 
     public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;

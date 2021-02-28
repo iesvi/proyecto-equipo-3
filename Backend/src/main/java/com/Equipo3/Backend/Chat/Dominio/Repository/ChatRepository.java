@@ -1,11 +1,13 @@
 package com.Equipo3.Backend.Chat.Dominio.Repository;
 
-import com.Equipo3.Backend.Shared.Dominio.Repository.GenericRepository;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
+import com.Equipo3.Backend.Chat.Dominio.ChatVO;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * Clase interfaz ChatRepository la cual extiende de GenericRepository
  */
-public interface ChatRepository extends GenericRepository<UsuarioVO, Integer> {
+@Repository
+public interface ChatRepository extends JpaRepository<ChatVO, Integer> {
 
 }

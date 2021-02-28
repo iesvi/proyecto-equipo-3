@@ -32,9 +32,13 @@ public class ChatDTO {
     private List<UsuarioDTO> usuarios = new ArrayList<>();
 
     /**
-     * historial tipo Mensaje
+     * puerto tipo int
      */
-    private Mensaje historial;
+    private int puerto;
 
-    private
+//    /**
+//     * historial tipo Mensaje
+//     */
+//    private Mensaje historial;
+
 }

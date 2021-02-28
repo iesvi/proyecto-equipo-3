@@ -37,19 +37,24 @@ public class ChatVO implements Serializable {
      * usuarios tipo List<UsuarioVO>
      */
     @ManyToMany
-    @JoinTable(name="usuario",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="chatId"))
+    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="chatId"))
     private List<UsuarioVO> usuarios = new ArrayList<>();
 
     /**
-     * historial tipo Mensaje
+     * puerto tipo int
      */
-    @Column(nullable = false)
-    private Mensaje historial;
+    @Column(unique = true, nullable = false)
+    private int puerto;
 
-    public ChatVO(int id, String nombre, Mensaje historial) {
+//    /**
+//     * historial tipo Mensaje
+//     */
+//    @Column(nullable = false)
+//    private Mensaje historial;
+
+    public ChatVO(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.historial = historial;
     }
 
     public void addUsuario(UsuarioVO usuario) {
@@ -75,11 +80,11 @@ public class ChatVO implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ChatVO chatVO = (ChatVO) o;
-        return id == chatVO.id && nombre.equals(chatVO.nombre) && historial.equals(chatVO.historial);
+        return id == chatVO.id && nombre.equals(chatVO.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, historial);
+        return Objects.hash(id, nombre);
     }
 }

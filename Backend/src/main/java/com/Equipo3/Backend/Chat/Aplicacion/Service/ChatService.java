@@ -1,14 +1,18 @@
 package com.Equipo3.Backend.Chat.Aplicacion.Service;
 
+import com.Equipo3.Backend.Chat.Dominio.ChatVO;
+import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
+import com.Equipo3.Backend.Chat.Dominio.Repository.ChatRepository;
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
+import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 /**
  * Casos de uso de la entidad chat
@@ -16,27 +20,26 @@ import javax.transaction.Transactional;
 @Service
 public class ChatService {
     /**
-     * eventoRepo tipo EventoRepository
+     * chatRepo tipo ChatRepository
      */
     @Autowired
-    EventoRepository eventoRepo;
+    ChatRepository chatRepo;
 
 
     /**
-     * Método para dar de alta un nuevo evento. Tambien se convierte un EventoDTO a EventoVO
-     * @param eventodto
-     * @return eventoRepo.save(event)
+     * Método para dar de alta un nuevo chat. Tambien se convierte un ChatDTO a ChatVO
+     * @param chatdto
+     * @return chatRepo.save(chat)
      */
     @Transactional
-    public EventoVO darDeAltaUnEvento(EventoDTO eventodto) {
+    public ChatVO darDeAltaUnChat(ChatDTO chatdto) {
 
-        EventoVO event = eventoRepo.findOne(eventodto.getId());
-        if (event!=null)
-            throw new EntityExist(EventoVO.class.toString(),event.getId());
+        Optional<ChatVO> nbd = chatRepo.findById(chatdto.getId());
+        if (nbd.isPresent())
+            throw new EntityExist(ChatVO.class.toString(),chatdto.getId());
 
-
-        event = new EventoVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
-        return eventoRepo.save(event);
+        ChatVO chat = new ChatVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
+        return chatRepo.save(chat);
     }
 
     /**
@@ -45,12 +48,13 @@ public class ChatService {
      */
     @Transactional
     public boolean eliminarUnEvento(int id){
-        EventoVO event = eventoRepo.findOne(id);
-        if (event == null)
+        Optional<EventoVO> nbd = eventoRepo.findById(id);
+        if (nbd.isPresent())
             throw new EntityNotExist(EventoVO.class.toString(),id);
 
         //Borra el evento si está en la base de datos
-        return eventoRepo.delete(event);
+        eventoRepo.deleteById(id);
+        return true;
     }
 
     /**
@@ -60,11 +64,7 @@ public class ChatService {
      */
     @Transactional
     public EventoVO consultarEventos(int id) {
-        EventoVO event = eventoRepo.findOne(id);
-        if (event == null)
-            throw new EntityNotExist(EventoVO.class.toString(),id);
-
-        return eventoRepo.findOne(id);
+        return eventoRepo.findById(id).get();
     }
 
     /**
@@ -76,13 +76,11 @@ public class ChatService {
     @Transactional
     public EventoVO modificarEvento(EventoDTO eventodto) {
 
-        EventoVO newevent = eventoRepo.findOne(eventodto.getId());
-        if (newevent == null)
-            throw new EntityNotExist(EventoVO.class.toString(),eventodto.getId());
-
-        newevent.setNombre(eventodto.getNombre());
-        newevent.setDescripcion(eventodto.getDescripcion());
-        newevent.setFecha(eventodto.getFecha());
-        return eventoRepo.save(newevent);
+        Optional<EventoVO> nbd = eventoRepo.findById(eventodto.getId());
+        if (nbd.isPresent()) {
+            throw new EntityNotExist(EventoVO.class.toString(), eventodto.getId());
+        }
+        EventoVO udpevento = EventoMapper.fromDTO(eventodto);
+        return eventoRepo.save(udpevento);
     }
 }

@@ -2,13 +2,14 @@ package GamerHUB.GestionUsuarios.model.vo;
 
 import GamerHUB.GestionEventos.model.vo.EventoVO;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 
 /**
  *
  */
-public class UsuarioVO {
+public class UsuarioVO implements Serializable {
 
     private int id;
     private String nombre;
@@ -36,6 +37,11 @@ public class UsuarioVO {
         this.amigos = amigos;
         this.amigosde = amigosde;
         this.evento = evento;
+    }
+
+    public UsuarioVO(String user, String password){
+        this.nombre = user;
+        this.password = password;
     }
 
     public int getId() {

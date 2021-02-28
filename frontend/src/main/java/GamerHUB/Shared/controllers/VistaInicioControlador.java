@@ -3,6 +3,7 @@ package GamerHUB.Shared.controllers;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
+import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaInicioVista;
@@ -96,7 +97,7 @@ public class VistaInicioControlador {
      * @throws IOException
      * @throws CustomException
      */
-    public void Login() throws IOException, CustomException {
+    public void Login() throws IOException, CustomException{
 
         boolean correct = false;
         usuarioDTO = new UsuarioDTO();
@@ -104,7 +105,7 @@ public class VistaInicioControlador {
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
 
-        for (UsuarioDTO user : listaUsuario.getUsers()) {
+        /*for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
                 VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
                 home.LaunchHomeView();
@@ -124,7 +125,7 @@ public class VistaInicioControlador {
             alert.setHeaderText("Usuario/contraseña incorrectos.");
             alert.setContentText("Vuelva a intentarlo de nuevo.");
             alert.showAndWait();
-        }
+        }*/
 
 
     }

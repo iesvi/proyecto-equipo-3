@@ -2,8 +2,6 @@ package com.Equipo3.Backend.Evento.Dominio.Mapper;
 
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 
 public class EventoMapper {
     public static EventoDTO toDTO(EventoVO vo) {
@@ -16,7 +14,7 @@ public class EventoMapper {
     }
 
     //TODO: convertDTO ==>  Por ctor
-    public EventoVO fromDTO(EventoDTO dto){
+    public static EventoVO fromDTO(EventoDTO dto){
         return new EventoVO()
                 .withId(dto.getId())
                 .withNombre(dto.getNombre())

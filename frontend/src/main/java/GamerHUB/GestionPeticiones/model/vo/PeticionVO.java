@@ -1,9 +1,11 @@
 package GamerHUB.GestionPeticiones.model.vo;
 
+import java.io.Serializable;
+
 /**
  *
  */
-public class PeticionVO {
+public class PeticionVO implements Serializable {
 
     private int id;
     private String nombre;

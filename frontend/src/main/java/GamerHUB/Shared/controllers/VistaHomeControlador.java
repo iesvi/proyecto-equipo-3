@@ -9,6 +9,7 @@ import GamerHUB.GestionPeticiones.ui.VentanaPeticionVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
+import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.util.ProcessHora;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaRootVista;
@@ -62,7 +63,7 @@ public class VistaHomeControlador {
     private TableColumn<EventoDTO, String> colEvento;
 
     @FXML
-    private MenuBar menu;
+    private MenuBar menuBar = new MenuBar();
 
     /**
      *
@@ -98,11 +99,29 @@ public class VistaHomeControlador {
     private Label time;
 
 
+    /**
+     *
+     */
     public VistaHomeControlador() {
         hora = new ProcessHora();
+
         // addOpcionAdmin();
     }
 
+    /**
+     * @param vista
+     * @param dialogStage
+     * @param pane
+     */
+    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
+        this.dialogStage = dialogStage;
+        this.vista = vista;
+        this.pane = pane;
+    }
+
+    /**
+     * @param listaEvento
+     */
     public void setEventos(ListaEvento listaEvento) {
         if (listaEvento == null) {
             if (userLogeado.getEventos().isEmpty()) {
@@ -114,6 +133,15 @@ public class VistaHomeControlador {
             this.listaEvento = listaEvento;
         }
     }
+
+    public UsuarioDTO getUsuarioLogeado() {
+        return userLogeado;
+    }
+
+    public void setUsuario(UsuarioDTO user) {
+        this.userLogeado = user;
+    }
+
 
     /**
      * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.
@@ -129,32 +157,17 @@ public class VistaHomeControlador {
         clock.play();
     }
 
-    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
-        this.dialogStage = dialogStage;
-        this.vista = vista;
-        this.pane = pane;
-    }
-
-
-    public UsuarioDTO getUsuarioLogeado() {
-        return userLogeado;
-    }
-
-    public void setUsuario(UsuarioDTO user) {
-        this.userLogeado = user;
-    }
-
 
     /**
      *
      */
     @FXML
     public void initialize() {
-        //colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
+       addOpcionAdmin();
     }
 
     public MenuBar getMenu() {
-        return menu;
+        return menuBar;
     }
 
 
@@ -179,7 +192,7 @@ public class VistaHomeControlador {
      *
      */
     public void addOpcionAdmin() {
-        if (getUsuarioLogeado().getRol().equals("admin")) {
+       // if (getUsuarioLogeado().getRol().equals("admin")) {
             Menu menu = new Menu();
             menu.setText("Opciones");
 
@@ -191,9 +204,15 @@ public class VistaHomeControlador {
 
             menuItem.setOnAction(event -> {
 
+                try {
+                    vista.LaunchVistaAdmin();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
 
             });
-        }
+       // }
     }
 
     /**
@@ -225,11 +244,11 @@ public class VistaHomeControlador {
      */
     @FXML
     public void LaunchPerfil() throws IOException {
-        VentanaPerfilVista ventanavista = new VentanaPerfilVista(dialogStage,vista);
+        VentanaPerfilVista ventanavista = new VentanaPerfilVista(dialogStage, vista);
         ventanavista.LaunchVistaPerfil(pane, userLogeado);
     }
 
-    public void setUserNameLabel(){
+    public void setUserNameLabel() {
         userName.setText(userLogeado.getNombre());
     }
 
@@ -281,6 +300,10 @@ public class VistaHomeControlador {
 
         dialogStage.showAndWait();
     }*/
+
+    public void LaunchVistaAdmin() {
+
+    }
 
     public void setlistaUsuarios(ListaUsuario listaUsuario) {
         this.listaUsuario = listaUsuario;

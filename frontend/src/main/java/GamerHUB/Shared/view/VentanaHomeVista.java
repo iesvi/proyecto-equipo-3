@@ -3,6 +3,7 @@ package GamerHUB.Shared.view;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.ui.VentanaAdminVista;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.exception.CustomException;
 import javafx.fxml.FXMLLoader;
@@ -97,8 +98,21 @@ public class VentanaHomeVista {
         pane.setDividerPositions(0.32);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
+    public void LaunchVistaAdmin() throws IOException {
+        VentanaAdminVista ventanaAdminVista = new VentanaAdminVista();
+        ventanaAdminVista.LaunchVistaAdmin(stageppal);
+    }
+
 
     public Stage getStageppal() {
         return stageppal;
+    }
+
+    public UsuarioDTO getUser() {
+        return user;
     }
 }

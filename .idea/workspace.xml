@@ -5,27 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="...">
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Repository/ConexionServerSocketRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/JPA/ConexionServerSocketImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/controller/PeticionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/Conversor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/dto/PeticionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/vo/PeticionVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VentanaPeticionVista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ClientSocketThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_13_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_13_09__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2021_16_17__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2021_16_17__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05__Default_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/controller/ChatAddController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ConversorCanal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ConversorMensaje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ListaChat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/MensajeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/MensajeVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/ui/VentanaAddChatVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/ui/VistaAddChat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/repository/ListaPeticiones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaAdminVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ServerSocketThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/UserLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/Canal.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/CanalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/CanalVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/CanalVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ClientSocketThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ClientSocketThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaAdminVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaAdminVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaAyudaDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VistaPeticionDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionEventos/controller/EventoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionEventos/controller/EventoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaAdminVista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaHomeVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaHomeVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionChat/model/dto/Canal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/AdminController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/VistaHomeControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/VistaHomeControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto-equipo-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto-equipo-3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/view/VentanaAdminVista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/view/VentanaHomeVista.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/view/VentanaHomeVista.class" afterDir="false" />
     </list>
+    <list id="2a745792-d143-489f-9cd2-26485c7b0849" name="Changes by cucha" comment="" />
     <list id="24a26919-abfb-4b40-b115-3b0aab506d2f" name="Changes by Manuel Santos" comment="" />
     <list id="33518009-771b-4157-98c7-2926d8cc2012" name="Changes by Vic" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,8 +88,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -131,8 +139,8 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DIU/2º EV/Spring - microservicios/tutorial_vrs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -144,6 +152,9 @@
       <recent name="C:\Users\Vic\Desktop\proyecto-equipo-3\frontend\src\main\java\GamerHUB\GestionUsuarios\ui" />
       <recent name="C:\Users\Vic\Desktop\proyecto-equipo-3\frontend\src\main\java\GamerHUB\GestionEventos\ui" />
       <recent name="C:\Users\Vic\Desktop\DAM\PSP\proyecto-equipo-3\frontend\src\main\resources\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Equipo3.Backend.Chat.Service" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainApp (1)">
@@ -211,19 +222,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -299,9 +297,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp (1)" />
+        <item itemvalue="JUnit.UsuarioInfraUnitTC" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="JUnit.com.Equipo3.Backend in Backend" />
-        <item itemvalue="JUnit.UsuarioInfraUnitTC" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +322,9 @@
       <workItem from="1614334886403" duration="660000" />
       <workItem from="1614335633421" duration="11257000" />
       <workItem from="1614372438724" duration="10530000" />
-      <workItem from="1614417683685" duration="9251000" />
+      <workItem from="1614417683685" duration="25791000" />
+      <workItem from="1614525075357" duration="39000" />
+      <workItem from="1614526990456" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="subiendo plantilla proyecto">
       <created>1608121643928</created>
@@ -340,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608126249597</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="...">
+      <created>1614431923755</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614431923755</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

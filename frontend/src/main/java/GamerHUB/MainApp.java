@@ -19,16 +19,6 @@ public class MainApp extends Application {
     private VentanaRootVista ventanaRoot;
 
     private AnchorPane home;
-    //private AnchorPane perfil;
-    // private AnchorPane evento;
-    /**
-     *
-     */
-
-
-    /**
-     *
-     */
 
 
     /**

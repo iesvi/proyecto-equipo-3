@@ -35,4 +35,6 @@ public class ChatDTO {
      * historial tipo Mensaje
      */
     private Mensaje historial;
+
+    private
 }

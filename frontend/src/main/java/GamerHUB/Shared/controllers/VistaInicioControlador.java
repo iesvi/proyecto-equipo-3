@@ -110,14 +110,14 @@ public class VistaInicioControlador {
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
-                LogUsuario(user);
+                logUsuario(user);
 
             } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
                 VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
-                LogUsuario(user);
+                logUsuario(user);
             }
         }
         if (!correct) {
@@ -179,17 +179,21 @@ public class VistaInicioControlador {
         vista.getStageppal().close();
     }
 
-    public void LogUsuario(UsuarioDTO user) throws Exception{
-        File directorio = new File("./frontend/target/classes/GamerHUB/Shared/");
-        ProcessBuilder pb = new ProcessBuilder("java","util.UserLog");
-        pb.directory(directorio);
-        Process p = pb.start();
-
-        int exitVal;
+    public void logUsuario(UsuarioDTO user){
         try {
-            exitVal = p.waitFor();
-            System.out.println("Valor de Salida: " + exitVal);
-        } catch (InterruptedException e) {
+            File directorio = new File("frontend/target/classes/");
+            ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog", user.getNombre());
+            pb.directory(directorio);
+            Process p = pb.start();
+
+            int exitVal;
+            try {
+                exitVal = p.waitFor();
+                System.out.println("Valor de Salida: " + exitVal);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }catch(Exception e){
             e.printStackTrace();
         }
     }

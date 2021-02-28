@@ -1,9 +1,8 @@
 package com.Equipo3.Backend.Evento.Dominio;
+
 import lombok.*;
 
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -40,6 +39,7 @@ public class EventoVO {
     /**
      * idusuario tipo int
      */
+    @ManyToOne
     @Column(length = 500)
     private int idusuario;
 

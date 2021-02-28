@@ -19,7 +19,6 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     public UsuarioRespositoryJDBC(ListaUsuario listaUsuario) {
         this.listaUsuario = listaUsuario;
-
     }
 
 
@@ -35,7 +34,6 @@ public class UsuarioRespositoryJDBC implements IUsuarioRepository {
 
     @Override
     public boolean remove(int id) {
-
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getId() == id) {
                 listaUsuario.getUsers().remove(user);

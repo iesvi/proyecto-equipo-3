@@ -4,9 +4,10 @@ package GamerHUB.GestionChat.model.vo;
 /**
  *
  */
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CanalVO {
+public class CanalVO implements Serializable {
 
 
     private int id;

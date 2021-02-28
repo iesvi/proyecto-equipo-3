@@ -1,5 +1,6 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
+import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Usuario.Err.PersonaErr;
 import lombok.*;
 
@@ -79,9 +80,9 @@ public class UsuarioVO implements Serializable  {
     @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="amigoId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
     private List<UsuarioVO> amigosde = new ArrayList<>();
 
-    /*@OneToMany
+    @OneToMany
     @JoinTable(name="Evento")
-    private List<UsuarioVO> eventos = new ArrayList<>();*/
+    private List<EventoVO> eventos = new ArrayList<>();
 
     public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;

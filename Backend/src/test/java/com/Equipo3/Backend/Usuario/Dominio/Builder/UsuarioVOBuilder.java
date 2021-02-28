@@ -1,14 +1,11 @@
 package com.Equipo3.Backend.Usuario.Dominio.Builder;
 
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import io.beanmother.core.ObjectMother;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

@@ -1,8 +1,8 @@
 package com.Equipo3.Backend.Usuario.Dominio.DTO;
 
 
+import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -64,4 +64,8 @@ public class UsuarioDTO {
      * amigosde tipo List<UsuarioDTO>
      */
     private List<UsuarioDTO> amigosde = new ArrayList<>();
+    /**
+     * eventos tipo List<EventoDTO>
+     */
+    private List<EventoDTO> eventos = new ArrayList<>();
 }

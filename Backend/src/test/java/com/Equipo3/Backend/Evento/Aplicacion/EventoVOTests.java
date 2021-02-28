@@ -1,14 +1,5 @@
 package com.Equipo3.Backend.Evento.Aplicacion;
 
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
-import com.Equipo3.Backend.Evento.Infraestructura.JPA.EventoRepositoryJPA;
-import org.junit.Assert;
-import org.junit.Test;
-
-import javax.transaction.Transactional;
-import java.util.Date;
-
 public class EventoVOTests  {
 
 //

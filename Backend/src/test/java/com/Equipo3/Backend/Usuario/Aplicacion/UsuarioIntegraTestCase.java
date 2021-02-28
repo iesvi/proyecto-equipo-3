@@ -5,7 +5,6 @@ import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.Builder.UsuarioVOBuilder;
-import com.Equipo3.Backend.Usuario.Dominio.Builder.UsuarioVOMother;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
 import com.Equipo3.Backend.Usuario.Dominio.Repository.UsuarioRepository;
@@ -18,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ConfigurationSpring.class})
 public class UsuarioIntegraTestCase {
@@ -28,6 +28,7 @@ public class UsuarioIntegraTestCase {
     UsuarioRepository userRepo;
 
     @Test
+    @Transactional
     public void ShouldRegisterUsuarioNotExistTest() {
 
         UsuarioVO newuser = userService.Registro_De_Usuario(buildUsuarioDto());
@@ -38,6 +39,7 @@ public class UsuarioIntegraTestCase {
     }
 
     @Test(expected = EntityExist.class)
+    @Transactional
     public void ShouldRegisterUsuarioExist_ThrowExceptionTest() {
 
 
@@ -48,14 +50,14 @@ public class UsuarioIntegraTestCase {
     }
 
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldRemoveUsuarioNotExist_ThrowExceptionTest() {
 
-        UsuarioVO usuarioYaExistente = new UsuarioVOBuilder().build();
-
-        userService.Eliminar_Usuario(usuarioYaExistente.getId());
+        userService.Eliminar_Usuario(25);
     }
 
     @Test
+    @Transactional
     public void ShouldRemoveUsuarioExistTest() {
 
 

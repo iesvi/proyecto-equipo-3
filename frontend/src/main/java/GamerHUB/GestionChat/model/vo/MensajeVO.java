@@ -1,13 +1,12 @@
 package GamerHUB.GestionChat.model.vo;
 
-import javafx.beans.property.StringProperty;
-
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  */
-public class MensajeVO {
+public class MensajeVO implements Serializable {
 
     private int id;
     private  int id_chat;

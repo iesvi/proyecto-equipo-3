@@ -57,6 +57,12 @@ public class ChatVO implements Serializable {
         this.nombre = nombre;
     }
 
+    public ChatVO(int id, String nombre, int puerto) {
+        this.id = id;
+        this.nombre = nombre;
+        this.puerto = puerto;
+    }
+
     public void addUsuario(UsuarioVO usuario) {
         if (usuarios == null)
             usuarios = new ArrayList<>();

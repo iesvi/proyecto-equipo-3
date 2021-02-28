@@ -29,8 +29,4 @@ public class EventoVOBuilder {
                 descripcion!=null ? descripcion : nmother.getDescripcion()
         );
     }
-
-
-
-
 }

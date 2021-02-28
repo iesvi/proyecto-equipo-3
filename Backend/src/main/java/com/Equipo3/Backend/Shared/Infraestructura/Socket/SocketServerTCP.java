@@ -14,7 +14,6 @@ public class SocketServerTCP implements SocketServer {
 
     private final int PORT = 12345;
     private ServerSocket serverSocket = new ServerSocket(PORT);
-
     private final Socket socket = new Socket();
 
     public SocketServerTCP() throws IOException {

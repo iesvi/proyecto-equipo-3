@@ -86,7 +86,8 @@ public class VistaHomeControlador {
      */
     @FXML
     private TextField searchBar;
-            private TextField msgBar = new TextField();
+    @FXML
+    private TextField msgBar = new TextField();
 
     @FXML
     private TextArea areaChat;
@@ -107,13 +108,13 @@ public class VistaHomeControlador {
     private Label time;
 
 
-    MultiChatUDP multiChatUDP = new MultiChatUDP("user", this);
+    MultiChatUDP multiChatUDP;
     /**
      *
      */
     public VistaHomeControlador() throws IOException {
         hora = new ProcessHora();
-
+        multiChatUDP = new MultiChatUDP("user", this);
         new Thread(multiChatUDP).start();
 
 
@@ -121,12 +122,8 @@ public class VistaHomeControlador {
     }
 
 
-    public void sendMsg(){
-        msgBar.setOnKeyPressed(new EventHandler<KeyEvent>()
-        {
-            @Override
-            public void handle(KeyEvent keyEvent)
-            {
+            @FXML
+            public void handlemensaje(KeyEvent keyEvent) {
                 if(keyEvent.getCode() == KeyCode.ENTER)
                 {
                     try {
@@ -136,8 +133,7 @@ public class VistaHomeControlador {
                     }
                 }
             }
-        });
-    }
+
 
     /**
      * @param vista

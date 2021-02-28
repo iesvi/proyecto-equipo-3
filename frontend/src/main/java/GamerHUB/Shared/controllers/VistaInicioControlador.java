@@ -3,7 +3,6 @@ package GamerHUB.Shared.controllers;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
-import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaInicioVista;
@@ -97,7 +96,7 @@ public class VistaInicioControlador {
      * @throws IOException
      * @throws CustomException
      */
-    public void Login() throws IOException, CustomException{
+    public void Login() throws Exception, IOException, CustomException{
 
         boolean correct = false;
         usuarioDTO = new UsuarioDTO();
@@ -105,18 +104,20 @@ public class VistaInicioControlador {
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
 
-        /*for (UsuarioDTO user : listaUsuario.getUsers()) {
+        for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
                 VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
+                LogUsuario(user);
 
             } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
                 VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
+                LogUsuario(user);
             }
         }
         if (!correct) {
@@ -125,7 +126,7 @@ public class VistaInicioControlador {
             alert.setHeaderText("Usuario/contraseña incorrectos.");
             alert.setContentText("Vuelva a intentarlo de nuevo.");
             alert.showAndWait();
-        }*/
+        }
 
 
     }
@@ -135,7 +136,7 @@ public class VistaInicioControlador {
      * Called when the user clicks ok.
      */
     @FXML
-    private void handleOk() throws IOException, CustomException {
+    private void handleOk() throws Exception, IOException, CustomException {
         if (isInputValid()) {
             Login();
         }
@@ -176,5 +177,20 @@ public class VistaInicioControlador {
         ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario);
         ventanaSignUpVista.LaunchSignUpView();
         vista.getStageppal().close();
+    }
+
+    public void LogUsuario(UsuarioDTO user) throws Exception{
+        File directorio = new File("./frontend/target/classes/GamerHUB/Shared/");
+        ProcessBuilder pb = new ProcessBuilder("java","util.UserLog");
+        pb.directory(directorio);
+        Process p = pb.start();
+
+        int exitVal;
+        try {
+            exitVal = p.waitFor();
+            System.out.println("Valor de Salida: " + exitVal);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

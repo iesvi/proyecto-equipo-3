@@ -3,6 +3,7 @@ package com.Equipo3.Backend.Usuario.Dominio.DTO;
 
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
+import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.List;
 @With
 @EqualsAndHashCode
 @AllArgsConstructor
-public class UsuarioDTO {
+public class UsuarioDTO implements Dto {
 
     /**
      * id tipo int

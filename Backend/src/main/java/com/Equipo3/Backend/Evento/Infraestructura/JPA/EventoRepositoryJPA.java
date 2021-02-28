@@ -8,9 +8,4 @@ import org.springframework.stereotype.Repository;
 /**
  * Implementación del repositorio de eventos para Java Persistence Api
  */
-@Repository
-public class EventoRepositoryJPA extends GenericRepositoryJPA<EventoVO,Integer> implements EventoRepository {
-    public EventoRepositoryJPA() {
-        super(EventoVO.class);
-    }
-}
+

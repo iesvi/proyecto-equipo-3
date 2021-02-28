@@ -3,6 +3,7 @@ package com.Equipo3.Backend.Usuario.Aplicacion.Service;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
+import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
 import com.Equipo3.Backend.Usuario.Dominio.Repository.UsuarioRepository;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class UsuarioService {
         if (nbd.isPresent())
             throw new EntityExist(UsuarioVO.class.toString(), usuariodto.getId());
 
-        UsuarioVO user = new UsuarioVO(usuariodto.getNombre(), usuariodto.getPassword(), usuariodto.getEmail(), usuariodto.getFecha_nacimiento(), usuariodto.getTelefono(), usuariodto.getRol(), null, null, null);
+        UsuarioVO user = UsuarioMapper.fromDTO(usuariodto);
         return usuarioRepo.save(user);
     }
 
@@ -61,7 +62,7 @@ public class UsuarioService {
         if (nbd.isPresent()) {
             throw new EntityNotExist(UsuarioVO.class.toString(), usuariodto.getId());
         }
-        UsuarioVO udpusuario = new UsuarioVO(usuariodto.getNombre(), usuariodto.getPassword(), usuariodto.getEmail(), usuariodto.getFecha_nacimiento(), usuariodto.getTelefono(), usuariodto.getRol());
+        UsuarioVO udpusuario = UsuarioMapper.fromDTO(usuariodto);
         return usuarioRepo.save(udpusuario);
     }
 

@@ -1,6 +1,7 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
+import com.Equipo3.Backend.Shared.Dominio.Audit.AuditableEntity;
 import com.Equipo3.Backend.Usuario.Err.PersonaErr;
 import lombok.*;
 
@@ -15,12 +16,13 @@ import java.util.List;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @Getter
 @Setter
 @With
 //@EqualsAndHashCode (exclude = {"friends","friendOf"})
 @Entity(name="Usuario")
-public class UsuarioVO implements Serializable  {
+public class UsuarioVO extends AuditableEntity implements Serializable  {
 
     /**
      * id tipo int el cual es el Id en la base de datos

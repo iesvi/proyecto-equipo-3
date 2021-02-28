@@ -12,7 +12,4 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @Import(value = {ConfigurationPersistence.class, ConfigurationMongo.class})
 public class ConfigurationSpring {
-    public ConfigurationSpring() {
-        System.setProperty("org.jboss.logging.provider","log4j2");
-    }
 }

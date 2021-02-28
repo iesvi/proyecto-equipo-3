@@ -2,9 +2,12 @@ package com.Equipo3.Backend.Evento.Aplicacion.Service;
 
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
+import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
 import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
+import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
+import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -73,13 +76,11 @@ public class EventoService {
     @Transactional
     public EventoVO modificarEvento(EventoDTO eventodto) {
 
-        EventoVO newevent = eventoRepo.findById(eventodto.getId());
-        if (newevent == null)
-            throw new EntityNotExist(EventoVO.class.toString(),eventodto.getId());
-
-        newevent.setNombre(eventodto.getNombre());
-        newevent.setDescripcion(eventodto.getDescripcion());
-        newevent.setFecha(eventodto.getFecha());
-        return eventoRepo.save(newevent);
+        Optional<EventoVO> nbd = eventoRepo.findById(eventodto.getId());
+        if (nbd.isPresent()) {
+            throw new EntityNotExist(EventoVO.class.toString(), eventodto.getId());
+        }
+        EventoVO udpevento = EventoMapper.fromDTO(eventodto);
+        return eventoRepo.save(udpevento);
     }
 }

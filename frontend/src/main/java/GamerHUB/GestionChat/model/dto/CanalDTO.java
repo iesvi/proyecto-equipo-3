@@ -16,19 +16,19 @@ public class CanalDTO {
     private IntegerProperty id;
     private StringProperty nombre;
     private ObservableList<Integer> miembros;
-    private ObservableList<MensajeDTO> historial;
+    //private ObservableList<MensajeDTO> historial;
 
     /**
      *
      * @param nombre
      * @param miembros
-     * @param historial
+
      */
-    public CanalDTO( String nombre, ObservableList<Integer> miembros, ObservableList<MensajeDTO> historial) {
+    public CanalDTO( String nombre, ObservableList<Integer> miembros) {
         this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));;
         this.nombre = new SimpleStringProperty(nombre);
         this.miembros = FXCollections.observableArrayList(miembros);
-        this.historial = FXCollections.observableArrayList(historial);
+        //this.historial = FXCollections.observableArrayList(historial);
     }
 
     public int getId() {
@@ -63,13 +63,13 @@ public class CanalDTO {
         this.miembros = miembros;
     }
 
-    public ObservableList<MensajeDTO> getHistorial() {
-        return historial;
-    }
+  //  public ObservableList<MensajeDTO> getHistorial() {
+     //   return historial;
+  //  }
 
-    public void setHistorial(ObservableList<MensajeDTO> historial) {
-        this.historial = historial;
-    }
+   // public void setHistorial(ObservableList<MensajeDTO> historial) {
+      //  this.historial = historial;
+   // }
 
     @Override
     public String toString() {
@@ -77,7 +77,7 @@ public class CanalDTO {
                 "id=" + id +
                 ", nombre=" + nombre +
                 ", miembros=" + miembros +
-                ", historial=" + historial +
+                ", historial="  +
                 '}';
     }
 }

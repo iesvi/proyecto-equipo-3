@@ -13,20 +13,20 @@ public class CanalVO implements Serializable {
     private int id;
     private String nombre;
     private ArrayList<Integer> miembros;
-    private ArrayList<MensajeVO> historial;
+    //private ArrayList<MensajeVO> historial;
 
     /**
      *
      * @param id
      * @param nombre
      * @param miembros
-     * @param historial
+
      */
-    public CanalVO(int id, String nombre, ArrayList<Integer> miembros, ArrayList<MensajeVO> historial) {
+    public CanalVO(int id, String nombre, ArrayList<Integer> miembros) {
         this.id = id;
         this.nombre = nombre;
         this.miembros = miembros;
-        this.historial = historial;
+        //this.historial = historial;
     }
 
     public int getId() {
@@ -53,13 +53,13 @@ public class CanalVO implements Serializable {
         this.miembros = miembros;
     }
 
-    public ArrayList<MensajeVO> getHistorial() {
-        return historial;
-    }
+    //public ArrayList<MensajeVO> getHistorial() {
+    //    return historial;
+    //}
 
-    public void setHistorial(ArrayList<MensajeVO> historial) {
-        this.historial = historial;
-    }
+   // public void setHistorial(ArrayList<MensajeVO> historial) {
+    //    this.historial = historial;
+    //}
 
     @Override
     public String toString() {
@@ -67,7 +67,7 @@ public class CanalVO implements Serializable {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", miembros=" + miembros +
-                ", historial=" + historial +
+                ", historial="  +
                 '}';
     }
 }

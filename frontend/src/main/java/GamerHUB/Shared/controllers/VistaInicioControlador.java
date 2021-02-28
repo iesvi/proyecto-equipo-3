@@ -3,7 +3,9 @@ package GamerHUB.Shared.controllers;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
+import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
+import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import GamerHUB.Shared.view.VentanaInicioVista;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
 
 /**
@@ -23,6 +26,7 @@ import java.net.URL;
 public class VistaInicioControlador {
 
 
+   // private final Socket socket = new Socket("localhost", 12345);
     private VentanaInicioVista vista;
     private UsuarioDTO usuarioLogeado = new UsuarioDTO();
     private ListaUsuario listaUsuario;
@@ -88,7 +92,7 @@ public class VistaInicioControlador {
     /**
      *
      */
-    public VistaInicioControlador() {
+    public VistaInicioControlador() throws IOException {
     }
 
 
@@ -103,6 +107,8 @@ public class VistaInicioControlador {
 
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
+
+       //LoginThread loginThread =new LoginThread(socket);
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
@@ -160,11 +166,8 @@ public class VistaInicioControlador {
             return true;
         } else {
             // Show the error message.
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error en los campos.");
-            alerta.setHeaderText(null);
-            alerta.setContentText(errorMsg);
-            alerta.showAndWait();
+            ActionDialogs.error("Error en los campos.", errorMsg);
+
             return false;
         }
     }

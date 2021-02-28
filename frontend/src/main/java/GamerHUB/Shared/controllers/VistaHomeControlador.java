@@ -1,6 +1,7 @@
 package GamerHUB.Shared.controllers;
 
 
+import GamerHUB.GestionChat.controller.MultiChatUDP;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
@@ -16,10 +17,13 @@ import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -81,7 +85,11 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private TextField searchBar, msgBar;
+    private TextField searchBar;
+            private TextField msgBar = new TextField();
+
+    @FXML
+    private TextArea areaChat;
 
     /**
      *
@@ -99,13 +107,36 @@ public class VistaHomeControlador {
     private Label time;
 
 
+    MultiChatUDP multiChatUDP = new MultiChatUDP("user", this);
     /**
      *
      */
-    public VistaHomeControlador() {
+    public VistaHomeControlador() throws IOException {
         hora = new ProcessHora();
 
+        new Thread(multiChatUDP).start();
+
+
         // addOpcionAdmin();
+    }
+
+
+    public void sendMsg(){
+        msgBar.setOnKeyPressed(new EventHandler<KeyEvent>()
+        {
+            @Override
+            public void handle(KeyEvent keyEvent)
+            {
+                if(keyEvent.getCode() == KeyCode.ENTER)
+                {
+                    try {
+                        multiChatUDP.sendMsg("user", msgBar.getText().toString());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     /**
@@ -142,6 +173,13 @@ public class VistaHomeControlador {
         this.userLogeado = user;
     }
 
+    public TextField getMsgBar() {
+        return msgBar;
+    }
+
+    public TextArea getAreaChat() {
+        return areaChat;
+    }
 
     /**
      * Método que muestra la hora actual completa (hh:mm:ss) en tiempo real.

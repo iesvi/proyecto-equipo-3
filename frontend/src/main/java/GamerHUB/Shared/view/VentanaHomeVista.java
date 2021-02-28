@@ -94,6 +94,7 @@ public class VentanaHomeVista {
         controladorHome.setImagenLupa();
         controladorHome.iniciar_Reloj();
         controladorHome.llenarTablaEventos();
+        controladorHome.sendMsg();
 
         pane.setDividerPositions(0.32);
     }

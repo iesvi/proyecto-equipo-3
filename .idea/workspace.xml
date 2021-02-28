@@ -5,23 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Front">
-      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/controller/MultiChatUDP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_11_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_2_2_13_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Aplicacion/Dto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Audit/AuditableEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Socket/SocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Audit/CustomAuditorAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerTCP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/RunApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/app.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerTCP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/CanalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/CanalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/CanalVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/CanalVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/LoginThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/LoginThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Mapper/UsuarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Mapper/UsuarioMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaHomeVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaHomeVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionChat/model/dto/CanalDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionChat/model/dto/CanalDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionChat/model/vo/CanalVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/GestionChat/model/vo/CanalVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/conexion/ClientSocketThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/conexion/ClientSocketThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/VistaHomeControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/VistaHomeControlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/UserLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/UserLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/VistaInicioControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/controllers/VistaInicioControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/view/VentanaHomeVista.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/view/VentanaHomeVista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/util/UserLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/target/classes/GamerHUB/Shared/util/UserLog.class" afterDir="false" />
     </list>
-    <list id="2a745792-d143-489f-9cd2-26485c7b0849" name="Changes by cucha" comment="" />
+    <list id="2a745792-d143-489f-9cd2-26485c7b0849" name="Changes by cucha" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Repository/EventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Repository/EventoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Infraestructura/JPA/EventoRepositoryJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Infraestructura/JPA/EventoRepositoryJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Aplicacion/Service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Aplicacion/Service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/DTO/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/DTO/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" afterDir="false" />
+    </list>
     <list id="24a26919-abfb-4b40-b115-3b0aab506d2f" name="Changes by Manuel Santos" comment="" />
     <list id="33518009-771b-4157-98c7-2926d8cc2012" name="Changes by Vic" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +120,33 @@
       </set>
     </option>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+        <range start1="14" end1="16" start2="15" end2="15" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="18" end1="18" start2="17" end2="18" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Repository/UsuarioRepository.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="7" end1="7" start2="8" end2="9" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="10" end1="11" start2="12" end2="14" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Aplicacion/UsuarioIntegraTestCase.java">
+      <ranges>
+        <range start1="7" end1="8" start2="7" end2="7" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="19" end1="19" start2="18" end2="19" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="30" end1="30" start2="30" end2="31" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+        <range start1="40" end1="40" start2="41" end2="42" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+        <range start1="50" end1="50" start2="52" end2="53" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+        <range start1="52" end1="55" start2="55" end2="56" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+        <range start1="58" end1="58" start2="59" end2="60" changelist="2a745792-d143-489f-9cd2-26485c7b0849" />
+      </ranges>
+    </file>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1ljrBEqVsz22sDhMOioM4rbDMuh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -151,7 +196,7 @@
       <recent name="com.Equipo3.Backend.Chat.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainApp">
+  <component name="RunManager" selected="Application.MainApp (1)">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -170,12 +215,43 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration name="MainApp" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="proyectopsp2021-grupoB" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApp (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GamerHUB.MainApp" />
       <module name="Proyectopsp2021_Grupo_B" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GamerHUB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GamerHUB.Shared.view.MainApp" />
+      <module name="Proyectopsp2021_Grupo_B" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GamerHUB.GestionEventos.ui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -284,14 +360,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.UserLog" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.MainApp" />
+      <item itemvalue="Application.MainApp (1)" />
+      <item itemvalue="Application.UserLog" />
       <item itemvalue="JUnit.com.Equipo3.Backend in Backend" />
       <item itemvalue="JUnit.UsuarioInfraUnitTC" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainApp" />
+        <item itemvalue="Application.MainApp (1)" />
         <item itemvalue="Application.UserLog" />
         <item itemvalue="JUnit.UsuarioInfraUnitTC" />
         <item itemvalue="Application.MainApp" />
@@ -321,7 +399,7 @@
       <workItem from="1614417683685" duration="25791000" />
       <workItem from="1614525075357" duration="39000" />
       <workItem from="1614526990456" duration="1670000" />
-      <workItem from="1614529818332" duration="9208000" />
+      <workItem from="1614529818332" duration="12502000" />
     </task>
     <task id="LOCAL-00001" summary="subiendo plantilla proyecto">
       <created>1608121643928</created>

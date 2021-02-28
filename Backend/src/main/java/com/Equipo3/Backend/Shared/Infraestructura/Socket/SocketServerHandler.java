@@ -13,6 +13,7 @@ public class SocketServerHandler {
     SocketServer socket;
 
     public SocketServerHandler() {
+
     }
 
     public void send(Dto object) {

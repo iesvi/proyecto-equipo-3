@@ -9,6 +9,7 @@ import com.Equipo3.Backend.Shared.UnitTestCase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +19,7 @@ import javax.persistence.PersistenceContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ConfigurationSpring.class})
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ChatInfraUnitTest extends UnitTestCase {
 
     @PersistenceContext
@@ -36,7 +38,6 @@ public class ChatInfraUnitTest extends UnitTestCase {
 
         //Assert
         ChatVO chatBd = em.find(ChatVO.class,chat.getId());
-
         Assert.assertEquals(chat, chatBd);
     }
 
@@ -83,7 +84,6 @@ public class ChatInfraUnitTest extends UnitTestCase {
     private ChatVO createAndSaveNewChat() {
         ChatVO chat = new ChatVOBuilder().build();
         em.persist(chat);
-
         return chat;
     }
 }

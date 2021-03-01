@@ -13,7 +13,6 @@ import java.util.Objects;
 /**
  * Clase ChatVO para trabajar con la base de datos
  */
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -36,14 +35,14 @@ public class ChatVO implements Serializable {
     /**
      * usuarios tipo List<UsuarioVO>
      */
-    @ManyToMany
-    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="chatId"))
-    private List<UsuarioVO> usuarios = new ArrayList<>();
+//    @ManyToMany
+//    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="chatId"))
+//    private List<UsuarioVO> usuarios = new ArrayList<>();
 
     /**
      * puerto tipo int
      */
-    @Column(unique = true, nullable = false)
+    @Column( nullable = false)
     private int puerto;
 
 //    /**
@@ -51,6 +50,11 @@ public class ChatVO implements Serializable {
 //     */
 //    @Column(nullable = false)
 //    private Mensaje historial;
+
+    public ChatVO(String nombre, int puerto) {
+        this.nombre = nombre;
+        this.puerto = puerto;
+    }
 
     public ChatVO(int id, String nombre) {
         this.id = id;
@@ -63,23 +67,23 @@ public class ChatVO implements Serializable {
         this.puerto = puerto;
     }
 
-    public void addUsuario(UsuarioVO usuario) {
-        if (usuarios == null)
-            usuarios = new ArrayList<>();
-
-        usuarios.add(usuario); //Chat agrega a usuario
-
-    }
-
-    public void eliminarUsuario(UsuarioVO usuario) {
-        if (usuarios == null)
-            throw new PersonaErr("PER.REM.FRIEND.NULL", "REMOVE FRIEND PARAM IS NULL");
-
-        if (!usuarios.contains(usuario))
-            return;
-
-        usuarios.remove(usuario); //Chat elimina a usuario
-    }
+//    public void addUsuario(UsuarioVO usuario) {
+//        if (usuarios == null)
+//            usuarios = new ArrayList<>();
+//
+//        usuarios.add(usuario); //Chat agrega a usuario
+//
+//    }
+//
+//    public void eliminarUsuario(UsuarioVO usuario) {
+//        if (usuarios == null)
+//            throw new PersonaErr("PER.REM.FRIEND.NULL", "REMOVE FRIEND PARAM IS NULL");
+//
+//        if (!usuarios.contains(usuario))
+//            return;
+//
+//        usuarios.remove(usuario); //Chat elimina a usuario
+//    }
 
     @Override
     public boolean equals(Object o) {

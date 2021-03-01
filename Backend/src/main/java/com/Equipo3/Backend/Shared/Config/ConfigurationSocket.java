@@ -11,7 +11,6 @@ import java.io.IOException;
 @Configuration
 public class ConfigurationSocket {
 
-    @SneakyThrows
     @Bean
     public SocketServer createSocketServer() {
             return new SocketServerTCP();

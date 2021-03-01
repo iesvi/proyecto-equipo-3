@@ -25,7 +25,6 @@ public class EventoVOBuilder {
         return new EventoVO(
                 nombre!=null ? nombre : nmother.getNombre(),
                 fecha!=null ? fecha : nmother.getFecha(),
-                idusuario!=0 ? idusuario : nmother.getIdusuario(),
                 descripcion!=null ? descripcion : nmother.getDescripcion()
         );
     }

@@ -1,12 +1,11 @@
 package com.Equipo3.Backend.Chat.Aplicacion;
 
 import com.Equipo3.Backend.Chat.Aplicacion.Service.ChatService;
-import com.Equipo3.Backend.Evento.Aplicacion.Service.EventoService;
-import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
-import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
-import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
+import com.Equipo3.Backend.Chat.Dominio.ChatVO;
+import com.Equipo3.Backend.Chat.Dominio.ChatVOBuilder;
+import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
+import com.Equipo3.Backend.Chat.Dominio.Mapper.ChatMapper;
+import com.Equipo3.Backend.Chat.Dominio.Repository.ChatRepository;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
@@ -19,100 +18,99 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ConfigurationSpring.class})
-public class ChatIntegraTest {@Autowired
-ChatService chatService;
+public class ChatIntegraTest {
+    @Autowired
+    ChatService chatService;
 
     @Autowired
     ChatRepository chatRepo;
 
     @Test
-    public void ShouldAddEventoNotExistTest() {
+    public void ShouldAddChatNotExistTest() {
 
-        EventoVO newevent = eventoService.darDeAltaUnEvento(buildEventoDto());
+        ChatVO newchat = chatService.darDeAltaUnChat(buildChatDto());
 
-
-        Assert.assertNotNull("Devuelve nuevo Evento", newevent);
-
+        Assert.assertNotNull("Devuelve nuevo Chat", newchat);
     }
 
     @Test(expected = EntityExist.class)
-    public void ShouldAddEventoExist_ThrowExceptionTest() {
+    public void ShouldAddChatExist_ThrowExceptionTest() {
 
 
-        EventoVO Eventoyaexistente = eventoRepo.save(new EventoVOBuilder().build());
+        ChatVO Chatyaexistente = chatRepo.save(new ChatVOBuilder().build());
 
-        EventoVO newevent = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(Eventoyaexistente));
+        ChatVO newchat = chatService.darDeAltaUnChat(ChatMapper.toDTO(Chatyaexistente));
 
     }
 
     @Test(expected = EntityNotExist.class)
-    public void ShouldRemoveEventoNotExist_ThrowExceptionTest() {
+    public void ShouldRemoveChatNotExist_ThrowExceptionTest() {
 
-        EventoVO Eventoyaexistente = new EventoVOBuilder().build();
+        ChatVO Chatyaexistente = new ChatVOBuilder().build();
 
-        eventoService.eliminarUnEvento(Eventoyaexistente.getId());
+        chatService.eliminarUnChat(Chatyaexistente.getId());
     }
 
     @Test
-    public void ShouldRemoveEventoExistTest() {
+    public void ShouldRemoveChatExistTest() {
 
 
-        EventoVO Eventoyaexistente = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
+        ChatVO Chatyaexistente = chatService.darDeAltaUnChat(ChatMapper.toDTO(new ChatVOBuilder().build()));
 
 
-        Assert.assertEquals(true, eventoService.eliminarUnEvento(Eventoyaexistente.getId()));
+        Assert.assertEquals(true, chatService.eliminarUnChat(Chatyaexistente.getId()));
 
     }
     @Test
-    public void ShouldReturnEventoExistTest() {
+    public void ShouldReturnChatExistTest() {
 
-        EventoVO Eventoyaexistente = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
+        ChatVO Chatyaexistente = chatService.darDeAltaUnChat(ChatMapper.toDTO(new ChatVOBuilder().build()));
 
-        EventoVO Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+        ChatVO Chatdevuelto = chatService.consultarChats(Chatyaexistente.getId());
 
-        Assert.assertNotNull(Eventodevuelto);
+        Assert.assertNotNull(Chatdevuelto);
 
     }
     @Test(expected = EntityNotExist.class)
-    public void ShouldReturnEventoNotExist_ThrowExceptionTest() {
+    public void ShouldReturnChatNotExist_ThrowExceptionTest() {
 
 
-        EventoVO Eventoyaexistente = new EventoVOBuilder().build();
+        ChatVO Chatyaexistente = new ChatVOBuilder().build();
 
-        EventoVO Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+        ChatVO Chatdevuelto = chatService.consultarChats(Chatyaexistente.getId());
 
     }
     @Test
-    public void ShouldEditEventoExistTest() {
+    public void ShouldEditChatExistTest() {
 
-        EventoVO Eventosineditar = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
+        ChatVO Chatsineditar = chatService.darDeAltaUnChat(ChatMapper.toDTO(new ChatVOBuilder().build()));
 
-        EventoVO Eventoaeditar = eventoService.consultarEventos(Eventosineditar.getId());
+        ChatVO Chataeditar = chatService.consultarChats(Chatsineditar.getId());
 
-        Eventoaeditar.setNombre("Cumpleaños de Pepe");
+        Chataeditar.setNombre("Chat de los chavales");
 
-        EventoVO eventodb = eventoService.modificarEvento(EventoMapper.toDTO(Eventoaeditar));
+        ChatVO chatdb = chatService.modificarChat(ChatMapper.toDTO(Chataeditar));
 
-        Assert.assertEquals(Eventoaeditar, eventodb);
+        Assert.assertEquals(Chataeditar, chatdb);
 
     }
     @Test(expected = EntityNotExist.class)
-    public void ShouldEditEventoNotExist_ThrowExceptionTest() {
+    public void ShouldEditChatNotExist_ThrowExceptionTest() {
 
 
-        EventoVO Eventosineditar = new EventoVOBuilder().build();
+        ChatVO Chatsineditar = new ChatVOBuilder().build();
 
-        EventoVO Eventoaeditar = Eventosineditar;
+        ChatVO Chataeditar = Chatsineditar;
 
-        Eventoaeditar.setNombre("Cumpleaños de Pepe");
+        Chataeditar.setNombre("Chat de los chavales");
 
-        EventoVO eventodb = eventoService.modificarEvento(EventoMapper.toDTO(Eventoaeditar));
+        ChatVO chatdb = chatService.modificarChat(ChatMapper.toDTO(Chataeditar));
 
 
     }
 
-    private EventoDTO buildEventoDto() {
-        return EventoMapper.toDTO(new EventoVOBuilder().build());
+    private ChatDTO buildChatDto() {
+        return ChatMapper.toDTO(new ChatVOBuilder().build());
     }
 
 }

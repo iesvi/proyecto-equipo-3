@@ -14,7 +14,7 @@ import java.util.Collections;
 @EnableMongoRepositories(basePackages = "com.Equipo3.*")
 public class ConfigurationMongo extends AbstractMongoClientConfiguration {
 
-    private static String BDNAME;
+    private static String BDNAME = "gamerHUB";
 
     @Override
     protected String getDatabaseName() {
@@ -33,6 +33,6 @@ public class ConfigurationMongo extends AbstractMongoClientConfiguration {
 
     @Override
     public Collection getMappingBasePackages() {
-        return Collections.singleton("com.iesvi");
+        return Collections.singleton("com.Equipo3");
     }
 }

@@ -48,6 +48,10 @@ public class UsuarioService {
      * @return usuarioRepo.findOne(id)
      */
     public UsuarioVO ConsultarPerfilUsuario(int id) {
+        Optional<UsuarioVO> nbd = usuarioRepo.findById(id);
+        if (!nbd.isPresent()) {
+            throw new EntityNotExist(UsuarioVO.class.toString(), id);
+        }
         return usuarioRepo.findById(id).get();
     }
 
@@ -59,7 +63,7 @@ public class UsuarioService {
     @Transactional
     public UsuarioVO Modificar_Usuario(UsuarioDTO usuariodto) {
         Optional<UsuarioVO> nbd = usuarioRepo.findById(usuariodto.getId());
-        if (nbd.isPresent()) {
+        if (!nbd.isPresent()) {
             throw new EntityNotExist(UsuarioVO.class.toString(), usuariodto.getId());
         }
         UsuarioVO udpusuario = UsuarioMapper.fromDTO(usuariodto);
@@ -74,7 +78,7 @@ public class UsuarioService {
     @Transactional
     public boolean Eliminar_Usuario(int id) {
         Optional<UsuarioVO> nbd = usuarioRepo.findById(id);
-        if (nbd.isPresent()) {
+        if (!nbd.isPresent()) {
             throw new EntityNotExist(UsuarioVO.class.toString(), id);
         }
         usuarioRepo.deleteById(id);

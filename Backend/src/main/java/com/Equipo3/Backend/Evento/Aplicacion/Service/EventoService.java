@@ -38,7 +38,7 @@ public class EventoService {
         if (nbd.isPresent())
             throw new EntityExist(EventoVO.class.toString(),eventodto.getId());
 
-        EventoVO event = new EventoVO(eventodto.getId(), eventodto.getNombre(), eventodto.getFecha(), eventodto.getIdusuario(), eventodto.getDescripcion());
+        EventoVO event = EventoMapper.fromDTO(eventodto);
         return eventoRepo.save(event);
     }
 
@@ -49,7 +49,7 @@ public class EventoService {
     @Transactional
     public boolean eliminarUnEvento(int id){
         Optional<EventoVO> nbd = eventoRepo.findById(id);
-        if (nbd.isPresent())
+        if (!nbd.isPresent())
             throw new EntityNotExist(EventoVO.class.toString(),id);
 
         //Borra el evento si está en la base de datos
@@ -64,6 +64,10 @@ public class EventoService {
      */
     @Transactional
     public EventoVO consultarEventos(int id) {
+        Optional<EventoVO> nbd = eventoRepo.findById(id);
+        if (!nbd.isPresent()) {
+            throw new EntityNotExist(EventoVO.class.toString(), id);
+        }
         return eventoRepo.findById(id).get();
     }
 
@@ -77,7 +81,7 @@ public class EventoService {
     public EventoVO modificarEvento(EventoDTO eventodto) {
 
         Optional<EventoVO> nbd = eventoRepo.findById(eventodto.getId());
-        if (nbd.isPresent()) {
+        if (!nbd.isPresent()) {
             throw new EntityNotExist(EventoVO.class.toString(), eventodto.getId());
         }
         EventoVO udpevento = EventoMapper.fromDTO(eventodto);

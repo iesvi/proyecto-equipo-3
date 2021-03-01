@@ -16,4 +16,5 @@ UsuarioVO: &usuario
     telefono: ${faker.phoneNumber.phoneNumber}
 
 chat: &chat
+  nombre: ${faker.name.fullName}
 

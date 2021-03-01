@@ -10,8 +10,7 @@ public class ChatMapper {
         return new ChatDTO()
                 .withId(vo.getId())
                 .withNombre(vo.getNombre())
-                .withPuerto(vo.getPuerto())
-                .withUsuarios(UsuarioMapper.ToListDto(vo.getUsuarios()));
+                .withPuerto(vo.getPuerto());
     }
 
     //TODO: convertDTO ==>  Por ctor
@@ -19,7 +18,6 @@ public class ChatMapper {
         return new ChatVO()
                 .withId(dto.getId())
                 .withNombre(dto.getNombre())
-                .withPuerto(dto.getPuerto())
-                .withUsuarios(UsuarioMapper.ToListVO(dto.getUsuarios()));
+                .withPuerto(dto.getPuerto());
     }
 }

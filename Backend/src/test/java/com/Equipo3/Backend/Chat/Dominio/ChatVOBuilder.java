@@ -14,17 +14,15 @@ import java.util.Date;
 public class ChatVOBuilder {
 
     private String nombre;
-    private Date fecha;
-    private int idusuario;
-    private String descripcion;
+    private int puerto;
 
 
     public ChatVO build() {
         ObjectMother om = ObjectMother.getInstance();
         ChatVO nmother= om.bear("chat", ChatVO.class);
-
         return new ChatVO(
-                nombre!=null ? nombre : nmother.getNombre()
+                nombre!=null ? nombre : nmother.getNombre(),
+                puerto!=0 ? puerto : 12345
         );
     }
 }

@@ -100,7 +100,6 @@ public class EventoIntegraTest {
     @Test(expected = EntityNotExist.class)
     public void ShouldEditEventoNotExist_ThrowExceptionTest() {
 
-
         EventoVO Eventosineditar = new EventoVOBuilder().build();
 
         EventoVO Eventoaeditar = Eventosineditar;

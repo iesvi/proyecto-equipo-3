@@ -26,10 +26,10 @@ public class ChatDTO {
      */
     private String nombre;
 
-    /**
-     * usuarios tipo List<UsuarioVO>
-     */
-    private List<UsuarioDTO> usuarios = new ArrayList<>();
+//    /**
+//     * usuarios tipo List<UsuarioVO>
+//     */
+//    private List<UsuarioDTO> usuarios = new ArrayList<>();
 
     /**
      * puerto tipo int
@@ -41,4 +41,9 @@ public class ChatDTO {
 //     */
 //    private Mensaje historial;
 
+
+    public ChatDTO(String nombre, int puerto) {
+        this.nombre = nombre;
+        this.puerto = puerto;
+    }
 }

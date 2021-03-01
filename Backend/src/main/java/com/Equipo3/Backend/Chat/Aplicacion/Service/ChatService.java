@@ -34,12 +34,11 @@ public class ChatService {
      */
     @Transactional
     public ChatVO darDeAltaUnChat(ChatDTO chatdto) {
-
         Optional<ChatVO> nbd = chatRepo.findById(chatdto.getId());
         if (nbd.isPresent())
             throw new EntityExist(ChatVO.class.toString(),chatdto.getId());
 
-        ChatVO chat = new ChatVO(chatdto.getId(), chatdto.getNombre());
+        ChatVO chat = ChatMapper.fromDTO(chatdto);
         return chatRepo.save(chat);
     }
 
@@ -50,7 +49,7 @@ public class ChatService {
     @Transactional
     public boolean eliminarUnChat(int id){
         Optional<ChatVO> nbd = chatRepo.findById(id);
-        if (nbd.isPresent())
+        if (!nbd.isPresent())
             throw new EntityNotExist(ChatVO.class.toString(),id);
 
         //Borra el chat si está en la base de datos
@@ -65,6 +64,9 @@ public class ChatService {
      */
     @Transactional
     public ChatVO consultarChats(int id) {
+        Optional<ChatVO> nbd = chatRepo.findById(id);
+        if (!nbd.isPresent())
+            throw new EntityNotExist(ChatVO.class.toString(),id);
         return chatRepo.findById(id).get();
     }
 
@@ -77,7 +79,7 @@ public class ChatService {
     public ChatVO modificarChat(ChatDTO chatdto) {
 
         Optional<ChatVO> nbd = chatRepo.findById(chatdto.getId());
-        if (nbd.isPresent()) {
+        if (!nbd.isPresent()) {
             throw new EntityNotExist(ChatVO.class.toString(), chatdto.getId());
         }
         ChatVO udpchat = ChatMapper.fromDTO(chatdto);

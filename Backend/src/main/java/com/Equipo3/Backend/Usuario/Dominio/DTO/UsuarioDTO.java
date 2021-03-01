@@ -71,8 +71,18 @@ public class UsuarioDTO implements Dto {
      * eventos tipo List<EventoDTO>
      */
     private List<EventoDTO> eventos = new ArrayList<>();
-    /**
-     * chats tipo List<ChatDTO>
-     */
-    private List<ChatDTO> chats = new ArrayList<>();
+//    /**
+//     * chats tipo List<ChatDTO>
+//     */
+//    private List<ChatDTO> chats = new ArrayList<>();
+
+    public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.rol = rol;
+    }
 }

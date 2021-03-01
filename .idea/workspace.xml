@@ -5,44 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Front">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_3_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_12_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Aplicacion/Service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Aplicacion/Service/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/ChatVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/ChatVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/Mapper/ChatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/Mapper/ChatMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/EventoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/EventoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Mapper/EventoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Mapper/EventoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketServerTCP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Aplicacion/Service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Aplicacion/Service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/DTO/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/DTO/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Mapper/UsuarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Mapper/UsuarioMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Aplicacion/ChatIntegraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Aplicacion/ChatIntegraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/ChatVOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/ChatVOBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoMother.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoMother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Infraestructura/ChatInfraUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Infraestructura/ChatInfraUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Aplicacion/EventoIntegraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Aplicacion/EventoIntegraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDtoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDtoBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/EventoVOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/EventoVOBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/resources/fixtures/publishing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/resources/fixtures/publishing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml" afterDir="false" />
     </list>
-    <list id="2a745792-d143-489f-9cd2-26485c7b0849" name="Changes by cucha" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Aplicacion/ChatIntegraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Aplicacion/ChatIntegraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Infraestructura/ChatInfraUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Infraestructura/ChatInfraUnitTest.java" afterDir="false" />
-    </list>
+    <list id="2a745792-d143-489f-9cd2-26485c7b0849" name="Changes by cucha" comment="" />
     <list id="24a26919-abfb-4b40-b115-3b0aab506d2f" name="Changes by Manuel Santos" comment="" />
     <list id="33518009-771b-4157-98c7-2926d8cc2012" name="Changes by Vic" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +181,7 @@
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -242,7 +209,7 @@
       <recent name="com.Equipo3.Backend.Chat.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.app">
+  <component name="RunManager" selected="Application.MainApp">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -447,7 +414,7 @@
       <workItem from="1614417683685" duration="25791000" />
       <workItem from="1614525075357" duration="39000" />
       <workItem from="1614526990456" duration="1670000" />
-      <workItem from="1614529818332" duration="26046000" />
+      <workItem from="1614529818332" duration="26783000" />
     </task>
     <task id="LOCAL-00001" summary="subiendo plantilla proyecto">
       <created>1608121643928</created>

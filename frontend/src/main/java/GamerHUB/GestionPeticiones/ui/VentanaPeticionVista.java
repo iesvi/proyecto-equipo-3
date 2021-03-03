@@ -30,7 +30,7 @@ public class VentanaPeticionVista {
      */
     public void LaunchVistaPeticion() throws IOException {
 
-        URL url = new File("frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VistaPeticionDialog.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/GestionPeticiones/ui/VistaPeticionDialog.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
 

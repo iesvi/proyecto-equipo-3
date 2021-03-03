@@ -26,7 +26,7 @@ public class VentanaSignUpVista {
      * @throws IOException
      */
     public void LaunchSignUpView() throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaRegistro.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/GestionUsuarios/ui/VistaRegistro.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane signup = (AnchorPane) loader.load();

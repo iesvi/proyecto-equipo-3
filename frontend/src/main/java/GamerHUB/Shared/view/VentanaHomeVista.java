@@ -34,7 +34,7 @@ public class VentanaHomeVista {
      * @throws IOException
      */
     public void LaunchHomeView() throws CustomException, IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaHome.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/Shared/view/VistaHome.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane home = (AnchorPane) loader.load();
@@ -62,7 +62,7 @@ public class VentanaHomeVista {
      * @throws IOException
      */
     public void loadHomeView1(Stage dialog) throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaHome1.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/Shared/view/VistaHome1.fxml").toURI().toURL();
         FXMLLoader loader1 = new FXMLLoader();
         loader1.setLocation(url);
         AnchorPane anchorPane = loader1.load();
@@ -81,7 +81,7 @@ public class VentanaHomeVista {
      * @throws IOException
      */
     public void loadHomeView2(Stage dialog, ListaEvento listaEvento) throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/Shared/view/VistaHome2.fxml").toURI().toURL();
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(url);
         AnchorPane anchorPane1 = loader2.load();

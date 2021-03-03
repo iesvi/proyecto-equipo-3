@@ -38,7 +38,7 @@ public class VentanaRootVista {
      * @throws IOException
      */
     public void Init() throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/RootLayout.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/Shared/view/RootLayout.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         rootLayout = (BorderPane) loader.load();

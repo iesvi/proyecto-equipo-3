@@ -17,10 +17,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="frontend" />
+        <module name="Proyectopsp2021_Grupo_B" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="frontend" target="8" />
+      <module name="Proyectopsp2021_Grupo_B" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

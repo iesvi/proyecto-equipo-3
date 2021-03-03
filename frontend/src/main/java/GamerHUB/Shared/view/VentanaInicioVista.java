@@ -32,7 +32,7 @@ public class VentanaInicioVista {
      */
     public void LaunchInicio() throws IOException {
 
-        URL url = new File("frontend/src/main/java/GamerHUB/Shared/view/VistaInicio.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/Shared/view/VistaInicio.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane inicio = (AnchorPane) loader.load();

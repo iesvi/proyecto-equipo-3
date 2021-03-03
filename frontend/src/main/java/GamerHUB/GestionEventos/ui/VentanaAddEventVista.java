@@ -29,7 +29,7 @@ public class VentanaAddEventVista {
      * @throws IOException
      */
     public void LaunchaddEvent() throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaAddEventoDialog.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/GestionEventos/ui/VistaAddEventoDialog.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane addEvento = (AnchorPane) loader.load();

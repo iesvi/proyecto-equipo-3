@@ -32,7 +32,7 @@ public class VentanaPerfilVista {
      * @throws IOException
      */
     public void LaunchVistaPerfil(SplitPane pane, UsuarioDTO usuarioDTO) throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaPerfil.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/GestionUsuarios/ui/VistaPerfil.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane perfil = (AnchorPane) loader.load();

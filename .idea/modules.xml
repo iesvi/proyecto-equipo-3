@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Backend/Backend.iml" filepath="$PROJECT_DIR$/Backend/Backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/frontend/Proyectopsp2021_Grupo_B.iml" filepath="$PROJECT_DIR$/frontend/Proyectopsp2021_Grupo_B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/proyecto-equipo-3.iml" filepath="$PROJECT_DIR$/proyecto-equipo-3.iml" />
     </modules>
   </component>

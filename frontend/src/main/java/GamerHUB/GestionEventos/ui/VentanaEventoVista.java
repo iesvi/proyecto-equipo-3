@@ -29,7 +29,7 @@ public class VentanaEventoVista {
      * @throws IOException
      */
     public void loadEventoView(SplitPane pane) throws IOException {
-        URL url = new File("frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaGestionEventos.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/GestionEventos/ui/VistaGestionEventos.fxml").toURI().toURL();
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(url);
         AnchorPane anchorPane1 = loader2.load();

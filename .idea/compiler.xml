@@ -19,9 +19,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="proyecto-equipo-3" />
         <module name="backend" />
-        <module name="Proyectopsp2021_Grupo_B" />
         <module name="Backend" />
         <module name="Frontend" />
+        <module name="frontend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,7 +30,6 @@
       <module name="Frontend" target="8" />
       <module name="frontend" target="8" />
       <module name="proyecto-equipo-3" target="8" />
-      <module name="Proyectopsp2021_Grupo_B" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

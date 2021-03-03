@@ -31,7 +31,7 @@ public class VentanaAdminVista {
      */
     public void LaunchVistaAdmin(Stage dialogStage) throws IOException {
 
-        URL url = new File("frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml").toURI().toURL();
+        URL url = new File("src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane admin = (AnchorPane) loader.load();

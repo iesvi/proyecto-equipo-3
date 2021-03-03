@@ -184,7 +184,7 @@ public class VistaInicioControlador {
 
     public void logUsuario(UsuarioDTO user){
         try {
-            File directorio = new File("frontend/target/classes/");
+            File directorio = new File("target/classes/");
             ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog", user.getNombre());
             pb.directory(directorio);
             Process p = pb.start();

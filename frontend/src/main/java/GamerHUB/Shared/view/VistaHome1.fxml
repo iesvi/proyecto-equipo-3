@@ -1,70 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="259.0" style="-fx-background-color: #aafe79;"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="GamerHUB.Shared.controllers.VistaHomeControlador">
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="259.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaHomeControlador">
     <children>
-        <SplitPane dividerPositions="0.5" layoutX="23.0" layoutY="178.0" orientation="VERTICAL" prefHeight="302.0"
-                   prefWidth="221.0" style="-fx-background-radius: 10;">
+        <SplitPane dividerPositions="0.5" layoutX="23.0" layoutY="178.0" orientation="VERTICAL" prefHeight="302.0" prefWidth="221.0" style="-fx-background-radius: 10;">
             <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="216.0"
-                            style="-fx-background-radius: 10;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="216.0" style="-fx-background-radius: 10;">
                     <children>
-                        <TableView fx:id="amigos" layoutX="10.0" layoutY="-12.0" prefHeight="147.0" prefWidth="219.0"
-                                   style="-fx-background-radius: 10; -fx-background-color: #2fdd72;"
-                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="amigos" layoutX="10.0" layoutY="-12.0" prefHeight="147.0" prefWidth="219.0" style="-fx-background-radius: 10; -fx-background-color: #2fdd72;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <columns>
-                                <TableColumn prefWidth="218.0" style="-fx-background-radius: 10;" text="Amigos"/>
+                                <TableColumn prefWidth="218.0" style="-fx-background-radius: 10;" text="Amigos" />
                             </columns>
                         </TableView>
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="195.0">
                     <children>
-                        <TableView fx:id="canales" layoutX="10.0" layoutY="-13.0" prefHeight="147.0" prefWidth="219.0"
-                                   style="-fx-background-radius: 10; -fx-background-color: #2fdd72;"
-                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="canales" layoutX="10.0" layoutY="-13.0" prefHeight="147.0" prefWidth="219.0" style="-fx-background-radius: 10; -fx-background-color: #2fdd72;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <columns>
-                                <TableColumn prefWidth="218.0" text="Canales"/>
+                                <TableColumn prefWidth="218.0" text="Canales" />
                             </columns>
                         </TableView>
                     </children>
                 </AnchorPane>
             </items>
         </SplitPane>
-        <AnchorPane layoutX="28.0" layoutY="52.0" prefHeight="114.0" prefWidth="212.0"
-                    style="-fx-background-color: #2fdd72; -fx-background-radius: 10;">
+        <AnchorPane layoutX="28.0" layoutY="52.0" prefHeight="114.0" prefWidth="212.0" style="-fx-background-color: #2fdd72; -fx-background-radius: 10;">
             <children>
-                <Label fx:id="userName" layoutX="17.0" layoutY="29.0" prefHeight="26.0" prefWidth="95.0"
-                       style="-fx-background-radius: 10;" text="user" wrapText="true">
+                <Label fx:id="userName" layoutX="17.0" layoutY="29.0" prefHeight="26.0" prefWidth="95.0" style="-fx-background-radius: 10;" text="user" wrapText="true">
                     <font>
-                        <Font name="System Bold" size="15.0"/>
+                        <Font name="System Bold" size="15.0" />
                     </font>
                 </Label>
-                <ImageView fx:id="fotoUser" fitHeight="76.0" fitWidth="76.0" layoutX="121.0" layoutY="18.0"
-                           pickOnBounds="true" preserveRatio="true"/>
-                <Button fx:id="btnConfig" layoutX="13.0" layoutY="67.0" mnemonicParsing="false" onAction="#LaunchPerfil"
-                        style="-fx-background-radius: 10; -fx-background-color: #235971;" text="Configuración"
-                        textFill="WHITE"/>
+                <ImageView fx:id="fotoUser" fitHeight="76.0" fitWidth="76.0" layoutX="121.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+                <Button fx:id="btnConfig" layoutX="13.0" layoutY="67.0" mnemonicParsing="false" onAction="#LaunchPerfil" style="-fx-background-radius: 10; -fx-background-color: #235971;" text="Configuración" textFill="WHITE" />
             </children>
         </AnchorPane>
-        <Button fx:id="btnNuevoCanal" layoutX="117.0" layoutY="480.0" mnemonicParsing="false" prefHeight="29.0"
-                prefWidth="24.0" style="-fx-background-radius: 30; -fx-background-color: #ffed00;" text="+">
+        <Button fx:id="btnNuevoCanal" layoutX="117.0" layoutY="480.0" mnemonicParsing="false" onAction="#LoadAddCanal" prefHeight="29.0" prefWidth="24.0" style="-fx-background-radius: 30; -fx-background-color: #ffed00;" text="+">
             <font>
-                <Font name="System Bold" size="13.0"/>
+                <Font name="System Bold" size="13.0" />
             </font>
         </Button>
         <MenuBar fx:id="menuBar" prefHeight="29.0" prefWidth="259.0" style="-fx-background-color: #2fdd72;">
             <menus>
                 <Menu mnemonicParsing="false" text="Archivo">
                     <items>
-                        <MenuItem fx:id="btnSalir" mnemonicParsing="false" onAction="#Logout" text="Cerrar sesión"/>
+                        <MenuItem fx:id="btnSalir" mnemonicParsing="false" onAction="#Logout" text="Cerrar sesión" />
                     </items>
                 </Menu>
             </menus>

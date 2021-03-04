@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ConfigurationSocket {
 
     @Bean
-    public SocketServer createSocketServer() {
+    public SocketServer createSocketServer() throws IOException {
             return new SocketServerTCP();
     }
 }

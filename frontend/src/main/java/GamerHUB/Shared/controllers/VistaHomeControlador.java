@@ -2,6 +2,8 @@ package GamerHUB.Shared.controllers;
 
 
 import GamerHUB.GestionChat.controller.MultiChatUDP;
+import GamerHUB.GestionChat.repository.ListaChat;
+import GamerHUB.GestionChat.ui.VentanaAddChatVista;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
@@ -45,6 +47,7 @@ public class VistaHomeControlador {
     private ListaUsuario listaUsuario;
     private ProcessHora hora;
     private ListaEvento listaEvento;
+    private ListaChat listaChat;
 
 
     @FXML
@@ -128,6 +131,7 @@ public class VistaHomeControlador {
                 {
                     try {
                         multiChatUDP.sendMsg("user", msgBar.getText().toString());
+                        msgBar.setText("");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -306,6 +310,11 @@ public class VistaHomeControlador {
         // getMainApp().LaunchaddEvent();
     }
 
+    @FXML
+    public void LoadAddCanal() throws  IOException{
+        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage, listaChat);
+        ventanaAddChatVista.LaunchAddCanal();
+    }
 
     @FXML
     private void LaunchVistaPeticion() throws IOException {

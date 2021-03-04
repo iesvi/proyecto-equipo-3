@@ -17,7 +17,7 @@
                </font>
             </Label>
             <TextField fx:id="campoNombreCanal" layoutX="45.0" layoutY="75.0" promptText="Nombre del nuevo canal..." />
-            <Button fx:id="btnGuardar" layoutX="38.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;" text="Guardar">
+            <Button fx:id="btnGuardar" layoutX="38.0" layoutY="129.0" mnemonicParsing="false" onAction="#addChat" prefHeight="25.0" prefWidth="163.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;" text="Guardar">
                <font>
                   <Font size="18.0" />
                </font>

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SocketServerTCP implements SocketServer {
+public class SocketServerTCP extends  Thread implements SocketServer {
 
 
 //    private final int PORT = 12345;
@@ -17,12 +17,21 @@ public class SocketServerTCP implements SocketServer {
 //    private final Socket socket = new Socket();
 
     public SocketServerTCP(){
-        //Inicialización del Socket ==> Configuración, etc...
+
         int aaa = 3;
     }
 
     @Override
     public void Send(Dto object) {
         throw new NotImplementedException();
+    }
+
+
+    @Override
+    public void run() {
+        super.run();
+
+
+
     }
 }

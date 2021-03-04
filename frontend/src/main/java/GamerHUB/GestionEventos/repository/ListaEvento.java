@@ -6,6 +6,9 @@ import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 
+/**
+ *
+ */
 public class ListaEvento {
 
     private ObservableList<EventoDTO> events = FXCollections.observableArrayList();

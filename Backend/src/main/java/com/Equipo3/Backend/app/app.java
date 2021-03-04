@@ -17,8 +17,6 @@ public class app {
 
     public static void main(String[] args) {
 
-
-
         ApplicationContext appContext = new AnnotationConfigApplicationContext(ConfigurationSpring.class);
 
         RunApp runApp = appContext.getBean(RunApp.class);

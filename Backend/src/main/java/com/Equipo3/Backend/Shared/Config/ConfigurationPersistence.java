@@ -38,7 +38,7 @@ public class ConfigurationPersistence {
             JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
             em.setJpaVendorAdapter(vendorAdapter);
             //mapeo a la unidad de persistencia
-            em.setPersistenceUnitName("backmm");
+            em.setPersistenceUnitName("Bd");
             return em;
         }
     }

@@ -23,7 +23,7 @@ public class app {
 
         runApp.run();
 
-        ((AnnotationConfigApplicationContext) appContext).close();
+        //((AnnotationConfigApplicationContext) appContext).close();
 
     }
 

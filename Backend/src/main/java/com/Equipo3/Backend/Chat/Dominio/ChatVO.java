@@ -1,13 +1,12 @@
 package com.Equipo3.Backend.Chat.Dominio;
 
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
-import com.Equipo3.Backend.Usuario.Err.PersonaErr;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.With;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**

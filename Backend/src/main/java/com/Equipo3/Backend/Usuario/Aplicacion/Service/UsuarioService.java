@@ -9,6 +9,7 @@ import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Optional;
 
 /**
@@ -47,12 +48,12 @@ public class UsuarioService {
      * @param id
      * @return usuarioRepo.findOne(id)
      */
-    public UsuarioVO ConsultarPerfilUsuario(int id) {
+    public Optional<UsuarioVO> ConsultarPerfilUsuario(int id) {
         Optional<UsuarioVO> nbd = usuarioRepo.findById(id);
         if (!nbd.isPresent()) {
             throw new EntityNotExist(UsuarioVO.class.toString(), id);
         }
-        return usuarioRepo.findById(id).get();
+        return usuarioRepo.findById(id);
     }
 
     /**

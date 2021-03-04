@@ -1,7 +1,7 @@
 package com.Equipo3.Backend.Shared.Config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -19,7 +19,7 @@ public class ConfigSwagger extends WebMvcConfigurationSupport {
     public Docket  MyApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.iesvi"))
+                .apis(RequestHandlerSelectors.basePackage("com.Equipo3"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo());

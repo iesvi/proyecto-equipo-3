@@ -1,16 +1,7 @@
 package com.Equipo3.Backend.Usuario.Dominio.Mapper;
 
-import com.Equipo3.Backend.Chat.Dominio.ChatVO;
-import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
-import com.Equipo3.Backend.Chat.Dominio.Mapper.ChatMapper;
-import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class UsuarioMapper {
 

@@ -1,10 +1,7 @@
 package com.Equipo3.Backend.Usuario.Dominio.DTO;
 
 
-import com.Equipo3.Backend.Chat.Dominio.ChatVO;
-import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
 import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import lombok.*;
 

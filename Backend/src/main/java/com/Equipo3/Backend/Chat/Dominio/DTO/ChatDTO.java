@@ -1,10 +1,6 @@
 package com.Equipo3.Backend.Chat.Dominio.DTO;
 
-import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Clase ChatDTO

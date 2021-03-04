@@ -1,5 +1,6 @@
 package com.Equipo3.Backend.Evento.Dominio.DTO;
 
+import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import lombok.*;
 
 import java.util.Date;
@@ -33,10 +34,16 @@ public class EventoDTO {
     /**
      * idusuario tipo int
      */
-    private int idusuario;
+    private UsuarioDTO idusuario;
 
     /**
      * descripcion tipo descripcion
      */
     private String descripcion;
+
+    public EventoDTO(String nombre, Date fecha, String descripcion) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+    }
 }

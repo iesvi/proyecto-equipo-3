@@ -1,10 +1,12 @@
 package GamerHUB.GestionUsuarios.controller;
 
-import GamerHUB.GestionUsuarios.model.Conversor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
-import GamerHUB.MainApp;
+import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.view.VentanaInicioVista;
+import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -17,6 +19,10 @@ import java.util.ArrayList;
 
 public class VistaRegistroControlador {
 
+    private VentanaSignUpVista vista;
+    private VentanaInicioVista ventanaInicioVista;
+    private VentanaRootVista ventanaRootVista;
+    private ListaUsuario listaUsuario;
 
     /**
      *
@@ -45,21 +51,22 @@ public class VistaRegistroControlador {
     @FXML
     private Button botonOk = new Button();
 
-    private UsuarioRespositoryJDBC usuarioRespositoryJDBC = new UsuarioRespositoryJDBC();
+    private UsuarioRespositoryJDBC usuarioRespositoryJDBC;
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
     private boolean okClicked = false;
     private ArrayList<String> roles;
+
     {
         roles = new ArrayList<String>() {
-            {  add("cliente");
-                add("admin");  }
+            {
+                add("cliente");
+                add("admin");
+            }
 
         };
     }
-
-    private MainApp mainApp = new MainApp();
 
     /**
      *
@@ -72,25 +79,19 @@ public class VistaRegistroControlador {
         if (checkBoxPoliticas.isSelected())
             botonOk.setDisable(false);
         else botonOk.setDisable(true);
-
-
     }
 
-    public MainApp getMainApp() {
-        return mainApp;
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-    }
 
     /**
      * Sets the stage of this dialog.
      *
      * @param dialogStage
      */
-    public void setDialogStage(Stage dialogStage) {
+    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario) {
         this.dialogStage = dialogStage;
+        this.vista = vista;
+        this.listaUsuario = listaUsuario;
+        usuarioRespositoryJDBC = new UsuarioRespositoryJDBC(listaUsuario);
     }
 
 
@@ -113,7 +114,7 @@ public class VistaRegistroControlador {
      * Called when the user clicks ok.
      */
     @FXML
-    private void handleOk() {
+    private void handleOk() throws IOException {
         if (isInputValid()) {
 
             UsuarioDTO usuarioDTO = new UsuarioDTO(
@@ -125,17 +126,17 @@ public class VistaRegistroControlador {
             );
 
 
-            mainApp.getUsuarios().add(usuarioDTO);
-            usuarioRespositoryJDBC.add(Conversor.dtoToVo(usuarioDTO));
+            usuarioRespositoryJDBC.add(usuarioDTO);
 
-            ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos, doritos y mucho hentai.\n" +
-                    usuarioDTO.toString());
+            ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos y doritos.\n" +
+                    "Nombre de usuario: " + usuarioDTO.getNombre() + "\n" + "Password: " + usuarioDTO.getPassword());
 
             campoUsuario.setText("");
             campoPass.setText("");
             campoEmail.setText("");
             checkBoxPoliticas.setSelected(false);
 
+            handleVolver();
 
         }
     }
@@ -187,9 +188,8 @@ public class VistaRegistroControlador {
      */
     @FXML
     public void handleVolver() throws IOException {
-        mainApp.Init();
-        mainApp.LaunchInicio();
-        dialogStage.close();
+        ventanaRootVista = new VentanaRootVista();
+        ventanaRootVista.inicioStage(dialogStage, listaUsuario);
     }
 
 

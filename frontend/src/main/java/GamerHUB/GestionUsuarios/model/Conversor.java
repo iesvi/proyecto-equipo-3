@@ -38,7 +38,8 @@ public class Conversor {
     }
 
     /**
-     *  Convierte un objeto tipo UsuarioVO a UsuarioDTO
+     * Convierte un objeto tipo UsuarioVO a UsuarioDTO
+     *
      * @param usuarioDTO
      * @return
      */

@@ -1,14 +1,29 @@
 package GamerHUB.Shared.controllers;
 
+
+import GamerHUB.GestionChat.controller.MultiChatUDP;
+import GamerHUB.GestionEventos.model.dto.EventoDTO;
+import GamerHUB.GestionEventos.repository.ListaEvento;
+import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
+import GamerHUB.GestionEventos.ui.VentanaEventoVista;
+import GamerHUB.GestionPeticiones.ui.VentanaPeticionVista;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.MainApp;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
+import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.util.ProcessHora;
+import GamerHUB.Shared.view.VentanaHomeVista;
+import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -18,13 +33,19 @@ import java.net.URL;
 import java.time.LocalTime;
 
 /**
- *Controlador de la
+ * Controlador de la
  */
 public class VistaHomeControlador {
 
-    private MainApp mainApp;
     private Stage dialogStage;
     private UsuarioDTO userLogeado;
+    private VentanaHomeVista vista;
+    private VentanaEventoVista vistaevento;
+    private SplitPane pane;
+    private ListaUsuario listaUsuario;
+    private ProcessHora hora;
+    private ListaEvento listaEvento;
+
 
     @FXML
     private TableView amigos, canales, eventos;
@@ -43,10 +64,10 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private TableColumn<UsuarioDTO, String> colEvento;
+    private TableColumn<EventoDTO, String> colEvento;
 
     @FXML
-    private MenuBar menu;
+    private MenuBar menuBar = new MenuBar();
 
     /**
      *
@@ -64,7 +85,12 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private TextField searchBar, msgBar;
+    private TextField searchBar;
+    @FXML
+    private TextField msgBar = new TextField();
+
+    @FXML
+    private TextArea areaChat;
 
     /**
      *
@@ -78,19 +104,77 @@ public class VistaHomeControlador {
     @FXML
     public MenuItem btnSalir;
 
-    /**
-     *
-     */
     @FXML
     private Label time;
 
-    private int minute;
-    private int hour;
-    private int second;
 
-    public VistaHomeControlador() {
-        llenarTablaEventos();
+    MultiChatUDP multiChatUDP;
+    /**
+     *
+     */
+    public VistaHomeControlador() throws IOException {
+        hora = new ProcessHora();
+        multiChatUDP = new MultiChatUDP("user", this);
+        new Thread(multiChatUDP).start();
+
+
         // addOpcionAdmin();
+    }
+
+
+            @FXML
+            public void handlemensaje(KeyEvent keyEvent) {
+                if(keyEvent.getCode() == KeyCode.ENTER)
+                {
+                    try {
+                        multiChatUDP.sendMsg("user", msgBar.getText().toString());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+
+    /**
+     * @param vista
+     * @param dialogStage
+     * @param pane
+     */
+    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
+        this.dialogStage = dialogStage;
+        this.vista = vista;
+        this.pane = pane;
+    }
+
+    /**
+     * @param listaEvento
+     */
+    public void setEventos(ListaEvento listaEvento) {
+        if (listaEvento == null) {
+            if (userLogeado.getEventos().isEmpty()) {
+                this.listaEvento = new ListaEvento();
+            } else {
+                this.listaEvento = new ListaEvento(userLogeado.getEventos());
+            }
+        } else {
+            this.listaEvento = listaEvento;
+        }
+    }
+
+    public UsuarioDTO getUsuarioLogeado() {
+        return userLogeado;
+    }
+
+    public void setUsuario(UsuarioDTO user) {
+        this.userLogeado = user;
+    }
+
+    public TextField getMsgBar() {
+        return msgBar;
+    }
+
+    public TextArea getAreaChat() {
+        return areaChat;
     }
 
     /**
@@ -98,7 +182,7 @@ public class VistaHomeControlador {
      */
     public void iniciar_Reloj() {
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            LocalTime currentTime = LocalTime.now();
+            LocalTime currentTime = hora.procesoHora();
             time.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
         }),
                 new KeyFrame(Duration.seconds(1))
@@ -107,42 +191,17 @@ public class VistaHomeControlador {
         clock.play();
     }
 
-    public Stage getDialogStage() {
-        return dialogStage;
-    }
-
-    public void setDialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
-
-
-    public UsuarioDTO getUsuarioLogeado() {
-        return userLogeado;
-    }
-
-    public void setUsuario() {
-        this.userLogeado = mainApp.getUsuarioLogeado();
-    }
-
-    public MainApp getMainApp() {
-        return mainApp;
-    }
 
     /**
      *
      */
     @FXML
     public void initialize() {
-        //colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
+       addOpcionAdmin();
     }
 
     public MenuBar getMenu() {
-        return menu;
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-        // eventos.setItems(getMainApp().getEventos());
+        return menuBar;
     }
 
 
@@ -158,8 +217,8 @@ public class VistaHomeControlador {
      *
      */
     public void llenarTablaEventos() {
-
-
+        eventos.setItems(listaEvento.getEvents());
+        colEvento.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
     }
 
 
@@ -167,7 +226,7 @@ public class VistaHomeControlador {
      *
      */
     public void addOpcionAdmin() {
-        if (getUsuarioLogeado().getRol().equals("admin")) {
+       // if (getUsuarioLogeado().getRol().equals("admin")) {
             Menu menu = new Menu();
             menu.setText("Opciones");
 
@@ -179,8 +238,15 @@ public class VistaHomeControlador {
 
             menuItem.setOnAction(event -> {
 
+                try {
+                    vista.LaunchVistaAdmin();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
             });
-        }
+       // }
     }
 
     /**
@@ -200,18 +266,24 @@ public class VistaHomeControlador {
      */
     @FXML
     public void Logout() throws IOException {
-        mainApp.Init();
-        mainApp.LaunchInicio();
+        VentanaRootVista ventanaRoot = new VentanaRootVista();
+        ventanaRoot.inicioStage(new Stage(), listaUsuario);
         dialogStage.close();
     }
 
     /**
      * *Método que carga la vista del perfil del usuario.
+     *
      * @throws IOException
      */
     @FXML
     public void LaunchPerfil() throws IOException {
-        mainApp.LaunchVistaPerfil(userLogeado);
+        VentanaPerfilVista ventanavista = new VentanaPerfilVista(dialogStage, vista);
+        ventanavista.LaunchVistaPerfil(pane, userLogeado);
+    }
+
+    public void setUserNameLabel() {
+        userName.setText(userLogeado.getNombre());
     }
 
     /**
@@ -220,7 +292,8 @@ public class VistaHomeControlador {
      * @throws IOException
      */
     public void LoadEventoView() throws IOException {
-        getMainApp().loadEventoView(dialogStage);
+        vistaevento = new VentanaEventoVista(dialogStage, vista, listaEvento);
+        vistaevento.loadEventoView(pane);
     }
 
     /**
@@ -228,10 +301,19 @@ public class VistaHomeControlador {
      */
     @FXML
     public void LoadAddEvent() throws IOException {
-        getMainApp().LaunchaddEvent();
+        VentanaAddEventVista ventanaAddEventVista = new VentanaAddEventVista(dialogStage, userLogeado, listaEvento);
+        ventanaAddEventVista.LaunchaddEvent();
+        // getMainApp().LaunchaddEvent();
     }
 
 
+    @FXML
+    private void LaunchVistaPeticion() throws IOException {
+
+        VentanaPeticionVista ventanaPeticionVista = new VentanaPeticionVista(dialogStage);
+        ventanaPeticionVista.LaunchVistaPeticion();
+
+    }
 
     /*@FXML
     public void AbrirdialogAñadirEvento() throws IOException{
@@ -252,4 +334,12 @@ public class VistaHomeControlador {
 
         dialogStage.showAndWait();
     }*/
+
+    public void LaunchVistaAdmin() {
+
+    }
+
+    public void setlistaUsuarios(ListaUsuario listaUsuario) {
+        this.listaUsuario = listaUsuario;
+    }
 }

@@ -14,3 +14,7 @@ UsuarioVO: &usuario
     email: ${faker.internet.emailAddress}
     fecha_nacimiento: ${faker.date.between('2000-01-01', '2022-01-01')}
     telefono: ${faker.phoneNumber.phoneNumber}
+
+chat: &chat
+  nombre: ${faker.name.fullName}
+

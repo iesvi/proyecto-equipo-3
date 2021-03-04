@@ -1,8 +1,13 @@
 package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.MainApp;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
+import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
+import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.view.VentanaHomeVista;
+import GamerHUB.Shared.view.VentanaInicioVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -10,11 +15,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
 
 /**
@@ -22,7 +25,12 @@ import java.net.URL;
  */
 public class VistaInicioControlador {
 
-    private MainApp main;
+
+   // private final Socket socket = new Socket("localhost", 12345);
+    private VentanaInicioVista vista;
+    private UsuarioDTO usuarioLogeado = new UsuarioDTO();
+    private ListaUsuario listaUsuario;
+    private VentanaSignUpVista ventanaSignUpVista;
 
     /**
      *
@@ -52,22 +60,22 @@ public class VistaInicioControlador {
     @FXML
     private ImageView imageView;
 
-
-    private Stage dialogStage;
+    private Stage stageinicio;
     private UsuarioDTO usuarioDTO;
 
 
-
-    public MainApp getMain() {
-        return main;
+    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario) {
+        this.stageinicio = stageinicio;
+        this.vista = vista;
+        this.listaUsuario = listaUsuario;
     }
 
-    public void setdialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
+    public UsuarioDTO getUsuarioLogeado() {
+        return usuarioLogeado;
     }
 
-    public void setMain(MainApp main) {
-        this.main = main;
+    public void setUsuarioLogeado(UsuarioDTO usuarioLogeado) {
+        this.usuarioLogeado = usuarioLogeado;
     }
 
     /**
@@ -84,17 +92,15 @@ public class VistaInicioControlador {
     /**
      *
      */
-    public VistaInicioControlador() {
+    public VistaInicioControlador() throws IOException {
     }
 
 
-
     /**
-     *
      * @throws IOException
      * @throws CustomException
      */
-    public void Login() throws IOException, CustomException {
+    public void Login() throws Exception, IOException, CustomException{
 
         boolean correct = false;
         usuarioDTO = new UsuarioDTO();
@@ -102,26 +108,41 @@ public class VistaInicioControlador {
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
 
-        for (UsuarioDTO user : main.getUsuarios()) {
+       //LoginThread loginThread =new LoginThread(socket);
 
+        for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                main.setUsuarioLogeado(user);
-                main.LaunchHomeView();
-                dialogStage.close();
-            }
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                home.LaunchHomeView();
+                vista.getStageppal().close();
+                correct = true;
+                logUsuario(user);
 
+            } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                home.LaunchHomeView();
+                vista.getStageppal().close();
+                correct = true;
+                logUsuario(user);
+            }
+        }
+        if (!correct) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error con las credenciales");
+            alert.setHeaderText("Usuario/contraseña incorrectos.");
+            alert.setContentText("Vuelva a intentarlo de nuevo.");
+            alert.showAndWait();
         }
 
 
     }
 
 
-
     /**
      * Called when the user clicks ok.
      */
     @FXML
-    private void handleOk() throws IOException, CustomException {
+    private void handleOk() throws Exception, IOException, CustomException {
         if (isInputValid()) {
             Login();
         }
@@ -145,22 +166,38 @@ public class VistaInicioControlador {
             return true;
         } else {
             // Show the error message.
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error en los campos.");
-            alerta.setHeaderText(null);
-            alerta.setContentText(errorMsg);
-            alerta.showAndWait();
+            ActionDialogs.error("Error en los campos.", errorMsg);
+
             return false;
         }
     }
 
     /**
-     *
      * @param mouseEvent
      * @throws IOException
      */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
-        main.LaunchSignUpView();
-        this.dialogStage.close();
+        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario);
+        ventanaSignUpVista.LaunchSignUpView();
+        vista.getStageppal().close();
+    }
+
+    public void logUsuario(UsuarioDTO user){
+        try {
+            File directorio = new File("target/classes/");
+            ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog", user.getNombre());
+            pb.directory(directorio);
+            Process p = pb.start();
+
+            int exitVal;
+            try {
+                exitVal = p.waitFor();
+                System.out.println("Valor de Salida: " + exitVal);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

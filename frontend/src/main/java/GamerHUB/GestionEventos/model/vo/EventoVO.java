@@ -1,11 +1,12 @@
 package GamerHUB.GestionEventos.model.vo;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
- *Tipo VO de la entidad Evento. Es el tipo de dato que se utiliza para persistir en la BBDD.
+ * Tipo VO de la entidad Evento. Es el tipo de dato que se utiliza para persistir en la BBDD.
  */
-public class EventoVO {
+public class EventoVO implements Serializable {
 
     private int id;
     private String nombre;
@@ -18,7 +19,6 @@ public class EventoVO {
     }
 
     /**
-     *
      * @param id
      * @param nombre
      * @param descripcion

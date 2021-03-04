@@ -1,27 +1,28 @@
 package GamerHUB.GestionUsuarios.controller;
 
+import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.MainApp;
+import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
+import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 /**
  *
  */
 public class VistaPerfilControlador {
-
-    private MainApp mainApp;
-    private UsuarioDTO usuarioDTO;
+    private VentanaPerfilVista vista;
+    private UsuarioDTO userLogeado;
     private Stage dialogStage;
-
-    /**
-     *
-     */
-    private UsuarioDTO userLogeado = mainApp.getUsuarioLogeado();
+    private ListaUsuario listaUsuario;
+    private VentanaHomeVista ventanaHomeVista;
 
     /**
      *
@@ -42,30 +43,35 @@ public class VistaPerfilControlador {
     private Button btnBack, btnEditar, btnCambiarPass, btnAjustesAvanzados;
 
     public VistaPerfilControlador() {
+
+    }
+
+    public void setcampos(){
+        if(userLogeado != null) {
+            campoNombre.setText(userLogeado.getNombre());
+            campoEmail.setText(userLogeado.getEmail());
+            campoTelefono.setText(String.valueOf(userLogeado.getTelefono()));
+            fechaNac.setValue(userLogeado.getFecha_nacimiento());
+        }
+    }
+
+    @FXML
+    public void volver() throws IOException {
+        ventanaHomeVista.loadHomeView1(dialogStage);
     }
 
 
-    public MainApp getMainApp() {
-        return mainApp;
+    public void setVentanahome(VentanaHomeVista ventanaHomeVista) {
+        this.ventanaHomeVista = ventanaHomeVista;
     }
 
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-    }
-
-    public UsuarioDTO getUsuarioDTO() {
-        return usuarioDTO;
-    }
-
-    public void setUsuarioDTO(UsuarioDTO usuarioDTO) {
-        this.usuarioDTO = usuarioDTO;
-    }
-
-    public Stage getDialogStage() {
-        return dialogStage;
-    }
-
-    public void setDialogStage(Stage dialogStage) {
+    public void setVista(VentanaPerfilVista vista, Stage dialogStage) {
         this.dialogStage = dialogStage;
+        this.vista = vista;
     }
+
+    public void setUserLogeado(UsuarioDTO userLogeado) {
+        this.userLogeado = userLogeado;
+    }
+
 }

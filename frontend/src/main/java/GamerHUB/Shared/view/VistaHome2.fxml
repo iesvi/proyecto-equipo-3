@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="525.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.Shared.controllers.VistaHomeControlador">
+    <children>
+        <ImageView fx:id="fotoBusqueda" fitHeight="34.0" fitWidth="34.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+        <TextField fx:id="searchBar" layoutX="72.0" layoutY="13.0" prefHeight="37.0" prefWidth="301.0" promptText="Busca amigos, canales..." style="-fx-background-radius: 5;" />
+        <BorderPane layoutX="13.0" layoutY="60.0" prefHeight="408.0" prefWidth="359.0" style="-fx-background-radius: 15;">
+            <center>
+                <SplitPane dividerPositions="0.8838526912181303" orientation="VERTICAL" prefHeight="161.0" prefWidth="242.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <TextArea fx:id="areaChat" disable="true" editable="false" layoutX="59.0" layoutY="26.0" prefHeight="309.0" prefWidth="357.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <TextField fx:id="msgBar" layoutX="14.0" layoutY="19.0" onKeyPressed="#handlemensaje" prefHeight="63.0" prefWidth="357.0" promptText="Escribe algo..." style="-fx-background-color: #e1ffcf;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+            <top>
+                <SplitPane dividerPositions="0.7927170868347339" prefHeight="53.0" prefWidth="242.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <children>
+                                <Label layoutX="14.0" layoutY="10.0" text="Chat">
+                                    <font>
+                                        <Font name="Arial Black" size="22.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="165.0">
+                            <children>
+                                <ImageView fitHeight="48.0" fitWidth="52.0" layoutX="10.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </top>
+        </BorderPane>
+        <TableView fx:id="eventos" layoutX="378.0" layoutY="60.0" prefHeight="194.0" prefWidth="130.0" style="-fx-background-color: #2fdd72;">
+            <columns>
+                <TableColumn fx:id="colEvento" prefWidth="129.0" text="EVENTOS" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnNuevoEvento" layoutX="478.0" layoutY="264.0" mnemonicParsing="false" onAction="#LoadAddEvent" style="-fx-background-radius: 20; -fx-background-color: #ffed00;" text="+" />
+        <ToggleButton layoutX="389.0" layoutY="340.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="109.0" style="-fx-background-radius: 30; -fx-background-color: #30afb5;" text="Subir archivo">
+            <font>
+                <Font name="Arial Black" size="12.0" />
+            </font>
+        </ToggleButton>
+        <Button fx:id="btnAyuda" layoutX="378.0" layoutY="13.0" mnemonicParsing="false" onAction="#LaunchVistaPeticion" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 5; -fx-background-color: #235971;" text="Ayuda" textFill="#59d3ff">
+            <font>
+                <Font name="Arial Black" size="17.0" />
+            </font>
+        </Button>
+        <Label layoutX="380.0" layoutY="268.0" text="Añadir evento">
+            <font>
+                <Font name="Arial Black" size="12.0" />
+            </font>
+        </Label>
+        <Button layoutX="394.0" layoutY="443.0" mnemonicParsing="false" style="-fx-background-radius: 5; -fx-background-color: #30afb5;" text="Ver archivos">
+            <font>
+                <Font name="Arial Black" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnConfigEventos" layoutX="376.0" layoutY="296.0" mnemonicParsing="false" onAction="#LoadEventoView" style="-fx-background-radius: 5; -fx-background-color: #30afb5;" text="Gestionar eventos">
+            <font>
+                <Font name="Arial Black" size="12.0" />
+            </font>
+        </Button>
+        <Label id="time" fx:id="time" layoutX="406.0" layoutY="489.0" prefHeight="38.0" prefWidth="92.0" text="xx:xx:xx" textAlignment="CENTER">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="350.0" layoutY="495.0" prefHeight="26.0" prefWidth="51.0" text="Hora:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

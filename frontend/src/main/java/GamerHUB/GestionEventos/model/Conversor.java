@@ -2,7 +2,6 @@ package GamerHUB.GestionEventos.model;
 
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionEventos.model.vo.EventoVO;
-import javafx.beans.property.SimpleIntegerProperty;
 
 import java.sql.Date;
 
@@ -12,16 +11,17 @@ import java.sql.Date;
  */
 public class Conversor {
 
-    public Conversor(){
+    public Conversor() {
 
     }
 
     /**
-     *Convierte un objeto tipo EventoDTO a EventoVO
+     * Convierte un objeto tipo EventoDTO a EventoVO
+     *
      * @param eventoVO
      * @return
      */
-    public EventoDTO dtoToVo(EventoVO eventoVO){
+    public EventoDTO dtoToVo(EventoVO eventoVO) {
         EventoDTO eventoDTO = new EventoDTO();
 
         eventoDTO.setId(eventoVO.getId());
@@ -36,10 +36,11 @@ public class Conversor {
 
     /**
      * Convierte un objeto tipo EventoVO a EventoDTO
+     *
      * @param eventoDTO
      * @return
      */
-    public EventoVO voToDto(EventoDTO eventoDTO){
+    public EventoVO voToDto(EventoDTO eventoDTO) {
         EventoVO eventoVO = new EventoVO();
 
         eventoVO.setId(eventoDTO.getId());

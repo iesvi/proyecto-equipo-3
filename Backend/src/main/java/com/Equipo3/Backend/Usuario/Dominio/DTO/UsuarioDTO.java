@@ -1,8 +1,8 @@
 package com.Equipo3.Backend.Usuario.Dominio.DTO;
 
 
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
+import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
+import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.List;
 @With
 @EqualsAndHashCode
 @AllArgsConstructor
-public class UsuarioDTO {
+public class UsuarioDTO implements Dto {
 
     /**
      * id tipo int
@@ -64,4 +64,22 @@ public class UsuarioDTO {
      * amigosde tipo List<UsuarioDTO>
      */
     private List<UsuarioDTO> amigosde = new ArrayList<>();
+    /**
+     * eventos tipo List<EventoDTO>
+     */
+    private List<EventoDTO> eventos = new ArrayList<>();
+//    /**
+//     * chats tipo List<ChatDTO>
+//     */
+//    private List<ChatDTO> chats = new ArrayList<>();
+
+    public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.rol = rol;
+    }
 }

@@ -1,11 +1,10 @@
 package com.Equipo3.Backend.Usuario.Aplicacion;
 
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
+import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.Builder.UsuarioVOBuilder;
-import com.Equipo3.Backend.Usuario.Dominio.Builder.UsuarioVOMother;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
 import com.Equipo3.Backend.Usuario.Dominio.Repository.UsuarioRepository;
@@ -18,8 +17,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpring.class})
+@ContextConfiguration(classes = {ConfigurationSpringTest.class})
 public class UsuarioIntegraTestCase {
     @Autowired
     UsuarioService userService;
@@ -28,6 +30,7 @@ public class UsuarioIntegraTestCase {
     UsuarioRepository userRepo;
 
     @Test
+    @Transactional
     public void ShouldRegisterUsuarioNotExistTest() {
 
         UsuarioVO newuser = userService.Registro_De_Usuario(buildUsuarioDto());
@@ -38,6 +41,7 @@ public class UsuarioIntegraTestCase {
     }
 
     @Test(expected = EntityExist.class)
+    @Transactional
     public void ShouldRegisterUsuarioExist_ThrowExceptionTest() {
 
 
@@ -48,14 +52,14 @@ public class UsuarioIntegraTestCase {
     }
 
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldRemoveUsuarioNotExist_ThrowExceptionTest() {
 
-        UsuarioVO usuarioYaExistente = new UsuarioVOBuilder().build();
-
-        userService.Eliminar_Usuario(usuarioYaExistente.getId());
+        userService.Eliminar_Usuario(25);
     }
 
     @Test
+    @Transactional
     public void ShouldRemoveUsuarioExistTest() {
 
 
@@ -71,7 +75,7 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO Usuarioyaexistente = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
-        UsuarioVO Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
+        Optional<UsuarioVO> Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
 
         Assert.assertNotNull(Usuariodevuelto);
 
@@ -82,7 +86,7 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO Usuarioyaexistente = new UsuarioVOBuilder().build();
 
-        UsuarioVO Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
+        Optional<UsuarioVO> Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
 
     }
     @Test
@@ -90,11 +94,11 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO Usuariosineditar = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
-        UsuarioVO Usuarioaeditar = userService.ConsultarPerfilUsuario(Usuariosineditar.getId());
+        Optional<UsuarioVO> Usuarioaeditar = userService.ConsultarPerfilUsuario(Usuariosineditar.getId());
 
-        Usuarioaeditar.setNombre("Miguel");
+        Usuarioaeditar.get().setNombre("Miguel");
 
-        UsuarioVO usuariodb = userService.Modificar_Usuario(UsuarioMapper.toDTO(Usuarioaeditar));
+        UsuarioVO usuariodb = userService.Modificar_Usuario(UsuarioMapper.toDTO(Usuarioaeditar.get()));
 
         Assert.assertEquals(Usuarioaeditar, usuariodb);
 

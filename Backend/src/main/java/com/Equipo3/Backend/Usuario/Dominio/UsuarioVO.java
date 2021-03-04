@@ -1,5 +1,7 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
+import com.Equipo3.Backend.Evento.Dominio.EventoVO;
+import com.Equipo3.Backend.Shared.Dominio.Audit.AuditableEntity;
 import com.Equipo3.Backend.Usuario.Err.PersonaErr;
 import lombok.*;
 
@@ -14,12 +16,13 @@ import java.util.List;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @Getter
 @Setter
 @With
-//@EqualsAndHashCode (exclude = {"friends","friendOf"})
+//@EqualsAndHashCode (exclude = {"amigos","amigsode", "eventos", "chats"})
 @Entity(name="Usuario")
-public class UsuarioVO implements Serializable  {
+public class UsuarioVO extends AuditableEntity implements Serializable  {
 
     /**
      * id tipo int el cual es el Id en la base de datos
@@ -79,9 +82,22 @@ public class UsuarioVO implements Serializable  {
     @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="amigoId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
     private List<UsuarioVO> amigosde = new ArrayList<>();
 
-    /*@OneToMany
-    @JoinTable(name="Evento")
-    private List<UsuarioVO> eventos = new ArrayList<>();*/
+    @OneToMany (mappedBy = "idusuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
+    private List<EventoVO> eventos = new ArrayList<>();
+
+//    @ManyToMany
+//    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="chatId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
+//    private List<ChatVO> chats = new ArrayList<>();
+
+    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.rol = rol;
+    }
 
     public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;

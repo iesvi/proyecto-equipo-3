@@ -1,6 +1,6 @@
 package com.Equipo3.Backend.Usuario.Aplicacion;
 
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
+import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpring.class})
+@ContextConfiguration(classes = {ConfigurationSpringTest.class})
 public class UsuarioIntegraTestCase {
     @Autowired
     UsuarioService userService;

@@ -6,7 +6,7 @@ import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
 import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
 import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
+import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import org.junit.Assert;
@@ -17,7 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpring.class})
+@ContextConfiguration(classes = {ConfigurationSpringTest.class})
 public class EventoIntegraTest {
 
     @Autowired

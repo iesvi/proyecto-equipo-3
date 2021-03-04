@@ -5,7 +5,6 @@ import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
 import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
 import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.UnitTestCase;
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,8 +1,10 @@
 package com.Equipo3.Backend.Shared.Config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -15,8 +17,10 @@ import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(value = {"com.Equipo3.*"},excludeFilters = @ComponentScan.Filter(Configuration.class))
+@EnableJpaAuditing(auditorAwareRef = "customAuditorAware")
 @EnableJpaRepositories("com.Equipo3.*")
-public class ConfigurationPersistence {
+public class ConfigurationPersistenceTest {
 
         @Bean
         public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
@@ -38,7 +42,8 @@ public class ConfigurationPersistence {
             JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
             em.setJpaVendorAdapter(vendorAdapter);
             //mapeo a la unidad de persistencia
-            em.setPersistenceUnitName("backmm");
+            //em.setPersistenceUnitName("backmm");
+            em.setPersistenceUnitName("Bd");
             return em;
         }
     }

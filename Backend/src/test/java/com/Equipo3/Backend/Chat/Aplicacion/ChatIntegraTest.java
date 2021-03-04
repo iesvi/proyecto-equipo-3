@@ -6,7 +6,7 @@ import com.Equipo3.Backend.Chat.Dominio.ChatVOBuilder;
 import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
 import com.Equipo3.Backend.Chat.Dominio.Mapper.ChatMapper;
 import com.Equipo3.Backend.Chat.Dominio.Repository.ChatRepository;
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
+import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import org.junit.Assert;
@@ -17,7 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpring.class})
+@ContextConfiguration(classes = {ConfigurationSpringTest.class})
 public class ChatIntegraTest {
     @Autowired
     ChatService chatService;

@@ -1,6 +1,5 @@
 package com.Equipo3.Backend.Usuario.Dominio;
 
-import com.Equipo3.Backend.Chat.Dominio.ChatVO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Shared.Dominio.Audit.AuditableEntity;
 import com.Equipo3.Backend.Usuario.Err.PersonaErr;

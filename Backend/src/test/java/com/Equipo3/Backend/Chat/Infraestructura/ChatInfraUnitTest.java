@@ -2,14 +2,12 @@ package com.Equipo3.Backend.Chat.Infraestructura;
 
 import com.Equipo3.Backend.Chat.Dominio.ChatVO;
 import com.Equipo3.Backend.Chat.Dominio.ChatVOBuilder;
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
+import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
+import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
 import com.Equipo3.Backend.Shared.UnitTestCase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +16,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpring.class})
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
+@ContextConfiguration(classes = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
 public class ChatInfraUnitTest extends UnitTestCase {
 
     @PersistenceContext

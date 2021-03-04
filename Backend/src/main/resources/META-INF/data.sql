@@ -1,1 +1,0 @@
-insert into Evento (id,nombre,fecha,idusuario,descripcion) values (1,'Cumpleaños Melania','2018-01-01',1,'Es el cumpleaños de Melania');

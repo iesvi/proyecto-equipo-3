@@ -6,10 +6,9 @@ import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
 import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
-import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
 import java.util.Optional;
 

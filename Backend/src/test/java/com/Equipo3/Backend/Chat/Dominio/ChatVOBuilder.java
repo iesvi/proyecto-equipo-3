@@ -1,12 +1,9 @@
 package com.Equipo3.Backend.Chat.Dominio;
 
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import io.beanmother.core.ObjectMother;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.With;
-
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor

@@ -14,7 +14,7 @@ import java.util.Collections;
 @EnableMongoRepositories(basePackages = "com.Equipo3.*")
 public class ConfigurationMongo extends AbstractMongoClientConfiguration {
 
-    private static String BDNAME;
+    private static String BDNAME = "gamerHUB";
 
     @Override
     protected String getDatabaseName() {

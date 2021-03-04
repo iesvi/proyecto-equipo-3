@@ -1,6 +1,6 @@
 package com.Equipo3.Backend.Usuario.Aplicacion;
 
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpring;
+import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
@@ -17,9 +17,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpring.class})
+@ContextConfiguration(classes = {ConfigurationSpringTest.class})
 public class UsuarioIntegraTestCase {
     @Autowired
     UsuarioService userService;
@@ -73,7 +75,7 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO Usuarioyaexistente = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
-        UsuarioVO Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
+        Optional<UsuarioVO> Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
 
         Assert.assertNotNull(Usuariodevuelto);
 
@@ -84,7 +86,7 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO Usuarioyaexistente = new UsuarioVOBuilder().build();
 
-        UsuarioVO Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
+        Optional<UsuarioVO> Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
 
     }
     @Test
@@ -92,11 +94,11 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO Usuariosineditar = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
-        UsuarioVO Usuarioaeditar = userService.ConsultarPerfilUsuario(Usuariosineditar.getId());
+        Optional<UsuarioVO> Usuarioaeditar = userService.ConsultarPerfilUsuario(Usuariosineditar.getId());
 
-        Usuarioaeditar.setNombre("Miguel");
+        Usuarioaeditar.get().setNombre("Miguel");
 
-        UsuarioVO usuariodb = userService.Modificar_Usuario(UsuarioMapper.toDTO(Usuarioaeditar));
+        UsuarioVO usuariodb = userService.Modificar_Usuario(UsuarioMapper.toDTO(Usuarioaeditar.get()));
 
         Assert.assertEquals(Usuarioaeditar, usuariodb);
 

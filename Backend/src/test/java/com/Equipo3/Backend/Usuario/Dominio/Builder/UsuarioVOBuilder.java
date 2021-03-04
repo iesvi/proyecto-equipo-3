@@ -2,9 +2,10 @@ package com.Equipo3.Backend.Usuario.Dominio.Builder;
 
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import io.beanmother.core.ObjectMother;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.With;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @AllArgsConstructor

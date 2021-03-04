@@ -12,7 +12,7 @@ import java.util.Collections;
 
 @Configuration
 @EnableMongoRepositories(basePackages = "com.Equipo3.*")
-public class ConfigurationMongo extends AbstractMongoClientConfiguration {
+public class ConfigurationMongoTest extends AbstractMongoClientConfiguration {
 
     private static String BDNAME = "gamerHUB";
 

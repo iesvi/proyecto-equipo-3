@@ -2,7 +2,6 @@ package com.Equipo3.Backend.Chat.Dominio.Mapper;
 
 import com.Equipo3.Backend.Chat.Dominio.ChatVO;
 import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
-import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
 
 public class ChatMapper {
 

@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Databases with Docker
+/res/

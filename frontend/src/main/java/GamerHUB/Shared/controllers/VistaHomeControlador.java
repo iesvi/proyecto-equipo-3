@@ -2,6 +2,7 @@ package GamerHUB.Shared.controllers;
 
 
 import GamerHUB.GestionChat.controller.MultiChatUDP;
+import GamerHUB.GestionChat.model.dto.CanalDTO;
 import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionChat.ui.VentanaAddChatVista;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
@@ -19,6 +20,7 @@ import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -48,6 +50,7 @@ public class VistaHomeControlador {
     private ProcessHora hora;
     private ListaEvento listaEvento;
     private ListaChat listaChat;
+
 
 
     @FXML
@@ -117,13 +120,16 @@ public class VistaHomeControlador {
      */
     public VistaHomeControlador() throws IOException {
         hora = new ProcessHora();
+
+        listaChat = new ListaChat();
+
         multiChatUDP = new MultiChatUDP("user", this);
         new Thread(multiChatUDP).start();
 
 
+
         // addOpcionAdmin();
     }
-
 
             @FXML
             public void handlemensaje(KeyEvent keyEvent) {
@@ -148,6 +154,20 @@ public class VistaHomeControlador {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.pane = pane;
+    }
+
+    public void initCanales(ListaChat listaChat){
+
+        if(listaChat ==null){
+            this.listaChat = new ListaChat();
+
+            listaChat.getCanales().add(new CanalDTO("factores", 1234, FXCollections.observableArrayList(
+                    new Integer(12345678), new Integer(9876543)
+            )));
+        } else {
+            this.listaChat = listaChat;
+        }
+
     }
 
     /**
@@ -214,6 +234,12 @@ public class VistaHomeControlador {
     }
 
     public void llenarTablaCanales() {
+
+        if(listaChat.getCanales()!=null && listaChat!=null){
+            canales.setItems(listaChat.getCanales());
+            colCanal.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
+        }
+
 
     }
 
@@ -312,7 +338,7 @@ public class VistaHomeControlador {
 
     @FXML
     public void LoadAddCanal() throws  IOException{
-        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage, listaChat);
+        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage);
         ventanaAddChatVista.LaunchAddCanal();
     }
 

@@ -3,12 +3,14 @@ package GamerHUB.Shared.conexion;
 import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import GamerHUB.Shared.util.ActionDialogs;
 
+import javax.net.ssl.SSLSocket;
 import java.io.*;
 import java.net.Socket;
 
 public class LoginThread{
 
-    private Socket socket;
+
+    private SSLSocket socket;
     private BufferedReader input;
     private UsuarioVO usuarioLogeado;
 
@@ -18,7 +20,7 @@ public class LoginThread{
      * @param socket
      * @throws IOException
      */
-    public LoginThread(Socket socket) throws IOException{
+    public LoginThread(SSLSocket socket) throws IOException{
 
         this.socket = socket;
         this.input = new BufferedReader( new InputStreamReader(socket.getInputStream()));

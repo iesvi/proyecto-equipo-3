@@ -27,6 +27,9 @@ public class VentanaAddChatVista {
 
 
 
+    public VentanaAddChatVista(Stage stageppal){
+        this.stageppal =stageppal;
+    }
 
     public VentanaAddChatVista(Stage stageppal, ListaChat listaChat){
         this.stageppal = stageppal;
@@ -34,6 +37,10 @@ public class VentanaAddChatVista {
     }
 
 
+    /**
+     *
+     * @throws IOException
+     */
     public void LaunchAddCanal() throws IOException {
         URL url = new File("src/main/java/GamerHUB/GestionChat/ui/VistaAddChat.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();

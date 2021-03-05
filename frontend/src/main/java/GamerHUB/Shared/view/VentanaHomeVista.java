@@ -1,5 +1,6 @@
 package GamerHUB.Shared.view;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
@@ -73,6 +74,8 @@ public class VentanaHomeVista {
         controladorHome.setlistaUsuarios(listaUsuario);
         controladorHome.setUsuario(user);
         controladorHome.setUserNameLabel();
+
+        //controladorHome.llenarTablaCanales();
 
         pane.setDividerPositions(0.32);
     }

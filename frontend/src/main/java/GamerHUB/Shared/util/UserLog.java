@@ -20,14 +20,16 @@ public class UserLog {
                 contenido = contenido + "\n" + linea;
             }
             br.close();
-            String usuario = String.valueOf(args[0]);
 
+            DataInputStream dis = new DataInputStream(System.in);
+
+            String usuario = dis.readUTF();
             LocalDateTime Localtime = LocalDateTime.now();
             String tiempo = Localtime.toString();
 
+
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-
             bw.write(contenido + "\n" + "Usuario " + usuario + " ha iniciado sesion a las " + tiempo);
             bw.close();
         } catch (IOException e) {

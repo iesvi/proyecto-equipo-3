@@ -2,6 +2,7 @@ package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
@@ -15,8 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 import java.net.URL;
 
@@ -31,6 +31,7 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioLogeado = new UsuarioDTO();
     private ListaUsuario listaUsuario;
     private VentanaSignUpVista ventanaSignUpVista;
+    private UsuarioRespositorySocket URS;
 
     /**
      *
@@ -70,6 +71,11 @@ public class VistaInicioControlador {
         this.listaUsuario = listaUsuario;
     }
 
+    public void setListaUsuario(){
+        URS = new UsuarioRespositorySocket();
+        listaUsuario.setlistaUsuarios(URS.retrieveUsers());
+    }
+
     public UsuarioDTO getUsuarioLogeado() {
         return usuarioLogeado;
     }
@@ -93,6 +99,7 @@ public class VistaInicioControlador {
      *
      */
     public VistaInicioControlador() throws IOException {
+
     }
 
 
@@ -185,14 +192,19 @@ public class VistaInicioControlador {
     public void logUsuario(UsuarioDTO user){
         try {
             File directorio = new File("target/classes/");
-            ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog", user.getNombre());
+            ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog");
             pb.directory(directorio);
             Process p = pb.start();
 
+            OutputStream os = p.getOutputStream();
+
+            DataOutputStream dos = new DataOutputStream(os);
+            dos.writeUTF(user.getNombre());
+            dos.flush();
             int exitVal;
             try {
                 exitVal = p.waitFor();
-                System.out.println("Valor de Salida: " + exitVal);
+                System.out.println("Valor de Salida: " + String.valueOf(exitVal));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

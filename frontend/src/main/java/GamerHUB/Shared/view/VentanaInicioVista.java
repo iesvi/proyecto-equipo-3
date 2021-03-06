@@ -42,6 +42,7 @@ public class VentanaInicioVista {
         //inicio.setBackground();
         VistaInicioControlador controladorInicio = loader.getController();
         controladorInicio.setVista(this, stageppal, listaUsuario);
+        controladorInicio.setListaUsuario();
 
     }
 

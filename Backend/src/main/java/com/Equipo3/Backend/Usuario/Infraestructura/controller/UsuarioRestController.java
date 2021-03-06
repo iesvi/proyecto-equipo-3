@@ -4,7 +4,6 @@ import com.Equipo3.Backend.Shared.Infraestructura.controller.constant.EndpointUr
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -36,7 +36,6 @@ public class VentanaSignUpVista {
         dialogStage.setScene(scene);
         dialogStage.setTitle("Únete a gamerhub!");
         dialogStage.initModality(Modality.APPLICATION_MODAL);
-
         VistaRegistroControlador controladorRegistro = loader.getController();
         controladorRegistro.setVista(this, dialogStage, listaUsuario);
 

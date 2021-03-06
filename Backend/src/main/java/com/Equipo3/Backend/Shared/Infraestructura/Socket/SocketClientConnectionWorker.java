@@ -1,8 +1,14 @@
 package com.Equipo3.Backend.Shared.Infraestructura.Socket;
 
+import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
+import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
+import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import java.io.*;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 /**
 
@@ -14,13 +20,18 @@ public class SocketClientConnectionWorker implements Runnable{
 
     private InputStream entrada;
     private OutputStream salida;
+    @Autowired
+    private UsuarioService US;
 
     private DataInputStream flujoEntrada;
     private DataOutputStream flujoSalida;
+    private ObjectInputStream ObjectEntrada;
+    private ObjectOutputStream ObjectSalida;
 
     public SocketClientConnectionWorker(Socket clientSocket, String clientID) {
         this.clientSocket = clientSocket;
         this.clientID = clientID;
+        this.US = new UsuarioService();
 
         try {
             this.clientSocket.setReceiveBufferSize(1024);
@@ -35,17 +46,34 @@ public class SocketClientConnectionWorker implements Runnable{
             salida = clientSocket.getOutputStream();
 
             flujoEntrada = new DataInputStream(entrada);
+            flujoSalida = new DataOutputStream(salida);
 
             System.out.println(clientID + ". Waiting....");
 
             byte[] buffer = new byte[1024];
 
             while(true) {
-                int readbytes = entrada.read(buffer);
-                //String mm = flujoEntrada.readUTF();
-                String s = new String(buffer, StandardCharsets.UTF_8);
 
-                System.out.println(this.clientID + ". Valor recibido:\n" + s);
+                String n = flujoEntrada.readUTF();
+                switch (n){
+                    case "usuarios":
+                        ArrayList<UsuarioDTO> lista = US.Consultar_Usuarios();
+                        ObjectSalida.writeObject(lista);
+                        ObjectSalida.flush();
+                        break;
+                    case "add":
+                        try {
+                            ObjectEntrada = new ObjectInputStream(entrada);
+                            Object o = ObjectEntrada.readObject();
+                            UsuarioDTO user = (UsuarioDTO) o;
+                            US.Registro_De_Usuario(user);
+                        }catch(ClassNotFoundException er){
+                            er.printStackTrace();
+                        }
+                        break;
+                }
+
+
             }
 
         } catch (IOException e) {

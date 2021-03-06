@@ -2,7 +2,7 @@ package GamerHUB.GestionUsuarios.controller;
 
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
-import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
+import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaInicioVista;
@@ -51,7 +51,7 @@ public class VistaRegistroControlador {
     @FXML
     private Button botonOk = new Button();
 
-    private UsuarioRespositoryJDBC usuarioRespositoryJDBC;
+    private UsuarioRespositorySocket usuarioRespositorySocket;
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
@@ -91,7 +91,7 @@ public class VistaRegistroControlador {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
-        usuarioRespositoryJDBC = new UsuarioRespositoryJDBC(listaUsuario);
+        usuarioRespositorySocket = new UsuarioRespositorySocket();
     }
 
 
@@ -125,8 +125,8 @@ public class VistaRegistroControlador {
                     0
             );
 
-
-            usuarioRespositoryJDBC.add(usuarioDTO);
+            usuarioRespositorySocket.add(usuarioDTO);
+            listaUsuario.AddUsuario(usuarioDTO);
 
             ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos y doritos.\n" +
                     "Nombre de usuario: " + usuarioDTO.getNombre() + "\n" + "Password: " + usuarioDTO.getPassword());

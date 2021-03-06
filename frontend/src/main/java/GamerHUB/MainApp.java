@@ -27,9 +27,9 @@ public class MainApp extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ListaUsuario listausuario = new ListaUsuario();
+        ListaUsuario listaUsuario = new ListaUsuario();
         ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(primaryStage, listausuario);
+        ventanaRoot.inicioStage(primaryStage, listaUsuario);
 
     }
 

@@ -20,6 +20,7 @@ public class VentanaRootVista {
     public void inicioStage(Stage primaryStage, ListaUsuario listaUsuario) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Welcome to GamerHub!");
+        this.listaUsuario = listaUsuario;
 
         Init();
 

@@ -21,14 +21,8 @@ public class Conversor {
      */
     public static UsuarioDTO voToDto(UsuarioVO usuarioVO) {
 
-        UsuarioDTO usuarioDTO = new UsuarioDTO();
+        UsuarioDTO usuarioDTO = new UsuarioDTO(usuarioVO.getId(),usuarioVO.getNombre(),usuarioVO.getPassword(),usuarioVO.getEmail(),usuarioVO.getFecha_nacimiento().toLocalDate(),usuarioVO.getTelefono(),usuarioVO.getRol());
 
-        usuarioDTO.setId(usuarioVO.getId());
-        usuarioDTO.setNombre(usuarioVO.getNombre());
-        usuarioDTO.setPassword(usuarioVO.getPassword());
-        usuarioDTO.setEmail(usuarioVO.getEmail());
-        usuarioDTO.setTelefono(usuarioVO.getTelefono());
-        usuarioDTO.setFecha_nacimiento(usuarioVO.getFecha_nacimiento().toLocalDate());
 
 //        for (int i = 0; i < usuarioVO.getAmigos().size(); i++) {
 //            usuarioDTO.getAmigos().add(new SimpleIntegerProperty(usuarioVO.getAmigos().get(i)));

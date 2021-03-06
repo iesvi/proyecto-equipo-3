@@ -26,6 +26,7 @@ services:
       MYSQL_USER: "team3"
       MYSQL_PASSWORD: "team3"
       MYSQL_ROOT_PASSWORD: "root"
+
     ports:
       - 3311:3306
     expose:

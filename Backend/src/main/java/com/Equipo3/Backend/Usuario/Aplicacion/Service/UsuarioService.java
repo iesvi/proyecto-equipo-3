@@ -26,7 +26,6 @@ public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepo;
 
-
     /**
      * Método para dar de alta un nuevo usuario. Tambien se convierte un UsuarioDTO a UsuarioVO
      *

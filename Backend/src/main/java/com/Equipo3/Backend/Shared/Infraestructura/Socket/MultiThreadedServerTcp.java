@@ -2,6 +2,9 @@ package com.Equipo3.Backend.Shared.Infraestructura.Socket;
 
 import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import com.Equipo3.Backend.Shared.Dominio.Socket.SocketServer;
+import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -18,6 +21,9 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
     protected Thread       runningThread= null;
 
     HashMap<Integer, SocketClientConnectionWorker> clientsConnections = new HashMap<>();
+
+    @Autowired
+    private UsuarioService US;
 
     public MultiThreadedServerTcp() {
     }
@@ -44,7 +50,7 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
             }
 
             Integer clientId = clientsConnections.size()+1;
-            clientsConnections.put(clientId,new SocketClientConnectionWorker(clientSocket, "ClienteID: " + clientId));
+            clientsConnections.put(clientId,new SocketClientConnectionWorker(clientSocket, "ClienteID: " + clientId, US));
 
             new Thread(clientsConnections.get(clientId)).start();
 

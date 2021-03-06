@@ -1,6 +1,7 @@
 package GamerHUB.GestionUsuarios.model.vo;
 
 import GamerHUB.GestionEventos.model.vo.EventoVO;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 /**
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UsuarioVO implements Serializable {
 
     private int id;
@@ -20,7 +22,7 @@ public class UsuarioVO implements Serializable {
     private String rol;
     private ArrayList<UsuarioVO> amigos;
     private ArrayList<UsuarioVO> amigosde;
-    private ArrayList<EventoVO> evento;
+    private ArrayList<EventoVO> eventos;
 
 
     public UsuarioVO() {
@@ -36,7 +38,7 @@ public class UsuarioVO implements Serializable {
         this.rol = rol;
         this.amigos = amigos;
         this.amigosde = amigosde;
-        this.evento = evento;
+        this.eventos = evento;
     }
 
     public UsuarioVO(String user, String password){
@@ -117,11 +119,11 @@ public class UsuarioVO implements Serializable {
     }
 
     public ArrayList<EventoVO> getEvento() {
-        return evento;
+        return eventos;
     }
 
     public void setEvento(ArrayList<EventoVO> evento) {
-        this.evento = evento;
+        this.eventos = evento;
     }
 
     @Override

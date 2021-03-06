@@ -8,6 +8,7 @@ import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,13 +24,13 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
 
     public UsuarioRespositorySocket() {
         CS = new ClientSocket();
+        CS.conectar();
     }
 
 
 
 
-
-    private MainApp mainApp = new MainApp();
+    private static ObjectMapper mapper = new ObjectMapper();
 
     @Override
     public boolean add(UsuarioDTO usuarioDTO) {
@@ -69,15 +70,17 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
             if(CS.comprobarConexion()){
                 CS.send("usuarios");
                 Object o = CS.receive();
-                listaUsuarios = (ArrayList<UsuarioVO>) o;
+                ArrayList<UsuarioVO> listaUsuario = (ArrayList<UsuarioVO>) o;
+                for(int i = 0;i<listaUsuario.size();i++){
+                    UsuarioVO user= mapper.convertValue(listaUsuario.get(i), UsuarioVO.class);
+                    listaUsuarios.add(user);
+                }
             }
             else{
                 ActionDialogs.error("Error","No hay conexion con la base de datos. Prueba mas tarde.");
                 listaUsuarios = null;
             }
         }catch(IOException er){
-            er.printStackTrace();
-        }catch (ClassNotFoundException er){
             er.printStackTrace();
         }
         return listaUsuarios;

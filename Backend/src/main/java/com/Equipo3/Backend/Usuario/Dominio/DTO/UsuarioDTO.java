@@ -5,6 +5,7 @@ import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
 @With
 @EqualsAndHashCode
 @AllArgsConstructor
-public class UsuarioDTO implements Dto {
+public class UsuarioDTO implements Dto, Serializable {
 
     /**
      * id tipo int

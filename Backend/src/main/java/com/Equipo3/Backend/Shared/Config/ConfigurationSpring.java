@@ -10,6 +10,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan("com.Equipo3.Backend.*")
 @EnableJpaAuditing(auditorAwareRef="customAuditorAware")
 @EnableTransactionManagement
-@Import(value = {ConfigurationPersistence.class, ConfigurationSocket.class, ConfigSwagger.class, ConfigWeb.class})
+@Import(value = {ConfigurationPersistence.class, ConfigurationSocket.class})
 public class ConfigurationSpring {
 }

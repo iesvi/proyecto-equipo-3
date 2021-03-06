@@ -55,6 +55,15 @@ public class UsuarioDTO {
         this.telefono = new SimpleIntegerProperty(telefono);
         this.rol = new SimpleStringProperty(rol);
     }
+    public UsuarioDTO(int id,String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol) {
+        this.id = new SimpleIntegerProperty(id);
+        this.nombre = new SimpleStringProperty(nombre);
+        this.password = new SimpleStringProperty(password);
+        this.email = new SimpleStringProperty(email);
+        this.fecha_nacimiento = new SimpleObjectProperty<LocalDate>(fecha_nacimiento);
+        this.telefono = new SimpleIntegerProperty(telefono);
+        this.rol = new SimpleStringProperty(rol);
+    }
 
     public int getId() {
         return id.get();

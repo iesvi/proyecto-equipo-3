@@ -1,7 +1,11 @@
 package GamerHUB.Shared.conexion;
 
+import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
+import GamerHUB.Shared.util.JsonMapper;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,12 +23,6 @@ public class ClientSocket {
     }
 
     public boolean comprobarConexion(){
-        try {
-            this.socket = new Socket(Host, Puerto);
-            socket.close();
-        }catch(IOException er){
-
-        }
         if (socket == null){
             return false;
         }else{
@@ -40,38 +38,47 @@ public class ClientSocket {
      * @throws IOException
      */
     public void sendO(Object o, String n) throws IOException{
-        this.socket = new Socket(Host, Puerto);
         DataOutputStream Dos = new DataOutputStream(socket.getOutputStream());
         Dos.writeUTF(n);
         ObjectOutputStream OOs = new ObjectOutputStream(socket.getOutputStream());
         OOs.writeObject(o);
-        socket.close();
     }
 
     public void send(String n) throws IOException{
-        this.socket = new Socket(Host, Puerto);
         DataOutputStream Dos = new DataOutputStream(socket.getOutputStream());
         Dos.writeUTF(n);
-        socket.close();
     }
 
 
     /**
      *
-     * @param o
      * @return
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    public Object receive() throws IOException, ClassNotFoundException{
-        this.socket = new Socket(Host, Puerto);
-        InputStream inputStream = socket.getInputStream();
-        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-        Object o = objectInputStream.readObject();
-        socket.close();
-         return o;
-
+    public Object receive() throws IOException {
+        Object o = null;
+            InputStream inputStream = socket.getInputStream();
+            DataInputStream dataInputStream = new DataInputStream(inputStream);
+            String json = dataInputStream.readUTF();
+            o = JsonMapper.fromJsonToJava(json, ArrayList.class);
+        return o;
     }
+
+    public void conectar() {
+        try {
+            this.socket = new Socket(Host, Puerto);
+        } catch (IOException er) {
+            System.out.println("No hay conexion.");
+        }
+    }
+    public void desconectar() {
+        try {
+            socket.close();
+        } catch (IOException er) {
+                System.out.println("No hay conexion.");
+        }
+        }
 
 
 }

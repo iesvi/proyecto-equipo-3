@@ -28,8 +28,6 @@ public class DatosRepository {
                 usuarioVO = (UsuarioVO) clientSocket.receive();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         return Conversor.voToDto(usuarioVO);
     }
@@ -50,8 +48,6 @@ public class DatosRepository {
                 usuarioDTOS.add(Conversor.voToDto(user));
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 

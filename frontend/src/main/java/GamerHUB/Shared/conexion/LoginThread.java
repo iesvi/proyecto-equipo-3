@@ -53,24 +53,23 @@ public class LoginThread{
 
         while(!accepted){
 
-
             usuarioLogeado = (UsuarioVO)  objectInputStream.readObject();
 
             if(usuarioLogeado!=null){
-                accepted=true;
                 ActionDialogs.info("Conexión establecida.", "Bienvenido a Gamerhub "+usuario.getNombre()+"!");
 
-            }   else {
+                return true;
 
-                accepted = false;
+            }   else {
                 ActionDialogs.info("Conexión rechazada", "No se puedo establecer la conexión.");
+                return false;
 
 
             }
 
         }
 
-return accepted;
+return true;
     }
 
     public UsuarioVO getUsuarioLogeado() {

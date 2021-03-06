@@ -10,6 +10,7 @@ import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.GestionPeticiones.ui.VentanaPeticionVista;
+import GamerHUB.GestionServidorArchivos.Apartado4_5.Servidor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
@@ -102,7 +103,7 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    public Button btnConfig, btnAyuda, btnSubirArchivo, btnVerArchivos, btnNuevoCanal, btnNuevoEvento, btnConfigEventos;
+    public Button btnConfig, btnAyuda, btnGestionArchivos, btnNuevoCanal, btnNuevoEvento, btnConfigEventos;
 
     /**
      *
@@ -316,6 +317,11 @@ public class VistaHomeControlador {
         userName.setText(userLogeado.getNombre());
     }
 
+    @FXML
+    public void LaunchVistaFTP() throws IOException {
+        String[] args = {};
+        Servidor.main(args);
+    }
     /**
      * Método para cargar la vista del formulario y tablas de los eventos.
      *
@@ -350,25 +356,6 @@ public class VistaHomeControlador {
 
     }
 
-    /*@FXML
-    public void AbrirdialogAñadirEvento() throws IOException{
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("/vistas/gestioneventos/VistaAddEventoDialog.fxml"));
-        AnchorPane Aevent = (AnchorPane) loader.load();
-
-        Stage newevent = new Stage();
-        newevent.setTitle("Añadir Evento");
-        newevent.initModality(Modality.WINDOW_MODAL);
-        newevent.initOwner(dialogStage);
-        Scene scene = new Scene(Aevent);
-        newevent.setScene(scene);
-
-        EventoController contevnt = loader.getController();
-        contevnt.setdialogStage(dialogStage);
-        contevnt.setMainApp(mainApp);
-
-        dialogStage.showAndWait();
-    }*/
 
     public void LaunchVistaAdmin() {
 

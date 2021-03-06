@@ -37,7 +37,9 @@ public class PeticionController {
     }
 
     public PeticionController() {
-        listaIncidencias = new ChoiceBox<String>(FXCollections.observableArrayList(lista));
+
+        listaIncidencias = new ChoiceBox<String>();
+        listaIncidencias.setItems(FXCollections.observableArrayList(lista));
     }
 
 

@@ -28,7 +28,7 @@ public class UsuarioVO implements Serializable {
     public UsuarioVO() {
     }
 
-    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos, ArrayList<UsuarioVO> amigosde, ArrayList<EventoVO> evento) {
+    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos, ArrayList<UsuarioVO> amigosde, ArrayList<EventoVO> eventos) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
@@ -38,7 +38,7 @@ public class UsuarioVO implements Serializable {
         this.rol = rol;
         this.amigos = amigos;
         this.amigosde = amigosde;
-        this.eventos = evento;
+        this.eventos = eventos;
     }
 
     public UsuarioVO(String user, String password){
@@ -110,20 +110,20 @@ public class UsuarioVO implements Serializable {
         this.amigos = amigos;
     }
 
-    public ArrayList<UsuarioVO> getAmigosDe() {
+    public ArrayList<UsuarioVO> getAmigosde() {
         return amigosde;
     }
 
-    public void setAmigosDe(ArrayList<UsuarioVO> amigosde) {
+    public void setAmigosde(ArrayList<UsuarioVO> amigosde) {
         this.amigosde = amigosde;
     }
 
-    public ArrayList<EventoVO> getEvento() {
+    public ArrayList<EventoVO> getEventos() {
         return eventos;
     }
 
-    public void setEvento(ArrayList<EventoVO> evento) {
-        this.eventos = evento;
+    public void setEvento(ArrayList<EventoVO> eventos) {
+        this.eventos = eventos;
     }
 
     @Override

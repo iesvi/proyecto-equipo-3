@@ -8,6 +8,7 @@ import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.MainApp;
 import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.util.JsonMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -22,9 +23,8 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
 
     private ClientSocket CS;
 
-    public UsuarioRespositorySocket() {
-        CS = new ClientSocket();
-        CS.conectar();
+    public UsuarioRespositorySocket(ClientSocket CS) {
+        this.CS = CS;
     }
 
 
@@ -37,7 +37,8 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
         UsuarioVO UsVO = Conversor.dtoToVo(usuarioDTO);
         try{
             if(CS.comprobarConexion()){
-                CS.sendO(UsVO, "add");
+                String Json = JsonMapper.fromJavaToJson(UsVO);
+                CS.sendO(Json, "add");
             }
             else{
                 ActionDialogs.error("Error","No se ha podido registrar en la base de datos. Se registrará solo en local.");
@@ -65,7 +66,7 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
 
     @Override
     public ArrayList<UsuarioVO> retrieveUsers() {
-        ArrayList<UsuarioVO> listaUsuarios = new ArrayList<UsuarioVO>();
+        ArrayList<UsuarioVO> listaUsuarios = new ArrayList<>();
         try{
             if(CS.comprobarConexion()){
                 CS.send("usuarios");
@@ -78,7 +79,6 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
             }
             else{
                 ActionDialogs.error("Error","No hay conexion con la base de datos. Prueba mas tarde.");
-                listaUsuarios = null;
             }
         }catch(IOException er){
             er.printStackTrace();

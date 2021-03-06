@@ -4,6 +4,7 @@ import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaInicioVista;
 import GamerHUB.Shared.view.VentanaRootVista;
@@ -23,6 +24,7 @@ public class VistaRegistroControlador {
     private VentanaInicioVista ventanaInicioVista;
     private VentanaRootVista ventanaRootVista;
     private ListaUsuario listaUsuario;
+    private ClientSocket CS;
 
     /**
      *
@@ -87,11 +89,12 @@ public class VistaRegistroControlador {
      *
      * @param dialogStage
      */
-    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario) {
+    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario, ClientSocket CS) {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
-        usuarioRespositorySocket = new UsuarioRespositorySocket();
+        this.CS = CS;
+        usuarioRespositorySocket = new UsuarioRespositorySocket(CS);
     }
 
 
@@ -122,7 +125,8 @@ public class VistaRegistroControlador {
                     campoPass.getText(),
                     campoEmail.getText(),
                     fechaNac.getValue(),
-                    0
+                    0,
+                    "user"
             );
 
             usuarioRespositorySocket.add(usuarioDTO);
@@ -189,7 +193,7 @@ public class VistaRegistroControlador {
     @FXML
     public void handleVolver() throws IOException {
         ventanaRootVista = new VentanaRootVista();
-        ventanaRootVista.inicioStage(dialogStage, listaUsuario);
+        ventanaRootVista.inicioStage(dialogStage, listaUsuario, CS);
     }
 
 

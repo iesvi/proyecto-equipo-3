@@ -88,7 +88,7 @@ public class SocketClientConnectionWorker implements Runnable {
 
         } catch (IOException e) {
             //report exception somewhere.
-            e.printStackTrace();
+            System.out.println(clientID + " desconectado.");
         }
     }
 

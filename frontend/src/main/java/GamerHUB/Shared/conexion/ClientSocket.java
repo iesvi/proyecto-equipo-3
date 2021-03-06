@@ -37,16 +37,19 @@ public class ClientSocket {
      * @param n
      * @throws IOException
      */
-    public void sendO(Object o, String n) throws IOException{
+    public void sendO(String Json, String n) throws IOException{
         DataOutputStream Dos = new DataOutputStream(socket.getOutputStream());
         Dos.writeUTF(n);
-        ObjectOutputStream OOs = new ObjectOutputStream(socket.getOutputStream());
-        OOs.writeObject(o);
+        Dos.flush();
+        DataOutputStream DOs = new DataOutputStream(socket.getOutputStream());
+        DOs.writeUTF(Json);
+        DOs.flush();
     }
 
     public void send(String n) throws IOException{
         DataOutputStream Dos = new DataOutputStream(socket.getOutputStream());
         Dos.writeUTF(n);
+        Dos.flush();
     }
 
 

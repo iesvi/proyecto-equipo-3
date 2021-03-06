@@ -32,7 +32,6 @@ public class UsuarioIntegraTestCase {
 
     @Test
     @Transactional
-    @Commit
     public void ShouldRegisterUsuarioNotExistTest() {
 
         UsuarioVO newuser = userService.Registro_De_Usuario(buildUsuarioDto());

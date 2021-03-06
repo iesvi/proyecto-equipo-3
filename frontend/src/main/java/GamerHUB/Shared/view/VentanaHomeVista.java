@@ -5,6 +5,7 @@ import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaAdminVista;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.exception.CustomException;
 import javafx.fxml.FXMLLoader;
@@ -23,11 +24,13 @@ public class VentanaHomeVista {
     private Stage stageppal;
     private ListaUsuario listaUsuario;
     private UsuarioDTO user;
+    private ClientSocket CS;
 
-    public VentanaHomeVista(Stage stageppal, UsuarioDTO user, ListaUsuario listaUsuario) {
+    public VentanaHomeVista(Stage stageppal, UsuarioDTO user, ListaUsuario listaUsuario, ClientSocket CS) {
         this.stageppal = stageppal;
         this.user = user;
         this.listaUsuario = listaUsuario;
+        this.CS = CS;
     }
 
     /**
@@ -50,7 +53,7 @@ public class VentanaHomeVista {
         pane.setDividerPositions(0.32);
 
         VistaHomeControlador controladorHome = loader.getController();
-        controladorHome.setVista(this, dialogStage, pane);
+        controladorHome.setVista(this, dialogStage, pane, CS);
         controladorHome.setUsuario(user);
         controladorHome.setlistaUsuarios(listaUsuario);
         dialogStage.setTitle("Bienvenido " + user.getNombre() + "!");
@@ -70,7 +73,7 @@ public class VentanaHomeVista {
         pane.getItems().set(0, anchorPane);
 
         VistaHomeControlador controladorHome = loader1.getController();
-        controladorHome.setVista(this, dialog, pane);
+        controladorHome.setVista(this, dialog, pane, CS);
         controladorHome.setlistaUsuarios(listaUsuario);
         controladorHome.setUsuario(user);
         controladorHome.setUserNameLabel();
@@ -90,7 +93,7 @@ public class VentanaHomeVista {
         AnchorPane anchorPane1 = loader2.load();
         pane.getItems().set(1, anchorPane1);
         VistaHomeControlador controladorHome = loader2.getController();
-        controladorHome.setVista(this, dialog, pane);
+        controladorHome.setVista(this, dialog, pane, CS);
         controladorHome.setUsuario(user);
         controladorHome.setlistaUsuarios(listaUsuario);
         controladorHome.setEventos(listaEvento);

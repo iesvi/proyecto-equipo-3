@@ -66,7 +66,7 @@ public class UsuarioDTO {
     }
 
     public int getId() {
-        return id.get();
+        return id.getValue();
     }
 
     public IntegerProperty idProperty() {
@@ -78,7 +78,7 @@ public class UsuarioDTO {
     }
 
     public String getNombre() {
-        return nombre.get();
+        return nombre.getValue();
     }
 
     public StringProperty nombreProperty() {
@@ -90,7 +90,7 @@ public class UsuarioDTO {
     }
 
     public String getPassword() {
-        return password.get();
+        return password.getValue();
     }
 
     public StringProperty passwordProperty() {
@@ -102,7 +102,7 @@ public class UsuarioDTO {
     }
 
     public String getEmail() {
-        return email.get();
+        return email.getValue();
     }
 
     public StringProperty emailProperty() {
@@ -114,7 +114,7 @@ public class UsuarioDTO {
     }
 
     public LocalDate getFecha_nacimiento() {
-        return fecha_nacimiento.get();
+        return fecha_nacimiento.getValue();
     }
 
     public ObjectProperty<LocalDate> fecha_nacimientoProperty() {
@@ -126,7 +126,7 @@ public class UsuarioDTO {
     }
 
     public int getTelefono() {
-        return telefono.get();
+        return telefono.getValue();
     }
 
     public IntegerProperty telefonoProperty() {
@@ -138,7 +138,7 @@ public class UsuarioDTO {
     }
 
     public String getRol() {
-        return rol.get();
+        return rol.getValue();
     }
 
     public StringProperty rolProperty() {

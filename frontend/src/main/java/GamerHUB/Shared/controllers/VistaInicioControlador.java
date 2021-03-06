@@ -4,6 +4,7 @@ import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.util.ActionDialogs;
@@ -32,6 +33,7 @@ public class VistaInicioControlador {
     private ListaUsuario listaUsuario;
     private VentanaSignUpVista ventanaSignUpVista;
     private UsuarioRespositorySocket URS;
+    private ClientSocket CS;
 
     /**
      *
@@ -65,14 +67,15 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioDTO;
 
 
-    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario) {
+    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario, ClientSocket CS) {
         this.stageinicio = stageinicio;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
+        this.CS = CS;
     }
 
     public void setListaUsuario(){
-        URS = new UsuarioRespositorySocket();
+        URS = new UsuarioRespositorySocket(CS);
         listaUsuario.setlistaUsuarios(URS.retrieveUsers());
     }
 
@@ -119,14 +122,14 @@ public class VistaInicioControlador {
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
                 logUsuario(user);
 
             } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
@@ -184,7 +187,7 @@ public class VistaInicioControlador {
      * @throws IOException
      */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
-        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario);
+        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario, CS);
         ventanaSignUpVista.LaunchSignUpView();
         vista.getStageppal().close();
     }

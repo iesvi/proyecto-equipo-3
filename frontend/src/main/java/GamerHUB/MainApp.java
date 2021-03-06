@@ -1,6 +1,7 @@
 package GamerHUB;
 
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,8 +29,10 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         ListaUsuario listaUsuario = new ListaUsuario();
+        ClientSocket CS = new ClientSocket();
+        CS.conectar();
         ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(primaryStage, listaUsuario);
+        ventanaRoot.inicioStage(primaryStage, listaUsuario, CS);
 
     }
 

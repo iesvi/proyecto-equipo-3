@@ -14,6 +14,7 @@ import GamerHUB.GestionServidorArchivos.Apartado4_5.Servidor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.util.ProcessHora;
 import GamerHUB.Shared.view.VentanaHomeVista;
@@ -51,6 +52,7 @@ public class VistaHomeControlador {
     private ProcessHora hora;
     private ListaEvento listaEvento;
     private ListaChat listaChat;
+    private ClientSocket CS;
 
 
 
@@ -151,10 +153,11 @@ public class VistaHomeControlador {
      * @param dialogStage
      * @param pane
      */
-    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane) {
+    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane, ClientSocket CS) {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.pane = pane;
+        this.CS = CS;
     }
 
     public void initCanales(ListaChat listaChat){
@@ -298,7 +301,7 @@ public class VistaHomeControlador {
     @FXML
     public void Logout() throws IOException {
         VentanaRootVista ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(new Stage(), listaUsuario);
+        ventanaRoot.inicioStage(new Stage(), listaUsuario, CS);
         dialogStage.close();
     }
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="460.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="14.0" layoutY="16.0" prefHeight="200.0" prefWidth="169.0">
+        <columns>
+          <TableColumn prefWidth="167.0" text="C1" />
+        </columns>
+      </TableView>
+      <Button layoutX="254.0" layoutY="144.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Editar" />
+      <Button layoutX="254.0" layoutY="185.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Eliminar" />
+      <TextField layoutX="254.0" layoutY="16.0" prefHeight="25.0" prefWidth="169.0" promptText="Evento...." style="-fx-background-radius: 10;" />
+      <TextField layoutX="254.0" layoutY="52.0" prefHeight="25.0" prefWidth="169.0" promptText="Descripcion..." style="-fx-background-radius: 10;" />
+      <DatePicker layoutX="254.0" layoutY="103.0" prefHeight="25.0" prefWidth="80.0" promptText="Fecha inicial" />
+      <DatePicker layoutX="347.0" layoutY="103.0" prefHeight="25.0" prefWidth="80.0" promptText="Fecha de fin" />
+   </children>
+</AnchorPane>

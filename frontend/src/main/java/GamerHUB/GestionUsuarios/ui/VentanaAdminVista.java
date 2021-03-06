@@ -47,5 +47,17 @@ public class VentanaAdminVista {
 
     }
 
+    public void LaunchVistaGestionChat(){
+
+    }
+
+    public void LaunchVistaGestionUsers(){
+
+    }
+
+    public void LaunchVistaGestionEventos(){
+
+    }
+
 
 }

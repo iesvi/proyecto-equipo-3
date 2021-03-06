@@ -25,7 +25,7 @@ public class AdminController {
     @FXML
     private TableColumn<UsuarioDTO, String> colUsuario;
     @FXML
-    private Button btnEditarUser, btnEliminarUser, btnGestionarEventos;
+    private Button btnEditarUser, btnEliminarUser, btnGestionarEventos, btnGestionarChats, btnGestionarFTP;
 
 
     private VentanaAdminVista ventanaAdminVista;
@@ -46,8 +46,9 @@ public class AdminController {
 
     }
 
-    public void volver(){
 
+
+    public void volver(){
     }
 
 }

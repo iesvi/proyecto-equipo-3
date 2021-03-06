@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -28,7 +27,12 @@
                         </MenuBar>
                         <Button layoutX="27.0" layoutY="304.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #c80815;" text="Eliminar" textFill="WHITE" />
                         <Button layoutX="27.0" layoutY="262.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #30afb5;" text="Editar" />
-                  <Button layoutX="32.0" layoutY="395.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="200.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar chats">
+                  <Button layoutX="42.0" layoutY="367.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="200.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar chats">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="442.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="257.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar servidor FTP">
                      <font>
                         <Font name="System Bold" size="19.0" />
                      </font>

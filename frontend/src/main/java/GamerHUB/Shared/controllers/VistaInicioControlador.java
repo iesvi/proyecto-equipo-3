@@ -122,18 +122,19 @@ public class VistaInicioControlador {
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
+                logUsuario(user);
                 VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
-                logUsuario(user);
+
 
             } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
+                logUsuario(user);
                 VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
-                logUsuario(user);
             }
         }
         if (!correct) {

@@ -52,11 +52,6 @@ public class VentanaRootVista {
         primaryStage.setScene(scene);
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
                                            @Override public void handle(WindowEvent event) {
-                                               try {
-                                                   CS.send("exit");
-                                               }catch(IOException er){
-                                                   er.printStackTrace();
-                                               }
                                                primaryStage.close();
                                            }
                                        });

@@ -1,6 +1,7 @@
 package GamerHUB.GestionPeticiones.ui;
 
 import GamerHUB.GestionPeticiones.controller.PeticionController;
+import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -19,9 +20,11 @@ public class VentanaPeticionVista {
 
 
     private Stage stageppal;
+    private ClientSocket CS;
 
-    public VentanaPeticionVista(Stage stageppal){
+    public VentanaPeticionVista(Stage stageppal, ClientSocket CS){
             this.stageppal = stageppal;
+            this.CS = CS;
     }
 
     /**
@@ -42,7 +45,8 @@ public class VentanaPeticionVista {
         dialogStage.setTitle("Gracias por confiar en nosotros.");
         dialogStage.initModality(Modality.APPLICATION_MODAL);
         PeticionController peticionController = loader.getController();
-        peticionController.setVentanaPeticionVista(this, dialogStage);
+        peticionController.setVentanaPeticionVista(this, dialogStage, CS);
+        peticionController.setListaIncidencias();
 
         dialogStage.show();
 

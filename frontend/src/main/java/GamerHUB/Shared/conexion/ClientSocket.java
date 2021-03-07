@@ -33,7 +33,6 @@ public class ClientSocket {
 
     /**
      *
-     * @param o
      * @param n
      * @throws IOException
      */

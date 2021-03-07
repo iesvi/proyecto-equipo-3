@@ -1,7 +1,10 @@
 package com.Equipo3.Backend.Shared.Infraestructura.Socket;
 
+import com.Equipo3.Backend.Peticion.Aplicacion.PeticionService;
 import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import com.Equipo3.Backend.Shared.Dominio.Socket.SocketServer;
+import com.Equipo3.Backend.Shared.Infraestructura.ProductorConsumidor.ColaPeticiones;
+import com.Equipo3.Backend.Shared.Infraestructura.ProductorConsumidor.ConsumidorPeticiones;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +28,12 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
     @Autowired
     private UsuarioService US;
 
+    @Autowired
+    private PeticionService PS;
+
+    private static ColaPeticiones colap = new ColaPeticiones();
+    private ConsumidorPeticiones consumidorPeticiones = new ConsumidorPeticiones(colap,PS);
+
     public MultiThreadedServerTcp() {
     }
 
@@ -33,6 +42,10 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
     }
 
     public void run(){
+        if(!consumidorPeticiones.isAlive()){
+            consumidorPeticiones = new ConsumidorPeticiones(colap,PS);
+            consumidorPeticiones.start();
+        }
         synchronized(this){
             this.runningThread = Thread.currentThread();
         }
@@ -50,7 +63,7 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
             }
 
             Integer clientId = clientsConnections.size()+1;
-            clientsConnections.put(clientId,new SocketClientConnectionWorker(clientSocket, "ClienteID: " + clientId, US));
+            clientsConnections.put(clientId,new SocketClientConnectionWorker(clientSocket, "ClienteID: " + clientId, US, colap));
 
             new Thread(clientsConnections.get(clientId)).start();
 

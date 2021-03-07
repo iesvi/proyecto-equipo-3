@@ -79,6 +79,7 @@ public class UsuarioRespositorySocket implements IUsuarioRepository{
             }
             else{
                 ActionDialogs.error("Error","No hay conexion con la base de datos. Prueba mas tarde.");
+                listaUsuarios = null;
             }
         }catch(IOException er){
             er.printStackTrace();

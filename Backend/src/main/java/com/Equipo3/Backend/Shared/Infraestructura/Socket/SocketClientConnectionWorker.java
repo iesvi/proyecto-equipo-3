@@ -1,5 +1,7 @@
 package com.Equipo3.Backend.Shared.Infraestructura.Socket;
 
+import com.Equipo3.Backend.Peticion.Dominio.DTO.PeticionDTO;
+import com.Equipo3.Backend.Shared.Infraestructura.ProductorConsumidor.ColaPeticiones;
 import com.Equipo3.Backend.Shared.util.JsonMapper;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
@@ -34,11 +36,14 @@ public class SocketClientConnectionWorker implements Runnable {
     private DataInputStream DataEntrada;
     private DataOutputStream DataSalida;
     private String data;
+    private Object o;
+    private ColaPeticiones colap;
 
-    public SocketClientConnectionWorker(Socket clientSocket, String clientID, UsuarioService US) {
+    public SocketClientConnectionWorker(Socket clientSocket, String clientID, UsuarioService US, ColaPeticiones colap) {
         this.clientSocket = clientSocket;
         this.clientID = clientID;
         this.US = US;
+        this.colap = colap;
 
         try {
             this.clientSocket.setReceiveBufferSize(1024);
@@ -75,9 +80,16 @@ public class SocketClientConnectionWorker implements Runnable {
                     case "add":
                             DataEntrada = new DataInputStream(entrada);
                             data = DataEntrada.readUTF();
-                            Object o = JsonMapper.fromJsonToJava(data,UsuarioDTO.class);
+                            o = JsonMapper.fromJsonToJava(data,UsuarioDTO.class);
                             UsuarioDTO user = (UsuarioDTO) o;
                             UsuarioVO userVO = US.Registro_De_Usuario(user);
+                        break;
+                    case "peticion":
+                        DataEntrada = new DataInputStream(entrada);
+                        data = DataEntrada.readUTF();
+                        o = JsonMapper.fromJsonToJava(data, PeticionDTO.class);
+                        PeticionDTO peticion = (PeticionDTO) o;
+                        colap.put(peticion);
                         break;
                     case "ok":
                         break;

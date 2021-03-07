@@ -354,7 +354,7 @@ public class VistaHomeControlador {
     @FXML
     private void LaunchVistaPeticion() throws IOException {
 
-        VentanaPeticionVista ventanaPeticionVista = new VentanaPeticionVista(dialogStage);
+        VentanaPeticionVista ventanaPeticionVista = new VentanaPeticionVista(dialogStage, CS);
         ventanaPeticionVista.LaunchVistaPeticion();
 
     }

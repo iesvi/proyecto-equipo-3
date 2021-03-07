@@ -14,6 +14,9 @@ public class UserLog {
         String linea = "";
         try {
             File file = new File("../../log.txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             while ((linea = br.readLine()) != null) {

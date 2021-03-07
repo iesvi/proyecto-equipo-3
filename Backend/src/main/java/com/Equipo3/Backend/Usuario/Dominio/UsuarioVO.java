@@ -85,6 +85,9 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
     @OneToMany (mappedBy = "idusuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
     private List<EventoVO> eventos = new ArrayList<>();
 
+//    @OneToMany (mappedBy = "idusuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
+//    private List<EventoVO> peticiones = new ArrayList<>();
+
 //    @ManyToMany
 //    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="chatId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
 //    private List<ChatVO> chats = new ArrayList<>();

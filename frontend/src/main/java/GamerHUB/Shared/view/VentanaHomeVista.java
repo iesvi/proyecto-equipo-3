@@ -8,11 +8,13 @@ import GamerHUB.GestionUsuarios.ui.VentanaAdminVista;
 import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.controllers.VistaHomeControlador;
 import GamerHUB.Shared.exception.CustomException;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,12 +27,17 @@ public class VentanaHomeVista {
     private ListaUsuario listaUsuario;
     private UsuarioDTO user;
     private ClientSocket CS;
+    private ListaChat LC;
+    private VistaHomeControlador controladorHome;
+    private VistaHomeControlador controladorHomeview1;
+    private VistaHomeControlador controladorHomeview2;
 
-    public VentanaHomeVista(Stage stageppal, UsuarioDTO user, ListaUsuario listaUsuario, ClientSocket CS) {
+    public VentanaHomeVista(Stage stageppal, UsuarioDTO user, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.stageppal = stageppal;
         this.user = user;
         this.listaUsuario = listaUsuario;
         this.CS = CS;
+        this.LC = LC;
     }
 
     /**
@@ -46,17 +53,26 @@ public class VentanaHomeVista {
         Scene scene = new Scene(home, 800, 525);
         dialogStage.setScene(scene);
         pane = (SplitPane) home.getChildren().get(0);
-
-        loadHomeView1(dialogStage);
-        loadHomeView2(dialogStage, null);
-
-        pane.setDividerPositions(0.32);
-
-        VistaHomeControlador controladorHome = loader.getController();
-        controladorHome.setVista(this, dialogStage, pane, CS);
+        dialogStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
+            @Override public void handle(WindowEvent event) {
+                if(CS.comprobarConexion()){
+                    CS.desconectar();
+                }
+                dialogStage.close();
+            }
+        });
+        controladorHome = loader.getController();
+        controladorHome.setVista(this, dialogStage, pane, CS, LC);
         controladorHome.setUsuario(user);
         controladorHome.setlistaUsuarios(listaUsuario);
         dialogStage.setTitle("Bienvenido " + user.getNombre() + "!");
+
+        loadHomeView1(dialogStage);
+        loadHomeView2(dialogStage, null);
+        controladorHome.setControladores(controladorHome, controladorHomeview1, controladorHomeview2);
+
+        pane.setDividerPositions(0.32);
+
 
         dialogStage.show();
 
@@ -72,14 +88,13 @@ public class VentanaHomeVista {
         AnchorPane anchorPane = loader1.load();
         pane.getItems().set(0, anchorPane);
 
-        VistaHomeControlador controladorHome = loader1.getController();
-        controladorHome.setVista(this, dialog, pane, CS);
-        controladorHome.setlistaUsuarios(listaUsuario);
-        controladorHome.setUsuario(user);
-        controladorHome.setUserNameLabel();
-
-        //controladorHome.llenarTablaCanales();
-
+        controladorHomeview1 = loader1.getController();
+        controladorHomeview1.setVista(this, dialog, pane, CS, LC);
+        controladorHomeview1.setUsuario(user);
+        controladorHomeview1.setlistaUsuarios(listaUsuario);
+        controladorHomeview1.setControladores(controladorHome, controladorHomeview1, controladorHomeview2);
+        controladorHomeview1.setUserNameLabel();
+        controladorHomeview1.llenarTablaCanales();
         pane.setDividerPositions(0.32);
     }
 
@@ -92,14 +107,17 @@ public class VentanaHomeVista {
         loader2.setLocation(url);
         AnchorPane anchorPane1 = loader2.load();
         pane.getItems().set(1, anchorPane1);
-        VistaHomeControlador controladorHome = loader2.getController();
-        controladorHome.setVista(this, dialog, pane, CS);
-        controladorHome.setUsuario(user);
-        controladorHome.setlistaUsuarios(listaUsuario);
-        controladorHome.setEventos(listaEvento);
-        controladorHome.setImagenLupa();
-        controladorHome.iniciar_Reloj();
-        controladorHome.llenarTablaEventos();
+
+        controladorHomeview2 = loader2.getController();
+        controladorHomeview2.setVista(this, dialog, pane, CS, LC);
+        controladorHomeview2.setUsuario(user);
+        controladorHomeview2.setlistaUsuarios(listaUsuario);
+        controladorHomeview1.setControladorHomeView2(controladorHomeview2);
+        controladorHomeview2.setControladores(controladorHome, controladorHomeview1, controladorHomeview2);
+        controladorHomeview2.setEventos(listaEvento);
+        controladorHomeview2.setImagenLupa();
+        controladorHomeview2.iniciar_Reloj();
+        controladorHomeview2.llenarTablaEventos();
 
         pane.setDividerPositions(0.32);
     }
@@ -113,6 +131,17 @@ public class VentanaHomeVista {
         ventanaAdminVista.LaunchVistaAdmin(stageppal);
     }
 
+    public VistaHomeControlador getcontrollerHome(){
+        return controladorHome;
+    }
+
+    public VistaHomeControlador getcontrollerHomeview1(){
+        return controladorHomeview1;
+    }
+
+    public VistaHomeControlador getcontrollerHomeview2(){
+        return controladorHomeview2;
+    }
 
     public Stage getStageppal() {
         return stageppal;

@@ -15,15 +15,15 @@ public class MultiChatUDP implements Runnable{
     static MulticastSocket ms = null;
     static byte[] buf = new byte[1000];
     static InetAddress grupo = null;
-    static int Puerto = 12345;
+    private int puerto=0;
     boolean repetir = true;
 
     VistaHomeControlador vistaHomeControlador;
 
-    public MultiChatUDP(String nombre, VistaHomeControlador vistaHomeControlador) throws IOException {
-
+    public MultiChatUDP(String nombre, VistaHomeControlador vistaHomeControlador, int Puerto) throws IOException {
+        this.puerto = Puerto;
         this.vistaHomeControlador = vistaHomeControlador;
-        ms = new MulticastSocket(Puerto);
+        ms = new MulticastSocket(puerto);
         grupo = InetAddress.getByName("225.0.0.1");// Grupo
         // Nos unimos al grupo
         ms.joinGroup(grupo);
@@ -50,7 +50,7 @@ public class MultiChatUDP implements Runnable{
     public void sendMsg(String user, String msg) throws IOException {
         // ENVIANDO mensaje al grupo
         DatagramPacket paquete = new DatagramPacket(msg.getBytes(),
-                msg.length(), grupo, Puerto);
+                msg.length(), grupo, this.puerto);
         ms.send(paquete);
 
     }

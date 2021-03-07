@@ -6,6 +6,7 @@ import com.Equipo3.Backend.Peticion.Dominio.Mapper.PeticionMapper;
 import com.Equipo3.Backend.Peticion.Dominio.PeticionVO;
 import org.springframework.stereotype.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConsumidorPeticiones extends Thread{
@@ -30,6 +31,7 @@ public class ConsumidorPeticiones extends Thread{
             for(int i=0;i<lista.size();i++){
                 PeticionVO pet = PS.darDeAltaUnaPeticion(lista.get(i));
             }
+            colap.setPeticiones();
 
             try {
                 sleep(2000);

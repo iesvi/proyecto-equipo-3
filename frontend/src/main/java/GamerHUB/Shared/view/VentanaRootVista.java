@@ -1,5 +1,6 @@
 package GamerHUB.Shared.view;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.event.EventHandler;
@@ -20,17 +21,19 @@ public class VentanaRootVista {
     private BorderPane rootLayout;
     private ListaUsuario listaUsuario;
     private ClientSocket CS;
+    private ListaChat LC;
 
 
-    public void inicioStage(Stage primaryStage, ListaUsuario listaUsuario, ClientSocket CS) throws IOException {
+    public void inicioStage(Stage primaryStage, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Welcome to GamerHub!");
         this.listaUsuario = listaUsuario;
         this.CS = CS;
+        this.LC = LC;
 
         Init();
 
-        VentanaInicioVista inicio = new VentanaInicioVista(primaryStage, rootLayout, listaUsuario, CS);
+        VentanaInicioVista inicio = new VentanaInicioVista(primaryStage, rootLayout, listaUsuario, CS, LC);
         inicio.LaunchInicio();
 
     }
@@ -52,6 +55,9 @@ public class VentanaRootVista {
         primaryStage.setScene(scene);
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
                                            @Override public void handle(WindowEvent event) {
+                                               if(CS.comprobarConexion()){
+                                                   CS.desconectar();
+                                               }
                                                primaryStage.close();
                                            }
                                        });

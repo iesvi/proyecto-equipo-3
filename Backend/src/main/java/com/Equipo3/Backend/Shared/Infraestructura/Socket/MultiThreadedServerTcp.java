@@ -9,6 +9,7 @@ import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -16,6 +17,7 @@ import java.net.Socket;
 import java.util.HashMap;
 
 @Component
+@Controller
 public class MultiThreadedServerTcp implements SocketServer, Runnable{
 
     protected int          serverPort   = 5555;

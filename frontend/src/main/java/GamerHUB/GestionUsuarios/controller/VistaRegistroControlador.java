@@ -1,5 +1,6 @@
 package GamerHUB.GestionUsuarios.controller;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
@@ -25,6 +26,7 @@ public class VistaRegistroControlador {
     private VentanaRootVista ventanaRootVista;
     private ListaUsuario listaUsuario;
     private ClientSocket CS;
+    private ListaChat LC;
 
     /**
      *
@@ -89,11 +91,12 @@ public class VistaRegistroControlador {
      *
      * @param dialogStage
      */
-    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario, ClientSocket CS) {
+    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
         this.CS = CS;
+        this.LC = LC;
         usuarioRespositorySocket = new UsuarioRespositorySocket(CS);
     }
 
@@ -193,7 +196,7 @@ public class VistaRegistroControlador {
     @FXML
     public void handleVolver() throws IOException {
         ventanaRootVista = new VentanaRootVista();
-        ventanaRootVista.inicioStage(dialogStage, listaUsuario, CS);
+        ventanaRootVista.inicioStage(dialogStage, listaUsuario, CS, LC);
     }
 
 

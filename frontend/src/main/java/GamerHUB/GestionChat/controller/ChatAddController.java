@@ -4,14 +4,17 @@ import GamerHUB.GestionChat.model.dto.CanalDTO;
 import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionChat.ui.VentanaAddChatVista;
 import GamerHUB.Shared.util.ActionDialogs;
+import GamerHUB.Shared.util.GeneracionPuertos;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ChatAddController {
+import javax.imageio.IIOException;
+import java.io.IOException;
 
+public class ChatAddController {
 
     @FXML
     private TextField campoNombreCanal;
@@ -21,10 +24,10 @@ public class ChatAddController {
 
      private VentanaAddChatVista vista;
      private Stage stage;
+     private ListaChat listaChat;
 
      private int puerto;
 
-    private ListaChat listaChat =new ListaChat();
 
     public ChatAddController(){}
 
@@ -55,9 +58,13 @@ public class ChatAddController {
     @FXML
     public void addChat(){
         if(isInputValid()){
-
+            try {
+                this.puerto = GeneracionPuertos.generarPuerto();
+            }catch(IOException er){
+                er.printStackTrace();
+            }
             String campo = campoNombreCanal.getText();
-            CanalDTO chatDTO = new CanalDTO(campo, getPuerto(), FXCollections.observableArrayList(new Integer(12345)));
+            CanalDTO chatDTO = new CanalDTO(campo, this.puerto, FXCollections.observableArrayList(new Integer(12345)));
 
             listaChat.getCanales().add(chatDTO);
 

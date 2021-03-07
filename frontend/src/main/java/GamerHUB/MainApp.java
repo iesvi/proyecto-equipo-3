@@ -1,5 +1,6 @@
 package GamerHUB;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.view.VentanaRootVista;
@@ -30,9 +31,10 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         ListaUsuario listaUsuario = new ListaUsuario();
         ClientSocket CS = new ClientSocket();
+        ListaChat listaChat =new ListaChat();
         CS.conectar();
         ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(primaryStage, listaUsuario, CS);
+        ventanaRoot.inicioStage(primaryStage, listaUsuario, CS, listaChat);
 
     }
 

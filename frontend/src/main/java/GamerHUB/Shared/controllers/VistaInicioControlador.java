@@ -1,5 +1,6 @@
 package GamerHUB.Shared.controllers;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
@@ -34,6 +35,7 @@ public class VistaInicioControlador {
     private VentanaSignUpVista ventanaSignUpVista;
     private UsuarioRespositorySocket URS;
     private ClientSocket CS;
+    private ListaChat LC;
 
     /**
      *
@@ -67,11 +69,12 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioDTO;
 
 
-    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario, ClientSocket CS) {
+    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.stageinicio = stageinicio;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
         this.CS = CS;
+        this.LC = LC;
     }
 
     public void setListaUsuario(){
@@ -123,18 +126,20 @@ public class VistaInicioControlador {
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
                 logUsuario(user);
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS, LC);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
+                break;
 
 
             } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
                 logUsuario(user);
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS, LC);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
+                break;
             }
         }
         if (!correct) {
@@ -188,7 +193,7 @@ public class VistaInicioControlador {
      * @throws IOException
      */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
-        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario, CS);
+        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario, CS, LC);
         ventanaSignUpVista.LaunchSignUpView();
         vista.getStageppal().close();
     }

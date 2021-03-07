@@ -41,4 +41,8 @@ public class ColaPeticiones {
             notifyAll();
         }
     }
+
+    public void setPeticiones(){
+        peticiones = new ArrayList<>();
+    }
 }

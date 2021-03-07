@@ -53,11 +53,16 @@ public class VistaHomeControlador {
     private ListaEvento listaEvento;
     private ListaChat listaChat;
     private ClientSocket CS;
+    private VistaHomeControlador controladorHome;
+    private VistaHomeControlador controladorHomeview1;
+    private VistaHomeControlador controladorHomeview2;
 
 
 
     @FXML
-    private TableView amigos, canales, eventos;
+    private TableView amigos,eventos;
+    @FXML
+    private TableView<CanalDTO>   canales ;
 
     /**
      *
@@ -68,7 +73,7 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private TableColumn<UsuarioDTO, String> colCanal;
+    private TableColumn<CanalDTO, String> colCanal;
     /**
      *
      */
@@ -82,7 +87,7 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private Label userName;
+    private Label userName, NombreChat;
 
     /**
      *
@@ -97,6 +102,7 @@ public class VistaHomeControlador {
     private TextField searchBar;
     @FXML
     private TextField msgBar = new TextField();
+
 
     @FXML
     private TextArea areaChat;
@@ -124,13 +130,6 @@ public class VistaHomeControlador {
     public VistaHomeControlador() throws IOException {
         hora = new ProcessHora();
 
-        listaChat = new ListaChat();
-
-        multiChatUDP = new MultiChatUDP("user", this);
-        new Thread(multiChatUDP).start();
-
-
-
         // addOpcionAdmin();
     }
 
@@ -153,26 +152,27 @@ public class VistaHomeControlador {
      * @param dialogStage
      * @param pane
      */
-    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane, ClientSocket CS) {
+    public void setVista(VentanaHomeVista vista, Stage dialogStage, SplitPane pane, ClientSocket CS, ListaChat LC) {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.pane = pane;
         this.CS = CS;
+        this.listaChat = LC;
     }
 
-    public void initCanales(ListaChat listaChat){
-
-        if(listaChat ==null){
-            this.listaChat = new ListaChat();
-
-            listaChat.getCanales().add(new CanalDTO("factores", 1234, FXCollections.observableArrayList(
-                    new Integer(12345678), new Integer(9876543)
-            )));
-        } else {
-            this.listaChat = listaChat;
-        }
-
-    }
+//    public void initCanales(ListaChat listaChat){
+//
+//        if(listaChat ==null){
+//            this.listaChat = new ListaChat();
+//
+//            listaChat.getCanales().add(new CanalDTO("factores", 1234, FXCollections.observableArrayList(
+//                    new Integer(12345678), new Integer(9876543)
+//            )));
+//        } else {
+//            this.listaChat = listaChat;
+//        }
+//
+//    }
 
     /**
      * @param listaEvento
@@ -186,6 +186,16 @@ public class VistaHomeControlador {
             }
         } else {
             this.listaEvento = listaEvento;
+        }
+    }
+
+    public void setChat(CanalDTO canal){
+        NombreChat.setText(canal.getNombre());
+        try {
+            multiChatUDP = new MultiChatUDP(userLogeado.getNombre(), this, canal.getPuerto());
+            new Thread(multiChatUDP).start();
+        }catch(IOException er){
+            er.printStackTrace();
         }
     }
 
@@ -237,13 +247,18 @@ public class VistaHomeControlador {
 
     }
 
-    public void llenarTablaCanales() {
+    public void llenarTablaCanales(){
 
-        if(listaChat.getCanales()!=null && listaChat!=null){
             canales.setItems(listaChat.getCanales());
             colCanal.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
-        }
 
+            canales.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> controladorHomeview2.setChat(newValue));
+
+//            CanalDTO canalSeleccionado = canales.getSelectionModel().getSelectedItem();
+//            if(canalSeleccionado!=null) {
+//                setChat(canalSeleccionado);
+//            }
 
     }
 
@@ -301,8 +316,19 @@ public class VistaHomeControlador {
     @FXML
     public void Logout() throws IOException {
         VentanaRootVista ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(new Stage(), listaUsuario, CS);
+        ventanaRoot.inicioStage(new Stage(), listaUsuario, CS, listaChat);
         dialogStage.close();
+    }
+
+    public void setControladores(VistaHomeControlador controlador, VistaHomeControlador controlador1, VistaHomeControlador controlador2){
+        this.controladorHome = controlador;
+        this.controladorHomeview1 = controlador1;
+        this.controladorHomeview2 = controlador2;
+
+    }
+
+    public void setControladorHomeView2(VistaHomeControlador controlador2){
+        this.controladorHomeview2 = controlador2;
     }
 
     /**
@@ -347,7 +373,7 @@ public class VistaHomeControlador {
 
     @FXML
     public void LoadAddCanal() throws  IOException{
-        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage);
+        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage, listaChat);
         ventanaAddChatVista.LaunchAddCanal();
     }
 
@@ -367,4 +393,6 @@ public class VistaHomeControlador {
     public void setlistaUsuarios(ListaUsuario listaUsuario) {
         this.listaUsuario = listaUsuario;
     }
+
+
 }

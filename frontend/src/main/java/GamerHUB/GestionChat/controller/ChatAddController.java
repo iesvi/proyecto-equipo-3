@@ -48,7 +48,6 @@ public class ChatAddController {
     public void setVista(VentanaAddChatVista vista, Stage stage){
         this.vista =vista;
         this.stage =stage;
-        listaChat = new ListaChat();
     }
 
     public int getPuerto() {
@@ -59,14 +58,20 @@ public class ChatAddController {
     public void addChat(){
         if(isInputValid()){
             try {
-                this.puerto = GeneracionPuertos.generarPuerto();
-            }catch(IOException er){
+                this.puerto = GeneracionPuertos.findFreePort();
+            }catch(Exception er){
                 er.printStackTrace();
             }
             String campo = campoNombreCanal.getText();
             CanalDTO chatDTO = new CanalDTO(campo, this.puerto, FXCollections.observableArrayList(new Integer(12345)));
 
             listaChat.getCanales().add(chatDTO);
+
+            for(CanalDTO canalDTO: listaChat.getCanales()){
+                System.out.println(canalDTO.toString());
+            }
+
+
 
             ActionDialogs.info("Se ha registrado un chat.", "Se creó el chat "+campo+ ".\n" +
                     chatDTO.toString());

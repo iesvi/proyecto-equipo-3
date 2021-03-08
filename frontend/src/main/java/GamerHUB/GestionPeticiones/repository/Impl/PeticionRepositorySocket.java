@@ -22,8 +22,6 @@ public class PeticionRepositorySocket implements PeticionRepository {
     }
 
 
-
-
     private static ObjectMapper mapper = new ObjectMapper();
 
     @Override

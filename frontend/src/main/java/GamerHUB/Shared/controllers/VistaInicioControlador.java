@@ -2,6 +2,7 @@ package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionChat.repository.Impl.ChatRepositorySocket;
 import GamerHUB.GestionChat.repository.ListaChat;
+import GamerHUB.GestionServidorArchivos.ClienteSMTP;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
@@ -228,4 +229,5 @@ public class VistaInicioControlador {
             e.printStackTrace();
         }
     }
+
 }

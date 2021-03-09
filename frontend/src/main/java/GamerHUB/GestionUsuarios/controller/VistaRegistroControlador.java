@@ -1,6 +1,7 @@
 package GamerHUB.GestionUsuarios.controller;
 
 import GamerHUB.GestionChat.repository.ListaChat;
+import GamerHUB.GestionServidorArchivos.ClienteSMTP;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
@@ -15,6 +16,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.apache.commons.mail.EmailException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -135,6 +137,12 @@ public class VistaRegistroControlador {
             usuarioRespositorySocket.add(usuarioDTO);
             listaUsuario.AddUsuario(usuarioDTO);
 
+            try {
+                sendEmailSMTP(usuarioDTO.getEmail());
+            } catch (EmailException e) {
+                e.printStackTrace();
+            }
+
             ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos y doritos.\n" +
                     "Nombre de usuario: " + usuarioDTO.getNombre() + "\n" + "Password: " + usuarioDTO.getPassword());
 
@@ -197,6 +205,23 @@ public class VistaRegistroControlador {
     public void handleVolver() throws IOException {
         ventanaRootVista = new VentanaRootVista();
         ventanaRootVista.inicioStage(dialogStage, listaUsuario, CS, LC);
+    }
+
+
+    /**
+     *
+     * @param emailNuevoUser
+     */
+    public void sendEmailSMTP(String emailNuevoUser) throws EmailException {
+
+        ClienteSMTP clienteSMTP = new ClienteSMTP();
+
+        clienteSMTP.remitenteCorreo("smtp.gmail.com", "correopruebapsp2021",
+                "passwordpsp");
+        clienteSMTP.enviarMensaje("Bienvenido a GamerHub", "Te damos la bienvenida a GamerHub.\n" +
+                "Esperamos que tu experiencia sea satisfactoria AAAAAAAAAAAAAAAAAAAAAAAAAAmuchotexto", emailNuevoUser, null, null);
+
+
     }
 
 

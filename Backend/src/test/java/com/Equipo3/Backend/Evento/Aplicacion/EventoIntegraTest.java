@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Optional;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ConfigurationSpringTest.class})
 public class EventoIntegraTest {
@@ -69,7 +71,7 @@ public class EventoIntegraTest {
 
         EventoVO Eventoyaexistente = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
 
-        EventoVO Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+       Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
 
         Assert.assertNotNull(Eventodevuelto);
 
@@ -80,7 +82,7 @@ public class EventoIntegraTest {
 
         EventoVO Eventoyaexistente = new EventoVOBuilder().build();
 
-        EventoVO Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+        Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
 
     }
     @Test
@@ -88,11 +90,11 @@ public class EventoIntegraTest {
 
         EventoVO Eventosineditar = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
 
-        EventoVO Eventoaeditar = eventoService.consultarEventos(Eventosineditar.getId());
+        Optional<EventoVO> Eventoaeditar = eventoService.consultarEventos(Eventosineditar.getId());
 
-        Eventoaeditar.setNombre("Cumpleaños de Pepe");
+        Eventoaeditar.get().setNombre("Cumpleaños de Pepe");
 
-        EventoVO eventodb = eventoService.modificarEvento(EventoMapper.toDTO(Eventoaeditar));
+        EventoVO eventodb = eventoService.modificarEvento(EventoMapper.toDTO(Eventoaeditar.get()));
 
         Assert.assertEquals(Eventoaeditar, eventodb);
 

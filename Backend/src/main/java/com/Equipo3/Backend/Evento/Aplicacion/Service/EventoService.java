@@ -62,12 +62,12 @@ public class EventoService {
      * @return eventoRepo.findOne(id)
      */
     @Transactional
-    public EventoVO consultarEventos(int id) {
+    public Optional<EventoVO> consultarEventos(int id) {
         Optional<EventoVO> nbd = eventoRepo.findById(id);
         if (!nbd.isPresent()) {
             throw new EntityNotExist(EventoVO.class.toString(), id);
         }
-        return eventoRepo.findById(id).get();
+        return nbd;
     }
 
     /**

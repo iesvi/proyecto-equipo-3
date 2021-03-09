@@ -77,8 +77,6 @@ public class ChatAddController {
                 System.out.println(canalDTO.toString());
             }
 
-
-
             ActionDialogs.info("Se ha registrado un chat.", "Se creó el chat "+campo+ ".\n" +
                     chatDTO.toString());
             stage.close();

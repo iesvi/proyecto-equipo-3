@@ -11,6 +11,7 @@ import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.GestionPeticiones.ui.VentanaPeticionVista;
+import GamerHUB.GestionServidorArchivos.clienteFTPBasico;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
@@ -373,10 +374,12 @@ public class VistaHomeControlador {
 
     @FXML
     public void LaunchVistaFTP() throws IOException {
-        String[] args = {};
-//        Servidor.main(args);
+      clienteFTPBasico cl = new clienteFTPBasico();
+      cl.show();
+
     }
-    /**
+
+        /**
      * Método para cargar la vista del formulario y tablas de los eventos.
      *
      * @throws IOException

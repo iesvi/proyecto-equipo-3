@@ -7,60 +7,43 @@ import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-/**
- *
- */
-public class VentanaAdminVista {
-
+public class VentanaGestionUser {
 
     private Stage stageppal;
+    private ListaUsuario listaUsuario;
+    private ClientSocket CS;
+    private ListaChat LC;
 
-
-
-    public VentanaAdminVista(Stage stageppal) {
-
+    public VentanaGestionUser(Stage stageppal, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.stageppal = stageppal;
+        this.listaUsuario = listaUsuario;
+        this.CS = CS;
+        this.LC = LC;
     }
 
-    /**
-     * @param dialogStage
-     * @throws IOException
-     */
-    public void LaunchVistaAdmin(Stage dialogStage) throws IOException {
 
-        URL url = new File("src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml").toURI().toURL();
+    public void LaunchVistaGestionUsers(Stage dialogStage) throws IOException {
+
+        URL url = new File("src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdminUsers.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(url);
         AnchorPane anchorPane = (AnchorPane) loader.load();
 
         dialogStage = new Stage();
+        AdminController adminController = loader.getController();
         Scene scene = new Scene(anchorPane, 591, 417);
         dialogStage.setScene(scene);
-         AdminController adminController = loader.getController();
-        adminController.setVentanaAdminVista(this, dialogStage);
-        dialogStage.initModality(Modality.APPLICATION_MODAL);
-
-        dialogStage.show();
+        //adminController.setVentanaAdminVista(this, dialogStage);
+        dialogStage.close();
 
     }
 
-
-
-
-    public void LaunchVistaGestionChats(Stage dialogStage){
-
-    }
-
-    public void LaunchVistaGestionEventos(Stage dialogStage){
-
-    }
 
 
 }

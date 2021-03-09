@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="460.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="477.0" style="-fx-background-color: #aafe79; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView layoutX="14.0" layoutY="16.0" prefHeight="200.0" prefWidth="175.0">
+      <TableView layoutX="14.0" layoutY="15.0" prefHeight="314.0" prefWidth="205.0">
         <columns>
-          <TableColumn prefWidth="174.0" text="C1" />
+          <TableColumn prefWidth="202.0" text="C1" />
         </columns>
       </TableView>
-      <Button layoutX="251.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" style="-fx-background-radius: 10;" text="Eliminar" />
-      <Button layoutX="251.0" layoutY="183.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" style="-fx-background-radius: 10;" text="Ver usuarios" />
+      <Button layoutX="251.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" style="-fx-background-radius: 10;" text="Eliminar" />
+      <Button layoutX="251.0" layoutY="304.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" style="-fx-background-radius: 10;" text="Ver usuarios" />
       <TextField layoutX="251.0" layoutY="20.0" prefHeight="25.0" prefWidth="175.0" promptText="Nombre..." style="-fx-background-radius: 10;">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -25,6 +24,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </TextField>
-      <Button layoutX="251.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" style="-fx-background-radius: 10;" text="Editar" />
+      <Button layoutX="251.0" layoutY="229.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" style="-fx-background-radius: 10;" text="Editar" />
    </children>
 </AnchorPane>

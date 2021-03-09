@@ -128,7 +128,7 @@ public class VentanaHomeVista {
      * @throws IOException
      */
     public void LaunchVistaAdmin() throws IOException {
-        VentanaAdminVista ventanaAdminVista = new VentanaAdminVista();
+        VentanaAdminVista ventanaAdminVista = new VentanaAdminVista(stageppal);
         ventanaAdminVista.LaunchVistaAdmin(stageppal);
     }
 

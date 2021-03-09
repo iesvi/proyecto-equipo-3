@@ -4,11 +4,14 @@ import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionPeticiones.model.dto.PeticionDTO;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.ui.VentanaAdminVista;
+import GamerHUB.GestionUsuarios.ui.VentanaGestionUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class AdminController {
 
@@ -25,7 +28,7 @@ public class AdminController {
     @FXML
     private TableColumn<UsuarioDTO, String> colUsuario;
     @FXML
-    private Button btnEditarUser, btnEliminarUser, btnGestionarEventos, btnGestionarChats, btnGestionarFTP;
+    private Button btnEditarUser, btnEliminarUser, btnGestionarEventos, btnGestionarChats, btnGestionarFTP, btnGestionarUsuarios, btnGestionarPeticiones, btnVolver;
 
 
     private VentanaAdminVista ventanaAdminVista;
@@ -40,6 +43,11 @@ public class AdminController {
 
     }
 
+    @FXML
+    public void LaunchVistaGestionUsers() throws IOException {
+        //VentanaGestionUser ventanaGestionUser = new VentanaGestionUser(dialogStage);
+        //ventanaAdminVista.LaunchVistaGestionUsers(dialogStage);
+    }
 
 
     public void gestionarEventos(){
@@ -48,7 +56,9 @@ public class AdminController {
 
 
 
-    public void volver(){
+    public void volver() throws IOException {
+        VentanaAdminVista ventanaAdminVista = new VentanaAdminVista(dialogStage);
+        ventanaAdminVista.LaunchVistaAdmin(dialogStage);
     }
 
 }

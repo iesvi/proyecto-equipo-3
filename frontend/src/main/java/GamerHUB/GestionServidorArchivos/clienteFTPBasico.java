@@ -13,7 +13,10 @@ import java.io.*;
 
 public class clienteFTPBasico extends JFrame {
 	private static final long serialVersionUID = 1L;
-	
+	public void cerrar(){
+		this.setVisible(false);
+	}
+
     //campos de cabecera parte superior
     static JTextField cab = new JTextField();
 	static JTextField cab2 = new JTextField();
@@ -43,7 +46,7 @@ public class clienteFTPBasico extends JFrame {
 	String user = "usuario";
 	String pasw = "usuario";
 	boolean login;
-    static String direcInicial = "/";
+    static String direcInicial = "/home/usuario/equipo3/Archivos";
 
     //para saber directorio y fichero seleccionado
    	static String direcSelec = direcInicial;
@@ -51,20 +54,20 @@ public class clienteFTPBasico extends JFrame {
 	
 	// constructor
 	public clienteFTPBasico() throws IOException {
-		super("CLIENTE B?SICO FTP");		
+		super("CLIENTE B?SICO FTP");
 		System.out.println("Conectandose a " + servidor);
-		
+
 		cliente.addProtocolCommandListener(new PrintCommandListener (new PrintWriter(System.out) ));
 		cliente.connect(servidor);
 		cliente.enterLocalPassiveMode();
 		login = cliente.login(user, pasw);
-		
-		cliente.changeWorkingDirectory(direcInicial);		
-		
-		FTPFile[] files = cliente.listFiles();		
-		//Construyendo arbol de directorios, espere un momento	
+
+		cliente.changeWorkingDirectory(direcInicial);
+
+		FTPFile[] files = cliente.listFiles();
+		//Construyendo arbol de directorios, espere un momento
 		llenarLista(files, direcInicial);
-	
+
 		campo.setBounds(new Rectangle(3, 485, 485, 30));
 		campo.setForeground(Color.blue);
 		campo.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -74,27 +77,27 @@ public class clienteFTPBasico extends JFrame {
 		campo2.setFont(new Font("Verdana", Font.BOLD, 12));
 		campo2.setText(" ");
 
-		cab.setBounds(new Rectangle(5, 5, 200, 30));		
+		cab.setBounds(new Rectangle(5, 5, 200, 30));
 		cab.setBorder(null);
 		cab.setForeground(Color.blue);
-		cab.setFont(new Font("Arial", Font.BOLD, 14));				
+		cab.setFont(new Font("Arial", Font.BOLD, 14));
 		cab.setText("Servidor FTP: "+servidor);
-		
+
 		cab2.setBounds(new Rectangle(350, 5, 140, 30));
 		cab2.setBorder(null);
 		cab2.setFont(new Font("Arial", Font.BOLD, 14));
 		cab2.setForeground(Color.blue);
 		cab2.setText("Usuario: "+user);
-				
+
 		cab3.setBounds(new Rectangle(5, 34, 140, 30));
 		cab3.setBorder(null);
 		cab3.setFont(new Font("Arial", Font.BOLD, 14));
 		cab3.setForeground(Color.blue);
-		cab3.setText("DIRECTORIO RAIZ: "+direcInicial);		
-		
+		cab3.setText("DIRECTORIO RAIZ: "+direcInicial);
+
 		botonCargar.setBounds(new Rectangle(350, 100, 140, 30));
 		botonDescargar.setBounds(new Rectangle(350, 150, 140, 30));
-		botonBorrar.setBounds(new Rectangle(350, 200, 140, 30));		
+		botonBorrar.setBounds(new Rectangle(350, 200, 140, 30));
 		botonCreaDir.setBounds(new Rectangle(350, 250, 140, 30));
 		botonDelDir.setBounds(new Rectangle(350, 300, 140, 30));
 		botonSalir.setBounds(new Rectangle(350, 350, 140, 30));
@@ -105,7 +108,7 @@ public class clienteFTPBasico extends JFrame {
 		barraDesplazamiento.setPreferredSize(new Dimension(335, 420));
 		barraDesplazamiento.setBounds(new Rectangle(5, 65, 335, 420));
 		c.add(barraDesplazamiento);
-		c.setLayout(null);		
+		c.setLayout(null);
 
 		c.add(campo); campo.setEditable(false);
 		c.add(campo2); campo2.setEditable(false);
@@ -122,7 +125,7 @@ public class clienteFTPBasico extends JFrame {
 		listaDirec.addListSelectionListener(new ListSelectionListener() {
 			  public void valueChanged(ListSelectionEvent lse) {
 			    if (lse.getValueIsAdjusting()) {
-			    
+
 			      ficheroSelec="";
 
 			      //elemento seleccionado de la lista
@@ -130,12 +133,12 @@ public class clienteFTPBasico extends JFrame {
 
 			      if (listaDirec.getSelectedIndex() == 0) {
 			          //Se hace clic en el primer elemento del JList
-			          if (!fic.equals(direcInicial)) {	
-			              //si no estamos en el dictorio inicial, hay que 
+			          if (!fic.equals(direcInicial)) {
+			              //si no estamos en el dictorio inicial, hay que
 			              //subir al directorio padre
 					  try {
 						cliente.changeToParentDirectory();
-						direcSelec = cliente.printWorkingDirectory();					
+						direcSelec = cliente.printWorkingDirectory();
 						cliente.changeWorkingDirectory(direcSelec);
 						FTPFile[] ff2 = cliente.listFiles();
 						campo.setText("");
@@ -149,62 +152,62 @@ public class clienteFTPBasico extends JFrame {
 			      else {
 			            if (fic.substring(0, 6).equals("(DIR) ")) {
 						//SE TRATA DE UN DIRECTORIO
-						try {		
-						  fic = fic.substring(6);		
+						try {
+						  fic = fic.substring(6);
 						  String direcSelec2 = "";
 						  if (direcSelec.equals("/"))
 							direcSelec2 = direcSelec + fic;
 						  else
 							direcSelec2=direcSelec + "/" + fic;
-						  FTPFile[] ff2 = null;	
+						  FTPFile[] ff2 = null;
 			                    cliente.changeWorkingDirectory(direcSelec2);
 						  ff2 = cliente.listFiles();
-						  campo.setText("DIRECTORIO:  "+ fic + ", " 
+						  campo.setText("DIRECTORIO:  "+ fic + ", "
 			                                          + ff2.length + " elementos");
 						  direcSelec = direcSelec2;							  llenarLista(ff2, direcSelec);
 						} catch (IOException e2) {e2.printStackTrace();}
 			              } else {
-						   // SE TRATA DE UN FICHERO 
+						   // SE TRATA DE UN FICHERO
 						   ficheroSelec = direcSelec;
 					         if (direcSelec.equals("/"))
 							 ficheroSelec +=  fic;
 						   else
 							 ficheroSelec += "/" + fic;
-						   campo.setText("FICHERO seleccionado:" + 
+						   campo.setText("FICHERO seleccionado:" +
 			                                                   ficheroSelec);
 			                     ficheroSelec=fic;
 			              }//fin else
 			       }//else de fichero o directorio
 				 campo2.setText("DIRECTORIO ACTUAL: " + direcSelec);
-			    }//fin if inicial				
+			    }//fin if inicial
 			  }
 			});// fin lista
 
-		
+
 		// --al hacer clic en el bot?n Salir
 		botonSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					cliente.disconnect();					
-				} catch (IOException e1) {					
+					cliente.disconnect();
+				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-				System.exit(0);
-			}
+				cerrar();
+						}
 		});
-		
+
 		//CREAR CARPETA
 		botonCreaDir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nombreCarpeta = JOptionPane.showInputDialog(null,
 				   "Introduce el nombre del directorio",
-				   "carpeta");  
+				   "carpeta");
 				if (!(nombreCarpeta==null)) {
 					String directorio=direcSelec;
 					if (!direcSelec.equals("/"))
 						directorio =directorio +"/";
 					directorio+=nombreCarpeta.trim() ;
-					
+
 					try {
 						if (cliente.makeDirectory(directorio)) {
 							String m= nombreCarpeta.trim()	+ " => Se ha creado correctamente ...";
@@ -212,13 +215,13 @@ public class clienteFTPBasico extends JFrame {
 							campo.setText(m);
 							cliente.changeWorkingDirectory(direcSelec);
 							FTPFile[] ff2 = cliente.listFiles();
-							llenarLista(ff2, direcSelec);						
-						
+							llenarLista(ff2, direcSelec);
+
 						} else
 							JOptionPane.showMessageDialog(null, nombreCarpeta.trim()
 									+ " => No se ha podido crear ...");
-					
-					} catch (IOException e1) {						
+
+					} catch (IOException e1) {
 						e1.printStackTrace();
 					}
 				}
@@ -229,13 +232,13 @@ public class clienteFTPBasico extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String nombreCarpeta = JOptionPane.showInputDialog(null,
 						   "Introduce el nombre del directorio a eliminar",
-						   "carpeta");  
+						   "carpeta");
 						if (!(nombreCarpeta==null)) {
 							String directorio=direcSelec;
 							if (!direcSelec.equals("/"))
 								directorio =directorio +"/";
 							directorio+=nombreCarpeta.trim() ;
-							
+
 							try {
 								if (cliente.removeDirectory(directorio)) {
 									String m= nombreCarpeta.trim()	+ " => Se ha eliminado correctamente ...";
@@ -243,30 +246,30 @@ public class clienteFTPBasico extends JFrame {
 									campo.setText(m);
 									cliente.changeWorkingDirectory(direcSelec);
 									FTPFile[] ff2 = cliente.listFiles();
-									llenarLista(ff2, direcSelec);						
-								
+									llenarLista(ff2, direcSelec);
+
 								} else
 									JOptionPane.showMessageDialog(null, nombreCarpeta.trim()
 											+ " => No se ha podido eliminar ...");
-							
-							} catch (IOException e1) {						
+
+							} catch (IOException e1) {
 								e1.printStackTrace();
 							}
 						}
 			}
 		});//..botonDelDir
-		
+
 		// --al hacer clic en el bot?n Subir
 		botonCargar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser f = new JFileChooser();				
+				JFileChooser f = new JFileChooser();
 				f.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				f.setDialogTitle("Selecciona el Fichero a SUBIR AL SERVIDOR FTP");
 				int returnVal = f.showDialog(f, "Cargar");
 				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					File file = f.getSelectedFile();
 					String archivo = file.getAbsolutePath();
-					String nombreArchivo = file.getName();					
+					String nombreArchivo = file.getName();
 					try {
 						SubirFichero(archivo, nombreArchivo);
 					} catch (IOException e1) {
@@ -295,9 +298,9 @@ public class clienteFTPBasico extends JFrame {
 				String directorio=direcSelec;
 				if (!direcSelec.equals("/"))
 					directorio =directorio +"/";
-				if(!ficheroSelec.equals(""))				
+				if(!ficheroSelec.equals(""))
 					BorrarFichero(directorio + ficheroSelec ,ficheroSelec);
-				
+
 			}
 		});//boton borrar
 	}// ..FIN CONSTRUCTOR
@@ -423,12 +426,10 @@ public class clienteFTPBasico extends JFrame {
 
 		return ok;
 	}// SubirFichero
-		
-	// main---------------------------------------------------------------------
+
+//	 main---------------------------------------------------------------------
 	public static void main(String[] args) throws IOException {
-		clienteFTPBasico cl = new clienteFTPBasico();
-		cl.setDefaultCloseOperation(cl.EXIT_ON_CLOSE);
-		cl.show();
+		new clienteFTPBasico();
 	}// ..FIN main
 
 }// .fin clase

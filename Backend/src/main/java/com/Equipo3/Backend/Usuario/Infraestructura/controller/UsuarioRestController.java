@@ -27,13 +27,6 @@ public class UsuarioRestController {
     public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
         userService.Registro_De_Usuario(dto);
         return new ResponseEntity<>(HttpStatus.OK);
-
-    }
-
-    public ResponseEntity<UsuarioDTO> createUser(@RequestBody UsuarioDTO newuser) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(UsuarioMapper.toDTO(userService.Registro_De_Usuario(newuser)));
-
     }
 
     @GetMapping(EndpointUrls.GetAll)
@@ -64,18 +57,4 @@ public class UsuarioRestController {
                 ? ResponseEntity.ok(true)
                 : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }
-//    @GetMapping(EndpointUrls.GetById)
-//    public ResponseEntity<UsuarioDTO> getById(@PathVariable final int id) {
-//        try {
-//            UsuarioVO vo = userService.ConsultarPerfilUsuario(id);
-//            UsuarioDTO dto = UsuarioMapper.toDTO(vo);
-//            return new ResponseEntity(dto, HttpStatus.OK);
-//        }catch(Exception e){
-//            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
-//        }
-//    }
-//    @GetMapping("/me")
-//    public UsuarioDTO me( UsuarioVO user) {
-//        return UsuarioMapper.toDTO(user);
-//    }
 }

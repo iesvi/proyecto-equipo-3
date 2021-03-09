@@ -83,4 +83,13 @@ public class UsuarioDTO implements Dto, Serializable {
         this.telefono = telefono;
         this.rol = rol;
     }
+
+    public UsuarioDTO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.rol = rol;
+    }
 }

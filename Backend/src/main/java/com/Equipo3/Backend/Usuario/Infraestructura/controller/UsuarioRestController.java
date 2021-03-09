@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(EndpointUrls.V1 + UsuarioRestController.USER_RESOURCE)
 @AllArgsConstructor
@@ -24,7 +26,7 @@ public class UsuarioRestController {
     @PostMapping
     public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
         userService.Registro_De_Usuario(dto);
-        return new ResponseEntity<>(dto, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
 
@@ -34,6 +36,11 @@ public class UsuarioRestController {
 
     }
 
+    @GetMapping(EndpointUrls.GetAll)
+    public ResponseEntity<List<UsuarioDTO>> getAll() {
+        return ResponseEntity.ok(userService.Consultar_Usuarios());
+    }
+
     @GetMapping(EndpointUrls.GetById)
     public ResponseEntity getById(@PathVariable final int id) {
         try {
@@ -41,9 +48,21 @@ public class UsuarioRestController {
                     .map(user -> UsuarioMapper.toDTO(user))
                     .map(userdto -> new ResponseEntity(userdto, HttpStatus.OK))
                     .orElse(new ResponseEntity(null, HttpStatus.NOT_FOUND));
-        }catch(Exception e){
+        } catch (Exception e) {
             return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PutMapping(EndpointUrls.Update)
+    public ResponseEntity<UsuarioDTO> update(@RequestBody UsuarioDTO usuarioDTO) {
+        return new ResponseEntity(userService.Modificar_Usuario(usuarioDTO), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(EndpointUrls.DeleteById)
+    public ResponseEntity<Boolean> delete(@PathVariable final int id) {
+        return userService.Eliminar_Usuario(id)
+                ? ResponseEntity.ok(true)
+                : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }
 //    @GetMapping(EndpointUrls.GetById)
 //    public ResponseEntity<UsuarioDTO> getById(@PathVariable final int id) {

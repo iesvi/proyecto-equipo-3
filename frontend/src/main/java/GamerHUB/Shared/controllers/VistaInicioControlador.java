@@ -17,6 +17,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -159,6 +161,13 @@ public class VistaInicioControlador {
         }
 
 
+    }
+    @FXML
+    public void Loginenter(KeyEvent keyEvent) throws Exception {
+        if(keyEvent.getCode() == KeyCode.ENTER)
+        {
+            Login();
+        }
     }
 
 

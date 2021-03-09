@@ -49,7 +49,7 @@
                            pickOnBounds="true" preserveRatio="true"/>
                 <Label layoutX="184.0" layoutY="457.0" onMouseClicked="#LaunchSignUpView" text="Registrarse"
                        underline="true"/>
-                <PasswordField fx:id="campoPass" layoutX="50.0" layoutY="315.0" prefHeight="35.0" prefWidth="189.0"
+                <PasswordField fx:id="campoPass" layoutX="50.0" layoutY="315.0" onKeyPressed="#Loginenter" prefHeight="35.0" prefWidth="189.0"
                                promptText="Contraseña" style="-fx-background-radius: 10;"/>
             </children>
             <effect>

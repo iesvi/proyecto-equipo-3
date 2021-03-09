@@ -1,8 +1,10 @@
 package GamerHUB.GestionChat.controller;
 
 import GamerHUB.GestionChat.model.dto.CanalDTO;
+import GamerHUB.GestionChat.repository.Impl.ChatRepositorySocket;
 import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionChat.ui.VentanaAddChatVista;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.util.GeneracionPuertos;
 import javafx.collections.FXCollections;
@@ -25,8 +27,9 @@ public class ChatAddController {
      private VentanaAddChatVista vista;
      private Stage stage;
      private ListaChat listaChat;
-
      private int puerto;
+     private ChatRepositorySocket CRS;
+     private ClientSocket CS;
 
 
     public ChatAddController(){}
@@ -45,9 +48,11 @@ public class ChatAddController {
         this.listaChat = listaChat;
     }
 
-    public void setVista(VentanaAddChatVista vista, Stage stage){
+    public void setVista(VentanaAddChatVista vista, Stage stage, ClientSocket CS){
         this.vista =vista;
         this.stage =stage;
+        this.CS = CS;
+        CRS = new ChatRepositorySocket(CS);
     }
 
     public int getPuerto() {
@@ -63,8 +68,9 @@ public class ChatAddController {
                 er.printStackTrace();
             }
             String campo = campoNombreCanal.getText();
-            CanalDTO chatDTO = new CanalDTO(campo, this.puerto, FXCollections.observableArrayList(new Integer(12345)));
+            CanalDTO chatDTO = new CanalDTO(campo, this.puerto);
 
+            CRS.add(chatDTO);
             listaChat.getCanales().add(chatDTO);
 
             for(CanalDTO canalDTO: listaChat.getCanales()){

@@ -3,6 +3,7 @@ package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionChat.controller.MultiChatUDP;
 import GamerHUB.GestionChat.model.dto.CanalDTO;
+import GamerHUB.GestionChat.repository.Impl.ChatRepositorySocket;
 import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionChat.ui.VentanaAddChatVista;
 import GamerHUB.GestionEventos.model.dto.EventoDTO;
@@ -10,7 +11,6 @@ import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionEventos.ui.VentanaAddEventVista;
 import GamerHUB.GestionEventos.ui.VentanaEventoVista;
 import GamerHUB.GestionPeticiones.ui.VentanaPeticionVista;
-import GamerHUB.GestionServidorArchivos.Apartado4_5.Servidor;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
@@ -51,6 +51,7 @@ public class VistaHomeControlador {
     private ListaUsuario listaUsuario;
     private ProcessHora hora;
     private ListaEvento listaEvento;
+    private ChatRepositorySocket CRS;
     private ListaChat listaChat;
     private ClientSocket CS;
     private VistaHomeControlador controladorHome;
@@ -93,7 +94,7 @@ public class VistaHomeControlador {
      *
      */
     @FXML
-    private ImageView fotoUser, fotoBusqueda;
+    private ImageView fotoUser, fotoBusqueda, actualizarlistachats;
 
     /**
      *
@@ -138,7 +139,7 @@ public class VistaHomeControlador {
                 if(keyEvent.getCode() == KeyCode.ENTER)
                 {
                     try {
-                        multiChatUDP.sendMsg("user", msgBar.getText().toString());
+                        multiChatUDP.sendMsg(userLogeado.getNombre(), msgBar.getText().toString());
                         msgBar.setText("");
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -190,10 +191,21 @@ public class VistaHomeControlador {
     }
 
     public void setChat(CanalDTO canal){
+        if(multiChatUDP != null){
+            try {
+                multiChatUDP.Usuariosalido(userLogeado.getNombre());
+                multiChatUDP.terminarhilo();
+            }catch(IOException er){
+                er.printStackTrace();
+            }
+        }
+        msgBar.setEditable(true);
         NombreChat.setText(canal.getNombre());
         try {
             multiChatUDP = new MultiChatUDP(userLogeado.getNombre(), this, canal.getPuerto());
             new Thread(multiChatUDP).start();
+            areaChat.setText("\n");
+            multiChatUDP.Usuariologeado(userLogeado.getNombre());
         }catch(IOException er){
             er.printStackTrace();
         }
@@ -308,6 +320,19 @@ public class VistaHomeControlador {
         fotoBusqueda.setImage(image);
     }
 
+    public void setImagenActualizar() {
+        URL url = getClass().getResource("/images/actualizar.png");
+        File file = new File(url.getPath());
+        Image image = new Image(file.toURI().toString());
+        actualizarlistachats.setImage(image);
+    }
+    @FXML
+    public void actualizarchats(){
+        CRS = new ChatRepositorySocket(CS);
+        listaChat.setlistaChat(CRS.retrieveChats());
+        canales.setItems(listaChat.getCanales());
+    }
+
     /**
      * Método para salir de la aplicación (Log-out)
      *
@@ -349,7 +374,7 @@ public class VistaHomeControlador {
     @FXML
     public void LaunchVistaFTP() throws IOException {
         String[] args = {};
-        Servidor.main(args);
+//        Servidor.main(args);
     }
     /**
      * Método para cargar la vista del formulario y tablas de los eventos.
@@ -373,7 +398,7 @@ public class VistaHomeControlador {
 
     @FXML
     public void LoadAddCanal() throws  IOException{
-        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage, listaChat);
+        VentanaAddChatVista ventanaAddChatVista = new VentanaAddChatVista(dialogStage, listaChat, CS);
         ventanaAddChatVista.LaunchAddCanal();
     }
 

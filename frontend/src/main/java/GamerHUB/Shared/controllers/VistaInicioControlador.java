@@ -1,5 +1,6 @@
 package GamerHUB.Shared.controllers;
 
+import GamerHUB.GestionChat.repository.Impl.ChatRepositorySocket;
 import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
@@ -34,6 +35,7 @@ public class VistaInicioControlador {
     private ListaUsuario listaUsuario;
     private VentanaSignUpVista ventanaSignUpVista;
     private UsuarioRespositorySocket URS;
+    private ChatRepositorySocket CRS;
     private ClientSocket CS;
     private ListaChat LC;
 
@@ -80,6 +82,11 @@ public class VistaInicioControlador {
     public void setListaUsuario(){
         URS = new UsuarioRespositorySocket(CS);
         listaUsuario.setlistaUsuarios(URS.retrieveUsers());
+    }
+
+    public void setListaChat(){
+        CRS = new ChatRepositorySocket(CS);
+        LC.setlistaChat(CRS.retrieveChats());
     }
 
     public UsuarioDTO getUsuarioLogeado() {

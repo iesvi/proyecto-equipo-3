@@ -54,5 +54,6 @@
                 </Menu>
             </menus>
         </MenuBar>
+      <ImageView fx:id="actualizarlistachats" fitHeight="17.0" fitWidth="18.0" layoutX="215.0" layoutY="486.0" onMouseClicked="#actualizarchats" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>

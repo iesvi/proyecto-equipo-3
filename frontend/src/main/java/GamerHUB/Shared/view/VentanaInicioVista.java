@@ -4,10 +4,12 @@ import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.controllers.VistaInicioControlador;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,11 +46,20 @@ public class VentanaInicioVista {
         AnchorPane inicio = (AnchorPane) loader.load();
 
         rootLayout.setCenter(inicio);
+        stageppal.setOnCloseRequest(new EventHandler<WindowEvent>(){
+            @Override public void handle(WindowEvent event) {
+                if(CS.comprobarConexion()){
+                    CS.desconectar();
+                }
+                stageppal.close();
+            }
+        });
 
         //inicio.setBackground();
         VistaInicioControlador controladorInicio = loader.getController();
         controladorInicio.setVista(this, stageppal, listaUsuario, CS, LC);
         controladorInicio.setListaUsuario();
+        controladorInicio.setListaChat();
 
     }
 

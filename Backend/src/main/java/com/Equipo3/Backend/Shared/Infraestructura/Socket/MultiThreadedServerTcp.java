@@ -1,5 +1,6 @@
 package com.Equipo3.Backend.Shared.Infraestructura.Socket;
 
+import com.Equipo3.Backend.Chat.Aplicacion.Service.ChatService;
 import com.Equipo3.Backend.Peticion.Aplicacion.PeticionService;
 import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import com.Equipo3.Backend.Shared.Dominio.Socket.SocketServer;
@@ -33,6 +34,9 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
     @Autowired
     private PeticionService PS;
 
+    @Autowired
+    private ChatService CS;
+
     private static ColaPeticiones colap = new ColaPeticiones();
     private ConsumidorPeticiones consumidorPeticiones = new ConsumidorPeticiones(colap,PS);
 
@@ -65,7 +69,7 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
             }
 
             Integer clientId = clientsConnections.size()+1;
-            clientsConnections.put(clientId,new SocketClientConnectionWorker(clientSocket, "ClienteID: " + clientId, US, colap));
+            clientsConnections.put(clientId,new SocketClientConnectionWorker(clientSocket, "ClienteID: " + clientId, US, colap, CS));
 
             new Thread(clientsConnections.get(clientId)).start();
 

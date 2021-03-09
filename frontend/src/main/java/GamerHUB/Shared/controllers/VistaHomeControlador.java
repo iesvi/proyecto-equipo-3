@@ -376,7 +376,6 @@ public class VistaHomeControlador {
     public void LaunchVistaFTP() throws IOException {
       clienteFTPBasico cl = new clienteFTPBasico();
       cl.show();
-
     }
 
         /**

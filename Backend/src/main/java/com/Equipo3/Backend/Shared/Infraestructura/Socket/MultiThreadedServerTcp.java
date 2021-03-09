@@ -18,7 +18,6 @@ import java.net.Socket;
 import java.util.HashMap;
 
 @Component
-@Controller
 public class MultiThreadedServerTcp implements SocketServer, Runnable{
 
     protected int          serverPort   = 5555;
@@ -37,8 +36,11 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
     @Autowired
     private ChatService CS;
 
-    private static ColaPeticiones colap = new ColaPeticiones();
-    private ConsumidorPeticiones consumidorPeticiones = new ConsumidorPeticiones(colap,PS);
+    @Autowired
+    private ColaPeticiones colap;
+
+    @Autowired
+    private ConsumidorPeticiones consumidorPeticiones;
 
     public MultiThreadedServerTcp() {
     }
@@ -48,10 +50,7 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
     }
 
     public void run(){
-        if(!consumidorPeticiones.isAlive()){
-            consumidorPeticiones = new ConsumidorPeticiones(colap,PS);
-            consumidorPeticiones.start();
-        }
+
         synchronized(this){
             this.runningThread = Thread.currentThread();
         }
@@ -66,6 +65,10 @@ public class MultiThreadedServerTcp implements SocketServer, Runnable{
                     return;
                 }
                 throw new RuntimeException("Error accepting client connection", e);
+            }
+
+            if(!consumidorPeticiones.isAlive()){
+                consumidorPeticiones.start();
             }
 
             Integer clientId = clientsConnections.size()+1;

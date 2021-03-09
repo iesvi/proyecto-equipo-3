@@ -4,24 +4,29 @@ import com.Equipo3.Backend.Peticion.Aplicacion.PeticionService;
 import com.Equipo3.Backend.Peticion.Dominio.DTO.PeticionDTO;
 import com.Equipo3.Backend.Peticion.Dominio.Mapper.PeticionMapper;
 import com.Equipo3.Backend.Peticion.Dominio.PeticionVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ConsumidorPeticiones extends Thread{
 
+    @Autowired
     private ColaPeticiones colap;
     boolean parar = false;
     private List<PeticionDTO> lista;
+    @Autowired
     private PeticionService PS;
 
 
 
-    public ConsumidorPeticiones(ColaPeticiones colap, PeticionService PS) {
-        this.colap = colap;
-        this.PS = PS;
-    }
+//    public ConsumidorPeticiones(ColaPeticiones colap, PeticionService PS) {
+//        this.colap = colap;
+//        this.PS = PS;
+//    }
 
     public void run() {
         while (!parar)

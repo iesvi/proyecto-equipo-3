@@ -1,6 +1,7 @@
 package com.Equipo3.Backend.Shared.Infraestructura.ProductorConsumidor;
 
 import com.Equipo3.Backend.Peticion.Dominio.DTO.PeticionDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;

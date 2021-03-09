@@ -70,7 +70,7 @@ public class UsuarioService {
         if (!nbd.isPresent()) {
             throw new EntityNotExist(UsuarioVO.class.toString(), id);
         }
-        return usuarioRepo.findById(id);
+        return nbd;
     }
 
     /**

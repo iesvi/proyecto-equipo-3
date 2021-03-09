@@ -94,6 +94,7 @@ public class VentanaHomeVista {
         controladorHomeview1.setlistaUsuarios(listaUsuario);
         controladorHomeview1.setControladores(controladorHome, controladorHomeview1, controladorHomeview2);
         controladorHomeview1.setUserNameLabel();
+        controladorHomeview1.setImagenActualizar();
         controladorHomeview1.llenarTablaCanales();
         pane.setDividerPositions(0.32);
     }

@@ -6,10 +6,15 @@ import com.Equipo3.Backend.Chat.Dominio.Mapper.ChatMapper;
 import com.Equipo3.Backend.Chat.Dominio.Repository.ChatRepository;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
+import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
+import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
+import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -65,6 +70,17 @@ public class ChatService {
         if (!nbd.isPresent())
             throw new EntityNotExist(ChatVO.class.toString(),id);
         return chatRepo.findById(id).get();
+    }
+
+    @Transactional
+    public ArrayList<ChatDTO> Consultar_todoslosChats() {
+        List<ChatVO> nbd = chatRepo.findAll();
+        ArrayList<ChatDTO> nbdA = new ArrayList<>();
+        for(int i = 0; i<nbd.size();i++){
+            ChatDTO user = ChatMapper.toDTO(nbd.get(i));
+            nbdA.add(user);
+        }
+        return nbdA;
     }
 
     /**

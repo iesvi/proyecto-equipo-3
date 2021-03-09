@@ -16,7 +16,7 @@ public class CanalDTO {
     private IntegerProperty id;
     private StringProperty nombre;
     private IntegerProperty puerto;
-    private ObservableList<Integer> miembros;
+//    private ObservableList<Integer> miembros;
     //private ObservableList<MensajeDTO> historial;
 
     /**
@@ -25,12 +25,21 @@ public class CanalDTO {
      * @param miembros
 
      */
-    public CanalDTO( String nombre,int puerto, ObservableList<Integer> miembros) {
+    public CanalDTO( String nombre,int puerto) {
         this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));;
         this.nombre = new SimpleStringProperty(nombre);
         this.puerto = new SimpleIntegerProperty(puerto);
-        this.miembros = FXCollections.observableArrayList(miembros);
+//        this.miembros = FXCollections.observableArrayList(miembros);
         //this.historial = FXCollections.observableArrayList(historial);
+    }
+
+    public CanalDTO(Integer id, String nombre, Integer puerto) {
+        this.id = new SimpleIntegerProperty(id);
+        this.nombre = new SimpleStringProperty(nombre);
+        this.puerto =  new SimpleIntegerProperty(puerto);
+    }
+
+    public CanalDTO() {
     }
 
     public int getId() {
@@ -57,13 +66,13 @@ public class CanalDTO {
         this.nombre.set(nombre);
     }
 
-    public ObservableList<Integer> getMiembros() {
-        return miembros;
-    }
-
-    public void setMiembros(ObservableList<Integer> miembros) {
-        this.miembros = miembros;
-    }
+//    public ObservableList<Integer> getMiembros() {
+//        return miembros;
+//    }
+//
+//    public void setMiembros(ObservableList<Integer> miembros) {
+//        this.miembros = miembros;
+//    }
 
     public int getPuerto() {
         return puerto.get();
@@ -83,7 +92,7 @@ public class CanalDTO {
                 "id=" + id +
                 ", nombre=" + nombre +
                 ", puerto=" + puerto +
-                ", miembros=" + miembros +
+//                ", miembros=" + miembros +
                 '}';
     }
 

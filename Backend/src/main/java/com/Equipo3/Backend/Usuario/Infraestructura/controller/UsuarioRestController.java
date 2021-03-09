@@ -4,6 +4,7 @@ import com.Equipo3.Backend.Shared.Infraestructura.controller.constant.EndpointUr
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
+import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class UsuarioRestController {
     @PostMapping
     public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
         userService.Registro_De_Usuario(dto);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
 
     }
 
@@ -33,8 +34,8 @@ public class UsuarioRestController {
 
     }
 
-    @GetMapping(value = "/{id}/")
-    public ResponseEntity getById(@PathVariable("id") Integer id) {
+    @GetMapping(EndpointUrls.GetById)
+    public ResponseEntity getById(@PathVariable final int id) {
         try {
             return userService.ConsultarPerfilUsuario(id)
                     .map(user -> UsuarioMapper.toDTO(user))
@@ -44,7 +45,16 @@ public class UsuarioRestController {
             return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
     }
-
+//    @GetMapping(EndpointUrls.GetById)
+//    public ResponseEntity<UsuarioDTO> getById(@PathVariable final int id) {
+//        try {
+//            UsuarioVO vo = userService.ConsultarPerfilUsuario(id);
+//            UsuarioDTO dto = UsuarioMapper.toDTO(vo);
+//            return new ResponseEntity(dto, HttpStatus.OK);
+//        }catch(Exception e){
+//            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
+//        }
+//    }
 //    @GetMapping("/me")
 //    public UsuarioDTO me( UsuarioVO user) {
 //        return UsuarioMapper.toDTO(user);

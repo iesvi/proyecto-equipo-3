@@ -73,6 +73,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
      */
     @ManyToMany
     @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="amigoId"))
+    @NonNull
     private List<UsuarioVO> amigos = new ArrayList<>();
 
     /**
@@ -80,6 +81,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
      */
     @ManyToMany
     @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="amigoId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
+    @NonNull
     private List<UsuarioVO> amigosde = new ArrayList<>();
 
     @OneToMany (mappedBy = "idusuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)

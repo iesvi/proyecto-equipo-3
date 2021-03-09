@@ -63,6 +63,7 @@ public class ListaUsuario {
 
     public void setlistaUsuarios(ArrayList<UsuarioVO> lista){
             if(lista != null){
+                users = FXCollections.observableArrayList();
             ArrayList<UsuarioVO> listaVO = lista;
             for (int i = 0; i < listaVO.size(); i++) {
                 UsuarioDTO n = Conversor.voToDto(listaVO.get(i));

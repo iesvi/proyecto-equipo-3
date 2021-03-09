@@ -20,7 +20,7 @@ public class Conversor {
 
         PeticionDTO peticionDTO = new PeticionDTO();
 
-        peticionDTO.setId(peticionDTO.getId());
+        peticionDTO.setId(peticionVO.getId());
         peticionDTO.setNombre(peticionVO.getNombre());
         peticionDTO.setDescripcion(peticionVO.getDescripcion());
 

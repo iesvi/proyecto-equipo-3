@@ -7,6 +7,7 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.SocketException;
+import java.time.LocalTime;
 
 public class MultiChatUDP implements Runnable{
 
@@ -48,11 +49,33 @@ public class MultiChatUDP implements Runnable{
 
 
     public void sendMsg(String user, String msg) throws IOException {
+        String message = user + " a las (" + LocalTime.now() + "): " + msg + "                    " + "\n";
         // ENVIANDO mensaje al grupo
-        DatagramPacket paquete = new DatagramPacket(msg.getBytes(),
-                msg.length(), grupo, this.puerto);
+        DatagramPacket paquete = new DatagramPacket(message.getBytes(),
+                message.length(), grupo, this.puerto);
         ms.send(paquete);
 
+    }
+    public void Usuariologeado(String user) throws IOException {
+        String message = user + " ha entrado en el chat a las (" + LocalTime.now() + ")" + "\n";
+        // ENVIANDO mensaje al grupo
+        DatagramPacket paquete = new DatagramPacket(message.getBytes(),
+                message.length(), grupo, this.puerto);
+        ms.send(paquete);
+
+    }
+
+    public void Usuariosalido(String user) throws IOException {
+        String message = user + " ha salido del chat a las (" + LocalTime.now() + ")" + "\n";
+        // ENVIANDO mensaje al grupo
+        DatagramPacket paquete = new DatagramPacket(message.getBytes(),
+                message.length(), grupo, this.puerto);
+        ms.send(paquete);
+
+    }
+
+    public void terminarhilo(){
+        this.repetir = false;
     }
 
 

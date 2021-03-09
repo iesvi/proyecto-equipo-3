@@ -6,6 +6,7 @@ import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionEventos.controller.EventoAddController;
 import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
+import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -24,6 +25,7 @@ public class VentanaAddChatVista {
     private Stage stageppal;
     private CanalDTO canalDTO;
     private ListaChat listaChat;
+    private ClientSocket CS;
 
 
 
@@ -31,9 +33,10 @@ public class VentanaAddChatVista {
         this.stageppal =stageppal;
     }
 
-    public VentanaAddChatVista(Stage stageppal, ListaChat listaChat){
+    public VentanaAddChatVista(Stage stageppal, ListaChat listaChat, ClientSocket CS){
         this.stageppal = stageppal;
         this.listaChat = listaChat;
+        this.CS = CS;
     }
 
 
@@ -56,7 +59,7 @@ public class VentanaAddChatVista {
         ChatAddController chataddController = loader.getController();
 
         chataddController.setListaChat(listaChat);
-        chataddController.setVista(this, dialogStage);
+        chataddController.setVista(this, dialogStage, CS);
 
         dialogStage.show();
     }

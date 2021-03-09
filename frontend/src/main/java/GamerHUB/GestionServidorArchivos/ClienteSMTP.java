@@ -7,12 +7,21 @@ import org.apache.commons.mail.MultiPartEmail;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ *
+ */
 public class ClienteSMTP {
     private String          servidorSMTP;
     private String          usuarioRemitente;
     private String          claveRemitente;
     private MultiPartEmail email;
 
+    /**
+     *
+     * @param servidorSMTP
+     * @param usuarioRemitente
+     * @param claveRemitente
+     */
     public void remitenteCorreo(String servidorSMTP,
                                        String usuarioRemitente, String claveRemitente) {
         this.servidorSMTP       =   servidorSMTP;
@@ -42,6 +51,15 @@ public class ClienteSMTP {
         email.setSSLOnConnect(true);
     }
 
+    /**
+     *
+     * @param asunto
+     * @param textoEmail
+     * @param destinatario
+     * @param destinatariosCC
+     * @param destinatariosBCC
+     * @throws EmailException
+     */
     private  void configurarParametrosBasicos (
             String asunto, String textoEmail, String destinatario,
             String[] destinatariosCC, String[] destinatariosBCC) throws EmailException
@@ -62,6 +80,16 @@ public class ClienteSMTP {
             email.addBcc(destinatariosBCC);
         }
     }
+
+    /**
+     *
+     * @param asunto
+     * @param textoEmail
+     * @param destinatario
+     * @param destinatariosCC
+     * @param destinatariosBCC
+     * @throws EmailException
+     */
     public void enviarMensaje(String asunto, String textoEmail, String destinatario,
                               String[] destinatariosCC, String[] destinatariosBCC)
             throws EmailException

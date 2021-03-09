@@ -215,7 +215,6 @@ public class VistaRegistroControlador {
     public void sendEmailSMTP(String emailNuevoUser) throws EmailException {
 
         ClienteSMTP clienteSMTP = new ClienteSMTP();
-
         clienteSMTP.remitenteCorreo("smtp.gmail.com", "correopruebapsp2021",
                 "passwordpsp");
         clienteSMTP.enviarMensaje("Bienvenido a GamerHub", "Te damos la bienvenida a GamerHub.\n" +
@@ -223,6 +222,9 @@ public class VistaRegistroControlador {
 
 
     }
+
+
+
 
 
 }

@@ -4,11 +4,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalTime;
 
+/**
+ *
+ */
 public class ProcessHora {
 
     public ProcessHora() {
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalTime procesoHora() {
         String hora = "";
         if (OsUtil.isWindows()) {

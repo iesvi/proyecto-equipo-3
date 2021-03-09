@@ -22,22 +22,17 @@ public class ChatDTO {
      */
     private String nombre;
 
-//    /**
-//     * usuarios tipo List<UsuarioVO>
-//     */
-//    private List<UsuarioDTO> usuarios = new ArrayList<>();
-
     /**
      * puerto tipo int
      */
     private int puerto;
 
-//    /**
-//     * historial tipo Mensaje
-//     */
-//    private Mensaje historial;
-
-
+    /**
+     * Constructor de ChatDTO
+     *
+     * @param nombre
+     * @param puerto
+     */
     public ChatDTO(String nombre, int puerto) {
         this.nombre = nombre;
         this.puerto = puerto;

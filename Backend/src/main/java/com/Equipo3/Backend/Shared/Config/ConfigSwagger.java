@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class ConfigSwagger extends WebMvcConfigurationSupport {
     @Bean
-    public Docket  MyApi() {
+    public Docket MyApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.Equipo3"))

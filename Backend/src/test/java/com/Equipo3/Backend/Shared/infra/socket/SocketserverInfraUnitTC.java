@@ -3,7 +3,6 @@ package com.Equipo3.Backend.Shared.infra.socket;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSocketTest;
 import com.Equipo3.Backend.Shared.Infraestructura.Socket.MultiThreadedServerTcp;
 import com.Equipo3.Backend.Shared.UnitTestCase;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

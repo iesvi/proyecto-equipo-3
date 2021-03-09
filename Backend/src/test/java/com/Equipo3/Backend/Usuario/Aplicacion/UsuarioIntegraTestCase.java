@@ -2,7 +2,6 @@ package com.Equipo3.Backend.Usuario.Aplicacion;
 
 import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
 import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
-import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
@@ -15,7 +14,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -84,6 +82,7 @@ public class UsuarioIntegraTestCase {
         Assert.assertNotNull(Usuariodevuelto);
 
     }
+
     @Test(expected = EntityNotExist.class)
     @Transactional
     public void ShouldReturnUsuarioNotExist_ThrowExceptionTest() {
@@ -94,6 +93,7 @@ public class UsuarioIntegraTestCase {
         Optional<UsuarioVO> Usuariodevuelto = userService.ConsultarPerfilUsuario(Usuarioyaexistente.getId());
 
     }
+
     @Test
     @Transactional
     public void ShouldEditUsuarioExistTest() {
@@ -109,6 +109,7 @@ public class UsuarioIntegraTestCase {
         Assert.assertEquals(Usuarioaeditar, usuariodb);
 
     }
+
     @Test(expected = EntityNotExist.class)
     @Transactional
     public void ShouldEditUsuarioNotExist_ThrowExceptionTest() {

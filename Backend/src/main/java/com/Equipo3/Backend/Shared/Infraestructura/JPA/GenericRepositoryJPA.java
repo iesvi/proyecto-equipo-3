@@ -10,7 +10,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K> {
+public abstract class GenericRepositoryJPA<T, K> implements GenericRepository<T, K> {
     @PersistenceContext
     private EntityManager em;
 
@@ -21,7 +21,7 @@ public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K
     }
 
     public T findOne(K pk) {
-        return em.find(type,pk);
+        return em.find(type, pk);
     }
 
     public Iterable<T> findAll() {

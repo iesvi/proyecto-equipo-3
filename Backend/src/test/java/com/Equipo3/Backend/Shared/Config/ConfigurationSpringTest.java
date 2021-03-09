@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @SpringBootTest
 @ComponentScan("com.Equipo3.Backend.*")
-@EnableJpaAuditing(auditorAwareRef="customAuditorAware")
+@EnableJpaAuditing(auditorAwareRef = "customAuditorAware")
 @EnableTransactionManagement
-@Import(value = {ConfigurationPersistenceTest.class,ConfigurationMongoTest.class})
+@Import(value = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
 public class ConfigurationSpringTest {
 
     public ConfigurationSpringTest() {
-        System.setProperty("org.jboss.logging.provider","log4j2");
+        System.setProperty("org.jboss.logging.provider", "log4j2");
     }
 }

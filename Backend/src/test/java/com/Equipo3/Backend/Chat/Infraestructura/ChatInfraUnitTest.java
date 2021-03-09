@@ -34,7 +34,7 @@ public class ChatInfraUnitTest extends UnitTestCase {
         ChatVO chat = createAndSaveNewChat();
 
         //Assert
-        ChatVO chatBd = em.find(ChatVO.class,chat.getId());
+        ChatVO chatBd = em.find(ChatVO.class, chat.getId());
         Assert.assertEquals(chat, chatBd);
     }
 
@@ -44,7 +44,7 @@ public class ChatInfraUnitTest extends UnitTestCase {
         //Arrange
         ChatVO chat = createAndSaveNewChat();
 
-        ChatVO chatEdit = em.find(ChatVO.class,chat.getId());
+        ChatVO chatEdit = em.find(ChatVO.class, chat.getId());
         chatEdit.setNombre("Chat los chavales");
 
         //Act
@@ -54,7 +54,7 @@ public class ChatInfraUnitTest extends UnitTestCase {
         em.clear();
 
         //Assert
-        ChatVO chatBd = em.find(ChatVO.class,chat.getId());
+        ChatVO chatBd = em.find(ChatVO.class, chat.getId());
 
         Assert.assertEquals(chatEdit, chatBd);
     }
@@ -63,14 +63,14 @@ public class ChatInfraUnitTest extends UnitTestCase {
     @Transactional
     public void ShouldRemoveChat() {
         //Arrange
-        ChatVO chatDelete = em.find(ChatVO.class,createAndSaveNewChat().getId());
+        ChatVO chatDelete = em.find(ChatVO.class, createAndSaveNewChat().getId());
 
         //Act
         em.remove(chatDelete);
         em.flush();
         em.clear();
 
-        ChatVO chatBd = em.find(ChatVO.class,chatDelete.getId());
+        ChatVO chatBd = em.find(ChatVO.class, chatDelete.getId());
 
         //Assert
         Assert.assertNull(chatBd);

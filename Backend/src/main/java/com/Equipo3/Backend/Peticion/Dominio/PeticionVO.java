@@ -1,37 +1,52 @@
 package com.Equipo3.Backend.Peticion.Dominio;
 
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
+/**
+ * Clase PeticionVO para trabajar con la base de datos
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @With
 @EqualsAndHashCode
-@Entity(name="Peticion")
+@Entity(name = "Peticion")
 public class PeticionVO {
 
+    /**
+     * id tipo int el cual es el Id en la base de datos
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    /**
+     * nombre tipo String
+     */
     @Column(nullable = false)
     private String nombre;
 
+    /**
+     * Descripcion tipo String
+     */
     @Column(length = 200, nullable = false)
     private String Descripcion;
 
+    /**
+     * Respuesta tipo String
+     */
     @Column(length = 200)
     private String Respuesta;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name="usuarioId",foreignKey = @ForeignKey(name = "USUARIO_ID_FK"))
-//    private UsuarioVO idusuario;
-
+    /**
+     * Constructor de PeticionVO
+     * @param nombre
+     * @param Descripcion
+     * @param Respuesta
+     */
     public PeticionVO(String nombre, String Descripcion, String Respuesta) {
         this.nombre = nombre;
         this.Descripcion = Descripcion;

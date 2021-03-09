@@ -1,11 +1,18 @@
 package com.Equipo3.Backend.Peticion.Dominio.Mapper;
 
-import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
-import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Peticion.Dominio.DTO.PeticionDTO;
 import com.Equipo3.Backend.Peticion.Dominio.PeticionVO;
 
+/**
+ * Clase Mapper la cual tiene los conversores
+ */
 public class PeticionMapper {
+
+    /**
+     * Conversor de PeticionVO a PeticionDTO
+     * @param vo
+     * @return
+     */
     public static PeticionDTO toDTO(PeticionVO vo) {
         return new PeticionDTO()
                 .withId(vo.getId())
@@ -13,8 +20,12 @@ public class PeticionMapper {
                 .withDescripcion(vo.getDescripcion());
     }
 
-    //TODO: convertDTO ==>  Por ctor
-    public static PeticionVO fromDTO(PeticionDTO dto){
+    /**
+     * Conversor de PeticionDTO a PeticionVO
+     * @param dto
+     * @return
+     */
+    public static PeticionVO fromDTO(PeticionDTO dto) {
         return new PeticionVO()
                 .withId(dto.getId())
                 .withNombre(dto.getNombre())

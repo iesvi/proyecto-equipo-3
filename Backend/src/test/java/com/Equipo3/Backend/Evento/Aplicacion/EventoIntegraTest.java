@@ -66,16 +66,18 @@ public class EventoIntegraTest {
         Assert.assertEquals(true, eventoService.eliminarUnEvento(Eventoyaexistente.getId()));
 
     }
+
     @Test
     public void ShouldReturnEventoExistTest() {
 
         EventoVO Eventoyaexistente = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
 
-       Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+        Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
 
         Assert.assertNotNull(Eventodevuelto);
 
     }
+
     @Test(expected = EntityNotExist.class)
     public void ShouldReturnEventoNotExist_ThrowExceptionTest() {
 
@@ -85,6 +87,7 @@ public class EventoIntegraTest {
         Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
 
     }
+
     @Test
     public void ShouldEditEventoExistTest() {
 
@@ -99,6 +102,7 @@ public class EventoIntegraTest {
         Assert.assertEquals(Eventoaeditar, eventodb);
 
     }
+
     @Test(expected = EntityNotExist.class)
     public void ShouldEditEventoNotExist_ThrowExceptionTest() {
 
@@ -112,8 +116,6 @@ public class EventoIntegraTest {
 
 
     }
-
-
 
 
     private EventoDTO buildEventoDto() {

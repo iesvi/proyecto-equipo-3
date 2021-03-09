@@ -27,15 +27,16 @@ public class EventoService {
 
     /**
      * Método para dar de alta un nuevo evento. Tambien se convierte un EventoDTO a EventoVO
+     *
      * @param eventodto
      * @return eventoRepo.save(event)
      */
     @Transactional
     public EventoVO darDeAltaUnEvento(EventoDTO eventodto) {
 
-            Optional<EventoVO> nbd = eventoRepo.findById(eventodto.getId());
+        Optional<EventoVO> nbd = eventoRepo.findById(eventodto.getId());
         if (nbd.isPresent())
-            throw new EntityExist(EventoVO.class.toString(),eventodto.getId());
+            throw new EntityExist(EventoVO.class.toString(), eventodto.getId());
 
         EventoVO event = EventoMapper.fromDTO(eventodto);
         return eventoRepo.save(event);
@@ -43,21 +44,23 @@ public class EventoService {
 
     /**
      * Método para eliminar un evento
+     *
      * @param id
      */
     @Transactional
-    public boolean eliminarUnEvento(int id){
+    public boolean eliminarUnEvento(int id) {
         Optional<EventoVO> nbd = eventoRepo.findById(id);
         if (!nbd.isPresent())
-            throw new EntityNotExist(EventoVO.class.toString(),id);
+            throw new EntityNotExist(EventoVO.class.toString(), id);
 
         //Borra el evento si está en la base de datos
-         eventoRepo.deleteById(id);
-         return true;
+        eventoRepo.deleteById(id);
+        return true;
     }
 
     /**
      * Método para consultar un evento en función a la id que se le pase
+     *
      * @param id
      * @return eventoRepo.findOne(id)
      */

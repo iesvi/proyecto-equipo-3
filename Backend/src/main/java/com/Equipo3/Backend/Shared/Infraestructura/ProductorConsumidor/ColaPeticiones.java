@@ -12,8 +12,10 @@ public class ColaPeticiones {
 
     private boolean disponible = false;
 
-
-
+    /**
+     * Clase que obtiene una lista de todas las peticiones
+     * @return
+     */
     public synchronized List<PeticionDTO> get() {
         while (disponible == false) {
             try {
@@ -22,13 +24,16 @@ public class ColaPeticiones {
             }
         }
         disponible = false;
-        System.out.println("\t\t\t\t\t\tRecuperado todos las peticiones" );
+        System.out.println("\t\t\t\t\t\tRecuperado todos las peticiones");
 
         notifyAll();
         return peticiones;
     }
 
-
+    /**
+     * Clase que introduce una lista de peticiones
+     * @param peticion
+     */
     public synchronized void put(PeticionDTO peticion) {
         while (disponible == true) {
             try {
@@ -38,13 +43,13 @@ public class ColaPeticiones {
         }
         this.peticiones.add(peticion);
         System.out.println("\t\t\t\tIntroducido peticion " + peticiones.size());
-        if(peticiones.size()==5) {
+        if (peticiones.size() == 5) {
             disponible = true;
             notifyAll();
         }
     }
 
-    public void setPeticiones(){
+    public void setPeticiones() {
         peticiones = new ArrayList<>();
     }
 }

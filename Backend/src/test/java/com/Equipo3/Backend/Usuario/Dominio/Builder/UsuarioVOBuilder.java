@@ -20,17 +20,17 @@ public class UsuarioVOBuilder {
     private String rol;
 
 
-    public UsuarioVO build(){
+    public UsuarioVO build() {
         ObjectMother om = ObjectMother.getInstance();
-        UsuarioVO mother= om.bear("UsuarioVO",UsuarioVO.class);
+        UsuarioVO mother = om.bear("UsuarioVO", UsuarioVO.class);
 
         return new UsuarioVO(
-                nombre!=null ? nombre : mother.getNombre(),
-                password!=null ? password : mother.getPassword(),
-                email!=null ? email : mother.getEmail(),
-                fecha_nacimiento!=null ? fecha_nacimiento : null,
-                telefono!=0 ? telefono : mother.getTelefono(),
-                rol!=null ? rol : "admin"
+                nombre != null ? nombre : mother.getNombre(),
+                password != null ? password : mother.getPassword(),
+                email != null ? email : mother.getEmail(),
+                fecha_nacimiento != null ? fecha_nacimiento : null,
+                telefono != 0 ? telefono : mother.getTelefono(),
+                rol != null ? rol : "admin"
         );
     }
 }

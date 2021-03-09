@@ -41,6 +41,12 @@ public class EventoDTO {
      */
     private String descripcion;
 
+    /**
+     * Constructor de EventoDTO
+     * @param nombre
+     * @param fecha
+     * @param descripcion
+     */
     public EventoDTO(String nombre, Date fecha, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;

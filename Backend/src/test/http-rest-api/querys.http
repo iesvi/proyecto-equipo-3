@@ -8,10 +8,10 @@ Content-type: application/json
 Accept: */*
 
 {
-    "nombre": "Miguelaaa",
-    "password": "123456",
-    "email": "p@hotmail.com",
-    "fecha_nacimiento": "2021-03-08",
-    "telefono": 123456789,
-    "rol": "Admin"
+  "nombre": "Miguelaaa",
+  "password": "123456",
+  "email": "p@hotmail.com",
+  "fecha_nacimiento": "2021-03-08",
+  "telefono": 123456789,
+  "rol": "Admin"
 }

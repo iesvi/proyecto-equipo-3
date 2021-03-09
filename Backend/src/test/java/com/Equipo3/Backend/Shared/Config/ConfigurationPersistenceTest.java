@@ -17,33 +17,33 @@ import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(value = {"com.Equipo3.*"},excludeFilters = @ComponentScan.Filter(Configuration.class))
+@ComponentScan(value = {"com.Equipo3.*"}, excludeFilters = @ComponentScan.Filter(Configuration.class))
 @EnableJpaAuditing(auditorAwareRef = "customAuditorAware")
 @EnableJpaRepositories("com.Equipo3.*")
 public class ConfigurationPersistenceTest {
 
-        @Bean
-        public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-            return new PersistenceExceptionTranslationPostProcessor();
-        }
-
-        //ejecutar transacciones
-        @Bean
-        public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
-            JpaTransactionManager transactionManager = new JpaTransactionManager();
-            transactionManager.setEntityManagerFactory(emf);
-            return transactionManager;
-        }
-
-        //integrar el entitymanager factory en spring framework
-        @Bean
-        public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-            LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-            JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-            em.setJpaVendorAdapter(vendorAdapter);
-            //mapeo a la unidad de persistencia
-            em.setPersistenceUnitName("backmm");
-//            em.setPersistenceUnitName("Bd");
-            return em;
-        }
+    @Bean
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+        return new PersistenceExceptionTranslationPostProcessor();
     }
+
+    //ejecutar transacciones
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(emf);
+        return transactionManager;
+    }
+
+    //integrar el entitymanager factory en spring framework
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        em.setJpaVendorAdapter(vendorAdapter);
+        //mapeo a la unidad de persistencia
+        em.setPersistenceUnitName("backmm");
+//            em.setPersistenceUnitName("Bd");
+        return em;
+    }
+}

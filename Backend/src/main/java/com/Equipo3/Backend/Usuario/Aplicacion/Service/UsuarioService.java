@@ -52,7 +52,7 @@ public class UsuarioService {
     public ArrayList<UsuarioDTO> Consultar_Usuarios() {
         List<UsuarioVO> nbd = usuarioRepo.findAll();
         ArrayList<UsuarioDTO> nbdA = new ArrayList<>();
-        for(int i = 0; i<nbd.size();i++){
+        for (int i = 0; i < nbd.size(); i++) {
             UsuarioDTO user = UsuarioMapper.toDTO(nbd.get(i));
             nbdA.add(user);
         }

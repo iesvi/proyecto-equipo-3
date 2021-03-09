@@ -1,7 +1,6 @@
 package com.Equipo3.Backend.Shared.Config;
 
 import com.Equipo3.Backend.Shared.Dominio.Socket.SocketServer;
-import com.Equipo3.Backend.Shared.Infraestructura.ProductorConsumidor.ColaPeticiones;
 import com.Equipo3.Backend.Shared.Infraestructura.Socket.MultiThreadedServerTcp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

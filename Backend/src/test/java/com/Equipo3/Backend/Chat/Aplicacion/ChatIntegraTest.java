@@ -66,6 +66,7 @@ public class ChatIntegraTest {
         Assert.assertEquals(true, chatService.eliminarUnChat(Chatyaexistente.getId()));
 
     }
+
     @Test
     @Transactional
     public void ShouldReturnChatExistTest() {
@@ -77,6 +78,7 @@ public class ChatIntegraTest {
         Assert.assertNotNull(Chatdevuelto);
 
     }
+
     @Test(expected = EntityNotExist.class)
     @Transactional
     public void ShouldReturnChatNotExist_ThrowExceptionTest() {
@@ -87,6 +89,7 @@ public class ChatIntegraTest {
         ChatVO Chatdevuelto = chatService.consultarChats(Chatyaexistente.getId());
 
     }
+
     @Test
     @Transactional
     public void ShouldEditChatExistTest() {
@@ -102,6 +105,7 @@ public class ChatIntegraTest {
         Assert.assertEquals(Chataeditar, chatdb);
 
     }
+
     @Test(expected = EntityNotExist.class)
     @Transactional
     public void ShouldEditChatNotExist_ThrowExceptionTest() {

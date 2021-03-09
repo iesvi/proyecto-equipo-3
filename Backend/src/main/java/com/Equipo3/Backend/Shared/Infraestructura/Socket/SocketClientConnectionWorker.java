@@ -9,20 +9,13 @@ import com.Equipo3.Backend.Shared.util.JsonMapper;
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
-import org.springframework.util.SerializationUtils;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
-
+ *
  */
 public class SocketClientConnectionWorker implements Runnable {
 
@@ -52,14 +45,14 @@ public class SocketClientConnectionWorker implements Runnable {
 
         try {
             this.clientSocket.setReceiveBufferSize(1024);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
     public void run() {
         try {
-            entrada  = clientSocket.getInputStream();
+            entrada = clientSocket.getInputStream();
             salida = clientSocket.getOutputStream();
 
             flujoEntrada = new DataInputStream(entrada);
@@ -69,10 +62,10 @@ public class SocketClientConnectionWorker implements Runnable {
 
             byte[] buffer = new byte[1024];
 
-            while(true) {
+            while (true) {
 
                 String n = flujoEntrada.readUTF();
-                switch (n){
+                switch (n) {
                     case "usuarios":
                         ArrayList<UsuarioDTO> lista = new ArrayList<UsuarioDTO>();
                         lista = US.Consultar_Usuarios();
@@ -83,11 +76,11 @@ public class SocketClientConnectionWorker implements Runnable {
                         DataSalida.flush();
                         break;
                     case "add":
-                            DataEntrada = new DataInputStream(entrada);
-                            data = DataEntrada.readUTF();
-                            o = JsonMapper.fromJsonToJava(data,UsuarioDTO.class);
-                            UsuarioDTO user = (UsuarioDTO) o;
-                            UsuarioVO userVO = US.Registro_De_Usuario(user);
+                        DataEntrada = new DataInputStream(entrada);
+                        data = DataEntrada.readUTF();
+                        o = JsonMapper.fromJsonToJava(data, UsuarioDTO.class);
+                        UsuarioDTO user = (UsuarioDTO) o;
+                        UsuarioVO userVO = US.Registro_De_Usuario(user);
                         break;
                     case "peticion":
                         DataEntrada = new DataInputStream(entrada);
@@ -126,7 +119,7 @@ public class SocketClientConnectionWorker implements Runnable {
     }
 
     public void Send(String text) {
-        try{
+        try {
 
             salida = clientSocket.getOutputStream();
 
@@ -135,7 +128,7 @@ public class SocketClientConnectionWorker implements Runnable {
             flujoSalida.flush();
             flujoSalida.writeUTF(text);
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -151,10 +144,9 @@ public class SocketClientConnectionWorker implements Runnable {
 
             System.out.println(this.clientID + ". Valor recibido: " + mensaje);
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
 
 
     }

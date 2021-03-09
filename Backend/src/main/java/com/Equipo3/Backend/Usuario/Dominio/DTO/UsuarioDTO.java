@@ -69,11 +69,17 @@ public class UsuarioDTO implements Dto, Serializable {
      * eventos tipo List<EventoDTO>
      */
     private List<EventoDTO> eventos = new ArrayList<>();
-//    /**
-//     * chats tipo List<ChatDTO>
-//     */
-//    private List<ChatDTO> chats = new ArrayList<>();
 
+    /**
+     * Constructor de UsuarioDTO
+     * @param id
+     * @param nombre
+     * @param password
+     * @param email
+     * @param fecha_nacimiento
+     * @param telefono
+     * @param rol
+     */
     public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.id = id;
         this.nombre = nombre;
@@ -84,6 +90,15 @@ public class UsuarioDTO implements Dto, Serializable {
         this.rol = rol;
     }
 
+    /**
+     * Constructor de UsuarioDTO
+     * @param nombre
+     * @param password
+     * @param email
+     * @param fecha_nacimiento
+     * @param telefono
+     * @param rol
+     */
     public UsuarioDTO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;
         this.password = password;

@@ -10,6 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Clase controlador de Evento para la Api Rest
+ */
 @RestController
 @RequestMapping(EndpointUrls.V1 + EventoRestController.EVENT_RESOURCE)
 @AllArgsConstructor
@@ -20,12 +23,22 @@ public class EventoRestController {
 
     public static final String EVENT_RESOURCE = "/event";
 
+    /**
+     * Método que registra un evento
+     * @param dto
+     * @return
+     */
     @PostMapping
     public ResponseEntity<EventoDTO> register(@RequestBody EventoDTO dto) {
         eventService.darDeAltaUnEvento(dto);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    /**
+     * Método que obtiene un evento por su id
+     * @param id
+     * @return
+     */
     @GetMapping(EndpointUrls.GetById)
     public ResponseEntity getById(@PathVariable final int id) {
         try {
@@ -38,11 +51,21 @@ public class EventoRestController {
         }
     }
 
+    /**
+     * Método que actualiza los datos de un evento
+     * @param eventoDTO
+     * @return
+     */
     @PutMapping(EndpointUrls.Update)
     public ResponseEntity<EventoDTO> update(@RequestBody EventoDTO eventoDTO) {
         return new ResponseEntity(eventService.modificarEvento(eventoDTO), HttpStatus.CREATED);
     }
 
+    /**
+     * Método que elimina un evento el cual se obtiene por su id
+     * @param id
+     * @return
+     */
     @DeleteMapping(EndpointUrls.DeleteById)
     public ResponseEntity<Boolean> delete(@PathVariable final int id) {
         return eventService.eliminarUnEvento(id)

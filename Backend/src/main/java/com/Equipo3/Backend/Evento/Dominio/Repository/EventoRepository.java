@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * Clase interfaz EventoRepository la cual extiende de GenericRepository
  */
 @Repository
-public interface EventoRepository extends JpaRepository<EventoVO,Integer> {
+public interface EventoRepository extends JpaRepository<EventoVO, Integer> {
 
 }
 

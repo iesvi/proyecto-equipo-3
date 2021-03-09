@@ -16,8 +16,9 @@ import java.util.Objects;
 @Getter
 @Setter
 @With
-@Entity(name="Chat")
+@Entity(name = "Chat")
 public class ChatVO implements Serializable {
+
     /**
      * id tipo int el cual es el Id en la base de datos
      */
@@ -32,58 +33,48 @@ public class ChatVO implements Serializable {
     private String nombre;
 
     /**
-     * usuarios tipo List<UsuarioVO>
-     */
-//    @ManyToMany
-//    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="chatId"))
-//    private List<UsuarioVO> usuarios = new ArrayList<>();
-
-    /**
      * puerto tipo int
      */
-    @Column( nullable = false)
+    @Column(nullable = false)
     private int puerto;
 
-//    /**
-//     * historial tipo Mensaje
-//     */
-//    @Column(nullable = false)
-//    private Mensaje historial;
-
+    /**
+     * Constructor de ChatVO
+     * @param nombre
+     * @param puerto
+     */
     public ChatVO(String nombre, int puerto) {
         this.nombre = nombre;
         this.puerto = puerto;
     }
 
+    /**
+     * Constructor de ChatVO
+     * @param id
+     * @param nombre
+     */
     public ChatVO(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
+    /**
+     * Constructor de ChatVO
+     * @param id
+     * @param nombre
+     * @param puerto
+     */
     public ChatVO(int id, String nombre, int puerto) {
         this.id = id;
         this.nombre = nombre;
         this.puerto = puerto;
     }
 
-//    public void addUsuario(UsuarioVO usuario) {
-//        if (usuarios == null)
-//            usuarios = new ArrayList<>();
-//
-//        usuarios.add(usuario); //Chat agrega a usuario
-//
-//    }
-//
-//    public void eliminarUsuario(UsuarioVO usuario) {
-//        if (usuarios == null)
-//            throw new PersonaErr("PER.REM.FRIEND.NULL", "REMOVE FRIEND PARAM IS NULL");
-//
-//        if (!usuarios.contains(usuario))
-//            return;
-//
-//        usuarios.remove(usuario); //Chat elimina a usuario
-//    }
-
+    /**
+     * Equals de ChatVO
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -92,6 +83,10 @@ public class ChatVO implements Serializable {
         return id == chatVO.id && nombre.equals(chatVO.nombre);
     }
 
+    /**
+     * HashCode de ChatVO
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, nombre);

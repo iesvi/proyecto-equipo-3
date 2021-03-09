@@ -20,9 +20,8 @@ import java.util.List;
 @Getter
 @Setter
 @With
-//@EqualsAndHashCode (exclude = {"amigos","amigsode", "eventos", "chats"})
-@Entity(name="Usuario")
-public class UsuarioVO extends AuditableEntity implements Serializable  {
+@Entity(name = "Usuario")
+public class UsuarioVO extends AuditableEntity implements Serializable {
 
     /**
      * id tipo int el cual es el Id en la base de datos
@@ -72,7 +71,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
      * amigos tipo List<UsuarioVO>
      */
     @ManyToMany
-    @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="usuarioId"),inverseJoinColumns = @JoinColumn(name="amigoId"))
+    @JoinTable(name = "Amigo", joinColumns = @JoinColumn(name = "usuarioId"), inverseJoinColumns = @JoinColumn(name = "amigoId"))
     @NonNull
     private List<UsuarioVO> amigos = new ArrayList<>();
 
@@ -80,20 +79,23 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
      * amigosde tipo List<UsuarioVO>
      */
     @ManyToMany
-    @JoinTable(name="Amigo",joinColumns = @JoinColumn(name="amigoId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
+    @JoinTable(name = "Amigo", joinColumns = @JoinColumn(name = "amigoId"), inverseJoinColumns = @JoinColumn(name = "usuarioId"))
     @NonNull
     private List<UsuarioVO> amigosde = new ArrayList<>();
 
-    @OneToMany (mappedBy = "idusuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "idusuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<EventoVO> eventos = new ArrayList<>();
 
-//    @OneToMany (mappedBy = "idusuario", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
-//    private List<EventoVO> peticiones = new ArrayList<>();
-
-//    @ManyToMany
-//    @JoinTable(name="usuario-chats",joinColumns = @JoinColumn(name="chatId"),inverseJoinColumns = @JoinColumn(name="usuarioId"))
-//    private List<ChatVO> chats = new ArrayList<>();
-
+    /**
+     * Constructor de UsuarioVO
+     * @param id
+     * @param nombre
+     * @param password
+     * @param email
+     * @param fecha_nacimiento
+     * @param telefono
+     * @param rol
+     */
     public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.id = id;
         this.nombre = nombre;
@@ -104,6 +106,15 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
         this.rol = rol;
     }
 
+    /**
+     * Constructor de UsuarioVO
+     * @param nombre
+     * @param password
+     * @param email
+     * @param fecha_nacimiento
+     * @param telefono
+     * @param rol
+     */
     public UsuarioVO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;
         this.password = password;
@@ -113,14 +124,21 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
         this.rol = rol;
     }
 
+    /**
+     * Método para añadir a un amigo a la lista de UsuarioVO
+     * @param amigo
+     */
     public void addAmigo(UsuarioVO amigo) {
         if (amigos == null)
             amigos = new ArrayList<>();
 
         amigos.add(amigo); //Usuario agrega a su amigo
-
     }
 
+    /**
+     * Método para eliminar a un amigo a la lista de UsuarioVO
+     * @param amigo
+     */
     public void eliminarAmigo(UsuarioVO amigo) {
         if (amigos == null)
             throw new PersonaErr("PER.REM.FRIEND.NULL", "REMOVE FRIEND PARAM IS NULL");
@@ -131,23 +149,11 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
         amigos.remove(amigo); //Usuario elimina a su amigo
     }
 
-    /*public void añadirEvento(EventoVO evento) {
-        if (eventos==null)
-            eventos = new ArrayList<>();
-
-        eventos.addEvento(evento); //Usuario añade a su evento
-    }
-
-    public void eliminarEvento(EventoVO evento) {
-        if (eventos==null)
-            throw new EventErr("PER.REM.EVENT.NULL","REMOVE EVENT PARAM IS NULL");
-
-        if (!eventos.contains(evento))
-            return;
-
-        eventos.remove(evento); //Usuario elimina a su evento
-    }*/
-
+    /**
+     * Método equals
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -166,6 +172,10 @@ public class UsuarioVO extends AuditableEntity implements Serializable  {
         return rol.equals(usuarioVO.rol);
     }
 
+    /**
+     * Método HashCode
+     * @return
+     */
     @Override
     public int hashCode() {
         int result = id;

@@ -1,6 +1,6 @@
 package com.Equipo3.Backend.Evento.Aplicacion;
 
-public class EventoVOTests  {
+public class EventoVOTests {
 
 //
 //    EventoRepositoryJPA repo;

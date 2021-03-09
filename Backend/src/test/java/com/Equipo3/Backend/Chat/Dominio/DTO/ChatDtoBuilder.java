@@ -16,11 +16,11 @@ public class ChatDtoBuilder {
 
     public ChatDTO build() {
         ObjectMother om = ObjectMother.getInstance();
-        ChatVO nmother= om.bear("chat", ChatVO.class);
+        ChatVO nmother = om.bear("chat", ChatVO.class);
 
         return new ChatDTO(
-                nombre!=null ? nombre : nmother.getNombre(),
-                puerto!=0 ? puerto : 12345
+                nombre != null ? nombre : nmother.getNombre(),
+                puerto != 0 ? puerto : 12345
         );
     }
 

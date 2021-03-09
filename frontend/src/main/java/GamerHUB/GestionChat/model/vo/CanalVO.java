@@ -4,15 +4,16 @@ package GamerHUB.GestionChat.model.vo;
 /**
  *
  */
+
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class CanalVO implements Serializable {
 
 
     private int id;
     private String nombre;
-    private ArrayList<Integer> miembros;
+    private Integer puerto;
+//    private ArrayList<Integer> miembros;
     //private ArrayList<MensajeVO> historial;
 
     /**
@@ -22,11 +23,15 @@ public class CanalVO implements Serializable {
      * @param miembros
 
      */
-    public CanalVO(int id, String nombre, ArrayList<Integer> miembros) {
+    public CanalVO(int id, String nombre, Integer puerto) {
         this.id = id;
         this.nombre = nombre;
-        this.miembros = miembros;
+        this.puerto = puerto;
+//        this.miembros = miembros;
         //this.historial = historial;
+    }
+
+    public CanalVO() {
     }
 
     public int getId() {
@@ -45,19 +50,27 @@ public class CanalVO implements Serializable {
         this.nombre = nombre;
     }
 
-    public ArrayList<Integer> getMiembros() {
-        return miembros;
+//    public ArrayList<Integer> getMiembros() {
+//        return miembros;
+//    }
+//
+//    public void setMiembros(ArrayList<Integer> miembros) {
+//        this.miembros = miembros;
+//    }
+
+    public Integer getPuerto() {
+        return puerto;
     }
 
-    public void setMiembros(ArrayList<Integer> miembros) {
-        this.miembros = miembros;
+    public void setPuerto(Integer puerto) {
+        this.puerto = puerto;
     }
 
     //public ArrayList<MensajeVO> getHistorial() {
     //    return historial;
     //}
 
-   // public void setHistorial(ArrayList<MensajeVO> historial) {
+    // public void setHistorial(ArrayList<MensajeVO> historial) {
     //    this.historial = historial;
     //}
 
@@ -66,8 +79,7 @@ public class CanalVO implements Serializable {
         return "CanalVO{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", miembros=" + miembros +
-                ", historial="  +
+                ", historial=" +
                 '}';
     }
 }

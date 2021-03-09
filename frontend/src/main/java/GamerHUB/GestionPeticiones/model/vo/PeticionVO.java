@@ -10,30 +10,27 @@ public class PeticionVO implements Serializable {
     private int id;
     private String nombre;
     private String descripcion;
-    private int id_usuario;
+    //    private int id_usuario;
     private String respuesta;
-    private boolean estado;
+//    private boolean estado;
 
 
     public PeticionVO() {
     }
 
     /**
-     *
      * @param id
      * @param nombre
      * @param descripcion
-     * @param id_usuario
      * @param respuesta
-     * @param estado
      */
-    public PeticionVO(int id, String nombre, String descripcion, int id_usuario, String respuesta, boolean estado) {
+    public PeticionVO(int id, String nombre, String descripcion, String respuesta) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.id_usuario = id_usuario;
+//        this.id_usuario = id_usuario;
         this.respuesta = respuesta;
-        this.estado = estado;
+//        this.estado = estado;
     }
 
     public int getId() {
@@ -60,13 +57,13 @@ public class PeticionVO implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
-    }
+//    public int getId_usuario() {
+//        return id_usuario;
+//    }
+//
+//    public void setId_usuario(int id_usuario) {
+//        this.id_usuario = id_usuario;
+//    }
 
     public String getRespuesta() {
         return respuesta;
@@ -76,13 +73,14 @@ public class PeticionVO implements Serializable {
         this.respuesta = respuesta;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
+//    public boolean isEstado() {
+//        return estado;
+//    }
+//
+//    public void setEstado(boolean estado) {
+//        this.estado = estado;
+//    }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
 
     @Override
     public String toString() {
@@ -90,9 +88,7 @@ public class PeticionVO implements Serializable {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", id_usuario=" + id_usuario +
                 ", respuesta='" + respuesta + '\'' +
-                ", estado=" + estado +
                 '}';
     }
 }

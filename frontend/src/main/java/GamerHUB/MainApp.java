@@ -1,6 +1,8 @@
 package GamerHUB;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.view.VentanaRootVista;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,9 @@ public class MainApp extends Application {
 
     private AnchorPane home;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     /**
      * @param primaryStage
@@ -27,16 +32,14 @@ public class MainApp extends Application {
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ListaUsuario listausuario = new ListaUsuario();
+        ListaUsuario listaUsuario = new ListaUsuario();
+        ClientSocket CS = new ClientSocket();
+        ListaChat listaChat = new ListaChat();
+        CS.conectar();
         ventanaRoot = new VentanaRootVista();
-        ventanaRoot.inicioStage(primaryStage, listausuario);
+        ventanaRoot.inicioStage(primaryStage, listaUsuario, CS, listaChat);
 
     }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 
     public void LaunchVistaAdmin() throws IOException {
 

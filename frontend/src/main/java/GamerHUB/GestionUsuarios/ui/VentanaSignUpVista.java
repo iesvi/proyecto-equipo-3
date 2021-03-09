@@ -1,7 +1,9 @@
 package GamerHUB.GestionUsuarios.ui;
 
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.controller.VistaRegistroControlador;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -12,14 +14,21 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ *
+ */
 public class VentanaSignUpVista {
 
     private Stage stageppal;
     private ListaUsuario listaUsuario;
+    private ClientSocket CS;
+    private ListaChat LC;
 
-    public VentanaSignUpVista(Stage stageppal, ListaUsuario listaUsuario) {
+    public VentanaSignUpVista(Stage stageppal, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.stageppal = stageppal;
         this.listaUsuario = listaUsuario;
+        this.CS = CS;
+        this.LC = LC;
     }
 
     /**
@@ -36,9 +45,8 @@ public class VentanaSignUpVista {
         dialogStage.setScene(scene);
         dialogStage.setTitle("Únete a gamerhub!");
         dialogStage.initModality(Modality.APPLICATION_MODAL);
-
         VistaRegistroControlador controladorRegistro = loader.getController();
-        controladorRegistro.setVista(this, dialogStage, listaUsuario);
+        controladorRegistro.setVista(this, dialogStage, listaUsuario, CS, LC);
 
         dialogStage.show();
 

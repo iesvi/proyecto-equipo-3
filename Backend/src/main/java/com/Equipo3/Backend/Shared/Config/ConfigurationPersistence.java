@@ -18,27 +18,27 @@ import javax.persistence.EntityManagerFactory;
 @EnableJpaRepositories("com.Equipo3.*")
 public class ConfigurationPersistence {
 
-        @Bean
-        public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-            return new PersistenceExceptionTranslationPostProcessor();
-        }
-
-        //ejecutar transacciones
-        @Bean
-        public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
-            JpaTransactionManager transactionManager = new JpaTransactionManager();
-            transactionManager.setEntityManagerFactory(emf);
-            return transactionManager;
-        }
-
-        //integrar el entitymanager factory en spring framework
-        @Bean
-        public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-            LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-            JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-            em.setJpaVendorAdapter(vendorAdapter);
-            //mapeo a la unidad de persistencia
-            em.setPersistenceUnitName("Bd");
-            return em;
-        }
+    @Bean
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+        return new PersistenceExceptionTranslationPostProcessor();
     }
+
+    //ejecutar transacciones
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(emf);
+        return transactionManager;
+    }
+
+    //integrar el entitymanager factory en spring framework
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        em.setJpaVendorAdapter(vendorAdapter);
+        //mapeo a la unidad de persistencia
+        em.setPersistenceUnitName("Bd");
+        return em;
+    }
+}

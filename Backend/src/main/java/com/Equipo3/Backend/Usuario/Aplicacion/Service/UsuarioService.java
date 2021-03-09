@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -23,7 +25,6 @@ public class UsuarioService {
      */
     @Autowired
     UsuarioRepository usuarioRepo;
-
 
     /**
      * Método para dar de alta un nuevo usuario. Tambien se convierte un UsuarioDTO a UsuarioVO
@@ -43,6 +44,22 @@ public class UsuarioService {
     }
 
     /**
+     * Método para devolver la lista de usuarios.
+     *
+     * @return ArrayList<UsuarioVO>
+     */
+    @Transactional
+    public ArrayList<UsuarioDTO> Consultar_Usuarios() {
+        List<UsuarioVO> nbd = usuarioRepo.findAll();
+        ArrayList<UsuarioDTO> nbdA = new ArrayList<>();
+        for (int i = 0; i < nbd.size(); i++) {
+            UsuarioDTO user = UsuarioMapper.toDTO(nbd.get(i));
+            nbdA.add(user);
+        }
+        return nbdA;
+    }
+
+    /**
      * Método para consultar un usuario en función a la id que se le pase
      *
      * @param id
@@ -53,7 +70,7 @@ public class UsuarioService {
         if (!nbd.isPresent()) {
             throw new EntityNotExist(UsuarioVO.class.toString(), id);
         }
-        return usuarioRepo.findById(id);
+        return nbd;
     }
 
     /**

@@ -1,9 +1,12 @@
 package GamerHUB.Shared.controllers;
 
+import GamerHUB.GestionChat.repository.Impl.ChatRepositorySocket;
+import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
+import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
-import GamerHUB.Shared.conexion.LoginThread;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaHomeVista;
@@ -12,12 +15,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.net.Socket;
+import java.io.OutputStream;
 import java.net.URL;
 
 /**
@@ -26,12 +32,20 @@ import java.net.URL;
 public class VistaInicioControlador {
 
 
-   // private final Socket socket = new Socket("localhost", 12345);
+    /**
+     *
+     */
+    @FXML
+    Label accederARegistro;
+    // private final Socket socket = new Socket("localhost", 12345);
     private VentanaInicioVista vista;
     private UsuarioDTO usuarioLogeado = new UsuarioDTO();
     private ListaUsuario listaUsuario;
     private VentanaSignUpVista ventanaSignUpVista;
-
+    private UsuarioRespositorySocket URS;
+    private ChatRepositorySocket CRS;
+    private ClientSocket CS;
+    private ListaChat LC;
     /**
      *
      */
@@ -42,12 +56,6 @@ public class VistaInicioControlador {
      */
     @FXML
     private PasswordField campoPass;
-    /**
-     *
-     */
-    @FXML
-    Label accederARegistro;
-
     /**
      *
      */
@@ -64,10 +72,29 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioDTO;
 
 
-    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario) {
+    /**
+     *
+     */
+    public VistaInicioControlador() throws IOException {
+
+    }
+
+    public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.stageinicio = stageinicio;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
+        this.CS = CS;
+        this.LC = LC;
+    }
+
+    public void setListaUsuario() {
+        URS = new UsuarioRespositorySocket(CS);
+        listaUsuario.setlistaUsuarios(URS.retrieveUsers());
+    }
+
+    public void setListaChat() {
+        CRS = new ChatRepositorySocket(CS);
+        LC.setlistaChat(CRS.retrieveChats());
     }
 
     public UsuarioDTO getUsuarioLogeado() {
@@ -90,17 +117,10 @@ public class VistaInicioControlador {
     }
 
     /**
-     *
-     */
-    public VistaInicioControlador() throws IOException {
-    }
-
-
-    /**
      * @throws IOException
      * @throws CustomException
      */
-    public void Login() throws Exception, IOException, CustomException{
+    public void Login() throws Exception, IOException, CustomException {
 
         boolean correct = false;
         usuarioDTO = new UsuarioDTO();
@@ -108,22 +128,25 @@ public class VistaInicioControlador {
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
 
-       //LoginThread loginThread =new LoginThread(socket);
+        //LoginThread loginThread =new LoginThread(socket);
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                logUsuario(user);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS, LC);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
-                logUsuario(user);
+                break;
+
 
             } else if (user.getEmail().equals(username) && user.getPassword().equals(pass)) {
-                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario);
+                logUsuario(user);
+                VentanaHomeVista home = new VentanaHomeVista(stageinicio, user, listaUsuario, CS, LC);
                 home.LaunchHomeView();
                 vista.getStageppal().close();
                 correct = true;
-                logUsuario(user);
+                break;
             }
         }
         if (!correct) {
@@ -135,6 +158,13 @@ public class VistaInicioControlador {
         }
 
 
+    }
+
+    @FXML
+    public void Loginenter(KeyEvent keyEvent) throws Exception {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            Login();
+        }
     }
 
 
@@ -177,27 +207,33 @@ public class VistaInicioControlador {
      * @throws IOException
      */
     public void LaunchSignUpView(MouseEvent mouseEvent) throws IOException {
-        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario);
+        ventanaSignUpVista = new VentanaSignUpVista(stageinicio, listaUsuario, CS, LC);
         ventanaSignUpVista.LaunchSignUpView();
         vista.getStageppal().close();
     }
 
-    public void logUsuario(UsuarioDTO user){
+    public void logUsuario(UsuarioDTO user) {
         try {
             File directorio = new File("target/classes/");
-            ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog", user.getNombre());
+            ProcessBuilder pb = new ProcessBuilder("java", "GamerHUB.Shared.util.UserLog");
             pb.directory(directorio);
             Process p = pb.start();
 
+            OutputStream os = p.getOutputStream();
+
+            DataOutputStream dos = new DataOutputStream(os);
+            dos.writeUTF(user.getNombre());
+            dos.flush();
             int exitVal;
             try {
                 exitVal = p.waitFor();
-                System.out.println("Valor de Salida: " + exitVal);
+                System.out.println("Valor de Salida: " + String.valueOf(exitVal));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }

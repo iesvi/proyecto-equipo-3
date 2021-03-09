@@ -3,8 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="476.0" prefWidth="384.0" style="-fx-background-color: #2fdd72;"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="476.0" prefWidth="384.0"
+            style="-fx-background-color: #2fdd72;" xmlns="http://javafx.com/javafx/8"
             fx:controller="GamerHUB.GestionUsuarios.controller.VistaRegistroControlador">
     <children>
         <AnchorPane layoutX="60.0" layoutY="25.0" prefHeight="424.0" prefWidth="281.0"

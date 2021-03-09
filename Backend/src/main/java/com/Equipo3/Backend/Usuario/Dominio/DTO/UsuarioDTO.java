@@ -5,6 +5,7 @@ import com.Equipo3.Backend.Evento.Dominio.DTO.EventoDTO;
 import com.Equipo3.Backend.Shared.Aplicacion.Dto;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
 @With
 @EqualsAndHashCode
 @AllArgsConstructor
-public class UsuarioDTO implements Dto {
+public class UsuarioDTO implements Dto, Serializable {
 
     /**
      * id tipo int
@@ -68,13 +69,37 @@ public class UsuarioDTO implements Dto {
      * eventos tipo List<EventoDTO>
      */
     private List<EventoDTO> eventos = new ArrayList<>();
-//    /**
-//     * chats tipo List<ChatDTO>
-//     */
-//    private List<ChatDTO> chats = new ArrayList<>();
 
+    /**
+     * Constructor de UsuarioDTO
+     * @param id
+     * @param nombre
+     * @param password
+     * @param email
+     * @param fecha_nacimiento
+     * @param telefono
+     * @param rol
+     */
     public UsuarioDTO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.rol = rol;
+    }
+
+    /**
+     * Constructor de UsuarioDTO
+     * @param nombre
+     * @param password
+     * @param email
+     * @param fecha_nacimiento
+     * @param telefono
+     * @param rol
+     */
+    public UsuarioDTO(String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;

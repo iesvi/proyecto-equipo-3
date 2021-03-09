@@ -4,11 +4,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalTime;
 
+/**
+ *
+ */
 public class ProcessHora {
 
     public ProcessHora() {
     }
 
+    /**
+     * @return
+     */
     public LocalTime procesoHora() {
         String hora = "";
         if (OsUtil.isWindows()) {
@@ -23,7 +29,7 @@ public class ProcessHora {
                         n++;
                         hora = hora + ((char) c);
                     }
-                    if(hora.charAt(0) == ' '){
+                    if (hora.charAt(0) == ' ') {
                         String horaarreglada = "0" + hora.charAt(1) + hora.charAt(2) + hora.charAt(3) + hora.charAt(4) + hora.charAt(5) + hora.charAt(6) + hora.charAt(7);
                         hora = horaarreglada;
                     }

@@ -1,13 +1,9 @@
 package GamerHUB.GestionUsuarios.ui;
 
-import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.controller.VistaPerfilControlador;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.GestionUsuarios.repository.ListaUsuario;
-import GamerHUB.MainApp;
 import GamerHUB.Shared.view.VentanaHomeVista;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;

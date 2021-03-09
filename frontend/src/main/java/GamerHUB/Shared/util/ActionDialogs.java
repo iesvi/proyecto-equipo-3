@@ -27,7 +27,7 @@ public class ActionDialogs {
      */
     public static void error(String title, String errorMsg) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
-        alerta.setTitle("Error en los campos.");
+        alerta.setTitle(title);
         alerta.setHeaderText(null);
         alerta.setContentText(errorMsg);
         alerta.showAndWait();

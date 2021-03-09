@@ -4,13 +4,17 @@ import com.Equipo3.Backend.Shared.Infraestructura.controller.constant.EndpointUr
 import com.Equipo3.Backend.Usuario.Aplicacion.Service.UsuarioService;
 import com.Equipo3.Backend.Usuario.Dominio.DTO.UsuarioDTO;
 import com.Equipo3.Backend.Usuario.Dominio.Mapper.UsuarioMapper;
-import com.Equipo3.Backend.Usuario.Dominio.UsuarioVO;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+/**
+ * Clase controlador de Usuario para la Api Rest
+ */
 @RestController
 @RequestMapping(EndpointUrls.V1 + UsuarioRestController.USER_RESOURCE)
 @AllArgsConstructor
@@ -21,33 +25,62 @@ public class UsuarioRestController {
 
     public static final String USER_RESOURCE = "/user";
 
+    /**
+     * Método que registra un usuario
+     * @param dto
+     * @return
+     */
     @PostMapping
     public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
-        userService.Registro_De_Usuario(dto);
-        return new ResponseEntity<>(HttpStatus.OK);
-
+        dto = UsuarioMapper.toDTO(userService.Registro_De_Usuario(dto));
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
-    public ResponseEntity<UsuarioDTO> createUser(@RequestBody UsuarioDTO newuser) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(UsuarioMapper.toDTO(userService.Registro_De_Usuario(newuser)));
-
+    /**
+     * Método que obtiene una lista de todos los usuarios
+     * @return
+     */
+    @GetMapping(EndpointUrls.GetAll)
+    public ResponseEntity<List<UsuarioDTO>> getAll() {
+        return ResponseEntity.ok(userService.Consultar_Usuarios());
     }
 
-    @GetMapping(value = "/{id}/")
-    public ResponseEntity getById(@PathVariable("id") Integer id) {
+    /**
+     * Método que obtiene un usuario por su id
+     * @param id
+     * @return
+     */
+    @GetMapping(EndpointUrls.GetById)
+    public ResponseEntity getById(@PathVariable final int id) {
         try {
             return userService.ConsultarPerfilUsuario(id)
                     .map(user -> UsuarioMapper.toDTO(user))
                     .map(userdto -> new ResponseEntity(userdto, HttpStatus.OK))
                     .orElse(new ResponseEntity(null, HttpStatus.NOT_FOUND));
-        }catch(Exception e){
+        } catch (Exception e) {
             return new ResponseEntity(null, HttpStatus.NOT_FOUND);
         }
     }
 
-//    @GetMapping("/me")
-//    public UsuarioDTO me( UsuarioVO user) {
-//        return UsuarioMapper.toDTO(user);
-//    }
+    /**
+     * Método que actualiza los datos de un usuario
+     * @param usuarioDTO
+     * @return
+     */
+    @PutMapping(EndpointUrls.Update)
+    public ResponseEntity<UsuarioDTO> update(@RequestBody UsuarioDTO usuarioDTO) {
+        return new ResponseEntity(userService.Modificar_Usuario(usuarioDTO), HttpStatus.CREATED);
+    }
+
+    /**
+     * Método que elimina un usuario el cual se obtiene por su id
+     * @param id
+     * @return
+     */
+    @DeleteMapping(EndpointUrls.DeleteById)
+    public ResponseEntity<Boolean> delete(@PathVariable final int id) {
+        return userService.Eliminar_Usuario(id)
+                ? ResponseEntity.ok(true)
+                : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    }
 }

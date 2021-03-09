@@ -20,12 +20,12 @@ public class EventoVOBuilder {
 
     public EventoVO build() {
         ObjectMother om = ObjectMother.getInstance();
-        EventoVO nmother= om.bear("evento", EventoVO.class);
+        EventoVO nmother = om.bear("evento", EventoVO.class);
 
         return new EventoVO(
-                nombre!=null ? nombre : nmother.getNombre(),
-                fecha!=null ? fecha : nmother.getFecha(),
-                descripcion!=null ? descripcion : nmother.getDescripcion()
+                nombre != null ? nombre : nmother.getNombre(),
+                fecha != null ? fecha : nmother.getFecha(),
+                descripcion != null ? descripcion : nmother.getDescripcion()
         );
     }
 }

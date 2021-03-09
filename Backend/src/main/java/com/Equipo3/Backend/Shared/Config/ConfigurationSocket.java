@@ -20,4 +20,10 @@ public class ConfigurationSocket {
 
         return server;
     }
+//    @Bean
+//    public ColaPeticiones createColaPeticiones() {
+//        ColaPeticiones colaP = new ColaPeticiones();
+//
+//        return colaP;
+//    }
 }

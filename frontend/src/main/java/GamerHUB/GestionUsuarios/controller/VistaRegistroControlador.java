@@ -1,9 +1,12 @@
 package GamerHUB.GestionUsuarios.controller;
 
+import GamerHUB.GestionChat.repository.ListaChat;
+import GamerHUB.GestionServidorArchivos.ClienteSMTP;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
-import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositoryJDBC;
+import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
+import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaInicioVista;
 import GamerHUB.Shared.view.VentanaRootVista;
@@ -13,6 +16,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.apache.commons.mail.EmailException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,6 +27,8 @@ public class VistaRegistroControlador {
     private VentanaInicioVista ventanaInicioVista;
     private VentanaRootVista ventanaRootVista;
     private ListaUsuario listaUsuario;
+    private ClientSocket CS;
+    private ListaChat LC;
 
     /**
      *
@@ -51,7 +57,7 @@ public class VistaRegistroControlador {
     @FXML
     private Button botonOk = new Button();
 
-    private UsuarioRespositoryJDBC usuarioRespositoryJDBC;
+    private UsuarioRespositorySocket usuarioRespositorySocket;
 
     private Stage dialogStage;
     private UsuarioDTO usuarioDTO;
@@ -87,11 +93,13 @@ public class VistaRegistroControlador {
      *
      * @param dialogStage
      */
-    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario) {
+    public void setVista(VentanaSignUpVista vista, Stage dialogStage, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.dialogStage = dialogStage;
         this.vista = vista;
         this.listaUsuario = listaUsuario;
-        usuarioRespositoryJDBC = new UsuarioRespositoryJDBC(listaUsuario);
+        this.CS = CS;
+        this.LC = LC;
+        usuarioRespositorySocket = new UsuarioRespositorySocket(CS);
     }
 
 
@@ -122,11 +130,19 @@ public class VistaRegistroControlador {
                     campoPass.getText(),
                     campoEmail.getText(),
                     fechaNac.getValue(),
-                    0
+                    0,
+                    "user"
             );
 
+            usuarioRespositorySocket.add(usuarioDTO);
+            listaUsuario.AddUsuario(usuarioDTO);
 
-            usuarioRespositoryJDBC.add(usuarioDTO);
+            try {
+                sendEmailSMTP(usuarioDTO.getEmail());
+                sendEmailSMTP(usuarioDTO.getNombre(), "correopruebapsp2021@gmail.com");
+            } catch (EmailException e) {
+                e.printStackTrace();
+            }
 
             ActionDialogs.info("Usuario registrado correctamente.", "Bienvenido a Gamerhub, disfruta de cheetos y doritos.\n" +
                     "Nombre de usuario: " + usuarioDTO.getNombre() + "\n" + "Password: " + usuarioDTO.getPassword());
@@ -189,7 +205,31 @@ public class VistaRegistroControlador {
     @FXML
     public void handleVolver() throws IOException {
         ventanaRootVista = new VentanaRootVista();
-        ventanaRootVista.inicioStage(dialogStage, listaUsuario);
+        ventanaRootVista.inicioStage(dialogStage, listaUsuario, CS, LC);
+    }
+
+
+    /**
+     * @param emailNuevoUser
+     */
+    public void sendEmailSMTP(String emailNuevoUser) throws EmailException {
+
+        ClienteSMTP clienteSMTP = new ClienteSMTP();
+        clienteSMTP.remitenteCorreo("smtp.gmail.com", "correopruebapsp2021",
+                "passwordpsp");
+        clienteSMTP.enviarMensaje("Bienvenido a GamerHub", "Te damos la bienvenida a GamerHub.\n" +
+                "Esperamos que tu experiencia sea satisfactoria AAAAAAAAAAAAAAAAAAAAAAAAAAmuchotexto", emailNuevoUser, null, null);
+
+
+    }
+
+
+    public void sendEmailSMTP(String nombreUser, String propio) throws EmailException {
+        ClienteSMTP clienteSMTP = new ClienteSMTP();
+        clienteSMTP.remitenteCorreo("smtp.gmail.com", "correopruebapsp2021",
+                "passwordpsp");
+        clienteSMTP.enviarMensaje("Se registro un nuevo usuario", "El usuario "+nombreUser+" se unio a la plataforma", propio, null, null);
+
     }
 
 

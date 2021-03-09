@@ -1,6 +1,7 @@
 package GamerHUB.GestionUsuarios.model.vo;
 
 import GamerHUB.GestionEventos.model.vo.EventoVO;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 /**
  *
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UsuarioVO implements Serializable {
 
     private int id;
@@ -20,13 +22,13 @@ public class UsuarioVO implements Serializable {
     private String rol;
     private ArrayList<UsuarioVO> amigos;
     private ArrayList<UsuarioVO> amigosde;
-    private ArrayList<EventoVO> evento;
+    private ArrayList<EventoVO> eventos;
 
 
     public UsuarioVO() {
     }
 
-    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos, ArrayList<UsuarioVO> amigosde, ArrayList<EventoVO> evento) {
+    public UsuarioVO(int id, String nombre, String password, String email, Date fecha_nacimiento, int telefono, String rol, ArrayList<UsuarioVO> amigos, ArrayList<UsuarioVO> amigosde, ArrayList<EventoVO> eventos) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
@@ -36,10 +38,10 @@ public class UsuarioVO implements Serializable {
         this.rol = rol;
         this.amigos = amigos;
         this.amigosde = amigosde;
-        this.evento = evento;
+        this.eventos = eventos;
     }
 
-    public UsuarioVO(String user, String password){
+    public UsuarioVO(String user, String password) {
         this.nombre = user;
         this.password = password;
     }
@@ -108,20 +110,20 @@ public class UsuarioVO implements Serializable {
         this.amigos = amigos;
     }
 
-    public ArrayList<UsuarioVO> getAmigosDe() {
+    public ArrayList<UsuarioVO> getAmigosde() {
         return amigosde;
     }
 
-    public void setAmigosDe(ArrayList<UsuarioVO> amigosde) {
+    public void setAmigosde(ArrayList<UsuarioVO> amigosde) {
         this.amigosde = amigosde;
     }
 
-    public ArrayList<EventoVO> getEvento() {
-        return evento;
+    public ArrayList<EventoVO> getEventos() {
+        return eventos;
     }
 
-    public void setEvento(ArrayList<EventoVO> evento) {
-        this.evento = evento;
+    public void setEvento(ArrayList<EventoVO> eventos) {
+        this.eventos = eventos;
     }
 
     @Override

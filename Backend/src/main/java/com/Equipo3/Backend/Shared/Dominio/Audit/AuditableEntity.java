@@ -10,6 +10,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Calendar;
 
+/**
+ * Clase que se encarga de controlar quien es el autor de cada clase, cuando fue creada, cuando se modificó por última vez y quién lo modificó por última vez.
+ */
 public class AuditableEntity {
 
     @Column(nullable = false, updatable = false)

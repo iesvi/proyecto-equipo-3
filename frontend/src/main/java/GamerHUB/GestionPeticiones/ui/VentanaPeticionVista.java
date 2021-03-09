@@ -1,6 +1,7 @@
 package GamerHUB.GestionPeticiones.ui;
 
 import GamerHUB.GestionPeticiones.controller.PeticionController;
+import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -9,23 +10,23 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- *
+ * Clase que lanza la ventana de la vista
  */
 public class VentanaPeticionVista {
 
 
     private Stage stageppal;
+    private ClientSocket CS;
 
-    public VentanaPeticionVista(Stage stageppal){
-            this.stageppal = stageppal;
+    public VentanaPeticionVista(Stage stageppal, ClientSocket CS) {
+        this.stageppal = stageppal;
+        this.CS = CS;
     }
 
     /**
-     *
      * @throws IOException
      */
     public void LaunchVistaPeticion() throws IOException {
@@ -42,7 +43,8 @@ public class VentanaPeticionVista {
         dialogStage.setTitle("Gracias por confiar en nosotros.");
         dialogStage.initModality(Modality.APPLICATION_MODAL);
         PeticionController peticionController = loader.getController();
-        peticionController.setVentanaPeticionVista(this, dialogStage);
+        peticionController.setVentanaPeticionVista(this, dialogStage, CS);
+        peticionController.setListaIncidencias();
 
         dialogStage.show();
 

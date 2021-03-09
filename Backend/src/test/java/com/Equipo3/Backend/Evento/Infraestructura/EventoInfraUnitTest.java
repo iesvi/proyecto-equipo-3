@@ -35,7 +35,7 @@ public class EventoInfraUnitTest extends UnitTestCase {
         EventoVO evento = createAndSaveNewEvento();
 
         //Assert
-        EventoVO eventoBd = em.find(EventoVO.class,evento.getId());
+        EventoVO eventoBd = em.find(EventoVO.class, evento.getId());
 
         Assert.assertEquals(evento, eventoBd);
     }
@@ -46,7 +46,7 @@ public class EventoInfraUnitTest extends UnitTestCase {
         //Arrange
         EventoVO evento = createAndSaveNewEvento();
 
-        EventoVO eventoEdit = em.find(EventoVO.class,evento.getId());
+        EventoVO eventoEdit = em.find(EventoVO.class, evento.getId());
         eventoEdit.setNombre("Cumpleaños Pepe");
 
         //Act
@@ -56,7 +56,7 @@ public class EventoInfraUnitTest extends UnitTestCase {
         em.clear();
 
         //Assert
-        EventoVO eventoBd = em.find(EventoVO.class,evento.getId());
+        EventoVO eventoBd = em.find(EventoVO.class, evento.getId());
 
         Assert.assertEquals(eventoEdit, eventoBd);
     }
@@ -65,14 +65,14 @@ public class EventoInfraUnitTest extends UnitTestCase {
     @Transactional
     public void ShouldRemoveEvento() {
         //Arrange
-        EventoVO eventoDelete = em.find(EventoVO.class,createAndSaveNewEvento().getId());
+        EventoVO eventoDelete = em.find(EventoVO.class, createAndSaveNewEvento().getId());
 
         //Act
         em.remove(eventoDelete);
         em.flush();
         em.clear();
 
-        EventoVO eventoBd = em.find(EventoVO.class,eventoDelete.getId());
+        EventoVO eventoBd = em.find(EventoVO.class, eventoDelete.getId());
 
         //Assert
         Assert.assertNull(eventoBd);

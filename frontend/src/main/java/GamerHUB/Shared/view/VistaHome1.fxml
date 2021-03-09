@@ -4,8 +4,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="259.0" style="-fx-background-color: #aafe79;"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="259.0"
+            style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/11.0.2"
             fx:controller="GamerHUB.Shared.controllers.VistaHomeControlador">
     <children>
         <SplitPane dividerPositions="0.5" layoutX="23.0" layoutY="178.0" orientation="VERTICAL" prefHeight="302.0"
@@ -31,7 +31,7 @@
                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <columns>
-                                <TableColumn prefWidth="218.0" text="Canales"/>
+                                <TableColumn fx:id="colCanal" prefWidth="218.0" text="Canales"/>
                             </columns>
                         </TableView>
                     </children>
@@ -54,8 +54,9 @@
                         textFill="WHITE"/>
             </children>
         </AnchorPane>
-        <Button fx:id="btnNuevoCanal" layoutX="117.0" layoutY="480.0" mnemonicParsing="false" prefHeight="29.0"
-                prefWidth="24.0" style="-fx-background-radius: 30; -fx-background-color: #ffed00;" text="+">
+        <Button fx:id="btnNuevoCanal" layoutX="117.0" layoutY="480.0" mnemonicParsing="false" onAction="#LoadAddCanal"
+                prefHeight="29.0" prefWidth="24.0" style="-fx-background-radius: 30; -fx-background-color: #ffed00;"
+                text="+">
             <font>
                 <Font name="System Bold" size="13.0"/>
             </font>
@@ -69,5 +70,7 @@
                 </Menu>
             </menus>
         </MenuBar>
+        <ImageView fx:id="actualizarlistachats" fitHeight="17.0" fitWidth="18.0" layoutX="215.0" layoutY="486.0"
+                   onMouseClicked="#actualizarchats" pickOnBounds="true" preserveRatio="true"/>
     </children>
 </AnchorPane>

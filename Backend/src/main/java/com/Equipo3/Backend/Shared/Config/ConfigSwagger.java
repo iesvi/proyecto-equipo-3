@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class ConfigSwagger extends WebMvcConfigurationSupport {
     @Bean
-    public Docket  MyApi() {
+    public Docket MyApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.Equipo3"))
@@ -27,9 +27,9 @@ public class ConfigSwagger extends WebMvcConfigurationSupport {
 
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                .title("Proyecto AAD-PSP 2021 Vallen Inclan")
+                .title("Proyecto Equipo 3")
                 .version("1.0")
-                .description("API for Proyecto AAD-PSP 2021 2º DAM")
+                .description("API for Proyecto Equipo 3")
                 .license("Apache License Version 2.0")
                 .build();
     }

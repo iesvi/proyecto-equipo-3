@@ -4,251 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Front">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__backport_util_concurrent_backport_util_concurrent_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__backport_util_concurrent_backport_util_concurrent_3_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javafaker_javafaker_0_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_javafaker_javafaker_0_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_mifmif_generex_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_mifmif_generex_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_27_0_1_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_27_0_1_jre.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_196.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_196.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_joestelmach_natty_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_joestelmach_natty_0_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dk_brics_automaton_automaton_1_11_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dk_brics_automaton_automaton_1_11_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_beanmother_beanmother_core_0_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_beanmother_beanmother_core_0_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_49.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_49.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_5_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_5_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_12_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_12_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_1_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mnode_ical4j_ical4j_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mnode_ical4j_ical4j_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_13_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_13_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_11_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_11_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_18.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_3_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_3_6_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_2_2_13_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_2_2_13_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_12_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_12_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_android_1_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_android_1_20.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Spring_5_2_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_5_2_3_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/proyecto-equipo-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto-equipo-3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_13_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_13_09__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2021_16_17_[Default_Changelist]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2021_16_17_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2021_16_17__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_02_2021_16_17__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/Conversor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/VistaHomeControlador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/VistaPerfilControlador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05_[Default]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2021_19_05__Default_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Aplicacion/Service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Aplicacion/Service/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/ChatVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/ChatVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/Mapper/ChatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/Mapper/ChatMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/Repository/ChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Chat/Dominio/Repository/ChatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Aplicacion/Service/EventoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/EventoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/EventoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Mapper/EventoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Mapper/EventoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Repository/EventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Dominio/Repository/EventoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Infraestructura/JPA/EventoRepositoryJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Evento/Infraestructura/JPA/EventoRepositoryJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Aplicacion/Dto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Aplicacion/Dto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Audit/AuditableEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Audit/AuditableEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Repository/ConexionServerSocketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Repository/ConexionServerSocketRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Repository/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Repository/GenericRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Socket/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Dominio/Socket/SocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Err/DomainError.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Err/DomainError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Err/EntityExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Err/EntityExist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Err/EntityNotExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Err/EntityNotExist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Audit/CustomAuditorAware.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Audit/CustomAuditorAware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/JPA/ConexionServerSocketImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/JPA/ConexionServerSocketImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/JPA/GenericRepositoryJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/JPA/GenericRepositoryJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/MultiThreadedServerTcp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/MultiThreadedServerTcp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketClientConnectionWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Shared/Infraestructura/Socket/SocketClientConnectionWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Aplicacion/Service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Aplicacion/Service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/DTO/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/DTO/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Mapper/UsuarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Mapper/UsuarioMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/Repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Dominio/UsuarioVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Err/PersonaErr.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Err/PersonaErr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Infraestructura/JPA/UsuarioRepositoryJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/Usuario/Infraestructura/JPA/UsuarioRepositoryJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/RunApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/RunApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/Equipo3/Backend/app/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Aplicacion/ChatIntegraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Aplicacion/ChatIntegraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/ChatVOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/ChatVOBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/ChatVOMother.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/ChatVOMother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoMother.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Dominio/DTO/ChatDtoMother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Infraestructura/ChatInfraUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Chat/Infraestructura/ChatInfraUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Aplicacion/EventoIntegraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Aplicacion/EventoIntegraTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Aplicacion/EventoVOTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Aplicacion/EventoVOTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDtoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDtoBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDtoMother.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/DTO/EventoDtoMother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/EventoVOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/EventoVOBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/EventoVOMother.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Dominio/EventoVOMother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Infraestructura/EventoInfraUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Evento/Infraestructura/EventoInfraUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationMongoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistenceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationPersistenceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSocketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSocketTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/Config/ConfigurationSpringTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/UnitTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/UnitTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/infra/socket/SocketserverInfraUnitTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Shared/infra/socket/SocketserverInfraUnitTC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Aplicacion/UsuarioIntegraTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Aplicacion/UsuarioIntegraTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Dominio/Builder/UsuarioVOBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Dominio/Builder/UsuarioVOBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Dominio/Builder/UsuarioVOMother.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Dominio/Builder/UsuarioVOMother.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Infraestructura/Persistence/UsuarioInfraUnitTC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/Equipo3/Backend/Usuario/Infraestructura/Persistence/UsuarioInfraUnitTC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/resources/fixtures/publishing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/resources/fixtures/publishing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_49.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_49.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/proyectopsp2021-grupoB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/proyectopsp2021-grupoB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/controller/ChatAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/controller/ChatAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/controller/MultiChatUDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/controller/MultiChatUDP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ConversorCanal.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ConversorCanal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ConversorMensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ConversorMensaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ListaChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/ListaChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/CanalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/CanalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/MensajeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/dto/MensajeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/CanalVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/CanalVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/MensajeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/model/vo/MensajeVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/repository/IChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/repository/IChatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/ui/VentanaAddChatVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/ui/VentanaAddChatVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/ui/VistaAddChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionChat/ui/VistaAddChat.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/controller/EventoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/Conversor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/dto/EventoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/dto/EventoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/vo/EventoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/model/vo/EventoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/IEventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/IEventoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/ListaEvento.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/ListaEvento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/impl/EventoRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/repository/impl/EventoRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VentanaAddEventVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VentanaAddEventVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VentanaEventoVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VentanaEventoVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaAddEventoDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaAddEventoDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaGestionEventos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionEventos/ui/VistaGestionEventos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/controller/PeticionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/controller/PeticionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/Conversor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/dto/PeticionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/dto/PeticionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/vo/PeticionVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/model/vo/PeticionVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/repository/ListaPeticiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/repository/ListaPeticiones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VentanaPeticionVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VentanaPeticionVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VistaPeticionDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/ui/VistaPeticionDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaAjustesAvanzadosPerfilControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaAjustesAvanzadosPerfilControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaPerfilControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaPerfilControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaProblemaAccesoDialogControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaProblemaAccesoDialogControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaRegistroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/controller/VistaRegistroControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/Conversor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/dto/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/vo/UsuarioVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/model/vo/UsuarioVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/IUsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/IUsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/ListaUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/ListaUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/impl/UsuarioRespositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/repository/impl/UsuarioRespositoryJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaAdminVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaAdminVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaPerfilVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaPerfilVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaSignUpVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VentanaSignUpVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAjustesAvanzadosPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaAjustesAvanzadosPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionUsuarios/ui/VistaRegistro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ClientSocketThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ClientSocketThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/LoginThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/LoginThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ServerSocketThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/conexion/ServerSocketThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/RootLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaAyudaDialogControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaAyudaDialogControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaHomeControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaInicioControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaVentanaChatControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/controllers/VistaVentanaChatControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/exception/CustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/exception/CustomException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ActionDialogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ActionDialogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/DateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/OsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/OsUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ProcessHora.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/ProcessHora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/UserLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/util/UserLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/RootLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaHomeVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaHomeVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaInicioVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaInicioVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaRootVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VentanaRootVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaHome2.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaInicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaInicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaProblemaAccesoDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/GamerHUB/Shared/view/VistaProblemaAccesoDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto-equipo-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto-equipo-3.iml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Front" />
     <list id="2a745792-d143-489f-9cd2-26485c7b0849" name="Changes by cucha" comment="" />
     <list id="24a26919-abfb-4b40-b115-3b0aab506d2f" name="Changes by Manuel Santos" comment="" />
     <list id="33518009-771b-4157-98c7-2926d8cc2012" name="Changes by Vic" comment="" />
@@ -341,6 +97,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;mongo" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -348,6 +105,10 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -355,7 +116,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -384,7 +145,7 @@
       <recent name="com.Equipo3.Backend.Chat.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainApp">
+  <component name="RunManager" selected="Spring Boot.appSpringBoot">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -436,17 +197,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in Backend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <option name="PACKAGE_NAME" value="" />
@@ -478,26 +228,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChatIntegraTest.ShouldAddChatNotExistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Equipo3.Backend.Chat.Aplicacion.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Equipo3.Backend.Chat.Aplicacion" />
-      <option name="MAIN_CLASS_NAME" value="com.Equipo3.Backend.Chat.Aplicacion.ChatIntegraTest" />
-      <option name="METHOD_NAME" value="ShouldAddChatNotExistTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -508,67 +238,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.Equipo3.Backend.Chat in Backend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="appSpringBoot" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.Equipo3.Backend.Chat.*" />
+          <option name="PATTERN" value="com.Equipo3.Backend.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.Equipo3.Backend.Chat" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="frontend" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="frontend" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Equipo3.Backend.app.appSpringBoot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -594,21 +272,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Backend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="Backend/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.MainApp" />
       <item itemvalue="Application.app" />
+      <item itemvalue="Docker.Backend: Compose Deployment" />
       <item itemvalue="JUnit.All in Backend" />
-      <item itemvalue="JUnit.com.Equipo3.Backend.Chat in Backend" />
-      <item itemvalue="JUnit.ChatIntegraTest.ShouldAddChatNotExistTest" />
       <item itemvalue="JUnit.ChatIntegraTest" />
+      <item itemvalue="Spring Boot.appSpringBoot" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.appSpringBoot" />
         <item itemvalue="Application.app" />
+        <item itemvalue="Docker.Backend: Compose Deployment" />
         <item itemvalue="JUnit.All in Backend" />
         <item itemvalue="JUnit.ChatIntegraTest" />
-        <item itemvalue="JUnit.ChatIntegraTest.ShouldAddChatNotExistTest" />
-        <item itemvalue="JUnit.com.Equipo3.Backend.Chat in Backend" />
       </list>
     </recent_temporary>
   </component>
@@ -636,6 +322,8 @@
       <workItem from="1614526990456" duration="1670000" />
       <workItem from="1614529818332" duration="26783000" />
       <workItem from="1614858783624" duration="169000" />
+      <workItem from="1615275118700" duration="4650000" />
+      <workItem from="1615280324210" duration="67000" />
     </task>
     <task id="LOCAL-00001" summary="subiendo plantilla proyecto">
       <created>1608121643928</created>
@@ -699,7 +387,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/frontend/src/main/java/GamerHUB/GestionPeticiones/controller/PeticionController.java</url>
-          <line>39</line>
+          <line>47</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

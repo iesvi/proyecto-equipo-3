@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan("com.Equipo3.Backend.*")
-@EnableJpaAuditing(auditorAwareRef="customAuditorAware")
+@EnableJpaAuditing(auditorAwareRef = "customAuditorAware")
 @EnableTransactionManagement
-@Import(value = {ConfigurationPersistence.class, ConfigurationSocket.class, ConfigSwagger.class, ConfigWeb.class})
+@Import(value = {ConfigurationPersistence.class, ConfigurationSocket.class})
 public class ConfigurationSpring {
 }

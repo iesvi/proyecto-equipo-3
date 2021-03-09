@@ -6,6 +6,8 @@ import com.Equipo3.Backend.Evento.Dominio.EventoVO;
 import com.Equipo3.Backend.Evento.Dominio.EventoVOBuilder;
 import com.Equipo3.Backend.Evento.Dominio.Mapper.EventoMapper;
 import com.Equipo3.Backend.Evento.Dominio.Repository.EventoRepository;
+import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
+import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
@@ -15,9 +17,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpringTest.class})
+@ContextConfiguration(classes = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
 public class EventoIntegraTest {
 
     @Autowired
@@ -27,6 +32,7 @@ public class EventoIntegraTest {
     EventoRepository eventoRepo;
 
     @Test
+    @Transactional
     public void ShouldAddEventoNotExistTest() {
 
         EventoVO newevent = eventoService.darDeAltaUnEvento(buildEventoDto());
@@ -37,6 +43,7 @@ public class EventoIntegraTest {
     }
 
     @Test(expected = EntityExist.class)
+    @Transactional
     public void ShouldAddEventoExist_ThrowExceptionTest() {
 
 
@@ -47,6 +54,7 @@ public class EventoIntegraTest {
     }
 
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldRemoveEventoNotExist_ThrowExceptionTest() {
 
         EventoVO Eventoyaexistente = new EventoVOBuilder().build();
@@ -55,6 +63,7 @@ public class EventoIntegraTest {
     }
 
     @Test
+    @Transactional
     public void ShouldRemoveEventoExistTest() {
 
 
@@ -64,40 +73,48 @@ public class EventoIntegraTest {
         Assert.assertEquals(true, eventoService.eliminarUnEvento(Eventoyaexistente.getId()));
 
     }
+
     @Test
+    @Transactional
     public void ShouldReturnEventoExistTest() {
 
         EventoVO Eventoyaexistente = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
 
-        EventoVO Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+        Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
 
         Assert.assertNotNull(Eventodevuelto);
 
     }
+
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldReturnEventoNotExist_ThrowExceptionTest() {
 
 
         EventoVO Eventoyaexistente = new EventoVOBuilder().build();
 
-        EventoVO Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
+        Optional<EventoVO> Eventodevuelto = eventoService.consultarEventos(Eventoyaexistente.getId());
 
     }
+
     @Test
+    @Transactional
     public void ShouldEditEventoExistTest() {
 
         EventoVO Eventosineditar = eventoService.darDeAltaUnEvento(EventoMapper.toDTO(new EventoVOBuilder().build()));
 
-        EventoVO Eventoaeditar = eventoService.consultarEventos(Eventosineditar.getId());
+        Optional<EventoVO> Eventoaeditar = eventoService.consultarEventos(Eventosineditar.getId());
 
-        Eventoaeditar.setNombre("Cumpleaños de Pepe");
+        Eventoaeditar.get().setNombre("Cumpleaños de Pepe");
 
-        EventoVO eventodb = eventoService.modificarEvento(EventoMapper.toDTO(Eventoaeditar));
+        EventoVO eventodb = eventoService.modificarEvento(EventoMapper.toDTO(Eventoaeditar.get()));
 
-        Assert.assertEquals(Eventoaeditar, eventodb);
+        Assert.assertEquals(Eventoaeditar.get(), eventodb);
 
     }
+
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldEditEventoNotExist_ThrowExceptionTest() {
 
         EventoVO Eventosineditar = new EventoVOBuilder().build();
@@ -110,8 +127,6 @@ public class EventoIntegraTest {
 
 
     }
-
-
 
 
     private EventoDTO buildEventoDto() {

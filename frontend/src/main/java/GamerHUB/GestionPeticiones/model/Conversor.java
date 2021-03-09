@@ -12,7 +12,6 @@ public class Conversor {
     }
 
     /**
-     *
      * @param peticionVO
      * @return
      */
@@ -20,17 +19,14 @@ public class Conversor {
 
         PeticionDTO peticionDTO = new PeticionDTO();
 
-        peticionDTO.setId(peticionDTO.getId());
+        peticionDTO.setId(peticionVO.getId());
         peticionDTO.setNombre(peticionVO.getNombre());
         peticionDTO.setDescripcion(peticionVO.getDescripcion());
-        peticionDTO.setId_usuario(peticionVO.getId());
-        peticionDTO.setEstado(peticionVO.isEstado());
 
         return peticionDTO;
     }
 
     /**
-     *
      * @param peticionDTO
      * @return
      */
@@ -39,10 +35,8 @@ public class Conversor {
         PeticionVO peticionVO = new PeticionVO();
 
         peticionVO.setId(peticionDTO.getId());
-        peticionVO.setNombre(peticionDTO.getRespuesta());
+        peticionVO.setNombre(peticionDTO.getNombre());
         peticionVO.setDescripcion(peticionDTO.getDescripcion());
-        peticionVO.setRespuesta(peticionDTO.getRespuesta());
-        peticionVO.setEstado(peticionDTO.isEstado());
 
 
         return peticionVO;

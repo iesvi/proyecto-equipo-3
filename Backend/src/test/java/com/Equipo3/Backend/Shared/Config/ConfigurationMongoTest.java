@@ -1,4 +1,5 @@
 package com.Equipo3.Backend.Shared.Config;
+
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;

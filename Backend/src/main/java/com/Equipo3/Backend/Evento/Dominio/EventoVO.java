@@ -15,7 +15,7 @@ import java.util.Date;
 @Setter
 @With
 @EqualsAndHashCode
-@Entity(name="Evento")
+@Entity(name = "Evento")
 public class EventoVO {
 
     /**
@@ -41,7 +41,7 @@ public class EventoVO {
      * idusuario tipo int
      */
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="usuarioId",foreignKey = @ForeignKey(name = "USUARIO_ID_FK"))
+    @JoinColumn(name = "usuarioId", foreignKey = @ForeignKey(name = "USUARIO_ID_FK"))
     private UsuarioVO idusuario;
 
     /**
@@ -50,6 +50,12 @@ public class EventoVO {
     @Column(length = 500)
     private String descripcion;
 
+    /**
+     * Constructor de EventoVO
+     * @param nombre
+     * @param fecha
+     * @param descripcion
+     */
     public EventoVO(String nombre, Date fecha, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;

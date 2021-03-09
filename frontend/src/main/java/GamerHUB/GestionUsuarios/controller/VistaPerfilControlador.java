@@ -1,6 +1,5 @@
 package GamerHUB.GestionUsuarios.controller;
 
-import GamerHUB.GestionEventos.repository.ListaEvento;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.ui.VentanaPerfilVista;
@@ -46,8 +45,8 @@ public class VistaPerfilControlador {
 
     }
 
-    public void setcampos(){
-        if(userLogeado != null) {
+    public void setcampos() {
+        if (userLogeado != null) {
             campoNombre.setText(userLogeado.getNombre());
             campoEmail.setText(userLogeado.getEmail());
             campoTelefono.setText(String.valueOf(userLogeado.getTelefono()));

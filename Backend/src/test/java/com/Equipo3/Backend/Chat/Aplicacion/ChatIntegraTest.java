@@ -6,6 +6,8 @@ import com.Equipo3.Backend.Chat.Dominio.ChatVOBuilder;
 import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
 import com.Equipo3.Backend.Chat.Dominio.Mapper.ChatMapper;
 import com.Equipo3.Backend.Chat.Dominio.Repository.ChatRepository;
+import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
+import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
@@ -15,9 +17,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpringTest.class})
+@ContextConfiguration(classes = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
 public class ChatIntegraTest {
     @Autowired
     ChatService chatService;
@@ -26,6 +29,7 @@ public class ChatIntegraTest {
     ChatRepository chatRepo;
 
     @Test
+    @Transactional
     public void ShouldAddChatNotExistTest() {
 
         ChatVO newchat = chatService.darDeAltaUnChat(buildChatDto());
@@ -34,6 +38,7 @@ public class ChatIntegraTest {
     }
 
     @Test(expected = EntityExist.class)
+    @Transactional
     public void ShouldAddChatExist_ThrowExceptionTest() {
 
 
@@ -44,6 +49,7 @@ public class ChatIntegraTest {
     }
 
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldRemoveChatNotExist_ThrowExceptionTest() {
 
         ChatVO Chatyaexistente = new ChatVOBuilder().build();
@@ -52,6 +58,7 @@ public class ChatIntegraTest {
     }
 
     @Test
+    @Transactional
     public void ShouldRemoveChatExistTest() {
 
 
@@ -61,7 +68,9 @@ public class ChatIntegraTest {
         Assert.assertEquals(true, chatService.eliminarUnChat(Chatyaexistente.getId()));
 
     }
+
     @Test
+    @Transactional
     public void ShouldReturnChatExistTest() {
 
         ChatVO Chatyaexistente = chatService.darDeAltaUnChat(ChatMapper.toDTO(new ChatVOBuilder().build()));
@@ -71,7 +80,9 @@ public class ChatIntegraTest {
         Assert.assertNotNull(Chatdevuelto);
 
     }
+
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldReturnChatNotExist_ThrowExceptionTest() {
 
 
@@ -80,7 +91,9 @@ public class ChatIntegraTest {
         ChatVO Chatdevuelto = chatService.consultarChats(Chatyaexistente.getId());
 
     }
+
     @Test
+    @Transactional
     public void ShouldEditChatExistTest() {
 
         ChatVO Chatsineditar = chatService.darDeAltaUnChat(ChatMapper.toDTO(new ChatVOBuilder().build()));
@@ -94,7 +107,9 @@ public class ChatIntegraTest {
         Assert.assertEquals(Chataeditar, chatdb);
 
     }
+
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldEditChatNotExist_ThrowExceptionTest() {
 
 

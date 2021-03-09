@@ -3,9 +3,6 @@ package GamerHUB.GestionChat.ui;
 import GamerHUB.GestionChat.controller.ChatAddController;
 import GamerHUB.GestionChat.model.dto.CanalDTO;
 import GamerHUB.GestionChat.repository.ListaChat;
-import GamerHUB.GestionEventos.controller.EventoAddController;
-import GamerHUB.GestionEventos.repository.ListaEvento;
-import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.Shared.conexion.ClientSocket;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,12 +25,11 @@ public class VentanaAddChatVista {
     private ClientSocket CS;
 
 
-
-    public VentanaAddChatVista(Stage stageppal){
-        this.stageppal =stageppal;
+    public VentanaAddChatVista(Stage stageppal) {
+        this.stageppal = stageppal;
     }
 
-    public VentanaAddChatVista(Stage stageppal, ListaChat listaChat, ClientSocket CS){
+    public VentanaAddChatVista(Stage stageppal, ListaChat listaChat, ClientSocket CS) {
         this.stageppal = stageppal;
         this.listaChat = listaChat;
         this.CS = CS;
@@ -41,7 +37,6 @@ public class VentanaAddChatVista {
 
 
     /**
-     *
      * @throws IOException
      */
     public void LaunchAddCanal() throws IOException {

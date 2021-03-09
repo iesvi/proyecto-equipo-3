@@ -3,11 +3,6 @@ package GamerHUB.GestionChat.repository;
 import GamerHUB.GestionChat.model.ConversorCanal;
 import GamerHUB.GestionChat.model.dto.CanalDTO;
 import GamerHUB.GestionChat.model.vo.CanalVO;
-import GamerHUB.GestionEventos.model.dto.EventoDTO;
-import GamerHUB.GestionUsuarios.model.Conversor;
-import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
-import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -20,16 +15,16 @@ public class ListaChat {
 
     private ObservableList<CanalDTO> canales = FXCollections.observableArrayList();
 
-    public ListaChat(){
+    public ListaChat() {
 
-        ObservableList<Integer> miembros =FXCollections.observableArrayList();
+        ObservableList<Integer> miembros = FXCollections.observableArrayList();
         CanalDTO canalDTO = new CanalDTO("CANAL", 12345);
 
         canales.add(canalDTO);
 
     }
 
-    public ListaChat(ObservableList<CanalDTO> lista){
+    public ListaChat(ObservableList<CanalDTO> lista) {
         this.canales = lista;
     }
 
@@ -37,13 +32,14 @@ public class ListaChat {
         return canales;
     }
 
-    public void setlistaChat(ArrayList<CanalVO> lista){
-        if(lista != null){
+    public void setlistaChat(ArrayList<CanalVO> lista) {
+        if (lista != null) {
             canales = FXCollections.observableArrayList();
             ArrayList<CanalVO> listaVO = lista;
             for (int i = 0; i < listaVO.size(); i++) {
                 CanalDTO n = ConversorCanal.voToDto(listaVO.get(i));
                 canales.add(n);
-            }}
+            }
+        }
     }
 }

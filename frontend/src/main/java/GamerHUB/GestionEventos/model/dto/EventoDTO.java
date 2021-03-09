@@ -49,72 +49,72 @@ public class EventoDTO {
         return id.get();
     }
 
-    public IntegerProperty idProperty() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getNombre() {
         return nombre.get();
     }
 
-    public StringProperty nombreProperty() {
-        return nombre;
-    }
-
     public void setNombre(String nombre) {
         this.nombre.set(nombre);
+    }
+
+    public StringProperty nombreProperty() {
+        return nombre;
     }
 
     public String getDescripcion() {
         return descripcion.get();
     }
 
-    public StringProperty descripcionProperty() {
-        return descripcion;
-    }
-
     public void setDescripcion(String descripcion) {
         this.descripcion.set(descripcion);
+    }
+
+    public StringProperty descripcionProperty() {
+        return descripcion;
     }
 
     public LocalDate getFechaini() {
         return fechaini.get();
     }
 
-    public ObjectProperty<LocalDate> fechainiProperty() {
-        return fechaini;
-    }
-
     public void setFechaini(LocalDate fechaini) {
         this.fechaini.set(fechaini);
+    }
+
+    public ObjectProperty<LocalDate> fechainiProperty() {
+        return fechaini;
     }
 
     public LocalDate getFechaf() {
         return fechaf.get();
     }
 
-    public ObjectProperty<LocalDate> fechafProperty() {
-        return fechaf;
-    }
-
     public void setFechaf(LocalDate fechaf) {
         this.fechaf.set(fechaf);
+    }
+
+    public ObjectProperty<LocalDate> fechafProperty() {
+        return fechaf;
     }
 
     public int getUsuario() {
         return usuario.get();
     }
 
-    public IntegerProperty usuarioProperty() {
-        return usuario;
-    }
-
     public void setUsuario(int usuario) {
         this.usuario.set(usuario);
+    }
+
+    public IntegerProperty usuarioProperty() {
+        return usuario;
     }
 
     @Override

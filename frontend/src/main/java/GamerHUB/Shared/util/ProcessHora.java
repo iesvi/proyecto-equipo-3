@@ -13,7 +13,6 @@ public class ProcessHora {
     }
 
     /**
-     *
      * @return
      */
     public LocalTime procesoHora() {
@@ -30,7 +29,7 @@ public class ProcessHora {
                         n++;
                         hora = hora + ((char) c);
                     }
-                    if(hora.charAt(0) == ' '){
+                    if (hora.charAt(0) == ' ') {
                         String horaarreglada = "0" + hora.charAt(1) + hora.charAt(2) + hora.charAt(3) + hora.charAt(4) + hora.charAt(5) + hora.charAt(6) + hora.charAt(7);
                         hora = horaarreglada;
                     }

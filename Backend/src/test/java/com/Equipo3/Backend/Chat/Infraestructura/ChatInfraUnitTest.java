@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
-public class ChatInfraUnitTest extends UnitTestCase {
+public class  ChatInfraUnitTest extends UnitTestCase {
 
     @PersistenceContext
     EntityManager em;

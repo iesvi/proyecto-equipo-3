@@ -23,7 +23,7 @@ public class Conversor {
      */
     public static UsuarioDTO voToDto(UsuarioVO usuarioVO) {
 
-        UsuarioDTO usuarioDTO = new UsuarioDTO(usuarioVO.getId(),usuarioVO.getNombre(),usuarioVO.getPassword(),usuarioVO.getEmail(),usuarioVO.getFecha_nacimiento().toLocalDate(),usuarioVO.getTelefono(),usuarioVO.getRol());
+        UsuarioDTO usuarioDTO = new UsuarioDTO(usuarioVO.getId(), usuarioVO.getNombre(), usuarioVO.getPassword(), usuarioVO.getEmail(), usuarioVO.getFecha_nacimiento().toLocalDate(), usuarioVO.getTelefono(), usuarioVO.getRol());
 
 
 //        for (int i = 0; i < usuarioVO.getAmigos().size(); i++) {

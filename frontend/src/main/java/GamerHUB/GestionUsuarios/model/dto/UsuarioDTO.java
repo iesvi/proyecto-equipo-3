@@ -55,7 +55,8 @@ public class UsuarioDTO {
         this.telefono = new SimpleIntegerProperty(telefono);
         this.rol = new SimpleStringProperty(rol);
     }
-    public UsuarioDTO(int id,String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol) {
+
+    public UsuarioDTO(int id, String nombre, String password, String email, LocalDate fecha_nacimiento, int telefono, String rol) {
         this.id = new SimpleIntegerProperty(id);
         this.nombre = new SimpleStringProperty(nombre);
         this.password = new SimpleStringProperty(password);
@@ -69,84 +70,84 @@ public class UsuarioDTO {
         return id.getValue();
     }
 
-    public IntegerProperty idProperty() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getNombre() {
         return nombre.getValue();
     }
 
-    public StringProperty nombreProperty() {
-        return nombre;
-    }
-
     public void setNombre(String nombre) {
         this.nombre.set(nombre);
+    }
+
+    public StringProperty nombreProperty() {
+        return nombre;
     }
 
     public String getPassword() {
         return password.getValue();
     }
 
-    public StringProperty passwordProperty() {
-        return password;
-    }
-
     public void setPassword(String password) {
         this.password.set(password);
+    }
+
+    public StringProperty passwordProperty() {
+        return password;
     }
 
     public String getEmail() {
         return email.getValue();
     }
 
-    public StringProperty emailProperty() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email.set(email);
+    }
+
+    public StringProperty emailProperty() {
+        return email;
     }
 
     public LocalDate getFecha_nacimiento() {
         return fecha_nacimiento.getValue();
     }
 
-    public ObjectProperty<LocalDate> fecha_nacimientoProperty() {
-        return fecha_nacimiento;
-    }
-
     public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
         this.fecha_nacimiento.set(fecha_nacimiento);
+    }
+
+    public ObjectProperty<LocalDate> fecha_nacimientoProperty() {
+        return fecha_nacimiento;
     }
 
     public int getTelefono() {
         return telefono.getValue();
     }
 
-    public IntegerProperty telefonoProperty() {
-        return telefono;
-    }
-
     public void setTelefono(int telefono) {
         this.telefono.set(telefono);
+    }
+
+    public IntegerProperty telefonoProperty() {
+        return telefono;
     }
 
     public String getRol() {
         return rol.getValue();
     }
 
-    public StringProperty rolProperty() {
-        return rol;
-    }
-
     public void setRol(String rol) {
         this.rol.set(rol);
+    }
+
+    public StringProperty rolProperty() {
+        return rol;
     }
 
     public ObservableList<UsuarioDTO> getAmigos() {

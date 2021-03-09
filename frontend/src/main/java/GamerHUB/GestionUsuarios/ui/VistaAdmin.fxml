@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="417.0" prefWidth="591.0" style="-fx-background-color: #2fdd72;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.GestionUsuarios.controller.AdminController">
-   <children>
-      <AnchorPane layoutX="57.0" layoutY="24.0" prefHeight="369.0" prefWidth="477.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
-         <children>
-            <Button fx:id="btnGestionarChats" layoutX="121.0" layoutY="230.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar chats">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnGestionarFTP" layoutX="111.0" layoutY="293.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="257.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar servidor FTP">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnGestionarUsuarios" layoutX="118.0" layoutY="27.0" mnemonicParsing="false" onAction="#LaunchVistaGestionUsers" prefHeight="42.0" prefWidth="243.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar usuarios">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnGestionarPeticiones" layoutX="121.0" layoutY="95.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar peticiones">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnGestionarEventos" layoutX="121.0" layoutY="164.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar eventos">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
+<AnchorPane prefHeight="417.0" prefWidth="591.0" style="-fx-background-color: #2fdd72;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.GestionUsuarios.controller.AdminController">
+    <children>
+        <AnchorPane layoutX="57.0" layoutY="24.0" prefHeight="369.0" prefWidth="477.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
+            <children>
+                <Button fx:id="btnGestionarChats" layoutX="121.0" layoutY="230.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar chats">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnGestionarUsuarios" layoutX="118.0" layoutY="27.0" mnemonicParsing="false" onAction="#LaunchVistaGestionUsers" prefHeight="42.0" prefWidth="243.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar usuarios">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnGestionarPeticiones" layoutX="121.0" layoutY="95.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar peticiones">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnGestionarEventos" layoutX="121.0" layoutY="164.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar eventos">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnGestionarCorreo" layoutX="129.0" layoutY="290.0" mnemonicParsing="false" onAction="#LaunchVistaGestionCorreos" prefHeight="54.0" prefWidth="222.0" style="-fx-background-radius: 30; -fx-background-color: #78cc9b;" text="Administrar correo">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

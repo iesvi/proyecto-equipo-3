@@ -12,7 +12,6 @@ public class Conversor {
     }
 
     /**
-     *
      * @param peticionVO
      * @return
      */
@@ -28,7 +27,6 @@ public class Conversor {
     }
 
     /**
-     *
      * @param peticionDTO
      * @return
      */

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="417.0" prefWidth="591.0" style="-fx-background-color: #2fdd72;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamerHUB.GestionUsuarios.controller.CorreoController">
+    <children>
+        <AnchorPane layoutX="57.0" layoutY="24.0" prefHeight="369.0" prefWidth="477.0" style="-fx-background-radius: 15; -fx-background-color: #aafe79;">
+         <children>
+            <TextArea fx:id="textAreacorreo" editable="false" layoutX="39.0" layoutY="38.0" prefHeight="286.0" prefWidth="393.0" wrapText="true" />
+         </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

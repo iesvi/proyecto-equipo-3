@@ -10,7 +10,7 @@ public class PeticionVO implements Serializable {
     private int id;
     private String nombre;
     private String descripcion;
-//    private int id_usuario;
+    //    private int id_usuario;
     private String respuesta;
 //    private boolean estado;
 
@@ -19,7 +19,6 @@ public class PeticionVO implements Serializable {
     }
 
     /**
-     *
      * @param id
      * @param nombre
      * @param descripcion

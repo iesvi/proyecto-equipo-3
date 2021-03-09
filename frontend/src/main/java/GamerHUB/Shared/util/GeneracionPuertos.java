@@ -1,12 +1,7 @@
 package GamerHUB.Shared.util;
 
-import javax.imageio.IIOException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 
 public class GeneracionPuertos {
 
@@ -44,7 +39,6 @@ public class GeneracionPuertos {
         }
         throw new IllegalStateException("-");
     }
-
 
 
 //    private static boolean isPortInUse(String host, int port) throws IOException {

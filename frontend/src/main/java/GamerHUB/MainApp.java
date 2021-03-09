@@ -22,6 +22,9 @@ public class MainApp extends Application {
 
     private AnchorPane home;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     /**
      * @param primaryStage
@@ -31,17 +34,12 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         ListaUsuario listaUsuario = new ListaUsuario();
         ClientSocket CS = new ClientSocket();
-        ListaChat listaChat =new ListaChat();
+        ListaChat listaChat = new ListaChat();
         CS.conectar();
         ventanaRoot = new VentanaRootVista();
         ventanaRoot.inicioStage(primaryStage, listaUsuario, CS, listaChat);
 
     }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 
     public void LaunchVistaAdmin() throws IOException {
 

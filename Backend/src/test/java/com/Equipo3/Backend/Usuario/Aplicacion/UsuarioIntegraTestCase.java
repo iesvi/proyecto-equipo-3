@@ -106,7 +106,7 @@ public class UsuarioIntegraTestCase {
 
         UsuarioVO usuariodb = userService.Modificar_Usuario(UsuarioMapper.toDTO(Usuarioaeditar.get()));
 
-        Assert.assertEquals(Usuarioaeditar, usuariodb);
+        Assert.assertEquals(Usuarioaeditar.get(), usuariodb);
 
     }
 

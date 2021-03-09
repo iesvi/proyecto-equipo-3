@@ -4,8 +4,6 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 /**
  *
@@ -20,13 +18,12 @@ public class CanalDTO {
     //private ObservableList<MensajeDTO> historial;
 
     /**
-     *
      * @param nombre
      * @param miembros
-
      */
-    public CanalDTO( String nombre,int puerto) {
-        this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));;
+    public CanalDTO(String nombre, int puerto) {
+        this.id = new SimpleIntegerProperty((int) Math.abs(System.currentTimeMillis() / 10000));
+        ;
         this.nombre = new SimpleStringProperty(nombre);
         this.puerto = new SimpleIntegerProperty(puerto);
 //        this.miembros = FXCollections.observableArrayList(miembros);
@@ -36,7 +33,7 @@ public class CanalDTO {
     public CanalDTO(Integer id, String nombre, Integer puerto) {
         this.id = new SimpleIntegerProperty(id);
         this.nombre = new SimpleStringProperty(nombre);
-        this.puerto =  new SimpleIntegerProperty(puerto);
+        this.puerto = new SimpleIntegerProperty(puerto);
     }
 
     public CanalDTO() {
@@ -46,24 +43,24 @@ public class CanalDTO {
         return id.get();
     }
 
-    public IntegerProperty idProperty() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getNombre() {
         return nombre.get();
     }
 
-    public StringProperty nombreProperty() {
-        return nombre;
-    }
-
     public void setNombre(String nombre) {
         this.nombre.set(nombre);
+    }
+
+    public StringProperty nombreProperty() {
+        return nombre;
     }
 
 //    public ObservableList<Integer> getMiembros() {
@@ -78,12 +75,12 @@ public class CanalDTO {
         return puerto.get();
     }
 
-    public IntegerProperty puertoProperty() {
-        return puerto;
-    }
-
     public void setPuerto(int puerto) {
         this.puerto.set(puerto);
+    }
+
+    public IntegerProperty puertoProperty() {
+        return puerto;
     }
 
     @Override
@@ -97,12 +94,12 @@ public class CanalDTO {
     }
 
     //  public ObservableList<MensajeDTO> getHistorial() {
-     //   return historial;
-  //  }
+    //   return historial;
+    //  }
 
-   // public void setHistorial(ObservableList<MensajeDTO> historial) {
-      //  this.historial = historial;
-   // }
+    // public void setHistorial(ObservableList<MensajeDTO> historial) {
+    //  this.historial = historial;
+    // }
 
 
 }

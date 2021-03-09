@@ -4,7 +4,7 @@ import GamerHUB.GestionEventos.model.dto.EventoDTO;
 import GamerHUB.GestionPeticiones.model.dto.PeticionDTO;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.ui.VentanaAdminVista;
-import GamerHUB.GestionUsuarios.ui.VentanaGestionUser;
+import GamerHUB.GestionUsuarios.ui.VentanaCorreoVista;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controlador del administrador que se encarga de manejar usuarios, peticiones, eventos y correos.
+ */
 public class AdminController {
 
     @FXML
@@ -34,13 +37,13 @@ public class AdminController {
     private VentanaAdminVista ventanaAdminVista;
     private Stage dialogStage;
 
+    public AdminController() {
+
+    }
+
     public void setVentanaAdminVista(VentanaAdminVista ventanaAdminVista, Stage dialogStage) {
         this.ventanaAdminVista = ventanaAdminVista;
         this.dialogStage = dialogStage;
-    }
-
-    public AdminController(){
-
     }
 
     @FXML
@@ -49,11 +52,15 @@ public class AdminController {
         //ventanaAdminVista.LaunchVistaGestionUsers(dialogStage);
     }
 
-
-    public void gestionarEventos(){
-
+    @FXML
+    public void LaunchVistaGestionCorreos() throws IOException {
+        VentanaCorreoVista ventanaCorreoVista = new VentanaCorreoVista(dialogStage);
+        ventanaCorreoVista.LaunchVistaCorreo();
     }
 
+    public void gestionarEventos() {
+
+    }
 
 
     public void volver() throws IOException {

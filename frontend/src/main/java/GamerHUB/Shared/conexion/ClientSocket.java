@@ -1,9 +1,11 @@
 package GamerHUB.Shared.conexion;
 
-import GamerHUB.GestionUsuarios.model.vo.UsuarioVO;
 import GamerHUB.Shared.util.JsonMapper;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -22,21 +24,20 @@ public class ClientSocket {
 
     }
 
-    public boolean comprobarConexion(){
-        if (socket == null){
+    public boolean comprobarConexion() {
+        if (socket == null) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
 
     /**
-     *
      * @param n
      * @throws IOException
      */
-    public void sendO(String Json, String n) throws IOException{
+    public void sendO(String Json, String n) throws IOException {
         DataOutputStream Dos = new DataOutputStream(socket.getOutputStream());
         Dos.writeUTF(n);
         Dos.flush();
@@ -45,7 +46,7 @@ public class ClientSocket {
         DOs.flush();
     }
 
-    public void send(String n) throws IOException{
+    public void send(String n) throws IOException {
         DataOutputStream Dos = new DataOutputStream(socket.getOutputStream());
         Dos.writeUTF(n);
         Dos.flush();
@@ -53,17 +54,16 @@ public class ClientSocket {
 
 
     /**
-     *
      * @return
      * @throws IOException
      * @throws ClassNotFoundException
      */
     public Object receive() throws IOException {
         Object o = null;
-            InputStream inputStream = socket.getInputStream();
-            DataInputStream dataInputStream = new DataInputStream(inputStream);
-            String json = dataInputStream.readUTF();
-            o = JsonMapper.fromJsonToJava(json, ArrayList.class);
+        InputStream inputStream = socket.getInputStream();
+        DataInputStream dataInputStream = new DataInputStream(inputStream);
+        String json = dataInputStream.readUTF();
+        o = JsonMapper.fromJsonToJava(json, ArrayList.class);
         return o;
     }
 
@@ -74,13 +74,14 @@ public class ClientSocket {
             System.out.println("No hay conexion.");
         }
     }
+
     public void desconectar() {
         try {
             socket.close();
         } catch (IOException er) {
-                System.out.println("No hay conexion.");
+            System.out.println("No hay conexion.");
         }
-        }
+    }
 
 
 }

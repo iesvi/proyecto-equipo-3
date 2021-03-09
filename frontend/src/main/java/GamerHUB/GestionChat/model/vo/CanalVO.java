@@ -4,8 +4,8 @@ package GamerHUB.GestionChat.model.vo;
 /**
  *
  */
+
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class CanalVO implements Serializable {
 
@@ -70,7 +70,7 @@ public class CanalVO implements Serializable {
     //    return historial;
     //}
 
-   // public void setHistorial(ArrayList<MensajeVO> historial) {
+    // public void setHistorial(ArrayList<MensajeVO> historial) {
     //    this.historial = historial;
     //}
 
@@ -79,7 +79,7 @@ public class CanalVO implements Serializable {
         return "CanalVO{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", historial="  +
+                ", historial=" +
                 '}';
     }
 }

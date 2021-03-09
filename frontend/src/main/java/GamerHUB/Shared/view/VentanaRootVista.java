@@ -8,13 +8,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ *Clase que muestra la ventana principal (raiz) de la aplicacion.
+ */
 public class VentanaRootVista {
 
     private Stage primaryStage;
@@ -53,14 +55,15 @@ public class VentanaRootVista {
         rootLayout = (BorderPane) loader.load();
         Scene scene = new Scene(rootLayout, 350, 600);
         primaryStage.setScene(scene);
-        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
-                                           @Override public void handle(WindowEvent event) {
-                                               if(CS.comprobarConexion()){
-                                                   CS.desconectar();
-                                               }
-                                               primaryStage.close();
-                                           }
-                                       });
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                if (CS.comprobarConexion()) {
+                    CS.desconectar();
+                }
+                primaryStage.close();
+            }
+        });
         primaryStage.show();
 
     }

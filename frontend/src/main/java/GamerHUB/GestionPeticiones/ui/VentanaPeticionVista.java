@@ -10,11 +10,10 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- *
+ * Clase que lanza la ventana de la vista
  */
 public class VentanaPeticionVista {
 
@@ -22,13 +21,12 @@ public class VentanaPeticionVista {
     private Stage stageppal;
     private ClientSocket CS;
 
-    public VentanaPeticionVista(Stage stageppal, ClientSocket CS){
-            this.stageppal = stageppal;
-            this.CS = CS;
+    public VentanaPeticionVista(Stage stageppal, ClientSocket CS) {
+        this.stageppal = stageppal;
+        this.CS = CS;
     }
 
     /**
-     *
      * @throws IOException
      */
     public void LaunchVistaPeticion() throws IOException {

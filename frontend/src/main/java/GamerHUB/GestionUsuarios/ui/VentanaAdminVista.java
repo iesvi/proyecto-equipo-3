@@ -1,9 +1,7 @@
 package GamerHUB.GestionUsuarios.ui;
 
-import GamerHUB.GestionChat.repository.ListaChat;
 import GamerHUB.GestionUsuarios.controller.AdminController;
-import GamerHUB.GestionUsuarios.repository.ListaUsuario;
-import GamerHUB.Shared.conexion.ClientSocket;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -23,7 +21,6 @@ public class VentanaAdminVista {
     private Stage stageppal;
 
 
-
     public VentanaAdminVista(Stage stageppal) {
 
         this.stageppal = stageppal;
@@ -33,6 +30,7 @@ public class VentanaAdminVista {
      * @param dialogStage
      * @throws IOException
      */
+    @FXML
     public void LaunchVistaAdmin(Stage dialogStage) throws IOException {
 
         URL url = new File("src/main/java/GamerHUB/GestionUsuarios/ui/VistaAdmin.fxml").toURI().toURL();
@@ -43,7 +41,7 @@ public class VentanaAdminVista {
         dialogStage = new Stage();
         Scene scene = new Scene(anchorPane, 591, 417);
         dialogStage.setScene(scene);
-         AdminController adminController = loader.getController();
+        AdminController adminController = loader.getController();
         adminController.setVentanaAdminVista(this, dialogStage);
         dialogStage.initModality(Modality.APPLICATION_MODAL);
 
@@ -52,13 +50,11 @@ public class VentanaAdminVista {
     }
 
 
-
-
-    public void LaunchVistaGestionChats(Stage dialogStage){
+    public void LaunchVistaGestionChats(Stage dialogStage) {
 
     }
 
-    public void LaunchVistaGestionEventos(Stage dialogStage){
+    public void LaunchVistaGestionEventos(Stage dialogStage) {
 
     }
 

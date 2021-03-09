@@ -9,17 +9,16 @@ import java.net.MulticastSocket;
 import java.net.SocketException;
 import java.time.LocalTime;
 
-public class MultiChatUDP implements Runnable{
+public class MultiChatUDP implements Runnable {
 
     private static final long serialVersionUID = 1L;
 
     static MulticastSocket ms = null;
     static byte[] buf = new byte[1000];
     static InetAddress grupo = null;
-    private int puerto=0;
     boolean repetir = true;
-
     VistaHomeControlador vistaHomeControlador;
+    private int puerto = 0;
 
     public MultiChatUDP(String nombre, VistaHomeControlador vistaHomeControlador, int Puerto) throws IOException {
         this.puerto = Puerto;
@@ -38,8 +37,8 @@ public class MultiChatUDP implements Runnable{
                 DatagramPacket p = new DatagramPacket(buf, buf.length);
                 ms.receive(p);
                 String texto = new String(p.getData(), 0, p.getLength());
-               vistaHomeControlador.getAreaChat().appendText(texto+"\n");
-            }catch (SocketException s) {
+                vistaHomeControlador.getAreaChat().appendText(texto + "\n");
+            } catch (SocketException s) {
                 System.out.println(s.getMessage());
             } catch (IOException e) {
                 e.printStackTrace();
@@ -56,6 +55,7 @@ public class MultiChatUDP implements Runnable{
         ms.send(paquete);
 
     }
+
     public void Usuariologeado(String user) throws IOException {
         String message = user + " ha entrado en el chat a las (" + LocalTime.now() + ")" + "\n";
         // ENVIANDO mensaje al grupo
@@ -74,12 +74,9 @@ public class MultiChatUDP implements Runnable{
 
     }
 
-    public void terminarhilo(){
+    public void terminarhilo() {
         this.repetir = false;
     }
-
-
-
 
 
 }

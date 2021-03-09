@@ -2,13 +2,11 @@ package GamerHUB.Shared.controllers;
 
 import GamerHUB.GestionChat.repository.Impl.ChatRepositorySocket;
 import GamerHUB.GestionChat.repository.ListaChat;
-import GamerHUB.GestionServidorArchivos.ClienteSMTP;
 import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
 import GamerHUB.GestionUsuarios.repository.ListaUsuario;
 import GamerHUB.GestionUsuarios.repository.impl.UsuarioRespositorySocket;
 import GamerHUB.GestionUsuarios.ui.VentanaSignUpVista;
 import GamerHUB.Shared.conexion.ClientSocket;
-import GamerHUB.Shared.conexion.LoginThread;
 import GamerHUB.Shared.exception.CustomException;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.view.VentanaHomeVista;
@@ -22,8 +20,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.*;
-import java.net.Socket;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URL;
 
 /**
@@ -32,7 +32,12 @@ import java.net.URL;
 public class VistaInicioControlador {
 
 
-   // private final Socket socket = new Socket("localhost", 12345);
+    /**
+     *
+     */
+    @FXML
+    Label accederARegistro;
+    // private final Socket socket = new Socket("localhost", 12345);
     private VentanaInicioVista vista;
     private UsuarioDTO usuarioLogeado = new UsuarioDTO();
     private ListaUsuario listaUsuario;
@@ -41,7 +46,6 @@ public class VistaInicioControlador {
     private ChatRepositorySocket CRS;
     private ClientSocket CS;
     private ListaChat LC;
-
     /**
      *
      */
@@ -52,12 +56,6 @@ public class VistaInicioControlador {
      */
     @FXML
     private PasswordField campoPass;
-    /**
-     *
-     */
-    @FXML
-    Label accederARegistro;
-
     /**
      *
      */
@@ -74,6 +72,13 @@ public class VistaInicioControlador {
     private UsuarioDTO usuarioDTO;
 
 
+    /**
+     *
+     */
+    public VistaInicioControlador() throws IOException {
+
+    }
+
     public void setVista(VentanaInicioVista vista, Stage stageinicio, ListaUsuario listaUsuario, ClientSocket CS, ListaChat LC) {
         this.stageinicio = stageinicio;
         this.vista = vista;
@@ -82,12 +87,12 @@ public class VistaInicioControlador {
         this.LC = LC;
     }
 
-    public void setListaUsuario(){
+    public void setListaUsuario() {
         URS = new UsuarioRespositorySocket(CS);
         listaUsuario.setlistaUsuarios(URS.retrieveUsers());
     }
 
-    public void setListaChat(){
+    public void setListaChat() {
         CRS = new ChatRepositorySocket(CS);
         LC.setlistaChat(CRS.retrieveChats());
     }
@@ -112,18 +117,10 @@ public class VistaInicioControlador {
     }
 
     /**
-     *
-     */
-    public VistaInicioControlador() throws IOException {
-
-    }
-
-
-    /**
      * @throws IOException
      * @throws CustomException
      */
-    public void Login() throws Exception, IOException, CustomException{
+    public void Login() throws Exception, IOException, CustomException {
 
         boolean correct = false;
         usuarioDTO = new UsuarioDTO();
@@ -131,7 +128,7 @@ public class VistaInicioControlador {
         String username = campoUsuario.getText();
         String pass = campoPass.getText();
 
-       //LoginThread loginThread =new LoginThread(socket);
+        //LoginThread loginThread =new LoginThread(socket);
 
         for (UsuarioDTO user : listaUsuario.getUsers()) {
             if (user.getNombre().equals(username) && user.getPassword().equals(pass)) {
@@ -162,10 +159,10 @@ public class VistaInicioControlador {
 
 
     }
+
     @FXML
     public void Loginenter(KeyEvent keyEvent) throws Exception {
-        if(keyEvent.getCode() == KeyCode.ENTER)
-        {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
             Login();
         }
     }
@@ -215,10 +212,10 @@ public class VistaInicioControlador {
         vista.getStageppal().close();
     }
 
-    public void logUsuario(UsuarioDTO user){
+    public void logUsuario(UsuarioDTO user) {
         try {
             File directorio = new File("target/classes/");
-            ProcessBuilder pb = new ProcessBuilder("java","GamerHUB.Shared.util.UserLog");
+            ProcessBuilder pb = new ProcessBuilder("java", "GamerHUB.Shared.util.UserLog");
             pb.directory(directorio);
             Process p = pb.start();
 
@@ -234,7 +231,7 @@ public class VistaInicioControlador {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

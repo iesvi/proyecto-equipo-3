@@ -1,7 +1,10 @@
 package GamerHUB.GestionPeticiones.model.dto;
 
 
-import javafx.beans.property.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -11,7 +14,7 @@ public class PeticionDTO {
     private IntegerProperty id;
     private StringProperty nombre;
     private StringProperty descripcion;
-//    private IntegerProperty id_usuario;
+    //    private IntegerProperty id_usuario;
     private StringProperty respuesta;
 //    private BooleanProperty estado;
 
@@ -43,36 +46,36 @@ public class PeticionDTO {
         return id.get();
     }
 
-    public IntegerProperty idProperty() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getNombre() {
         return nombre.get();
     }
 
-    public StringProperty nombreProperty() {
-        return nombre;
-    }
-
     public void setNombre(String nombre) {
         this.nombre.set(nombre);
+    }
+
+    public StringProperty nombreProperty() {
+        return nombre;
     }
 
     public String getDescripcion() {
         return descripcion.get();
     }
 
-    public StringProperty descripcionProperty() {
-        return descripcion;
-    }
-
     public void setDescripcion(String descripcion) {
         this.descripcion.set(descripcion);
+    }
+
+    public StringProperty descripcionProperty() {
+        return descripcion;
     }
 
 //    public int getId_usuario() {
@@ -91,12 +94,12 @@ public class PeticionDTO {
         return respuesta.get();
     }
 
-    public StringProperty respuestaProperty() {
-        return respuesta;
-    }
-
     public void setRespuesta(String respuesta) {
         this.respuesta.set(respuesta);
+    }
+
+    public StringProperty respuestaProperty() {
+        return respuesta;
     }
 
 //    public boolean isEstado() {
@@ -110,7 +113,6 @@ public class PeticionDTO {
 //    public void setEstado(boolean estado) {
 //        this.estado.set(estado);
 //    }
-
 
     @Override
     public String toString() {

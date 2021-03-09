@@ -7,14 +7,10 @@ import GamerHUB.GestionChat.ui.VentanaAddChatVista;
 import GamerHUB.Shared.conexion.ClientSocket;
 import GamerHUB.Shared.util.ActionDialogs;
 import GamerHUB.Shared.util.GeneracionPuertos;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import javax.imageio.IIOException;
-import java.io.IOException;
 
 public class ChatAddController {
 
@@ -24,18 +20,19 @@ public class ChatAddController {
     @FXML
     private Button btnGuardar;
 
-     private VentanaAddChatVista vista;
-     private Stage stage;
-     private ListaChat listaChat;
-     private int puerto;
-     private ChatRepositorySocket CRS;
-     private ClientSocket CS;
+    private VentanaAddChatVista vista;
+    private Stage stage;
+    private ListaChat listaChat;
+    private int puerto;
+    private ChatRepositorySocket CRS;
+    private ClientSocket CS;
 
 
-    public ChatAddController(){}
+    public ChatAddController() {
+    }
 
 
-    public ChatAddController(int puerto){
+    public ChatAddController(int puerto) {
         this.puerto = puerto;
     }
 
@@ -48,9 +45,9 @@ public class ChatAddController {
         this.listaChat = listaChat;
     }
 
-    public void setVista(VentanaAddChatVista vista, Stage stage, ClientSocket CS){
-        this.vista =vista;
-        this.stage =stage;
+    public void setVista(VentanaAddChatVista vista, Stage stage, ClientSocket CS) {
+        this.vista = vista;
+        this.stage = stage;
         this.CS = CS;
         CRS = new ChatRepositorySocket(CS);
     }
@@ -60,11 +57,11 @@ public class ChatAddController {
     }
 
     @FXML
-    public void addChat(){
-        if(isInputValid()){
+    public void addChat() {
+        if (isInputValid()) {
             try {
                 this.puerto = GeneracionPuertos.findFreePort();
-            }catch(Exception er){
+            } catch (Exception er) {
                 er.printStackTrace();
             }
             String campo = campoNombreCanal.getText();
@@ -73,11 +70,11 @@ public class ChatAddController {
             CRS.add(chatDTO);
             listaChat.getCanales().add(chatDTO);
 
-            for(CanalDTO canalDTO: listaChat.getCanales()){
+            for (CanalDTO canalDTO : listaChat.getCanales()) {
                 System.out.println(canalDTO.toString());
             }
 
-            ActionDialogs.info("Se ha registrado un chat.", "Se creó el chat "+campo+ ".\n" +
+            ActionDialogs.info("Se ha registrado un chat.", "Se creó el chat " + campo + ".\n" +
                     chatDTO.toString());
             stage.close();
         } else {
@@ -86,25 +83,23 @@ public class ChatAddController {
 
     }
 
-    public boolean isInputValid(){
+    public boolean isInputValid() {
 
-        String errorMsg="";
+        String errorMsg = "";
 
-        if(campoNombreCanal.getText().isEmpty() || campoNombreCanal.getText().equals(null)){
-            errorMsg+="Introduce un nombre para el nuevo canal";
+        if (campoNombreCanal.getText().isEmpty() || campoNombreCanal.getText().equals(null)) {
+            errorMsg += "Introduce un nombre para el nuevo canal";
         }
 
-        if(errorMsg.isEmpty()){
+        if (errorMsg.isEmpty()) {
             return true;
-        } else{
+        } else {
             ActionDialogs.error("Error en el campo.", errorMsg);
             return false;
         }
 
 
     }
-
-
 
 
 }

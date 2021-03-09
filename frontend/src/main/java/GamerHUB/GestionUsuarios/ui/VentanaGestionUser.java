@@ -42,8 +42,9 @@ public class VentanaGestionUser {
         //adminController.setVentanaAdminVista(this, dialogStage);
         dialogStage.close();
 
-    }
+        dialogStage.show();
 
+    }
 
 
 }

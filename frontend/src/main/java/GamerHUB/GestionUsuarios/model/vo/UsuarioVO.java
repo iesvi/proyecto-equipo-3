@@ -41,7 +41,7 @@ public class UsuarioVO implements Serializable {
         this.eventos = eventos;
     }
 
-    public UsuarioVO(String user, String password){
+    public UsuarioVO(String user, String password) {
         this.nombre = user;
         this.password = password;
     }

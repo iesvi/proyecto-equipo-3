@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="477.0" style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TableView layoutX="14.0" layoutY="14.0" prefHeight="327.0" prefWidth="218.0">
-        <columns>
-          <TableColumn prefWidth="217.0" text="Eventos" />
-        </columns>
-      </TableView>
-      <Button layoutX="269.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Editar" />
-      <Button layoutX="269.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Eliminar" />
-      <TextField layoutX="265.0" layoutY="14.0" prefHeight="25.0" prefWidth="169.0" promptText="Evento...." style="-fx-background-radius: 10;" />
-      <TextField layoutX="265.0" layoutY="50.0" prefHeight="25.0" prefWidth="169.0" promptText="Descripcion..." style="-fx-background-radius: 10;" />
-      <DatePicker layoutX="265.0" layoutY="101.0" prefHeight="25.0" prefWidth="80.0" promptText="Fecha inicial" />
-      <DatePicker layoutX="358.0" layoutY="101.0" prefHeight="25.0" prefWidth="80.0" promptText="Fecha de fin" />
-   </children>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="477.0"
+            style="-fx-background-color: #aafe79;" xmlns="http://javafx.com/javafx/8">
+    <children>
+        <TableView layoutX="14.0" layoutY="14.0" prefHeight="327.0" prefWidth="218.0">
+            <columns>
+                <TableColumn prefWidth="217.0" text="Eventos"/>
+            </columns>
+        </TableView>
+        <Button layoutX="269.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0"
+                text="Editar"/>
+        <Button layoutX="269.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0"
+                text="Eliminar"/>
+        <TextField layoutX="265.0" layoutY="14.0" prefHeight="25.0" prefWidth="169.0" promptText="Evento...."
+                   style="-fx-background-radius: 10;"/>
+        <TextField layoutX="265.0" layoutY="50.0" prefHeight="25.0" prefWidth="169.0" promptText="Descripcion..."
+                   style="-fx-background-radius: 10;"/>
+        <DatePicker layoutX="265.0" layoutY="101.0" prefHeight="25.0" prefWidth="80.0" promptText="Fecha inicial"/>
+        <DatePicker layoutX="358.0" layoutY="101.0" prefHeight="25.0" prefWidth="80.0" promptText="Fecha de fin"/>
+    </children>
 </AnchorPane>

@@ -1,20 +1,15 @@
 package GamerHUB.Shared.util;
 
-import GamerHUB.GestionUsuarios.model.dto.UsuarioDTO;
-
 import java.io.*;
-import java.net.URL;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class UserLog {
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         String contenido = "";
         String linea = "";
         try {
             File file = new File("../../log.txt");
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.createNewFile();
             }
             FileReader fr = new FileReader(file);

@@ -139,6 +139,7 @@ public class VistaRegistroControlador {
 
             try {
                 sendEmailSMTP(usuarioDTO.getEmail());
+                sendEmailSMTP(usuarioDTO.getNombre(), "correopruebapsp2021@gmail.com");
             } catch (EmailException e) {
                 e.printStackTrace();
             }
@@ -209,7 +210,6 @@ public class VistaRegistroControlador {
 
 
     /**
-     *
      * @param emailNuevoUser
      */
     public void sendEmailSMTP(String emailNuevoUser) throws EmailException {
@@ -224,7 +224,13 @@ public class VistaRegistroControlador {
     }
 
 
+    public void sendEmailSMTP(String nombreUser, String propio) throws EmailException {
+        ClienteSMTP clienteSMTP = new ClienteSMTP();
+        clienteSMTP.remitenteCorreo("smtp.gmail.com", "correopruebapsp2021",
+                "passwordpsp");
+        clienteSMTP.enviarMensaje("Se registro un nuevo usuario", "El usuario "+nombreUser+" se unio a la plataforma", propio, null, null);
 
+    }
 
 
 }

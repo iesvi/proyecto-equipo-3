@@ -15,6 +15,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ *Clase que muestra en la ventana raiz la vista inicio, que permite hacer login en la aplicación, o bien
+ * lleva a la de registro.
+ */
 public class VentanaInicioVista {
 
     private Stage stageppal;
@@ -46,9 +50,10 @@ public class VentanaInicioVista {
         AnchorPane inicio = (AnchorPane) loader.load();
 
         rootLayout.setCenter(inicio);
-        stageppal.setOnCloseRequest(new EventHandler<WindowEvent>(){
-            @Override public void handle(WindowEvent event) {
-                if(CS.comprobarConexion()){
+        stageppal.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                if (CS.comprobarConexion()) {
                     CS.desconectar();
                 }
                 stageppal.close();

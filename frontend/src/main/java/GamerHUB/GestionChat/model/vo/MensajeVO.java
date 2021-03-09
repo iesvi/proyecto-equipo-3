@@ -9,12 +9,11 @@ import java.util.Date;
 public class MensajeVO implements Serializable {
 
     private int id;
-    private  int id_chat;
+    private int id_chat;
     private String contenido;
     private Date fecha;
 
     /**
-     *
      * @param id
      * @param id_chat
      * @param contenido

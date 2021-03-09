@@ -20,6 +20,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * Clase que arranca
+ */
 public class VentanaHomeVista {
 
     private SplitPane pane;
@@ -53,9 +56,10 @@ public class VentanaHomeVista {
         Scene scene = new Scene(home, 800, 525);
         dialogStage.setScene(scene);
         pane = (SplitPane) home.getChildren().get(0);
-        dialogStage.setOnCloseRequest(new EventHandler<WindowEvent>(){
-            @Override public void handle(WindowEvent event) {
-                if(CS.comprobarConexion()){
+        dialogStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                if (CS.comprobarConexion()) {
                     CS.desconectar();
                 }
                 dialogStage.close();
@@ -124,7 +128,6 @@ public class VentanaHomeVista {
     }
 
     /**
-     *
      * @throws IOException
      */
     public void LaunchVistaAdmin() throws IOException {
@@ -132,15 +135,15 @@ public class VentanaHomeVista {
         ventanaAdminVista.LaunchVistaAdmin(stageppal);
     }
 
-    public VistaHomeControlador getcontrollerHome(){
+    public VistaHomeControlador getcontrollerHome() {
         return controladorHome;
     }
 
-    public VistaHomeControlador getcontrollerHomeview1(){
+    public VistaHomeControlador getcontrollerHomeview1() {
         return controladorHomeview1;
     }
 
-    public VistaHomeControlador getcontrollerHomeview2(){
+    public VistaHomeControlador getcontrollerHomeview2() {
         return controladorHomeview2;
     }
 

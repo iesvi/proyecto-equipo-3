@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
+/**
+ * Controlador de la vista del registro de los eventos.
+ */
 public class EventoAddController {
 
     @FXML

@@ -18,23 +18,21 @@ import java.time.LocalDate;
  */
 public class EventoController {
 
-    private Stage dialogStage;
-    private VentanaEventoVista vista;
-    private VentanaHomeVista ventanaHomeVista;
-    private ListaEvento listaEvento;
-    private EventoDTO currentEvento;
-
-    /**
-     * Tabla que muestra todos los eventos de la plataforma
-     */
-    @FXML
-    private TableView<EventoDTO> eventos;
     /**
      * Columna de la tabla de eventos que visualizará el listado de eventos.
      */
     @FXML
     TableColumn<EventoDTO, String> colEvento;
-
+    private Stage dialogStage;
+    private VentanaEventoVista vista;
+    private VentanaHomeVista ventanaHomeVista;
+    private ListaEvento listaEvento;
+    private EventoDTO currentEvento;
+    /**
+     * Tabla que muestra todos los eventos de la plataforma
+     */
+    @FXML
+    private TableView<EventoDTO> eventos;
     /**
      * Campos para visualizar el nombre y la prioridad del evento seleccionado
      * de la tabla.
@@ -69,7 +67,6 @@ public class EventoController {
     }
 
     /**
-     *
      * @throws IOException
      */
     @FXML
@@ -79,7 +76,6 @@ public class EventoController {
     }
 
     /**
-     *
      * @param vista
      * @param dialog
      * @param listaEvento
@@ -102,7 +98,6 @@ public class EventoController {
     }
 
     /**
-     *
      * @param evento
      */
     public void showEventoDetails(EventoDTO evento) {
@@ -155,7 +150,7 @@ public class EventoController {
         LocalDate fechainicial = fecha_i.getValue();
         LocalDate fechafinal = fecha_f.getValue();
         if (nombre.compareToIgnoreCase("") == 0 || Descripcion.compareToIgnoreCase("") == 0 || fechainicial == null || fechafinal == null) {
-           ActionDialogs.error("Error", "Debes especificar todos los campos.\n"+"Vuelva a intentarlo de nuevo.");
+            ActionDialogs.error("Error", "Debes especificar todos los campos.\n" + "Vuelva a intentarlo de nuevo.");
         } else if (currentEvento == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

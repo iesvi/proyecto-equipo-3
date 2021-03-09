@@ -6,6 +6,8 @@ import com.Equipo3.Backend.Chat.Dominio.ChatVOBuilder;
 import com.Equipo3.Backend.Chat.Dominio.DTO.ChatDTO;
 import com.Equipo3.Backend.Chat.Dominio.Mapper.ChatMapper;
 import com.Equipo3.Backend.Chat.Dominio.Repository.ChatRepository;
+import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
+import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
@@ -18,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpringTest.class})
+@ContextConfiguration(classes = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
 public class ChatIntegraTest {
     @Autowired
     ChatService chatService;

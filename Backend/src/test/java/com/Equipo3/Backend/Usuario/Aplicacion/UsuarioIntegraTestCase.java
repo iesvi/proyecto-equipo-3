@@ -1,5 +1,7 @@
 package com.Equipo3.Backend.Usuario.Aplicacion;
 
+import com.Equipo3.Backend.Shared.Config.ConfigurationMongoTest;
+import com.Equipo3.Backend.Shared.Config.ConfigurationPersistenceTest;
 import com.Equipo3.Backend.Shared.Config.ConfigurationSpringTest;
 import com.Equipo3.Backend.Shared.Err.EntityExist;
 import com.Equipo3.Backend.Shared.Err.EntityNotExist;
@@ -22,7 +24,7 @@ import java.util.Optional;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigurationSpringTest.class})
+@ContextConfiguration(classes = {ConfigurationPersistenceTest.class, ConfigurationMongoTest.class})
 public class UsuarioIntegraTestCase {
     @Autowired
     UsuarioService userService;
@@ -72,6 +74,7 @@ public class UsuarioIntegraTestCase {
     }
 
     @Test
+    @Transactional
     public void ShouldReturnUsuarioExistTest() {
 
         UsuarioVO Usuarioyaexistente = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
@@ -82,6 +85,7 @@ public class UsuarioIntegraTestCase {
 
     }
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldReturnUsuarioNotExist_ThrowExceptionTest() {
 
 
@@ -91,13 +95,14 @@ public class UsuarioIntegraTestCase {
 
     }
     @Test
+    @Transactional
     public void ShouldEditUsuarioExistTest() {
 
         UsuarioVO Usuariosineditar = userService.Registro_De_Usuario(UsuarioMapper.toDTO(new UsuarioVOBuilder().build()));
 
         Optional<UsuarioVO> Usuarioaeditar = userService.ConsultarPerfilUsuario(Usuariosineditar.getId());
 
-        Usuarioaeditar.get().setNombre("Miguel");
+        Usuarioaeditar.get().setNombre("Aaaaaaaa");
 
         UsuarioVO usuariodb = userService.Modificar_Usuario(UsuarioMapper.toDTO(Usuarioaeditar.get()));
 
@@ -105,6 +110,7 @@ public class UsuarioIntegraTestCase {
 
     }
     @Test(expected = EntityNotExist.class)
+    @Transactional
     public void ShouldEditUsuarioNotExist_ThrowExceptionTest() {
 
 

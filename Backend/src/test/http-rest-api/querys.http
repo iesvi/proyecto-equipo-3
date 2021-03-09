@@ -1,3 +1,17 @@
 ###
-GET {{baseApiUrl}}/v1/user/1
+GET {{baseApiUrl}}/user/id/1
 Accept: application/json
+
+###
+POST {{baseApiUrl}}/user
+Content-type: application/json
+Accept: */*
+
+{
+    "nombre": "Miguelaaa",
+    "password": "123456",
+    "email": "p@hotmail.com",
+    "fecha_nacimiento": "2021-03-08",
+    "telefono": 123456789,
+    "rol": "Admin"
+}
